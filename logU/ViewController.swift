@@ -28,6 +28,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.setsTextField.keyboardType = UIKeyboardType.PhonePad
+        self.setsTextField.returnKeyType = UIReturnKeyType.Done
+        
         dateTextField.delegate = self
         liftTextField.delegate = self
         setsTextField.delegate = self
@@ -36,9 +40,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         logButton.enabled = false
         
+        addDoneButton()
+        
         //dataOfJson("https://loguapp.com/swift.php")
-
     }
+    
+    func addDoneButton() {
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace,
+            target: nil, action: nil)
+        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .Done,
+            target: view, action: Selector("endEditing:"))
+        keyboardToolbar.items = [flexBarButton, doneBarButton]
+        setsTextField.inputAccessoryView = keyboardToolbar
+        repsTextField.inputAccessoryView = keyboardToolbar
+        weightTextField.inputAccessoryView = keyboardToolbar
+    }
+
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if logButton === sender {
