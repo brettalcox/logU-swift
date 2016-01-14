@@ -10,22 +10,28 @@ import UIKit
 
 class DashTableViewController: UITableViewController {
 
+    let url_to_post:String = "https://loguapp.com/swift7.php"
+    
     var Lifts: [String]! = []
     var Dates: [String]! = []
     var Weights: [String]! = []
     var Sets: [String]! = []
     var Reps: [String]! = []
+    var Ids: [String]! = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let (dates, lifts, weights, sets, reps) = dataOfLift("https://loguapp.com/swift6.php")!
+        let (dates, lifts, weights, sets, reps, ids) = dataOfLift("https://loguapp.com/swift6.php")!
         
         Dates = dates
         Lifts = lifts
         Weights = weights
         Sets = sets
         Reps = reps
+        Ids = ids
+        
+        navigationItem.leftBarButtonItem = editButtonItem()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -36,14 +42,16 @@ class DashTableViewController: UITableViewController {
 
     override func viewDidAppear(animated: Bool) {
         self.tableView.reloadData()
-        let (dates, lifts, weights, sets, reps) = dataOfLift("https://loguapp.com/swift6.php")!
+        let (dates, lifts, weights, sets, reps, ids) = dataOfLift("https://loguapp.com/swift6.php")!
         
         Dates = dates
         Lifts = lifts
         Weights = weights
         Sets = sets
         Reps = reps
+        Ids = ids
     }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -62,7 +70,7 @@ class DashTableViewController: UITableViewController {
         return Dates.count
     }
 
-    func dataOfLift(url: String) -> ([String], [String], [String], [String], [String])? {
+    func dataOfLift(url: String) -> ([String], [String], [String], [String], [String], [String])? {
         
         let data = NSData(contentsOfURL: NSURL(string:url)!)
         var date : [String] = []
@@ -70,6 +78,7 @@ class DashTableViewController: UITableViewController {
         var weight : [String] = []
         var set : [String] = []
         var rep : [String] = []
+        var id : [String] = []
         
         do {
             let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!, options: [NSJSONReadingOptions.MutableContainers, NSJSONReadingOptions.AllowFragments]) as? Array<Dictionary<String, String>>
@@ -81,6 +90,7 @@ class DashTableViewController: UITableViewController {
                 weight.append(jsonArray![i]["weight"]!)
                 set.append(jsonArray![i]["sets"]!)
                 rep.append(jsonArray![i]["reps"]!)
+                id.append(jsonArray![i]["id"]!)
                 
             }
             
@@ -90,9 +100,10 @@ class DashTableViewController: UITableViewController {
                 print(weight[i])
                 print(set[i])
                 print(rep[i])
+                print(id[i])
             }
             
-            return (date, lift, weight, set, rep)
+            return (date, lift, weight, set, rep, id)
         } catch let error as NSError {
             print(error.localizedDescription)
             return nil;
@@ -108,11 +119,13 @@ class DashTableViewController: UITableViewController {
         let weight = Weights[indexPath.row]
         let set = Sets[indexPath.row]
         let rep = Reps[indexPath.row]
+        let id = Ids[indexPath.row]
         
         cell.liftLabel.text = lift
         cell.dateLabel.text = date
         cell.poundsLabel.text = weight
         cell.setsRepsLabel.text = set + "x" + rep
+        cell.idLabel.text = id
         // Configure the cell...
 
         return cell
@@ -121,26 +134,59 @@ class DashTableViewController: UITableViewController {
     @IBAction func unwindToDashboard(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
         
     }
-        
-    /*
-    // Override to support conditional editing of the table view.
+    
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
+
         return true
     }
-    */
 
-    /*
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
+            let idToDelete = Ids[indexPath.row]
+            delete_request(idToDelete)
+            self.Lifts.removeAtIndex(indexPath.row)
+            self.Dates.removeAtIndex(indexPath.row)
+            self.Weights.removeAtIndex(indexPath.row)
+            self.Sets.removeAtIndex(indexPath.row)
+            self.Reps.removeAtIndex(indexPath.row)
+            self.Ids.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
+    func delete_request(theId: String)
+    {
+        let url:NSURL = NSURL(string: url_to_post)!
+        let session = NSURLSession.sharedSession()
+        
+        let request = NSMutableURLRequest(URL: url)
+        request.HTTPMethod = "POST"
+        request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
+        
+        let query = "id=\(theId)".dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let task = session.uploadTaskWithRequest(request, fromData: query, completionHandler:
+            {(data,response,error) in
+                
+                guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
+                    print("error")
+                    return
+                }
+                
+                let dataString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                print(dataString)
+            }
+        );
+        
+        task.resume()
+        
+    }
+
 
     /*
     // Override to support rearranging the table view.

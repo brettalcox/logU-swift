@@ -15,6 +15,8 @@ class LiftTableViewCell: UITableViewCell {
     @IBOutlet weak var liftLabel: UILabel!
     @IBOutlet weak var poundsLabel: UILabel!
     @IBOutlet weak var setsRepsLabel: UILabel!
+    @IBOutlet weak var idLabel: UILabel!
+
 
     
     override func awakeFromNib() {

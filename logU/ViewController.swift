@@ -42,6 +42,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         addDoneButton()
         
+        
         //dataOfJson("https://loguapp.com/swift.php")
     }
     
