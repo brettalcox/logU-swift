@@ -26,7 +26,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Lift:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2S-w1-Jfo">
@@ -147,13 +147,13 @@
         <!--Weekly Poundage-->
         <scene sceneID="DlF-sO-ALN">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="hbK-kt-rb8" customClass="GraphViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="hbK-kt-rb8" customClass="GraphViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NDy-Wd-M7H"/>
                         <viewControllerLayoutGuide type="bottom" id="XKW-Bw-A9w"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IFQ-80-JPC">
-                        <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bgy-vc-aux" customClass="LineChartView" customModule="Charts">
@@ -170,11 +170,10 @@
                             <constraint firstItem="XKW-Bw-A9w" firstAttribute="top" secondItem="Bgy-vc-aux" secondAttribute="bottom" id="ltk-d2-ZnU"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Weekly Poundage" id="NeG-ND-yMu"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Weekly Poundage" id="79b-lw-eli"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
                         <outlet property="poundageChartView" destination="Bgy-vc-aux" id="PUQ-Dc-QvT"/>
                     </connections>
@@ -186,13 +185,13 @@
         <!--Squat-->
         <scene sceneID="pCv-zz-PPe">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="7yG-PY-eea" customClass="SquatViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="7yG-PY-eea" customClass="SquatViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0jW-aA-Qlc"/>
                         <viewControllerLayoutGuide type="bottom" id="nhU-oy-jf6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oCC-Ci-IwK">
-                        <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A8w-Ub-5MC" customClass="LineChartView" customModule="Charts">
@@ -209,10 +208,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="A8w-Ub-5MC" secondAttribute="trailing" id="sAZ-fO-sZz"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Squat" id="7KS-xQ-IJZ"/>
                     <navigationItem key="navigationItem" title="Squat" id="bAA-TP-uAn"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
                         <outlet property="squatChartView" destination="A8w-Ub-5MC" id="v4g-QQ-Fwb"/>
                     </connections>
@@ -242,13 +240,13 @@
         <!--Bench-->
         <scene sceneID="9vQ-uF-ueZ">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="ssg-YH-E6z" customClass="BenchViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="ssg-YH-E6z" customClass="BenchViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g5h-RP-Da8"/>
                         <viewControllerLayoutGuide type="bottom" id="mUU-z9-phS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4YK-nV-p6V">
-                        <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xbN-Sa-pgb" customClass="LineChartView" customModule="Charts">
@@ -265,10 +263,9 @@
                             <constraint firstItem="xbN-Sa-pgb" firstAttribute="leading" secondItem="4YK-nV-p6V" secondAttribute="leadingMargin" id="dBN-Xi-OW9"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Bench" id="07n-tZ-bkd"/>
                     <navigationItem key="navigationItem" title="Bench" id="7Ah-Zt-EuK"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
                         <outlet property="benchChartView" destination="xbN-Sa-pgb" id="QD7-EW-yPf"/>
                     </connections>
@@ -302,13 +299,13 @@
         <!--Deadlift-->
         <scene sceneID="jsd-ZH-jmW">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="yGO-X1-Wna" customClass="DeadliftViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="yGO-X1-Wna" customClass="DeadliftViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U0U-F6-oQl"/>
                         <viewControllerLayoutGuide type="bottom" id="eEe-Mc-zpO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YgE-er-Lhj">
-                        <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZUZ-H1-9U2" customClass="LineChartView" customModule="Charts">
@@ -325,10 +322,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="ZUZ-H1-9U2" secondAttribute="trailing" id="urU-35-7J6"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Deadlift" id="xBF-qN-1Z1"/>
                     <navigationItem key="navigationItem" title="Deadlift" id="TW1-oC-zli"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
                         <outlet property="deadliftChartView" destination="ZUZ-H1-9U2" id="8S0-lW-MTD"/>
                     </connections>
@@ -384,7 +380,7 @@
             <objects>
                 <tableViewController title="Dashboard" id="1Qr-15-VoO" customClass="DashTableViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="87" sectionHeaderHeight="28" sectionFooterHeight="28" id="BEw-AV-hgN">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -492,6 +488,7 @@
             <objects>
                 <navigationController id="Xxk-Br-AG0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" id="HHt-Ge-0vr"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0RE-bF-emQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -505,7 +502,8 @@
         <scene sceneID="QmW-UZ-8TS">
             <objects>
                 <tabBarController id="dLN-94-LWx" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="1Iu-aV-HZY">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="1Iu-aV-HZY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -526,7 +524,7 @@
             <objects>
                 <tableViewController id="iKS-ey-D7z" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="kQf-Ge-RpD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
