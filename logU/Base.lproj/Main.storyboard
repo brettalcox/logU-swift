@@ -72,17 +72,17 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="icX-h5-RUC">
                                 <rect key="frame" x="231" y="175" width="139" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hCE-DE-4at">
                                 <rect key="frame" x="231" y="213" width="139" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y8m-H5-Na5">
                                 <rect key="frame" x="231" y="251" width="139" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -411,34 +411,43 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siD-Gs-LzB">
-                                            <rect key="frame" x="499" y="20" width="79" height="45"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siD-Gs-LzB">
+                                            <rect key="frame" x="513" y="0.0" width="79" height="45"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="93" id="RHI-gv-dVf"/>
+                                                <constraint firstAttribute="width" constant="79" id="RHI-gv-dVf"/>
                                                 <constraint firstAttribute="width" constant="79" id="adS-gw-6Q4"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUp-z6-qfW">
+                                            <rect key="frame" x="513" y="46" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="7AN-qX-fwD" firstAttribute="trailing" secondItem="Xpn-H0-aGX" secondAttribute="trailing" id="14g-oS-vCj"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="siD-Gs-LzB" secondAttribute="trailing" constant="14" id="3GG-F8-Ic3"/>
-                                        <constraint firstItem="siD-Gs-LzB" firstAttribute="top" secondItem="ODK-1i-JOY" secondAttribute="topMargin" constant="12" id="5CU-YH-ikF"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="siD-Gs-LzB" secondAttribute="trailing" id="3GG-F8-Ic3"/>
+                                        <constraint firstItem="siD-Gs-LzB" firstAttribute="top" secondItem="ODK-1i-JOY" secondAttribute="topMargin" constant="-8" id="5CU-YH-ikF"/>
                                         <constraint firstItem="Xpn-H0-aGX" firstAttribute="top" secondItem="7AN-qX-fwD" secondAttribute="bottom" constant="17" id="Kse-TX-qKk"/>
-                                        <constraint firstItem="siD-Gs-LzB" firstAttribute="centerY" secondItem="ODK-1i-JOY" secondAttribute="centerY" id="R6v-T9-hdT"/>
+                                        <constraint firstItem="siD-Gs-LzB" firstAttribute="centerY" secondItem="ODK-1i-JOY" secondAttribute="centerY" constant="-20.5" id="R6v-T9-hdT"/>
                                         <constraint firstItem="7AN-qX-fwD" firstAttribute="leading" secondItem="ODK-1i-JOY" secondAttribute="leadingMargin" constant="10" id="XeX-C8-r5g"/>
+                                        <constraint firstItem="kUp-z6-qfW" firstAttribute="bottom" secondItem="ODK-1i-JOY" secondAttribute="bottomMargin" constant="-11" id="Z3o-12-1fD"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Xpn-H0-aGX" secondAttribute="bottom" constant="8" id="gy7-Jb-t1f"/>
                                         <constraint firstItem="7AN-qX-fwD" firstAttribute="top" secondItem="ODK-1i-JOY" secondAttribute="topMargin" id="kun-ml-7Av"/>
                                         <constraint firstItem="siD-Gs-LzB" firstAttribute="trailing" secondItem="ODK-1i-JOY" secondAttribute="trailingMargin" id="lan-Bz-Vms"/>
                                         <constraint firstItem="Xpn-H0-aGX" firstAttribute="leading" secondItem="7AN-qX-fwD" secondAttribute="leading" id="p6b-XG-Z4H"/>
+                                        <constraint firstItem="kUp-z6-qfW" firstAttribute="centerX" secondItem="siD-Gs-LzB" secondAttribute="centerX" constant="-18.5" id="uMv-HA-asd"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dateLabel" destination="7AN-qX-fwD" id="3V7-DG-VZ3"/>
                                     <outlet property="liftLabel" destination="Xpn-H0-aGX" id="Uke-JN-0mN"/>
                                     <outlet property="poundsLabel" destination="siD-Gs-LzB" id="8SA-90-uIU"/>
+                                    <outlet property="setsRepsLabel" destination="kUp-z6-qfW" id="3th-VM-hRN"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

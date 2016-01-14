@@ -13,15 +13,19 @@ class DashTableViewController: UITableViewController {
     var Lifts: [String]! = []
     var Dates: [String]! = []
     var Weights: [String]! = []
+    var Sets: [String]! = []
+    var Reps: [String]! = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let (dates, lifts, weights) = dataOfLift("https://loguapp.com/swift6.php")!
+        let (dates, lifts, weights, sets, reps) = dataOfLift("https://loguapp.com/swift6.php")!
         
         Dates = dates
         Lifts = lifts
         Weights = weights
+        Sets = sets
+        Reps = reps
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -32,11 +36,13 @@ class DashTableViewController: UITableViewController {
 
     override func viewDidAppear(animated: Bool) {
         self.tableView.reloadData()
-        let (dates, lifts, weights) = dataOfLift("https://loguapp.com/swift6.php")!
+        let (dates, lifts, weights, sets, reps) = dataOfLift("https://loguapp.com/swift6.php")!
         
         Dates = dates
         Lifts = lifts
         Weights = weights
+        Sets = sets
+        Reps = reps
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,12 +62,14 @@ class DashTableViewController: UITableViewController {
         return Dates.count
     }
 
-    func dataOfLift(url: String) -> ([String], [String], [String])? {
+    func dataOfLift(url: String) -> ([String], [String], [String], [String], [String])? {
         
         let data = NSData(contentsOfURL: NSURL(string:url)!)
         var date : [String] = []
         var lift : [String] = []
         var weight : [String] = []
+        var set : [String] = []
+        var rep : [String] = []
         
         do {
             let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!, options: [NSJSONReadingOptions.MutableContainers, NSJSONReadingOptions.AllowFragments]) as? Array<Dictionary<String, String>>
@@ -71,6 +79,8 @@ class DashTableViewController: UITableViewController {
                 date.append(jsonArray![i]["date"]!)
                 lift.append(jsonArray![i]["lift"]!)
                 weight.append(jsonArray![i]["weight"]!)
+                set.append(jsonArray![i]["sets"]!)
+                rep.append(jsonArray![i]["reps"]!)
                 
             }
             
@@ -78,9 +88,11 @@ class DashTableViewController: UITableViewController {
                 print(date[i])
                 print(lift[i])
                 print(weight[i])
+                print(set[i])
+                print(rep[i])
             }
             
-            return (date, lift, weight)
+            return (date, lift, weight, set, rep)
         } catch let error as NSError {
             print(error.localizedDescription)
             return nil;
@@ -94,10 +106,13 @@ class DashTableViewController: UITableViewController {
         let lift = Lifts[indexPath.row]
         let date = Dates[indexPath.row]
         let weight = Weights[indexPath.row]
+        let set = Sets[indexPath.row]
+        let rep = Reps[indexPath.row]
         
         cell.liftLabel.text = lift
         cell.dateLabel.text = date
         cell.poundsLabel.text = weight
+        cell.setsRepsLabel.text = set + "x" + rep
         // Configure the cell...
 
         return cell
