@@ -23,6 +23,13 @@ class GraphViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(animated: Bool) {
+        let (week, poundage) = ViewController().dataOfWeeklyPoundage("https://loguapp.com/swift.php")!
+        
+        Date = week
+        setLineChart(week, values: poundage )
+    }
+    
     var Date: [String]!
     
     func setLineChart(dataPoints: [String], values: [Double]) {

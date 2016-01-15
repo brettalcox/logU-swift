@@ -24,6 +24,14 @@ class SquatViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    override func viewDidAppear(animated: Bool) {
+        let (date, weight) = ViewController().dataOfLift("https://loguapp.com/swift3.php")!
+        
+        Date = date
+        setLineChart(date, values: weight)
+
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
