@@ -41,7 +41,6 @@ class DashTableViewController: UITableViewController {
     }
 
     override func viewDidAppear(animated: Bool) {
-        self.tableView.reloadData()
         let (dates, lifts, weights, sets, reps, ids) = dataOfLift("https://loguapp.com/swift6.php")!
         
         Dates = dates
@@ -50,6 +49,9 @@ class DashTableViewController: UITableViewController {
         Sets = sets
         Reps = reps
         Ids = ids
+        
+        self.tableView.reloadData()
+
     }
 
     
