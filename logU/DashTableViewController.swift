@@ -49,6 +49,8 @@ class DashTableViewController: UITableViewController {
         Sets = sets
         Reps = reps
         Ids = ids
+        
+        self.tableView.reloadData()
 
     }
 
