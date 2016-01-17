@@ -20,7 +20,6 @@ class GraphViewController: UIViewController {
         
         Date = week
         setLineChart(week, values: poundage )
-        
     }
     
     override func viewDidAppear(animated: Bool) {

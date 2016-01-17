@@ -8,6 +8,8 @@
 
 import UIKit
 
+var dataAfter: Array<Dictionary<String, String>> = []
+
 class DashTableViewController: UITableViewController {
     
     let url_to_post:String = "https://loguapp.com/swift7.php"
@@ -21,16 +23,15 @@ class DashTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    print(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)
         
-        let (dates, lifts, weights, sets, reps, ids) = jsonData().dataOfLift("https://loguapp.com/swift6.php")!
-        
-        Dates = dates
-        Lifts = lifts
-        Weights = weights
-        Sets = sets
-        Reps = reps
-        Ids = ids
-        
+        let hope = jsonData()
+        jsonData().dataOfLift({ jsonString in
+            dataAfter = jsonString
+            self.somethingAfter(dataAfter)
+        })
+        self.tableView.reloadData()
+
         navigationItem.leftBarButtonItem = editButtonItem()
         
         // Uncomment the following line to preserve selection between presentations
@@ -40,21 +41,38 @@ class DashTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        let (dates, lifts, weights, sets, reps, ids) = jsonData().dataOfLift("https://loguapp.com/swift6.php")!
+    func somethingAfter(object: Array<Dictionary<String, String>>) {
+        dataAfter = object
         
-        Dates = dates
-        Lifts = lifts
-        Weights = weights
-        Sets = sets
-        Reps = reps
-        Ids = ids
+        Dates = []
+        Lifts = []
+        Weights = []
+        Sets = []
+        Reps = []
+        Ids = []
         
-        //liftData.dataOfLift("https://loguapp.com/swift6.php")
-        print("This the last thing in here")
-        print(Weights[0])
+        for i in 0..<dataAfter.count {
+            Dates.append(dataAfter[i]["date"]!)
+            Lifts.append(dataAfter[i]["lift"]!)
+            Weights.append(dataAfter[i]["weight"]!)
+            Sets.append(dataAfter[i]["sets"]!)
+            Reps.append(dataAfter[i]["reps"]!)
+            Ids.append(dataAfter[i]["id"]!)
+        }
         self.tableView.reloadData()
-        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+
+        self.tableView.reloadData()
+        let hope = jsonData()
+        jsonData().dataOfLift({ jsonString in
+            dataAfter = jsonString
+            self.somethingAfter(dataAfter)
+        })
+        self.tableView.reloadData()
+        sleep(1)
+        self.tableView.reloadData()
     }
     
     
@@ -97,7 +115,6 @@ class DashTableViewController: UITableViewController {
     }
     
     @IBAction func unwindToDashboard(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
-        
     }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

@@ -94,17 +94,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         do {
             let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!, options: [NSJSONReadingOptions.MutableContainers, NSJSONReadingOptions.AllowFragments]) as? Array<Dictionary<String, String>>
-            print("json := \(jsonArray)")
+            //print("json := \(jsonArray)")
             
             for i in 0..<jsonArray!.count {
                 week.append(jsonArray![i]["week"]!)
                 poundage.append(Double(jsonArray![i]["pounds"]!)!)
 
             }
-            
+
             for i in 0..<week.count {
-                print(week[i])
-                print(poundage[i])
+                //print(week[i])
+                //print(poundage[i])
             }
             
             return (week, poundage)
@@ -122,7 +122,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         do {
             let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!, options: [NSJSONReadingOptions.MutableContainers, NSJSONReadingOptions.AllowFragments]) as? Array<Dictionary<String, String>>
-            print("json := \(jsonArray)")
+            //print("json := \(jsonArray)")
             
             for i in 0..<jsonArray!.count {
                 date.append(jsonArray![i]["date"]!)
@@ -131,8 +131,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
             
             for i in 0..<date.count {
-                print(date[i])
-                print(weight[i])
+                //print(date[i])
+                //print(weight[i])
             }
             
             return (date, weight)
@@ -152,7 +152,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         request.HTTPMethod = "POST"
         request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
         
-        let query = "name=brettalcox&date=\(dateTextField.text!)&lift=\(liftTextField.text!)&sets=\(setsTextField.text!)&reps=\(repsTextField.text!)&weight=\(weightTextField.text!)".dataUsingEncoding(NSUTF8StringEncoding)
+        let query = "name=\(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)&date=\(dateTextField.text!)&lift=\(liftTextField.text!)&sets=\(setsTextField.text!)&reps=\(repsTextField.text!)&weight=\(weightTextField.text!)".dataUsingEncoding(NSUTF8StringEncoding)
         
         let task = session.uploadTaskWithRequest(request, fromData: query, completionHandler:
             {(data,response,error) in
