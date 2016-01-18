@@ -22,12 +22,13 @@ class LoginVC: UIViewController {
         
         if ( username.isEqualToString("") || password.isEqualToString("") ) {
             
-            var alertView:UIAlertView = UIAlertView()
-            alertView.title = "Sign in Failed!"
-            alertView.message = "Please enter Username and Password"
-            alertView.delegate = self
-            alertView.addButtonWithTitle("OK")
-            alertView.show()
+            let actionSheetController: UIAlertController = UIAlertController(title: "Sign in Failed", message: "Please enter Username and Password", preferredStyle: .Alert)
+            let cancelAction: UIAlertAction = UIAlertAction(title: "Dismiss", style: .Cancel) { action -> Void in
+                //Do some stuff
+            }
+            actionSheetController.addAction(cancelAction)
+            self.presentViewController(actionSheetController, animated: true, completion: nil)
+
         } else {
             
             let post:NSString = "username=\(username)&password=\(password)"
@@ -73,6 +74,14 @@ class LoginVC: UIViewController {
                         })
                     }
                     else {
+                        dispatch_async(dispatch_get_main_queue(), {
+                            let actionSheetController: UIAlertController = UIAlertController(title: "Sign in Failed", message: "Username/Password is Incorrect", preferredStyle: .Alert)
+                            let cancelAction: UIAlertAction = UIAlertAction(title: "Dismiss", style: .Cancel) { action -> Void in
+                            //Do some stuff
+                            }
+                            actionSheetController.addAction(cancelAction)
+                            self.presentViewController(actionSheetController, animated: true, completion: nil)
+                        })
                         
                     }
                 }
