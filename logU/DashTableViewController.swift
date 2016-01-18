@@ -25,11 +25,16 @@ class DashTableViewController: UITableViewController {
         super.viewDidLoad()
     print(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)
         
-        JsonData().dataOfLift({ jsonString in
-            dataAfter = jsonString
-            self.somethingAfter(dataAfter)
-        })
-        self.tableView.reloadData()
+        dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+        
+            JsonData().dataOfLift({ jsonString in
+                dataAfter = jsonString
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.loadAfter(dataAfter)
+                }
+            })
+        }
+        //self.tableView.reloadData()
 
         navigationItem.leftBarButtonItem = editButtonItem()
         
@@ -40,7 +45,7 @@ class DashTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    func somethingAfter(object: Array<Dictionary<String, String>>) {
+    func loadAfter(object: Array<Dictionary<String, String>>) {
         dataAfter = object
         
         Dates = []
@@ -63,14 +68,19 @@ class DashTableViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
 
+        //self.tableView.reloadData()
+        
+        dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+            JsonData().dataOfLift({ jsonString in
+                dataAfter = jsonString
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.loadAfter(dataAfter)
+                }
+            })
+        }
         self.tableView.reloadData()
-        JsonData().dataOfLift({ jsonString in
-            dataAfter = jsonString
-            self.somethingAfter(dataAfter)
-        })
-        self.tableView.reloadData()
-        sleep(1)
-        self.tableView.reloadData()
+        //sleep(1)
+        //self.tableView.reloadData()
     }
     
     

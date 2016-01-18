@@ -173,7 +173,13 @@
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Weekly Poundage" id="NeG-ND-yMu"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Weekly Poundage" id="79b-lw-eli"/>
+                    <navigationItem key="navigationItem" title="Weekly Poundage" id="79b-lw-eli">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="x5V-Ux-02G">
+                            <connections>
+                                <action selector="saveButton:" destination="hbK-kt-rb8" id="4We-Mu-86B"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="poundageChartView" destination="Bgy-vc-aux" id="PUQ-Dc-QvT"/>
                     </connections>
