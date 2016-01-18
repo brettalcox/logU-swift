@@ -16,7 +16,7 @@ class DeadliftViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let (date, weight) = ViewController().dataOfLift("https://loguapp.com/swift5.php")!
+        let (date, weight) = GraphData().dataOfLift("https://loguapp.com/swift5.php")!
         
         Date = date
         setLineChart(date, values: weight)
@@ -25,7 +25,7 @@ class DeadliftViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        let (date, weight) = ViewController().dataOfLift("https://loguapp.com/swift5.php")!
+        let (date, weight) = GraphData().dataOfLift("https://loguapp.com/swift5.php")!
         
         Date = date
         setLineChart(date, values: weight)

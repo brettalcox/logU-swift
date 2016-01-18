@@ -16,14 +16,14 @@ class GraphViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let (week, poundage) = ViewController().dataOfWeeklyPoundage("https://loguapp.com/swift.php")!
+        let (week, poundage) = GraphData().dataOfWeeklyPoundage("https://loguapp.com/swift.php")!
         
         Date = week
         setLineChart(week, values: poundage )
     }
     
     override func viewDidAppear(animated: Bool) {
-        let (week, poundage) = ViewController().dataOfWeeklyPoundage("https://loguapp.com/swift.php")!
+        let (week, poundage) = GraphData().dataOfWeeklyPoundage("https://loguapp.com/swift.php")!
         
         Date = week
         setLineChart(week, values: poundage )
