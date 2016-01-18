@@ -18,33 +18,39 @@ class GraphData {
     var graphWeek : [String]! = []
     var graphPoundage : [Int]! = []
     
-    func dataOfWeeklyPoundage(url: String) -> ([String], [Double])? {
+    func dataOfWeeklyPoundage(completion: (Array<Dictionary<String, String>>) -> ()) {
         
         //let urlString = "https://loguapp.com/swift.php"
-        let data = NSData(contentsOfURL: NSURL(string:url)!)
+        let urlName:NSURL = NSURL(string: url_to_request)!
+        let session = NSURLSession.sharedSession()
+        let data = NSData(contentsOfURL: NSURL(string: url_to_request)!)
+        let user = "username=\(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)"
+        let queryParam = user.dataUsingEncoding(NSUTF8StringEncoding)
+        let request:NSMutableURLRequest = NSMutableURLRequest(URL: urlName)
+        request.HTTPMethod = "POST"
+        request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
         var week : [String] = []
         var poundage : [Double] = []
         
-        do {
-            let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!, options: [NSJSONReadingOptions.MutableContainers, NSJSONReadingOptions.AllowFragments]) as? Array<Dictionary<String, String>>
-            //print("json := \(jsonArray)")
-            
-            for i in 0..<jsonArray!.count {
-                week.append(jsonArray![i]["week"]!)
-                poundage.append(Double(jsonArray![i]["pounds"]!)!)
+        let task = session.uploadTaskWithRequest(request, fromData: queryParam!, completionHandler:
+            {(data,response,error) in
                 
-            }
+                guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
+                    print("error")
+                    return
+                }
+                var myData: Array<Dictionary<String, String>> = []
+                do {
+                    let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!, options: [NSJSONReadingOptions.MutableContainers, NSJSONReadingOptions.AllowFragments]) as? Array<Dictionary<String, String>>
+                    myData = jsonArray!
             
-            for i in 0..<week.count {
-                //print(week[i])
-                //print(poundage[i])
-            }
-            
-            return (week, poundage)
-        } catch let error as NSError {
-            print(error.localizedDescription)
-            return nil;
-        }
+                } catch let error as NSError {
+                    print(error.localizedDescription)
+                }
+                completion(Array<Dictionary<String, String>>(myData))
+
+        });
+        task.resume()
     }
     
     func dataOfLift(url: String) -> ([String], [Double])? {

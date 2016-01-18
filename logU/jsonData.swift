@@ -38,9 +38,6 @@ class jsonData {
         request.HTTPMethod = "POST"
         request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
         
-        print("fuck my shitter")
-
-        
         let task = session.uploadTaskWithRequest(request, fromData: queryParam!, completionHandler:
             {(data,response,error) in
                 
@@ -69,7 +66,7 @@ class jsonData {
                 completion(Array<Dictionary<String, String>>(myData))
         });
         task.resume()
-        
+        /*
         for i in 0..<Dates.count {
         
 
@@ -84,7 +81,7 @@ class jsonData {
             Ids.append(dashJson[i]["id"]!)
             
         }
-
+*/
         /*
         do {
             let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!, options: [NSJSONReadingOptions.MutableContainers, NSJSONReadingOptions.AllowFragments]) as? Array<Dictionary<String, String>>
