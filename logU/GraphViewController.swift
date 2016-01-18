@@ -21,10 +21,6 @@ class GraphViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let (week, poundage) = GraphData().dataOfWeeklyPoundage("https://loguapp.com/swift.php")!
-        
-        //Date = week
-        
         GraphData().dataOfWeeklyPoundage({ jsonString in
             dataWeek = jsonString
             print(dataWeek)
@@ -37,10 +33,7 @@ class GraphViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        //let (week, poundage) = GraphData().dataOfWeeklyPoundage("https://loguapp.com/swift.php")!
         
-        //Date = week
-        //setLineChart(week, values: poundage )
         GraphData().dataOfWeeklyPoundage({ jsonString in
             dataWeek = jsonString
             dispatch_async(dispatch_get_main_queue(), {

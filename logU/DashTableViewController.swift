@@ -25,8 +25,7 @@ class DashTableViewController: UITableViewController {
         super.viewDidLoad()
     print(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)
         
-        let hope = jsonData()
-        jsonData().dataOfLift({ jsonString in
+        JsonData().dataOfLift({ jsonString in
             dataAfter = jsonString
             self.somethingAfter(dataAfter)
         })
@@ -65,8 +64,7 @@ class DashTableViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
 
         self.tableView.reloadData()
-        let hope = jsonData()
-        jsonData().dataOfLift({ jsonString in
+        JsonData().dataOfLift({ jsonString in
             dataAfter = jsonString
             self.somethingAfter(dataAfter)
         })

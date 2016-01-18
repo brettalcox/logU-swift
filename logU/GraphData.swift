@@ -29,8 +29,6 @@ class GraphData {
         let request:NSMutableURLRequest = NSMutableURLRequest(URL: urlName)
         request.HTTPMethod = "POST"
         request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
-        var week : [String] = []
-        var poundage : [Double] = []
         
         let task = session.uploadTaskWithRequest(request, fromData: queryParam!, completionHandler:
             {(data,response,error) in
@@ -61,17 +59,11 @@ class GraphData {
         
         do {
             let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!, options: [NSJSONReadingOptions.MutableContainers, NSJSONReadingOptions.AllowFragments]) as? Array<Dictionary<String, String>>
-            //print("json := \(jsonArray)")
             
             for i in 0..<jsonArray!.count {
                 date.append(jsonArray![i]["date"]!)
                 weight.append(Double(jsonArray![i]["weight"]!)!)
                 
-            }
-            
-            for i in 0..<date.count {
-                //print(date[i])
-                //print(weight[i])
             }
             
             return (date, weight)
