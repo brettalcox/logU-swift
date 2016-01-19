@@ -23,7 +23,25 @@ This is the current iOS development of https://loguapp.com
 
 
 
-![alt tag](http://i.imgur.com/RemjzRC.png)
+![alt tag](http://i.imgur.com/iq9RkuH.png)
+
+
+
+### Save User Graphs
+
+
+
+![alt tag](http://i.imgur.com/GebN84K.png)
+
+
+
+### Log a Lift
+
+
+
+![alt tag](http://i.imgur.com/y7xqeAV.png)
+
+![alt tag](http://i.imgur.com/d0Inh5w.png)
 
 
 
@@ -32,11 +50,3 @@ This is the current iOS development of https://loguapp.com
 
 
 ![alt tag](http://i.imgur.com/LKYUK7z.png)
-
-
-
-### Log a Lift
-
-
-
-![alt tag](http://i.imgur.com/UJ9OaXd.png)
