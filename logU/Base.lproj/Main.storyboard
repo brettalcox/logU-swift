@@ -9,9 +9,8 @@
         <scene sceneID="kuZ-1S-wep">
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="HsO-fj-Wmx" customClass="PageViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Graphs" id="WWR-43-547"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GLd-ej-HXR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -126,8 +125,8 @@
         <!--Navigation Controller-->
         <scene sceneID="Sha-9R-JiL">
             <objects>
-                <navigationController storyboardIdentifier="FirstNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L3U-cq-Ibz" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                <navigationController storyboardIdentifier="FirstNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L3U-cq-Ibz" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pww-gy-4ng">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -295,8 +294,8 @@
         <!--Item-->
         <scene sceneID="D79-z1-zbW">
             <objects>
-                <navigationController storyboardIdentifier="FourthNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5zf-51-LCh" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                <navigationController storyboardIdentifier="FourthNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5zf-51-LCh" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item" id="k6B-MS-eC2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sid-jr-I9y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -312,7 +311,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFO-Rx-3iq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2213" y="590"/>
+            <point key="canvasLocation" x="1424" y="618"/>
         </scene>
         <!--Deadlift-->
         <scene sceneID="jsd-ZH-jmW">
@@ -355,7 +354,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Hf-QA-gQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2942" y="590"/>
+            <point key="canvasLocation" x="2153" y="618"/>
         </scene>
         <!--Log a Lift-->
         <scene sceneID="qDv-ba-Opq">
@@ -380,8 +379,8 @@
         <!--Item-->
         <scene sceneID="3ZR-Al-qLc">
             <objects>
-                <navigationController storyboardIdentifier="SecondNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="r0p-Wc-eZ8" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                <navigationController storyboardIdentifier="SecondNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="r0p-Wc-eZ8" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item" id="Xwe-5X-Xeg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5VP-vk-guh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -648,8 +647,8 @@
         <!--Item-->
         <scene sceneID="sN2-60-PBl">
             <objects>
-                <navigationController storyboardIdentifier="ThirdNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eTw-LP-lxV" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                <navigationController storyboardIdentifier="ThirdNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eTw-LP-lxV" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item" id="mGM-Bc-Zvi"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="n8P-IE-srZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

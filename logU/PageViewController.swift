@@ -17,6 +17,13 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        self.view.backgroundColor = UIColor.whiteColor()
+        
+        let appearence = UIPageControl.appearance()
+        appearence.pageIndicatorTintColor = UIColor.lightGrayColor()
+        appearence.currentPageIndicatorTintColor = UIColor.grayColor()
+        
         self.dataSource = self
         self.delegate = self
         
@@ -44,6 +51,19 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         
         // if currently displaying first view controller, return nil to indicate that there is no previous view controller
         return (index == 0 ? nil : self.pages[index - 1])
+    }
+    
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return 4
+    }
+    
+    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+        guard let firstViewController = viewControllers?.first,
+            firstViewControllerIndex = pages.indexOf(firstViewController) else {
+                return 0
+        }
+        
+        return firstViewControllerIndex
     }
     
 }
