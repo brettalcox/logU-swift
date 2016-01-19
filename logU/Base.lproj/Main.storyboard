@@ -216,7 +216,13 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Squat" id="7KS-xQ-IJZ"/>
-                    <navigationItem key="navigationItem" title="Squat" id="bAA-TP-uAn"/>
+                    <navigationItem key="navigationItem" title="Squat" id="bAA-TP-uAn">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="cts-KW-kUD">
+                            <connections>
+                                <action selector="saveButton:" destination="7yG-PY-eea" id="XzF-AU-2BK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="squatChartView" destination="A8w-Ub-5MC" id="v4g-QQ-Fwb"/>
                     </connections>
@@ -271,7 +277,13 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Bench" id="07n-tZ-bkd"/>
-                    <navigationItem key="navigationItem" title="Bench" id="7Ah-Zt-EuK"/>
+                    <navigationItem key="navigationItem" title="Bench" id="7Ah-Zt-EuK">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="qZv-96-zyM">
+                            <connections>
+                                <action selector="saveButton:" destination="ssg-YH-E6z" id="Bdg-hy-p8u"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="benchChartView" destination="xbN-Sa-pgb" id="QD7-EW-yPf"/>
                     </connections>
@@ -330,7 +342,13 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Deadlift" id="xBF-qN-1Z1"/>
-                    <navigationItem key="navigationItem" title="Deadlift" id="TW1-oC-zli"/>
+                    <navigationItem key="navigationItem" title="Deadlift" id="TW1-oC-zli">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="UY7-ou-sfp">
+                            <connections>
+                                <action selector="saveButton:" destination="yGO-X1-Wna" id="odP-i2-U3q"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="deadliftChartView" destination="ZUZ-H1-9U2" id="8S0-lW-MTD"/>
                     </connections>
