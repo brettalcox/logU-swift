@@ -16,7 +16,7 @@ This is the current iOS development of https://loguapp.com
 
 
 
-![alt tag](http://i.imgur.com/iq9RkuH.png)
+![alt tag](http://i.imgur.com/iq9RkuH.png&1)
 
 
 
@@ -24,7 +24,7 @@ This is the current iOS development of https://loguapp.com
 
 
 
-![alt tag](http://i.imgur.com/GebN84K.png)
+![alt tag](http://i.imgur.com/GebN84K.png&1)
 
 
 
@@ -32,9 +32,9 @@ This is the current iOS development of https://loguapp.com
 
 
 
-![alt tag](http://i.imgur.com/y7xqeAV.png)
+![alt tag](http://i.imgur.com/y7xqeAV.png&1)
 
-![alt tag](http://i.imgur.com/d0Inh5w.png)
+![alt tag](http://i.imgur.com/d0Inh5w.png&1)
 
 
 
