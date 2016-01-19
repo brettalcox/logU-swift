@@ -11,13 +11,6 @@ This is the current iOS development of https://loguapp.com
 ![alt tag](http://i.imgur.com/jemY1A1.png)
 
 
-### User Graphs
-
-
-
-![alt tag](http://i.imgur.com/CPz0mqM.png)
-
-
 
 ### Swipe Between User Graphs
 
