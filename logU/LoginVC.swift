@@ -42,12 +42,19 @@ class LoginVC: UIViewController {
             let request:NSMutableURLRequest = NSMutableURLRequest(URL: url)
             request.HTTPMethod = "POST"
 
+            request.timeoutInterval = 5
+            
             var response: NSURLResponse?
             
             do {
                 let urlData: NSData? = try NSURLConnection.sendSynchronousRequest(request, returningResponse:&response)
             } catch let error as NSError {
-                
+                let actionSheetController: UIAlertController = UIAlertController(title: "Connection Time Out", message: "Do you have a network connection?", preferredStyle: .Alert)
+                let cancelAction: UIAlertAction = UIAlertAction(title: "Dismiss", style: .Cancel) { action -> Void in
+                    //Do some stuff
+                }
+                actionSheetController.addAction(cancelAction)
+                self.presentViewController(actionSheetController, animated: true, completion: nil)
             }
             
             let session = NSURLSession.sharedSession()
@@ -55,6 +62,10 @@ class LoginVC: UIViewController {
                 {(data,response,error) in
                     
                     guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
+                        if error?.code ==  NSURLErrorTimedOut {
+                            print("Time Out")
+                            //Call your method here.
+                        }
                         print("error")
                         return
                     }

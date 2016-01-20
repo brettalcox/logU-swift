@@ -135,7 +135,11 @@ class DashTableViewController: UITableViewController {
         if editingStyle == .Delete {
             // Delete the row from the data source
             let idToDelete = Ids[indexPath.row]
-            delete_request(idToDelete)
+            
+            dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+                    self.delete_request(idToDelete)
+            }
+            
             self.Lifts.removeAtIndex(indexPath.row)
             self.Dates.removeAtIndex(indexPath.row)
             self.Weights.removeAtIndex(indexPath.row)
