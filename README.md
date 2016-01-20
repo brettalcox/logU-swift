@@ -43,3 +43,18 @@ This is the current iOS development of https://loguapp.com
 
 
 ![alt tag](http://i.imgur.com/LKYUK7z.png)
+
+
+
+### User Statistics
+
+
+
+![alt tag](http://i.imgur.com/N8zUrU5.png?1)
+
+
+
+### One Rep Maxes
+
+
+![alt tag](http://i.imgur.com/CUfTr5Z.png?2)
