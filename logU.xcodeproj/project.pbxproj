@@ -27,6 +27,10 @@
 		B5C6F1451C4F26EA0016B70E /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5C6F13F1C4F26DD0016B70E /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5C6F14D1C4F27520016B70E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5C6F1491C4F27520016B70E /* LaunchScreen.storyboard */; };
 		B5C6F14E1C4F27520016B70E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5C6F14B1C4F27520016B70E /* Main.storyboard */; };
+		B5C6F1581C4F3A9E0016B70E /* StatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1571C4F3A9E0016B70E /* StatsTableViewController.swift */; };
+		B5C6F15A1C4F3AFE0016B70E /* StatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1591C4F3AFE0016B70E /* StatsTableViewCell.swift */; };
+		B5C6F15C1C4F40DF0016B70E /* MaxesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F15B1C4F40DF0016B70E /* MaxesTableViewController.swift */; };
+		B5C6F15E1C4F45240016B70E /* MaxesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F15D1C4F45240016B70E /* MaxesTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +117,10 @@
 		B5C6F1381C4F26DD0016B70E /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		B5C6F14A1C4F27520016B70E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5C6F14C1C4F27520016B70E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B5C6F1571C4F3A9E0016B70E /* StatsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsTableViewController.swift; sourceTree = "<group>"; };
+		B5C6F1591C4F3AFE0016B70E /* StatsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsTableViewCell.swift; sourceTree = "<group>"; };
+		B5C6F15B1C4F40DF0016B70E /* MaxesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaxesTableViewController.swift; sourceTree = "<group>"; };
+		B5C6F15D1C4F45240016B70E /* MaxesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaxesTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +172,10 @@
 		B5C6F0ED1C4F25F70016B70E /* logU */ = {
 			isa = PBXGroup;
 			children = (
+				B5C6F1571C4F3A9E0016B70E /* StatsTableViewController.swift */,
+				B5C6F15B1C4F40DF0016B70E /* MaxesTableViewController.swift */,
+				B5C6F15D1C4F45240016B70E /* MaxesTableViewCell.swift */,
+				B5C6F1591C4F3AFE0016B70E /* StatsTableViewCell.swift */,
 				B5C6F11C1C4F26480016B70E /* AppDelegate.swift */,
 				B5C6F1381C4F26DD0016B70E /* Charts.xcodeproj */,
 				B5C6F11D1C4F26480016B70E /* Assets.xcassets */,
@@ -384,8 +396,12 @@
 				B5C6F1351C4F26480016B70E /* PageViewController.swift in Sources */,
 				B5C6F1321C4F26480016B70E /* JsonData.swift in Sources */,
 				B5C6F12C1C4F26480016B70E /* BenchViewController.swift in Sources */,
+				B5C6F15E1C4F45240016B70E /* MaxesTableViewCell.swift in Sources */,
 				B5C6F12D1C4F26480016B70E /* DashTableViewController.swift in Sources */,
+				B5C6F15A1C4F3AFE0016B70E /* StatsTableViewCell.swift in Sources */,
+				B5C6F1581C4F3A9E0016B70E /* StatsTableViewController.swift in Sources */,
 				B5C6F1361C4F26480016B70E /* SquatViewController.swift in Sources */,
+				B5C6F15C1C4F40DF0016B70E /* MaxesTableViewController.swift in Sources */,
 				B5C6F1371C4F26480016B70E /* ViewController.swift in Sources */,
 				B5C6F1331C4F26480016B70E /* LiftTableViewCell.swift in Sources */,
 				B5C6F1341C4F26480016B70E /* LoginVC.swift in Sources */,
