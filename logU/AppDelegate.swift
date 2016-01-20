@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  logU
+//  seguepractice
 //
-//  Created by Brett Alcox on 1/19/16.
-//  Copyright © 2016 Brett Alcox. All rights reserved.
+//  Created by Brett on 1/7/16.
+//  Copyright © 2016 Brett. All rights reserved.
 //
 
 import UIKit
