@@ -125,7 +125,14 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
             if (weightTextField.text == "") {
                 weightTextField.text = "0"
             }
-            upload_request()
+            
+            if !Reachability.isConnectedToNetwork() {
+                upload_request()
+            }
+            
+            if Reachability.isConnectedToNetwork() {
+                OfflineRequest.coreDataInsert(dateTextField.text!, lift: liftTextField.text!, sets: setsTextField.text!, reps: repsTextField.text!, weight: weightTextField.text!)
+            }
         }
     }
     

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8BB596DB1C513968003B98BA /* ConnectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB596DA1C513968003B98BA /* ConnectionTest.swift */; };
+		8BB596E01C513BE8003B98BA /* LiftDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BB596DE1C513BE8003B98BA /* LiftDataModel.xcdatamodeld */; };
+		8BB596E21C514449003B98BA /* OfflineRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB596E11C514449003B98BA /* OfflineRequest.swift */; };
 		B5C6F1041C4F25F70016B70E /* logUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1031C4F25F70016B70E /* logUTests.swift */; };
 		B5C6F10F1C4F25F70016B70E /* logUUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F10E1C4F25F70016B70E /* logUUITests.swift */; };
 		B5C6F12A1C4F26480016B70E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F11C1C4F26480016B70E /* AppDelegate.swift */; };
@@ -93,6 +96,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8BB596DA1C513968003B98BA /* ConnectionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionTest.swift; sourceTree = "<group>"; };
+		8BB596DF1C513BE8003B98BA /* LiftDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LiftDataModel.xcdatamodel; sourceTree = "<group>"; };
+		8BB596E11C514449003B98BA /* OfflineRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfflineRequest.swift; sourceTree = "<group>"; };
 		B5C6F0EB1C4F25F70016B70E /* logU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = logU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C6F0FF1C4F25F70016B70E /* logUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = logUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C6F1031C4F25F70016B70E /* logUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logUTests.swift; sourceTree = "<group>"; };
@@ -193,6 +199,9 @@
 				B5C6F1271C4F26480016B70E /* PageViewController.swift */,
 				B5C6F1281C4F26480016B70E /* SquatViewController.swift */,
 				B5C6F1291C4F26480016B70E /* ViewController.swift */,
+				8BB596DA1C513968003B98BA /* ConnectionTest.swift */,
+				8BB596DE1C513BE8003B98BA /* LiftDataModel.xcdatamodeld */,
+				8BB596E11C514449003B98BA /* OfflineRequest.swift */,
 			);
 			path = logU;
 			sourceTree = "<group>";
@@ -395,14 +404,17 @@
 				B5C6F12A1C4F26480016B70E /* AppDelegate.swift in Sources */,
 				B5C6F1351C4F26480016B70E /* PageViewController.swift in Sources */,
 				B5C6F1321C4F26480016B70E /* JsonData.swift in Sources */,
+				8BB596DB1C513968003B98BA /* ConnectionTest.swift in Sources */,
 				B5C6F12C1C4F26480016B70E /* BenchViewController.swift in Sources */,
 				B5C6F15E1C4F45240016B70E /* MaxesTableViewCell.swift in Sources */,
+				8BB596E21C514449003B98BA /* OfflineRequest.swift in Sources */,
 				B5C6F12D1C4F26480016B70E /* DashTableViewController.swift in Sources */,
 				B5C6F15A1C4F3AFE0016B70E /* StatsTableViewCell.swift in Sources */,
 				B5C6F1581C4F3A9E0016B70E /* StatsTableViewController.swift in Sources */,
 				B5C6F1361C4F26480016B70E /* SquatViewController.swift in Sources */,
 				B5C6F15C1C4F40DF0016B70E /* MaxesTableViewController.swift in Sources */,
 				B5C6F1371C4F26480016B70E /* ViewController.swift in Sources */,
+				8BB596E01C513BE8003B98BA /* LiftDataModel.xcdatamodeld in Sources */,
 				B5C6F1331C4F26480016B70E /* LiftTableViewCell.swift in Sources */,
 				B5C6F1341C4F26480016B70E /* LoginVC.swift in Sources */,
 				B5C6F1301C4F26480016B70E /* GraphViewController.swift in Sources */,
@@ -665,6 +677,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8BB596DE1C513BE8003B98BA /* LiftDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8BB596DF1C513BE8003B98BA /* LiftDataModel.xcdatamodel */,
+			);
+			currentVersion = 8BB596DF1C513BE8003B98BA /* LiftDataModel.xcdatamodel */;
+			path = LiftDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B5C6F0E31C4F25F70016B70E /* Project object */;
 }

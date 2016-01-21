@@ -25,6 +25,8 @@ class DashTableViewController: UITableViewController {
         super.viewDidLoad()
     print(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)
         
+        if Reachability.isConnectedToNetwork() {
+            
         dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
         
             JsonData().dataOfLift({ jsonString in
@@ -33,7 +35,23 @@ class DashTableViewController: UITableViewController {
                     self.loadAfter(dataAfter)
                 }
             })
+          }
         }
+        
+        if !Reachability.isConnectedToNetwork() {
+            var Lifting = OfflineRequest().OfflineFetch()
+            for i in 0..<Lifting.count {
+                Dates.append(lifting[i].valueForKey("date")! as! String)
+                Lifts.append(lifting[i].valueForKey("lift")! as! String)
+                Sets.append(lifting[i].valueForKey("sets")! as! String)
+                Reps.append(lifting[i].valueForKey("reps")! as! String)
+                Weights.append(lifting[i].valueForKey("weight")! as! String)
+                
+                    Ids.append("0")
+                self.tableView.reloadData()
+            }
+        }
+        
         //self.tableView.reloadData()
 
         navigationItem.leftBarButtonItem = editButtonItem()
@@ -69,7 +87,7 @@ class DashTableViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
 
         //self.tableView.reloadData()
-        
+        if Reachability.isConnectedToNetwork() {
         dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
             JsonData().dataOfLift({ jsonString in
                 dataAfter = jsonString
@@ -78,6 +96,22 @@ class DashTableViewController: UITableViewController {
                 }
             })
         }
+        }
+        
+        if !Reachability.isConnectedToNetwork() {
+            var Lifting = OfflineRequest().OfflineFetch()
+            for i in 0..<Lifting.count {
+                Dates.append(lifting[i].valueForKey("date")! as! String)
+                Lifts.append(lifting[i].valueForKey("lift")! as! String)
+                Sets.append(lifting[i].valueForKey("sets")! as! String)
+                Reps.append(lifting[i].valueForKey("reps")! as! String)
+                Weights.append(lifting[i].valueForKey("weight")! as! String)
+                
+                Ids.append("0")
+                //self.tableView.reloadData()
+            }
+        }
+
         self.tableView.reloadData()
         //sleep(1)
         //self.tableView.reloadData()
