@@ -27,26 +27,30 @@ class BenchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
-            GraphData().dataOfLifting(self.url_to_post, completion: { jsonString in
-                dataBench = jsonString
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.loadAfter(dataBench)
-                })
+        if Reachability.isConnectedToNetwork() {
+            dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+                GraphData().dataOfLifting(self.url_to_post, completion: { jsonString in
+                    dataBench = jsonString
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.loadAfter(dataBench)
+                    })
                 
-            })
+                })
+            }
         }
     }
     
     override func viewDidAppear(animated: Bool) {
-        dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
-            GraphData().dataOfLifting(self.url_to_post, completion: { jsonString in
-                dataBench = jsonString
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.loadAfter(dataBench)
-                })
+        if Reachability.isConnectedToNetwork() {
+            dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+                GraphData().dataOfLifting(self.url_to_post, completion: { jsonString in
+                    dataBench = jsonString
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.loadAfter(dataBench)
+                    })
                 
-            })
+                })
+            }
         }
 
     }

@@ -27,30 +27,32 @@ class SquatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
-            GraphData().dataOfLifting(self.url_to_post, completion: { jsonString in
-                dataSquat = jsonString
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.loadAfter(dataSquat)
-                })
+        if Reachability.isConnectedToNetwork() {
+            dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+                GraphData().dataOfLifting(self.url_to_post, completion: { jsonString in
+                    dataSquat = jsonString
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.loadAfter(dataSquat)
+                    })
                 
-            })
+                })
+            }
         }
     }
 
     override func viewDidAppear(animated: Bool) {
         
-        dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
-            GraphData().dataOfLifting(self.url_to_post, completion: { jsonString in
-                dataSquat = jsonString
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.loadAfter(dataSquat)
-                })
+        if Reachability.isConnectedToNetwork() {
+            dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+                GraphData().dataOfLifting(self.url_to_post, completion: { jsonString in
+                    dataSquat = jsonString
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.loadAfter(dataSquat)
+                    })
                 
-            })
+                })
+            }
         }
-
     }
     
     func loadAfter(object: Array<Dictionary<String, String>>) {
