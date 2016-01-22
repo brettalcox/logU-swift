@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jFR-4P-h5w">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -10,13 +9,13 @@
         <!--Graphs-->
         <scene sceneID="kuZ-1S-wep">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="HsO-fj-Wmx" customClass="PageViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="HsO-fj-Wmx" customClass="PageViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Graphs" id="WWR-43-547"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GLd-ej-HXR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="572" y="-1502"/>
+            <point key="canvasLocation" x="1504" y="782"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -135,6 +134,7 @@
             <objects>
                 <navigationController storyboardIdentifier="FirstNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L3U-cq-Ibz" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Pww-gy-4ng">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -149,12 +149,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O6z-8Y-G2x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1816" y="-522"/>
+            <point key="canvasLocation" x="2320" y="-402"/>
         </scene>
         <!--Weekly Poundage-->
         <scene sceneID="DlF-sO-ALN">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="hbK-kt-rb8" customClass="GraphViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" modalPresentationStyle="currentContext" id="hbK-kt-rb8" customClass="GraphViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NDy-Wd-M7H"/>
                         <viewControllerLayoutGuide type="bottom" id="XKW-Bw-A9w"/>
@@ -171,34 +171,35 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Bgy-vc-aux" secondAttribute="trailing" id="9o5-Hy-Viy"/>
-                            <constraint firstItem="Bgy-vc-aux" firstAttribute="leading" secondItem="IFQ-80-JPC" secondAttribute="leadingMargin" id="a4q-zF-u08"/>
-                            <constraint firstItem="Bgy-vc-aux" firstAttribute="top" secondItem="NDy-Wd-M7H" secondAttribute="bottom" constant="20" id="iCG-p2-PPf"/>
-                            <constraint firstItem="XKW-Bw-A9w" firstAttribute="top" secondItem="Bgy-vc-aux" secondAttribute="bottom" id="ltk-d2-ZnU"/>
+                            <constraint firstItem="Bgy-vc-aux" firstAttribute="top" secondItem="NDy-Wd-M7H" secondAttribute="bottom" constant="20" id="9rG-St-CQn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Bgy-vc-aux" secondAttribute="trailing" id="htV-cM-vng"/>
+                            <constraint firstItem="Bgy-vc-aux" firstAttribute="leading" secondItem="IFQ-80-JPC" secondAttribute="leadingMargin" id="iH6-dJ-MYL"/>
+                            <constraint firstItem="XKW-Bw-A9w" firstAttribute="top" secondItem="Bgy-vc-aux" secondAttribute="bottom" id="mYE-SP-cxp"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Weekly Poundage" id="NeG-ND-yMu"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Weekly Poundage" id="79b-lw-eli">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="x5V-Ux-02G">
+                    <navigationItem key="navigationItem" title="Weekly Poundage" id="nLi-NP-FoJ">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="fpz-20-mmU">
                             <connections>
-                                <action selector="saveButton:" destination="hbK-kt-rb8" id="4We-Mu-86B"/>
+                                <action selector="saveButton:" destination="hbK-kt-rb8" id="nPZ-RE-yKS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="poundageChartView" destination="Bgy-vc-aux" id="PUQ-Dc-QvT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEn-y8-edN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2566" y="-522"/>
+            <point key="canvasLocation" x="3070" y="-402"/>
         </scene>
         <!--Squat-->
         <scene sceneID="pCv-zz-PPe">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="7yG-PY-eea" customClass="SquatViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" modalPresentationStyle="currentContext" id="7yG-PY-eea" customClass="SquatViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0jW-aA-Qlc"/>
                         <viewControllerLayoutGuide type="bottom" id="nhU-oy-jf6"/>
@@ -215,10 +216,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="A8w-Ub-5MC" firstAttribute="top" secondItem="0jW-aA-Qlc" secondAttribute="bottom" constant="20" id="62L-NR-yCP"/>
-                            <constraint firstItem="A8w-Ub-5MC" firstAttribute="leading" secondItem="oCC-Ci-IwK" secondAttribute="leadingMargin" id="AD2-xF-W3o"/>
-                            <constraint firstItem="nhU-oy-jf6" firstAttribute="top" secondItem="A8w-Ub-5MC" secondAttribute="bottom" id="rov-Ot-Kit"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="A8w-Ub-5MC" secondAttribute="trailing" id="sAZ-fO-sZz"/>
+                            <constraint firstItem="nhU-oy-jf6" firstAttribute="top" secondItem="A8w-Ub-5MC" secondAttribute="bottom" id="Dn4-bO-53t"/>
+                            <constraint firstItem="A8w-Ub-5MC" firstAttribute="top" secondItem="0jW-aA-Qlc" secondAttribute="bottom" constant="20" id="HOD-Li-4Pe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="A8w-Ub-5MC" secondAttribute="trailing" id="UGB-em-UI5"/>
+                            <constraint firstItem="A8w-Ub-5MC" firstAttribute="leading" secondItem="oCC-Ci-IwK" secondAttribute="leadingMargin" id="YUN-Aw-qjD"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -236,7 +237,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tPl-cW-hbK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2522" y="237"/>
+            <point key="canvasLocation" x="3026" y="357"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Cma-Sf-jl1">
@@ -254,12 +255,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ent-1W-GqD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1808" y="954"/>
+            <point key="canvasLocation" x="2312" y="1074"/>
         </scene>
         <!--Bench-->
         <scene sceneID="9vQ-uF-ueZ">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="ssg-YH-E6z" customClass="BenchViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" modalPresentationStyle="currentContext" id="ssg-YH-E6z" customClass="BenchViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g5h-RP-Da8"/>
                         <viewControllerLayoutGuide type="bottom" id="mUU-z9-phS"/>
@@ -276,10 +277,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xbN-Sa-pgb" firstAttribute="top" secondItem="g5h-RP-Da8" secondAttribute="bottom" constant="20" id="INj-d0-U0d"/>
-                            <constraint firstItem="mUU-z9-phS" firstAttribute="top" secondItem="xbN-Sa-pgb" secondAttribute="bottom" id="KdH-yt-WkH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xbN-Sa-pgb" secondAttribute="trailing" id="cJ9-2L-Gf6"/>
-                            <constraint firstItem="xbN-Sa-pgb" firstAttribute="leading" secondItem="4YK-nV-p6V" secondAttribute="leadingMargin" id="dBN-Xi-OW9"/>
+                            <constraint firstItem="xbN-Sa-pgb" firstAttribute="leading" secondItem="4YK-nV-p6V" secondAttribute="leadingMargin" id="Eka-vo-BJW"/>
+                            <constraint firstItem="xbN-Sa-pgb" firstAttribute="top" secondItem="g5h-RP-Da8" secondAttribute="bottom" constant="20" id="c60-dZ-ky5"/>
+                            <constraint firstItem="mUU-z9-phS" firstAttribute="top" secondItem="xbN-Sa-pgb" secondAttribute="bottom" id="cbz-ek-uSi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xbN-Sa-pgb" secondAttribute="trailing" id="ctx-Ll-72Q"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -297,7 +298,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOT-vR-V3h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2522" y="954"/>
+            <point key="canvasLocation" x="3026" y="1074"/>
         </scene>
         <!--Item-->
         <scene sceneID="D79-z1-zbW">
@@ -305,6 +306,7 @@
                 <navigationController storyboardIdentifier="FourthNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5zf-51-LCh" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item" id="k6B-MS-eC2"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sid-jr-I9y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -319,12 +321,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFO-Rx-3iq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1816" y="1706"/>
+            <point key="canvasLocation" x="2320" y="1826"/>
         </scene>
         <!--Deadlift-->
         <scene sceneID="jsd-ZH-jmW">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="yGO-X1-Wna" customClass="DeadliftViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" modalPresentationStyle="currentContext" id="yGO-X1-Wna" customClass="DeadliftViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U0U-F6-oQl"/>
                         <viewControllerLayoutGuide type="bottom" id="eEe-Mc-zpO"/>
@@ -341,10 +343,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eEe-Mc-zpO" firstAttribute="top" secondItem="ZUZ-H1-9U2" secondAttribute="bottom" id="0Sg-Mj-xcV"/>
-                            <constraint firstItem="ZUZ-H1-9U2" firstAttribute="leading" secondItem="YgE-er-Lhj" secondAttribute="leadingMargin" id="TfY-v0-mWY"/>
-                            <constraint firstItem="ZUZ-H1-9U2" firstAttribute="top" secondItem="U0U-F6-oQl" secondAttribute="bottom" constant="20" id="bcB-0X-2pG"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZUZ-H1-9U2" secondAttribute="trailing" id="urU-35-7J6"/>
+                            <constraint firstItem="ZUZ-H1-9U2" firstAttribute="top" secondItem="U0U-F6-oQl" secondAttribute="bottom" constant="20" id="1eL-xQ-3L5"/>
+                            <constraint firstItem="ZUZ-H1-9U2" firstAttribute="leading" secondItem="YgE-er-Lhj" secondAttribute="leadingMargin" id="C4i-sK-Ulf"/>
+                            <constraint firstItem="eEe-Mc-zpO" firstAttribute="top" secondItem="ZUZ-H1-9U2" secondAttribute="bottom" id="iYu-7r-xaR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZUZ-H1-9U2" secondAttribute="trailing" id="tbX-ZG-V3C"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -362,7 +364,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Hf-QA-gQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2545" y="1706"/>
+            <point key="canvasLocation" x="3049" y="1826"/>
         </scene>
         <!--Log a Lift-->
         <scene sceneID="qDv-ba-Opq">
@@ -390,6 +392,7 @@
                 <navigationController storyboardIdentifier="SecondNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="r0p-Wc-eZ8" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item" id="Xwe-5X-Xeg"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5VP-vk-guh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -404,7 +407,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kwM-jN-fqv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1816" y="237"/>
+            <point key="canvasLocation" x="2320" y="357"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="q3I-Yd-Iz9">
@@ -682,7 +685,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAO-Pv-gjv">
-                                            <rect key="frame" x="543" y="11" width="42" height="21"/>
+                                            <rect key="frame" x="539" y="11" width="53" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -738,6 +741,7 @@
                 <navigationController storyboardIdentifier="ThirdNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eTw-LP-lxV" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item" id="mGM-Bc-Zvi"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="n8P-IE-srZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -752,7 +756,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bfG-vO-2LZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1808" y="954"/>
+            <point key="canvasLocation" x="2312" y="1074"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5zI-yq-GF5">
