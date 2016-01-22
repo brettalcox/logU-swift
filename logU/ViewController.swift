@@ -94,8 +94,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
         
         addDoneButton()
         
-        
-        //dataOfJson("https://loguapp.com/swift.php")
     }
     
     func addDoneButton() {
@@ -126,12 +124,14 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
                 weightTextField.text = "0"
             }
             
-            if !Reachability.isConnectedToNetwork() {
+            if Reachability.isConnectedToNetwork() {
                 upload_request()
             }
             
-            if Reachability.isConnectedToNetwork() {
+            if !Reachability.isConnectedToNetwork() {
                 OfflineRequest.coreDataInsert(dateTextField.text!, lift: liftTextField.text!, sets: setsTextField.text!, reps: repsTextField.text!, weight: weightTextField.text!)
+                
+                DashTableViewController().OfflineTableInsert(dateTextField.text!, lift: liftTextField.text!, set: setsTextField.text!, rep: repsTextField.text!, weight: weightTextField.text!)
             }
         }
     }

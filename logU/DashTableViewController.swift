@@ -10,16 +10,18 @@ import UIKit
 
 var dataAfter: Array<Dictionary<String, String>> = []
 
+var Lifts: [String]! = []
+var Dates: [String]! = []
+var Weights: [String]! = []
+var Sets: [String]! = []
+var Reps: [String]! = []
+var Ids: [String]! = []
+
 class DashTableViewController: UITableViewController {
     
     let url_to_post:String = "https://loguapp.com/swift7.php"
     
-    var Lifts: [String]! = []
-    var Dates: [String]! = []
-    var Weights: [String]! = []
-    var Sets: [String]! = []
-    var Reps: [String]! = []
-    var Ids: [String]! = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,8 @@ class DashTableViewController: UITableViewController {
             
         dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
         
+            OfflineRequest().OfflineFetchSubmit()
+            
             JsonData().dataOfLift({ jsonString in
                 dataAfter = jsonString
                 dispatch_async(dispatch_get_main_queue()) {
@@ -86,9 +90,11 @@ class DashTableViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
 
-        //self.tableView.reloadData()
         if Reachability.isConnectedToNetwork() {
         dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+            
+            OfflineRequest().OfflineFetchSubmit()
+            
             JsonData().dataOfLift({ jsonString in
                 dataAfter = jsonString
                 dispatch_async(dispatch_get_main_queue()) {
@@ -99,22 +105,11 @@ class DashTableViewController: UITableViewController {
         }
         
         if !Reachability.isConnectedToNetwork() {
-            var Lifting = OfflineRequest().OfflineFetch()
-            for i in 0..<Lifting.count {
-                Dates.append(lifting[i].valueForKey("date")! as! String)
-                Lifts.append(lifting[i].valueForKey("lift")! as! String)
-                Sets.append(lifting[i].valueForKey("sets")! as! String)
-                Reps.append(lifting[i].valueForKey("reps")! as! String)
-                Weights.append(lifting[i].valueForKey("weight")! as! String)
-                
-                Ids.append("0")
-                //self.tableView.reloadData()
-            }
+                self.tableView.reloadData()
+
         }
 
         self.tableView.reloadData()
-        //sleep(1)
-        //self.tableView.reloadData()
     }
     
     
@@ -157,6 +152,7 @@ class DashTableViewController: UITableViewController {
     }
     
     @IBAction func unwindToDashboard(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
+        
     }
     
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -174,12 +170,12 @@ class DashTableViewController: UITableViewController {
                     self.delete_request(idToDelete)
             }
             
-            self.Lifts.removeAtIndex(indexPath.row)
-            self.Dates.removeAtIndex(indexPath.row)
-            self.Weights.removeAtIndex(indexPath.row)
-            self.Sets.removeAtIndex(indexPath.row)
-            self.Reps.removeAtIndex(indexPath.row)
-            self.Ids.removeAtIndex(indexPath.row)
+            Lifts.removeAtIndex(indexPath.row)
+            Dates.removeAtIndex(indexPath.row)
+            Weights.removeAtIndex(indexPath.row)
+            Sets.removeAtIndex(indexPath.row)
+            Reps.removeAtIndex(indexPath.row)
+            Ids.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             
         } else if editingStyle == .Insert {
@@ -210,9 +206,21 @@ class DashTableViewController: UITableViewController {
                 print(dataString)
             }
         );
-        
+
         task.resume()
         
+    }
+    
+    func OfflineTableInsert(date: String, lift: String, set: String, rep: String, weight: String) {
+        Dates.insert(date, atIndex: Dates.startIndex)
+        Lifts.insert(lift, atIndex: Lifts.startIndex)
+        Sets.insert(set, atIndex: Sets.startIndex)
+        Reps.insert(rep, atIndex: Reps.startIndex)
+        Weights.insert(weight, atIndex: Weights.startIndex)
+        
+        Ids.insert("0", atIndex: Ids.endIndex)
+        
+        self.tableView.reloadData()
     }
     
     

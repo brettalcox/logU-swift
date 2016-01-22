@@ -21,40 +21,6 @@ class LoginVC: UIViewController {
         if Reachability.isConnectedToNetwork() {
             OfflineRequest().OfflineFetchSubmit()
         }
-        /*
-        if Reachability.isConnectedToNetwork() {
-            print("butts")
-            
-            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            let managedContext = appDelegate.managedObjectContext
-            let entity = NSEntityDescription.entityForName("Insert", inManagedObjectContext: managedContext)
-            let insert = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
-            insert.setValue("Bench", forKey: "lift")
-            insert.setValue("1/21/2016", forKey: "date")
-            insert.setValue("1", forKey: "sets")
-            insert.setValue("1", forKey: "reps")
-            insert.setValue("315", forKey: "weight")
-            
-            do {
-                try managedContext.save()
-                lifting.append(insert)
-            } catch let error as NSError {
-                print("Could not save")
-            }
-            
-            let fetchRequest = NSFetchRequest(entityName: "Insert")
-            do {
-                let results = try managedContext.executeFetchRequest(fetchRequest)
-                lifting = results as! [NSManagedObject]
-            } catch let error as NSError {
-                print("Could not fetch")
-            }
-            
-            for i in 0..<lifting.count {
-                print(lifting[i].valueForKey("lift")!)
-            }
-        }
-*/
     }
     
     @IBOutlet weak var txtUsername: UITextField!
