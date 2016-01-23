@@ -32,6 +32,7 @@ class DashTableViewController: UITableViewController {
         dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
         
             OfflineRequest().OfflineFetchSubmit()
+            OfflineRequest().OfflineFetchDelete()
             
             JsonData().dataOfLift({ jsonString in
                 dataAfter = jsonString
@@ -94,6 +95,7 @@ class DashTableViewController: UITableViewController {
         dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
             
             OfflineRequest().OfflineFetchSubmit()
+            OfflineRequest().OfflineFetchDelete()
             
             JsonData().dataOfLift({ jsonString in
                 dataAfter = jsonString
@@ -102,11 +104,6 @@ class DashTableViewController: UITableViewController {
                 }
             })
         }
-        }
-        
-        if !Reachability.isConnectedToNetwork() {
-                self.tableView.reloadData()
-
         }
 
         self.tableView.reloadData()
@@ -165,9 +162,15 @@ class DashTableViewController: UITableViewController {
         if editingStyle == .Delete {
             // Delete the row from the data source
             let idToDelete = Ids[indexPath.row]
+            print(idToDelete)
+            if Reachability.isConnectedToNetwork() {
+                dispatch_async(dispatch_get_global_queue(Int   (QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+                        self.delete_request(idToDelete)
+                }
+            }
             
-            dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
-                    self.delete_request(idToDelete)
+            if !Reachability.isConnectedToNetwork() {
+                OfflineRequest.coreDataDelete(idToDelete, date: Dates[indexPath.row], lift: Lifts[indexPath.row], sets: Sets[indexPath.row], reps: Reps[indexPath.row], weight: Weights[indexPath.row])
             }
             
             Lifts.removeAtIndex(indexPath.row)
@@ -220,7 +223,9 @@ class DashTableViewController: UITableViewController {
         
         Ids.insert("0", atIndex: Ids.endIndex)
         
-        self.tableView.reloadData()
+        //self.tableView.reloadData()
+        
+        print("2")
     }
     
     

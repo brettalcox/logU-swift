@@ -20,6 +20,7 @@ class LoginVC: UIViewController {
         
         if Reachability.isConnectedToNetwork() {
             OfflineRequest().OfflineFetchSubmit()
+            OfflineRequest().OfflineFetchDelete()
         }
     }
     

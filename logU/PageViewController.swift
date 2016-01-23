@@ -13,11 +13,11 @@ import Foundation
 class PageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     private var pages: [UIViewController]!
+    private var startingViewController: UIViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+                
         self.view.backgroundColor = UIColor.whiteColor()
         
         let appearence = UIPageControl.appearance()
@@ -34,8 +34,11 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
             self.storyboard!.instantiateViewControllerWithIdentifier("FourthNavigationController") as! UINavigationController
         ]
         
-        let startingViewController = self.pages.first! as UIViewController
+        startingViewController = self.pages.first! as UIViewController
         self.setViewControllers([startingViewController], direction: .Forward, animated: false, completion: nil)
+        
+        self.edgesForExtendedLayout = UIRectEdge.None
+        self.automaticallyAdjustsScrollViewInsets = false;
         
     }
     

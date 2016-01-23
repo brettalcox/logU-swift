@@ -26,6 +26,8 @@ class GraphViewController: UIViewController, UIActionSheetDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.automaticallyAdjustsScrollViewInsets = false;
+        
         if Reachability.isConnectedToNetwork() {
             dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
                     GraphData().dataOfLifting(self.url_to_request, completion: { jsonString in

@@ -132,7 +132,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Sha-9R-JiL">
             <objects>
-                <navigationController storyboardIdentifier="FirstNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L3U-cq-Ibz" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FirstNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L3U-cq-Ibz" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Pww-gy-4ng">
@@ -154,7 +154,7 @@
         <!--Weekly Poundage-->
         <scene sceneID="DlF-sO-ALN">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" modalPresentationStyle="currentContext" id="hbK-kt-rb8" customClass="GraphViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="hbK-kt-rb8" customClass="GraphViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NDy-Wd-M7H"/>
                         <viewControllerLayoutGuide type="bottom" id="XKW-Bw-A9w"/>
@@ -171,10 +171,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Bgy-vc-aux" firstAttribute="top" secondItem="NDy-Wd-M7H" secondAttribute="bottom" constant="20" id="9rG-St-CQn"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Bgy-vc-aux" secondAttribute="trailing" id="htV-cM-vng"/>
-                            <constraint firstItem="Bgy-vc-aux" firstAttribute="leading" secondItem="IFQ-80-JPC" secondAttribute="leadingMargin" id="iH6-dJ-MYL"/>
-                            <constraint firstItem="XKW-Bw-A9w" firstAttribute="top" secondItem="Bgy-vc-aux" secondAttribute="bottom" id="mYE-SP-cxp"/>
+                            <constraint firstItem="Bgy-vc-aux" firstAttribute="top" secondItem="NDy-Wd-M7H" secondAttribute="bottom" id="4It-Lp-qAO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Bgy-vc-aux" secondAttribute="trailing" id="52f-5p-mEP"/>
+                            <constraint firstItem="XKW-Bw-A9w" firstAttribute="top" secondItem="Bgy-vc-aux" secondAttribute="bottom" id="i8R-XZ-ONq"/>
+                            <constraint firstItem="Bgy-vc-aux" firstAttribute="leading" secondItem="IFQ-80-JPC" secondAttribute="leadingMargin" id="wqa-OW-o5q"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -199,7 +199,7 @@
         <!--Squat-->
         <scene sceneID="pCv-zz-PPe">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" modalPresentationStyle="currentContext" id="7yG-PY-eea" customClass="SquatViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="7yG-PY-eea" customClass="SquatViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0jW-aA-Qlc"/>
                         <viewControllerLayoutGuide type="bottom" id="nhU-oy-jf6"/>
@@ -216,10 +216,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="nhU-oy-jf6" firstAttribute="top" secondItem="A8w-Ub-5MC" secondAttribute="bottom" id="Dn4-bO-53t"/>
-                            <constraint firstItem="A8w-Ub-5MC" firstAttribute="top" secondItem="0jW-aA-Qlc" secondAttribute="bottom" constant="20" id="HOD-Li-4Pe"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="A8w-Ub-5MC" secondAttribute="trailing" id="UGB-em-UI5"/>
-                            <constraint firstItem="A8w-Ub-5MC" firstAttribute="leading" secondItem="oCC-Ci-IwK" secondAttribute="leadingMargin" id="YUN-Aw-qjD"/>
+                            <constraint firstItem="nhU-oy-jf6" firstAttribute="top" secondItem="A8w-Ub-5MC" secondAttribute="bottom" id="4oV-ZM-QcG"/>
+                            <constraint firstItem="A8w-Ub-5MC" firstAttribute="leading" secondItem="oCC-Ci-IwK" secondAttribute="leadingMargin" id="Mpy-IV-8h3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="A8w-Ub-5MC" secondAttribute="trailing" id="Tr2-K1-lDK"/>
+                            <constraint firstItem="A8w-Ub-5MC" firstAttribute="top" secondItem="0jW-aA-Qlc" secondAttribute="bottom" id="yOu-HE-SgR"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -260,7 +260,7 @@
         <!--Bench-->
         <scene sceneID="9vQ-uF-ueZ">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" modalPresentationStyle="currentContext" id="ssg-YH-E6z" customClass="BenchViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="ssg-YH-E6z" customClass="BenchViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g5h-RP-Da8"/>
                         <viewControllerLayoutGuide type="bottom" id="mUU-z9-phS"/>
@@ -277,10 +277,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xbN-Sa-pgb" firstAttribute="leading" secondItem="4YK-nV-p6V" secondAttribute="leadingMargin" id="Eka-vo-BJW"/>
-                            <constraint firstItem="xbN-Sa-pgb" firstAttribute="top" secondItem="g5h-RP-Da8" secondAttribute="bottom" constant="20" id="c60-dZ-ky5"/>
-                            <constraint firstItem="mUU-z9-phS" firstAttribute="top" secondItem="xbN-Sa-pgb" secondAttribute="bottom" id="cbz-ek-uSi"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xbN-Sa-pgb" secondAttribute="trailing" id="ctx-Ll-72Q"/>
+                            <constraint firstItem="xbN-Sa-pgb" firstAttribute="top" secondItem="g5h-RP-Da8" secondAttribute="bottom" id="VFb-ht-Vwz"/>
+                            <constraint firstItem="mUU-z9-phS" firstAttribute="top" secondItem="xbN-Sa-pgb" secondAttribute="bottom" id="dGp-5N-irk"/>
+                            <constraint firstItem="xbN-Sa-pgb" firstAttribute="leading" secondItem="4YK-nV-p6V" secondAttribute="leadingMargin" id="fYq-1j-XPw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xbN-Sa-pgb" secondAttribute="trailing" id="gun-Wo-M5E"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -303,10 +303,9 @@
         <!--Item-->
         <scene sceneID="D79-z1-zbW">
             <objects>
-                <navigationController storyboardIdentifier="FourthNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5zf-51-LCh" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FourthNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5zf-51-LCh" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item" id="k6B-MS-eC2"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sid-jr-I9y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -326,7 +325,7 @@
         <!--Deadlift-->
         <scene sceneID="jsd-ZH-jmW">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" modalPresentationStyle="currentContext" id="yGO-X1-Wna" customClass="DeadliftViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="yGO-X1-Wna" customClass="DeadliftViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U0U-F6-oQl"/>
                         <viewControllerLayoutGuide type="bottom" id="eEe-Mc-zpO"/>
@@ -343,10 +342,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ZUZ-H1-9U2" firstAttribute="top" secondItem="U0U-F6-oQl" secondAttribute="bottom" constant="20" id="1eL-xQ-3L5"/>
-                            <constraint firstItem="ZUZ-H1-9U2" firstAttribute="leading" secondItem="YgE-er-Lhj" secondAttribute="leadingMargin" id="C4i-sK-Ulf"/>
-                            <constraint firstItem="eEe-Mc-zpO" firstAttribute="top" secondItem="ZUZ-H1-9U2" secondAttribute="bottom" id="iYu-7r-xaR"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZUZ-H1-9U2" secondAttribute="trailing" id="tbX-ZG-V3C"/>
+                            <constraint firstItem="eEe-Mc-zpO" firstAttribute="top" secondItem="ZUZ-H1-9U2" secondAttribute="bottom" id="SM9-OC-Eo4"/>
+                            <constraint firstItem="ZUZ-H1-9U2" firstAttribute="leading" secondItem="YgE-er-Lhj" secondAttribute="leadingMargin" id="T4K-cz-8gI"/>
+                            <constraint firstItem="ZUZ-H1-9U2" firstAttribute="top" secondItem="U0U-F6-oQl" secondAttribute="bottom" id="moQ-uO-nI6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZUZ-H1-9U2" secondAttribute="trailing" id="uWb-BV-Xtc"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -389,10 +388,9 @@
         <!--Item-->
         <scene sceneID="3ZR-Al-qLc">
             <objects>
-                <navigationController storyboardIdentifier="SecondNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="r0p-Wc-eZ8" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SecondNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="r0p-Wc-eZ8" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item" id="Xwe-5X-Xeg"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5VP-vk-guh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -738,10 +736,9 @@
         <!--Item-->
         <scene sceneID="sN2-60-PBl">
             <objects>
-                <navigationController storyboardIdentifier="ThirdNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eTw-LP-lxV" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ThirdNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eTw-LP-lxV" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item" id="mGM-Bc-Zvi"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="n8P-IE-srZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
