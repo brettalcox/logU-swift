@@ -17,18 +17,31 @@ class MaxesTableViewController: UITableViewController {
     var Maxes: [String]! = []
     
     override func viewDidLoad() {
-        
+        if Reachability.isConnectedToNetwork() {
+            dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+                
+                GraphData().dataOfLifting(self.url_to_request, completion: { jsonString in
+                    dataAfter = jsonString
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.loadAfter(dataAfter)
+                    }
+                })
+            }
+        }
+
     }
     
     override func viewDidAppear(animated: Bool) {
-        dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+        if Reachability.isConnectedToNetwork() {
+            dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
             
-            GraphData().dataOfLifting(self.url_to_request, completion: { jsonString in
-                dataAfter = jsonString
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.loadAfter(dataAfter)
-                }
-            })
+                GraphData().dataOfLifting(self.url_to_request, completion: { jsonString in
+                    dataAfter = jsonString
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.loadAfter(dataAfter)
+                    }
+                })
+            }
         }
 
     }
