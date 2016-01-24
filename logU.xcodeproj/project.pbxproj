@@ -34,6 +34,8 @@
 		B5C6F15A1C4F3AFE0016B70E /* StatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1591C4F3AFE0016B70E /* StatsTableViewCell.swift */; };
 		B5C6F15C1C4F40DF0016B70E /* MaxesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F15B1C4F40DF0016B70E /* MaxesTableViewController.swift */; };
 		B5C6F15E1C4F45240016B70E /* MaxesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F15D1C4F45240016B70E /* MaxesTableViewCell.swift */; };
+		B5C6F1681C557ACD0016B70E /* PoundageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1671C557ACD0016B70E /* PoundageTableViewCell.swift */; };
+		B5C6F16C1C557B4E0016B70E /* PoundageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F16B1C557B4E0016B70E /* PoundageTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +129,8 @@
 		B5C6F1591C4F3AFE0016B70E /* StatsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsTableViewCell.swift; sourceTree = "<group>"; };
 		B5C6F15B1C4F40DF0016B70E /* MaxesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaxesTableViewController.swift; sourceTree = "<group>"; };
 		B5C6F15D1C4F45240016B70E /* MaxesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaxesTableViewCell.swift; sourceTree = "<group>"; };
+		B5C6F1671C557ACD0016B70E /* PoundageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoundageTableViewCell.swift; sourceTree = "<group>"; };
+		B5C6F16B1C557B4E0016B70E /* PoundageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoundageTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +182,8 @@
 		B5C6F0ED1C4F25F70016B70E /* logU */ = {
 			isa = PBXGroup;
 			children = (
+				B5C6F1671C557ACD0016B70E /* PoundageTableViewCell.swift */,
+				B5C6F16B1C557B4E0016B70E /* PoundageTableViewController.swift */,
 				B5C6F1571C4F3A9E0016B70E /* StatsTableViewController.swift */,
 				B5C6F15B1C4F40DF0016B70E /* MaxesTableViewController.swift */,
 				B5C6F15D1C4F45240016B70E /* MaxesTableViewCell.swift */,
@@ -411,8 +417,10 @@
 				B5C6F12D1C4F26480016B70E /* DashTableViewController.swift in Sources */,
 				B5C6F15A1C4F3AFE0016B70E /* StatsTableViewCell.swift in Sources */,
 				B5C6F1581C4F3A9E0016B70E /* StatsTableViewController.swift in Sources */,
+				B5C6F16C1C557B4E0016B70E /* PoundageTableViewController.swift in Sources */,
 				B5C6F1361C4F26480016B70E /* SquatViewController.swift in Sources */,
 				B5C6F15C1C4F40DF0016B70E /* MaxesTableViewController.swift in Sources */,
+				B5C6F1681C557ACD0016B70E /* PoundageTableViewCell.swift in Sources */,
 				B5C6F1371C4F26480016B70E /* ViewController.swift in Sources */,
 				8BB596E01C513BE8003B98BA /* LiftDataModel.xcdatamodeld in Sources */,
 				B5C6F1331C4F26480016B70E /* LiftTableViewCell.swift in Sources */,

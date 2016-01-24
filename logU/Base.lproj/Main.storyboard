@@ -664,11 +664,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="hqK-7l-YA1" customClass="StatsTableViewCell" customModule="logU" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="hqK-7l-YA1" customClass="StatsTableViewCell" customModule="logU" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hqK-7l-YA1" id="Vtc-9Q-Hwl">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f58-BQ-e9d">
@@ -701,7 +701,7 @@
                     <connections>
                         <outlet property="tableView" destination="kQf-Ge-RpD" id="xd2-bw-Nc6"/>
                         <segue destination="Whh-SA-y8k" kind="show" identifier="showMaxes" id="qD1-yQ-ibE"/>
-                        <segue destination="Euu-nn-GlB" kind="show" identifier="showPoundage" id="JIn-pM-hK1"/>
+                        <segue destination="x92-rr-BNi" kind="show" identifier="showPoundage" id="4uB-Y3-VRi"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R6H-dz-HJX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -713,7 +713,7 @@
             <objects>
                 <tableViewController id="Whh-SA-y8k" customClass="MaxesTableViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="g0W-CF-DwV">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -763,6 +763,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCj-RH-bZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="883" y="2047"/>
+        </scene>
+        <!--Weekly Poundage-->
+        <scene sceneID="i6t-Y8-HjD">
+            <objects>
+                <tableViewController id="x92-rr-BNi" customClass="PoundageTableViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eCO-XC-dmU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Set-uZ-Ory" customClass="PoundageTableViewCell" customModule="logU" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Set-uZ-Ory" id="afq-tf-KZa">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toe-Ch-cHg">
+                                            <rect key="frame" x="8" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nF7-zl-gWa">
+                                            <rect key="frame" x="550" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="nF7-zl-gWa" firstAttribute="trailing" secondItem="afq-tf-KZa" secondAttribute="trailingMargin" id="Nli-Hc-Kyu"/>
+                                        <constraint firstItem="toe-Ch-cHg" firstAttribute="centerY" secondItem="afq-tf-KZa" secondAttribute="centerY" id="VTx-OB-Q63"/>
+                                        <constraint firstItem="toe-Ch-cHg" firstAttribute="top" secondItem="afq-tf-KZa" secondAttribute="topMargin" constant="3" id="bSH-at-KdM"/>
+                                        <constraint firstItem="toe-Ch-cHg" firstAttribute="firstBaseline" secondItem="nF7-zl-gWa" secondAttribute="firstBaseline" id="eZa-5Z-SQG"/>
+                                        <constraint firstItem="toe-Ch-cHg" firstAttribute="leading" secondItem="afq-tf-KZa" secondAttribute="leadingMargin" id="mRv-2d-WH1"/>
+                                        <constraint firstItem="toe-Ch-cHg" firstAttribute="baseline" secondItem="nF7-zl-gWa" secondAttribute="baseline" id="s9V-io-Nde"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="poundageLabel" destination="nF7-zl-gWa" id="hK4-PI-dbq"/>
+                                    <outlet property="weekLabel" destination="toe-Ch-cHg" id="ojk-On-dzP"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="x92-rr-BNi" id="gOu-u3-S6B"/>
+                            <outlet property="delegate" destination="x92-rr-BNi" id="IIZ-Hi-GJX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Weekly Poundage" id="sIw-No-Ywk"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kWZ-gd-Fbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="883" y="2750"/>
         </scene>
         <!--User Stats-->
         <scene sceneID="aWn-Dc-pPv">
@@ -839,46 +894,27 @@
             </objects>
             <point key="canvasLocation" x="151" y="2047"/>
         </scene>
-        <!--Weekly Poundage-->
-        <scene sceneID="D0i-Gf-41m">
-            <objects>
-                <viewController id="Euu-nn-GlB" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mZg-Wk-cXk"/>
-                        <viewControllerLayoutGuide type="bottom" id="dS0-oA-Z27"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Pbj-zz-oLs">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Weekly Poundage" id="MFt-of-zq6"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bzq-Mm-aH0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="859" y="2779"/>
-        </scene>
         <!--Navigation Controller-->
-        <scene sceneID="0JR-mJ-ytF">
+        <scene sceneID="O0U-pv-Xu1">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6YK-em-a0b" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PHJ-ju-UfY" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Q7-d8-YqD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oOf-oH-mgi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Euu-nn-GlB" kind="relationship" relationship="rootViewController" id="S6l-c7-fpA"/>
+                        <segue destination="x92-rr-BNi" kind="relationship" relationship="rootViewController" id="v6M-ld-xAY"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="X6O-2a-FlU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cEP-fI-z6b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="156" y="2779"/>
+            <point key="canvasLocation" x="151" y="2750"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7jg-Cu-olp"/>
-        <segue reference="S6l-c7-fpA"/>
+        <segue reference="4uB-Y3-VRi"/>
+        <segue reference="qD1-yQ-ibE"/>
     </inferredMetricsTieBreakers>
 </document>
