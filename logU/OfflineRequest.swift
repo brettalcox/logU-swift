@@ -18,9 +18,7 @@ let url_to_delete:String = "https://loguapp.com/swift7.php"
 class OfflineRequest {
     
     class func coreDataInsert(date: String, lift: String, sets: String, reps: String, weight: String) {
-        
-        //if Reachability.isConnectedToNetwork() {
-        //    print("butts")
+
             
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             let managedContext = appDelegate.managedObjectContext
@@ -40,8 +38,7 @@ class OfflineRequest {
             } catch let error as NSError {
                 print("Could not save")
             }
-        print("1")
-            
+        
         }
     
     class func coreDataDelete(id: String, date: String, lift: String, sets: String, reps: String, weight: String) {
@@ -69,15 +66,12 @@ class OfflineRequest {
                 print(entities)
             }
         } catch {
-            print("butts")
         }
         do {
             try managedContext.save()
         } catch {
             
         }
-        print("3")
-
         
     }
     
@@ -116,8 +110,6 @@ class OfflineRequest {
                             return
                         }
                 
-                        let dataString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-                        print(dataString)
                     }
                 );
         
@@ -162,10 +154,6 @@ class OfflineRequest {
 
         if deleting.count != 0 {
             dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
-
-                for i in 0..<deleting.count {
-                    print(deleting[i].valueForKey("id"))
-                }
                 
             for i in 0..<deleting.count {
                 
@@ -185,16 +173,12 @@ class OfflineRequest {
                             print("error")
                             return
                         }
-                        
-                        let dataString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-                        print(dataString, "dickles")
-                        for i in 0..<deleting.count {
-                            print(deleting[i].valueForKey("id"))
-                        }
+
                     }
                 );
                 
                 task.resume()
+                
                 }
 
             }
@@ -216,7 +200,6 @@ class OfflineRequest {
             } catch {
                 
             }
-            print("4")
         }
     }
     
@@ -237,5 +220,4 @@ class OfflineRequest {
     }
 
     
-    //}
 }

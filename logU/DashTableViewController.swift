@@ -57,8 +57,6 @@ class DashTableViewController: UITableViewController {
             }
         }
         
-        //self.tableView.reloadData()
-
         navigationItem.leftBarButtonItem = editButtonItem()
         
         // Uncomment the following line to preserve selection between presentations
@@ -162,13 +160,12 @@ class DashTableViewController: UITableViewController {
         if editingStyle == .Delete {
             // Delete the row from the data source
             let idToDelete = Ids[indexPath.row]
-            print(idToDelete)
             if Reachability.isConnectedToNetwork() {
                 dispatch_async(dispatch_get_global_queue(Int   (QOS_CLASS_USER_INITIATED.rawValue), 0)) {
                         self.delete_request(idToDelete)
                 }
             }
-            
+
             if !Reachability.isConnectedToNetwork() {
                 OfflineRequest.coreDataDelete(idToDelete, date: Dates[indexPath.row], lift: Lifts[indexPath.row], sets: Sets[indexPath.row], reps: Reps[indexPath.row], weight: Weights[indexPath.row])
             }
@@ -215,17 +212,15 @@ class DashTableViewController: UITableViewController {
     }
     
     func OfflineTableInsert(date: String, lift: String, set: String, rep: String, weight: String) {
-        Dates.insert(date, atIndex: Dates.startIndex)
-        Lifts.insert(lift, atIndex: Lifts.startIndex)
-        Sets.insert(set, atIndex: Sets.startIndex)
-        Reps.insert(rep, atIndex: Reps.startIndex)
-        Weights.insert(weight, atIndex: Weights.startIndex)
         
-        Ids.insert("0", atIndex: Ids.endIndex)
+        Dates.insert(date, atIndex: 0)
+        Lifts.insert(lift, atIndex: 0)
+        Sets.insert(set, atIndex: 0)
+        Reps.insert(rep, atIndex: 0)
+        Weights.insert(weight, atIndex: 0)
         
-        //self.tableView.reloadData()
-        
-        print("2")
+        Ids.insert("0", atIndex: 0)
+
     }
     
     
