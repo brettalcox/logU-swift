@@ -111,6 +111,13 @@ class LoginVC: UIViewController {
             );
 
             task.resume()
+            
+            Settings().getUnit({ jsonString in
+                let defaults = NSUserDefaults.standardUserDefaults()
+                defaults.setInteger(Int(jsonString[0]["unit"]!)!, forKey: "Unit")
+                print(jsonString[0]["unit"])
+            })
+            
         }
     }
 
