@@ -41,10 +41,12 @@ class StatsTableViewController: UITableViewController {
     {
         if indexPath.row == 0 {
             self.performSegueWithIdentifier("showMaxes", sender: self)
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
         
         if indexPath.row == 1 {
             self.performSegueWithIdentifier("showPoundage", sender: self)
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
         }
     }
