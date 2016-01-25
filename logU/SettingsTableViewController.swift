@@ -26,6 +26,20 @@ class SettingsTableViewController: UITableViewController {
         }
     }
     
+    override func viewDidLoad() {
+        if defaults.valueForKey("Unit") as! Int == 0 {
+            unitSwitch.setOn(false, animated: true)
+            unitLabel.text = "Kgs"
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if defaults.valueForKey("Unit") as! Int == 0 {
+            unitSwitch.setOn(false, animated: true)
+            unitLabel.text = "Kgs"
+        }
+    }
+    
 
 
 }
