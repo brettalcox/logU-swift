@@ -22,6 +22,7 @@ class LoginVC: UIViewController {
             OfflineRequest().OfflineFetchSubmit()
             OfflineRequest().OfflineFetchDelete()
         }
+        
     }
     
     @IBOutlet weak var txtUsername: UITextField!

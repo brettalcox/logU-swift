@@ -21,11 +21,17 @@ class DashTableViewController: UITableViewController {
     
     let url_to_post:String = "https://loguapp.com/swift7.php"
     
-    
+    var indicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     print(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)
+        
+        indicator = UIActivityIndicatorView()
+        indicator.center = view.center
+        indicator.activityIndicatorViewStyle = .Gray
+        indicator.startAnimating()
+        view.addSubview(indicator)
         
         if Reachability.isConnectedToNetwork() {
             
@@ -54,6 +60,7 @@ class DashTableViewController: UITableViewController {
                 
                     Ids.append("0")
                 self.tableView.reloadData()
+                indicator.stopAnimating()
             }
         }
         
@@ -85,6 +92,7 @@ class DashTableViewController: UITableViewController {
             Ids.append(dataAfter[i]["id"]!)
         }
         self.tableView.reloadData()
+        indicator.stopAnimating()
     }
     
     override func viewDidAppear(animated: Bool) {
