@@ -50,7 +50,7 @@ This is the current iOS development of https://loguapp.com
 
 
 
-![alt tag](http://i.imgur.com/N8zUrU5.png?1)
+![alt tag](http://i.imgur.com/WJ8pBsG.png?1)
 
 
 
@@ -58,3 +58,15 @@ This is the current iOS development of https://loguapp.com
 
 
 ![alt tag](http://i.imgur.com/CUfTr5Z.png?2)
+
+
+### Weekly Poundage
+
+
+![alt tag](http://i.imgur.com/nWQgJy7.png&1)
+
+
+### User Settings
+
+
+![alt tag](http://i.imgur.com/PkGUhl3.png?1)
