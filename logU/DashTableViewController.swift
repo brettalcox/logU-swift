@@ -17,15 +17,36 @@ var Sets: [String]! = []
 var Reps: [String]! = []
 var Ids: [String]! = []
 
-class DashTableViewController: UITableViewController {
+class DashTableViewController: UITableViewController, UISearchResultsUpdating {
+    
+    let searchController = UISearchController(searchResultsController: nil)
     
     let url_to_post:String = "https://loguapp.com/swift7.php"
     
     var indicator: UIActivityIndicatorView!
     
+    var resultSearchController = UISearchController()
+    var filteredTableData = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    print(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)
+
+        self.resultSearchController = ({
+            let controller = UISearchController(searchResultsController: nil)
+            controller.searchResultsUpdater = self
+            controller.dimsBackgroundDuringPresentation = false
+            controller.searchBar.sizeToFit()
+            controller.searchBar.placeholder = "Search Lift by Date"
+            
+            self.tableView.tableHeaderView = controller.searchBar
+            
+            return controller
+        })()
+        
+        self.navigationController?.extendedLayoutIncludesOpaqueBars = true
+        
+        // Reload the table
+        self.tableView.reloadData()
         
         indicator = UIActivityIndicatorView()
         indicator.center = view.center
@@ -96,6 +117,8 @@ class DashTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        self.definesPresentationContext = true
+        self.navigationController?.extendedLayoutIncludesOpaqueBars = true
 
         if Reachability.isConnectedToNetwork() {
         dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
@@ -130,7 +153,12 @@ class DashTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if (self.resultSearchController.active) {
+            return self.filteredTableData.count
+        }
+        else {
         return Dates.count
+        }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -144,14 +172,34 @@ class DashTableViewController: UITableViewController {
         let rep = Reps[indexPath.row]
         let id = Ids[indexPath.row]
         
+        if (self.resultSearchController.active) {
+            cell.dateLabel.text = filteredTableData[indexPath.row]
+            cell.liftLabel.text = date
+            cell.poundsLabel.text = weight
+            cell.setsRepsLabel.text = set + "x" + rep
+            cell.idLabel.text = id
+        }
+        else {
         cell.liftLabel.text = lift
         cell.dateLabel.text = date
         cell.poundsLabel.text = weight
         cell.setsRepsLabel.text = set + "x" + rep
         cell.idLabel.text = id
         // Configure the cell...
+        }
         
         return cell
+    }
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController)
+    {
+        filteredTableData.removeAll(keepCapacity: false)
+        
+        let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text!)
+        let array = (Dates as NSArray).filteredArrayUsingPredicate(searchPredicate)
+        filteredTableData = array as! [String]
+        
+        self.tableView.reloadData()
     }
     
     @IBAction func unwindToDashboard(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
