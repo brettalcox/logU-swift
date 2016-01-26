@@ -12,6 +12,7 @@ class SettingsTableViewController: UITableViewController {
     
     let defaults = NSUserDefaults.standardUserDefaults()
     
+    @IBOutlet weak var logoutAction: SettingsTableViewCell!
     @IBOutlet weak var unitLabel: UILabel!
     @IBOutlet weak var unitSwitch: UISwitch!
     @IBAction func unitSwitched(sender: UISwitch) {
@@ -40,6 +41,12 @@ class SettingsTableViewController: UITableViewController {
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if logoutAction === sender {
+            defaults.setValue("", forKey: "USERNAME")
+            defaults.setInteger(0, forKey: "ISLOGGEDIN")
+        }
+    }
 
 
 }

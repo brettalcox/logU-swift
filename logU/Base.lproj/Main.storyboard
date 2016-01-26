@@ -632,6 +632,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="4pE-nR-2MG"/>
                     <connections>
+                        <outlet property="logoutAction" destination="Gmz-4A-aOz" id="xmc-xe-3gM"/>
                         <outlet property="unitLabel" destination="IId-dM-IcT" id="e3y-ZS-x6g"/>
                         <outlet property="unitSwitch" destination="05S-XJ-6Fn" id="8DS-Sn-HFJ"/>
                     </connections>
