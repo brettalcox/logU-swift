@@ -38,11 +38,11 @@ class Settings {
             
     }
     
-    func getUnit(completion: (Array<Dictionary<String, String>>) -> ()) {
+    func getUnit(username: String, completion: (Array<Dictionary<String, String>>) -> ()) {
         let urlName:NSURL = NSURL(string: url_to_get)!
         let session = NSURLSession.sharedSession()
         let data = NSData(contentsOfURL: NSURL(string: url_to_get)!)
-        let user = "username=\(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)"
+        let user = "username=\(username)"
         let queryParam = user.dataUsingEncoding(NSUTF8StringEncoding)
         let request:NSMutableURLRequest = NSMutableURLRequest(URL: urlName)
         request.HTTPMethod = "POST"
