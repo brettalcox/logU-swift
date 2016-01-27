@@ -13,6 +13,7 @@
 		B505D0251C55B5AE00C09549 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B505D0241C55B5AE00C09549 /* SettingsTableViewController.swift */; };
 		B505D0291C55C27500C09549 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B505D0281C55C27500C09549 /* SettingsTableViewCell.swift */; };
 		B505D02B1C55CEDB00C09549 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B505D02A1C55CEDB00C09549 /* Settings.swift */; };
+		B56863DC1C58374B0065D641 /* DashData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56863DB1C58374B0065D641 /* DashData.swift */; };
 		B5C6F1041C4F25F70016B70E /* logUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1031C4F25F70016B70E /* logUTests.swift */; };
 		B5C6F10F1C4F25F70016B70E /* logUUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F10E1C4F25F70016B70E /* logUUITests.swift */; };
 		B5C6F12A1C4F26480016B70E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F11C1C4F26480016B70E /* AppDelegate.swift */; };
@@ -107,6 +108,7 @@
 		B505D0241C55B5AE00C09549 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		B505D0281C55C27500C09549 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		B505D02A1C55CEDB00C09549 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		B56863DB1C58374B0065D641 /* DashData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashData.swift; sourceTree = "<group>"; };
 		B5C6F0EB1C4F25F70016B70E /* logU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = logU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C6F0FF1C4F25F70016B70E /* logUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = logUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C6F1031C4F25F70016B70E /* logUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logUTests.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		B5C6F0ED1C4F25F70016B70E /* logU */ = {
 			isa = PBXGroup;
 			children = (
+				B56863DB1C58374B0065D641 /* DashData.swift */,
 				B505D02A1C55CEDB00C09549 /* Settings.swift */,
 				B505D0241C55B5AE00C09549 /* SettingsTableViewController.swift */,
 				B505D0281C55C27500C09549 /* SettingsTableViewCell.swift */,
@@ -432,6 +435,7 @@
 				B5C6F1681C557ACD0016B70E /* PoundageTableViewCell.swift in Sources */,
 				B505D0251C55B5AE00C09549 /* SettingsTableViewController.swift in Sources */,
 				B5C6F1371C4F26480016B70E /* ViewController.swift in Sources */,
+				B56863DC1C58374B0065D641 /* DashData.swift in Sources */,
 				8BB596E01C513BE8003B98BA /* LiftDataModel.xcdatamodeld in Sources */,
 				B5C6F1331C4F26480016B70E /* LiftTableViewCell.swift in Sources */,
 				B505D02B1C55CEDB00C09549 /* Settings.swift in Sources */,

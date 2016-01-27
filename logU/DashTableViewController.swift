@@ -17,6 +17,8 @@ var Sets: [String]! = []
 var Reps: [String]! = []
 var Ids: [String]! = []
 
+var unfilteredTableData = [DashData]()
+
 class DashTableViewController: UITableViewController, UISearchResultsUpdating {
     
     let searchController = UISearchController(searchResultsController: nil)
@@ -26,7 +28,7 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
     var indicator: UIActivityIndicatorView!
     
     var resultSearchController = UISearchController()
-    var filteredTableData = [String]()
+    var filteredTableData = [DashData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +74,14 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
         
         if !Reachability.isConnectedToNetwork() {
             var Lifting = OfflineRequest().OfflineFetch()
+            
+            var tableInsert = [DashData]()
             for i in 0..<Lifting.count {
+                
+                tableInsert.append(DashData(date: lifting[i].valueForKey("date")! as! String, lift: lifting[i].valueForKey("lift")! as! String, set: lifting[i].valueForKey("sets")! as! String, rep: lifting[i].valueForKey("reps")! as! String, weight: lifting[i].valueForKey("weight")! as! String, id: "0"))
+                unfilteredTableData.append(tableInsert[i])
+
+                /*
                 Dates.append(lifting[i].valueForKey("date")! as! String)
                 Lifts.append(lifting[i].valueForKey("lift")! as! String)
                 Sets.append(lifting[i].valueForKey("sets")! as! String)
@@ -80,9 +89,12 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
                 Weights.append(lifting[i].valueForKey("weight")! as! String)
                 
                     Ids.append("0")
-                self.tableView.reloadData()
-                indicator.stopAnimating()
+*/
+                //self.tableView.reloadData()
             }
+            indicator.stopAnimating()
+            
+            self.tableView.reloadData()
         }
         
         navigationItem.leftBarButtonItem = editButtonItem()
@@ -96,21 +108,11 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
     
     func loadAfter(object: Array<Dictionary<String, String>>) {
         dataAfter = object
-        
-        Dates = []
-        Lifts = []
-        Weights = []
-        Sets = []
-        Reps = []
-        Ids = []
-        
+
+        unfilteredTableData = []
         for i in 0..<dataAfter.count {
-            Dates.append(dataAfter[i]["date"]!)
-            Lifts.append(dataAfter[i]["lift"]!)
-            Weights.append(dataAfter[i]["weight"]!)
-            Sets.append(dataAfter[i]["sets"]!)
-            Reps.append(dataAfter[i]["reps"]!)
-            Ids.append(dataAfter[i]["id"]!)
+            
+            unfilteredTableData.append(DashData(date: dataAfter[i]["date"]!, lift: dataAfter[i]["lift"]!, set: dataAfter[i]["sets"]!, rep: dataAfter[i]["reps"]!, weight: dataAfter[i]["weight"]!, id: dataAfter[i]["id"]!))
         }
         self.tableView.reloadData()
         indicator.stopAnimating()
@@ -120,6 +122,8 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
         self.definesPresentationContext = true
         self.navigationController?.extendedLayoutIncludesOpaqueBars = true
 
+        self.tableView.reloadData()
+        
         if Reachability.isConnectedToNetwork() {
         dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
             
@@ -135,7 +139,11 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
         }
         }
 
+        print(unfilteredTableData[0].weight, "before reload")
         self.tableView.reloadData()
+        print(unfilteredTableData[0].weight, "after reload")
+
+        
     }
     
     
@@ -157,49 +165,46 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
             return self.filteredTableData.count
         }
         else {
-        return Dates.count
+        return unfilteredTableData.count
         }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "Cell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! LiftTableViewCell
-        
-        let lift = Lifts[indexPath.row]
-        let date = Dates[indexPath.row]
-        let weight = Weights[indexPath.row]
-        let set = Sets[indexPath.row]
-        let rep = Reps[indexPath.row]
-        let id = Ids[indexPath.row]
-        
+
         if (self.resultSearchController.active) {
-            cell.dateLabel.text = filteredTableData[indexPath.row]
-            cell.liftLabel.text = date
-            cell.poundsLabel.text = weight
-            cell.setsRepsLabel.text = set + "x" + rep
-            cell.idLabel.text = id
+
+            cell.dateLabel.text = filteredTableData[indexPath.row].date
+            cell.liftLabel.text = filteredTableData[indexPath.row].lift
+            cell.poundsLabel.text = filteredTableData[indexPath.row].weight
+            cell.setsRepsLabel.text = filteredTableData[indexPath.row].set + "x" + filteredTableData[indexPath.row].rep
+            cell.idLabel.text = filteredTableData[indexPath.row].id
+
         }
         else {
-        cell.liftLabel.text = lift
-        cell.dateLabel.text = date
-        cell.poundsLabel.text = weight
-        cell.setsRepsLabel.text = set + "x" + rep
-        cell.idLabel.text = id
-        // Configure the cell...
+            
+            cell.dateLabel.text = unfilteredTableData[indexPath.row].date
+            cell.liftLabel.text = unfilteredTableData[indexPath.row].lift
+            cell.poundsLabel.text = unfilteredTableData[indexPath.row].weight
+            cell.setsRepsLabel.text = unfilteredTableData[indexPath.row].set + "x" + unfilteredTableData[indexPath.row].rep
+            cell.idLabel.text = unfilteredTableData[indexPath.row].id
         }
         
         return cell
     }
     
-    func updateSearchResultsForSearchController(searchController: UISearchController)
-    {
-        filteredTableData.removeAll(keepCapacity: false)
-        
-        let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text!)
-        let array = (Dates as NSArray).filteredArrayUsingPredicate(searchPredicate)
-        filteredTableData = array as! [String]
+    func filterContentForSearchText(searchText: String, scope: String = "All") {
+        filteredTableData = unfilteredTableData.filter { logs in
+            return logs.date.lowercaseString.containsString(searchText.lowercaseString)
+        }
         
         self.tableView.reloadData()
+    }
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController)
+    {
+        filterContentForSearchText(searchController.searchBar.text!)
     }
     
     @IBAction func unwindToDashboard(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
@@ -215,7 +220,7 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            let idToDelete = Ids[indexPath.row]
+            let idToDelete = unfilteredTableData[indexPath.row].id
             if Reachability.isConnectedToNetwork() {
                 dispatch_async(dispatch_get_global_queue(Int   (QOS_CLASS_USER_INITIATED.rawValue), 0)) {
                         self.delete_request(idToDelete)
@@ -223,15 +228,11 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
             }
 
             if !Reachability.isConnectedToNetwork() {
-                OfflineRequest.coreDataDelete(idToDelete, date: Dates[indexPath.row], lift: Lifts[indexPath.row], sets: Sets[indexPath.row], reps: Reps[indexPath.row], weight: Weights[indexPath.row])
+                OfflineRequest.coreDataDelete(idToDelete, date: unfilteredTableData[indexPath.row].date, lift: unfilteredTableData[indexPath.row].lift, sets: unfilteredTableData[indexPath.row].set, reps: unfilteredTableData[indexPath.row].rep, weight: unfilteredTableData[indexPath.row].weight)
             }
             
-            Lifts.removeAtIndex(indexPath.row)
-            Dates.removeAtIndex(indexPath.row)
-            Weights.removeAtIndex(indexPath.row)
-            Sets.removeAtIndex(indexPath.row)
-            Reps.removeAtIndex(indexPath.row)
-            Ids.removeAtIndex(indexPath.row)
+            unfilteredTableData.removeAtIndex(indexPath.row)
+
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             
         } else if editingStyle == .Insert {
@@ -269,14 +270,9 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
     
     func OfflineTableInsert(date: String, lift: String, set: String, rep: String, weight: String) {
         
-        Dates.insert(date, atIndex: 0)
-        Lifts.insert(lift, atIndex: 0)
-        Sets.insert(set, atIndex: 0)
-        Reps.insert(rep, atIndex: 0)
-        Weights.insert(weight, atIndex: 0)
+        let tableInsert = DashData(date: date, lift: lift, set: set, rep: rep, weight: weight, id: "0")
         
-        Ids.insert("0", atIndex: 0)
-
+        unfilteredTableData.insert(tableInsert, atIndex: 0)
     }
     
     
