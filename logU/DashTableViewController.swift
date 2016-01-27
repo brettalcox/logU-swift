@@ -139,11 +139,7 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
         }
         }
 
-        print(unfilteredTableData[0].weight, "before reload")
         self.tableView.reloadData()
-        print(unfilteredTableData[0].weight, "after reload")
-
-        
     }
     
     
