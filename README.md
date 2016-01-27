@@ -8,9 +8,20 @@ This is the current iOS development of https://loguapp.com
 ### The Main User Dashboard
 
 
-![alt tag](http://i.imgur.com/jemY1A1.png)
+![alt tag](http://i.imgur.com/Y3de413.png?1)
 
 
+### Search for a Lift
+
+
+![alt tag](http://i.imgur.com/557UHNn.png?1)
+
+### Log a Lift
+
+
+
+![alt tag](http://i.imgur.com/y7xqeAV.png&1)
+![alt tag](http://i.imgur.com/d0Inh5w.png&1)
 
 ### Swipe Between User Graphs
 
@@ -25,16 +36,6 @@ This is the current iOS development of https://loguapp.com
 
 
 ![alt tag](http://i.imgur.com/GebN84K.png&1)
-
-
-
-### Log a Lift
-
-
-
-![alt tag](http://i.imgur.com/y7xqeAV.png&1)
-
-![alt tag](http://i.imgur.com/d0Inh5w.png&1)
 
 
 
