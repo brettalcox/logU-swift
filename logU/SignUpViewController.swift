@@ -36,6 +36,8 @@ class SignUpViewController: UIViewController {
         var confirm: NSString = confirmField.text!
         var email:NSString = "0"
         
+        UIApplication.sharedApplication().sendAction("resignFirstResponder", to:nil, from:nil, forEvent:nil)
+        
         if ( username.isEqualToString("") || password.isEqualToString("") ) {
             
             let actionSheetController: UIAlertController = UIAlertController(title: "Creating Account Failed", message: "Please enter Username and Password", preferredStyle: .Alert)
@@ -102,11 +104,21 @@ class SignUpViewController: UIViewController {
                     dataResult = dataString
                     
                     if dataResult == " 1" {
+                        dispatch_async(dispatch_get_main_queue(), {
+                            let actionSheetController: UIAlertController = UIAlertController(title: "Creating Account Successful", message: "Login now!", preferredStyle: .Alert)
+                            let cancelAction: UIAlertAction = UIAlertAction(title: "Dismiss", style: .Cancel) { action -> Void in
+                                //Do some stuff
+                                self.performSegueWithIdentifier("exitToLogin", sender: self)
+                            }
+                            actionSheetController.addAction(cancelAction)
+                            self.presentViewController(actionSheetController, animated: true, completion: nil)
+                        })
+
                         
                     }
                     else {
                         dispatch_async(dispatch_get_main_queue(), {
-                            let actionSheetController: UIAlertController = UIAlertController(title: "Create Account Failed", message: "Username is taken", preferredStyle: .Alert)
+                            let actionSheetController: UIAlertController = UIAlertController(title: "Creating Account Failed", message: "Username is taken", preferredStyle: .Alert)
                             let cancelAction: UIAlertAction = UIAlertAction(title: "Dismiss", style: .Cancel) { action -> Void in
                             //Do some stuff
                             }

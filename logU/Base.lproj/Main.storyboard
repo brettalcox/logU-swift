@@ -1054,7 +1054,6 @@
                                 <state key="normal" title="Create Account"/>
                                 <connections>
                                     <action selector="signUpTapped:" destination="6vV-7I-89e" eventType="touchUpInside" id="7le-P6-GeZ"/>
-                                    <segue destination="FAH-Ty-xoc" kind="unwind" unwindAction="unwindToLogin:towardsViewController:" id="E8h-IP-0wN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1072,7 +1071,7 @@
                     <navigationItem key="navigationItem" title="Create an Account" id="xoE-K7-XaQ">
                         <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="KBm-gI-Q0z">
                             <connections>
-                                <segue destination="FAH-Ty-xoc" kind="unwind" unwindAction="unwindToLogin:towardsViewController:" id="fb4-Oy-111"/>
+                                <segue destination="FAH-Ty-xoc" kind="unwind" identifier="exitToLogin" unwindAction="unwindToLogin:towardsViewController:" id="POn-op-MwZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
