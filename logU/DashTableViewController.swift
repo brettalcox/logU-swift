@@ -84,16 +84,6 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
                 tableInsert.append(DashData(date: lifting[i].valueForKey("date")! as! String, lift: lifting[i].valueForKey("lift")! as! String, set: lifting[i].valueForKey("sets")! as! String, rep: lifting[i].valueForKey("reps")! as! String, weight: lifting[i].valueForKey("weight")! as! String, id: "0"))
                 unfilteredTableData.append(tableInsert[i])
 
-                /*
-                Dates.append(lifting[i].valueForKey("date")! as! String)
-                Lifts.append(lifting[i].valueForKey("lift")! as! String)
-                Sets.append(lifting[i].valueForKey("sets")! as! String)
-                Reps.append(lifting[i].valueForKey("reps")! as! String)
-                Weights.append(lifting[i].valueForKey("weight")! as! String)
-                
-                    Ids.append("0")
-*/
-                //self.tableView.reloadData()
             }
             indicator.stopAnimating()
             
