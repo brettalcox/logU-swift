@@ -51,7 +51,10 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
         self.tableView.reloadData()
         
         indicator = UIActivityIndicatorView()
-        indicator.center = view.center
+        var frame = indicator.frame
+        frame.origin.x = view.frame.size.width / 2
+        frame.origin.y = (view.frame.size.height / 2) - 40
+        indicator.frame = frame
         indicator.activityIndicatorViewStyle = .Gray
         indicator.startAnimating()
         view.addSubview(indicator)

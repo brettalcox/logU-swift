@@ -16,7 +16,19 @@ class PoundageTableViewController: UITableViewController {
     var Weeks: [String]! = []
     var Poundage: [String]! = []
     
+    var indicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
+        
+        indicator = UIActivityIndicatorView()
+        var frame = indicator.frame
+        frame.origin.x = view.frame.size.width / 2
+        frame.origin.y = (view.frame.size.height / 2) - 40
+        indicator.frame = frame
+        indicator.activityIndicatorViewStyle = .Gray
+        indicator.startAnimating()
+        view.addSubview(indicator)
+        
         if Reachability.isConnectedToNetwork() {
             dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
                 
@@ -58,6 +70,7 @@ class PoundageTableViewController: UITableViewController {
             Poundage.append(dataAfter[i]["pounds"]!)
         }
         self.tableView.reloadData()
+        indicator.stopAnimating()
     }
     
     

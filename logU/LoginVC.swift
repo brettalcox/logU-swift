@@ -15,6 +15,7 @@ var dataResult = ""
 class LoginVC: UIViewController {
     
     var lifting = [NSManagedObject]()
+    var indicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         
@@ -31,6 +32,12 @@ class LoginVC: UIViewController {
     @IBAction func signinTapped(sender : UIButton) {
         var username:NSString = txtUsername.text!
         let password:NSString = txtPassword.text!
+        
+        indicator = UIActivityIndicatorView()
+        indicator.center = view.center
+        indicator.activityIndicatorViewStyle = .Gray
+        indicator.startAnimating()
+        view.addSubview(indicator)
         
         if ( username.isEqualToString("") || password.isEqualToString("") ) {
             
@@ -120,6 +127,7 @@ class LoginVC: UIViewController {
             })
             
         }
+        indicator.stopAnimating()
     }
 
 }
