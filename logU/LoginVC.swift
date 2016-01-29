@@ -34,6 +34,9 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func signinTapped(sender : UIButton) {
+        
+        UIApplication.sharedApplication().sendAction("resignFirstResponder", to:nil, from:nil, forEvent:nil)
+        
         var username:NSString = txtUsername.text!
         let password:NSString = txtPassword.text!
         
