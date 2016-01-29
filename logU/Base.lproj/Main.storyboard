@@ -452,7 +452,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siD-Gs-LzB">
-                                            <rect key="frame" x="477" y="0.0" width="94" height="45"/>
+                                            <rect key="frame" x="487" y="0.0" width="94" height="45"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="94" id="RHI-gv-dVf"/>
                                                 <constraint firstAttribute="width" constant="94" id="adS-gw-6Q4"/>
@@ -464,7 +464,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="7AN-qX-fwD" firstAttribute="trailing" secondItem="Xpn-H0-aGX" secondAttribute="trailing" id="14g-oS-vCj"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="siD-Gs-LzB" secondAttribute="trailing" constant="21" id="3GG-F8-Ic3"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="siD-Gs-LzB" secondAttribute="trailing" constant="11" id="3GG-F8-Ic3"/>
                                         <constraint firstItem="siD-Gs-LzB" firstAttribute="top" secondItem="ODK-1i-JOY" secondAttribute="topMargin" constant="-8" id="5CU-YH-ikF"/>
                                         <constraint firstItem="Xpn-H0-aGX" firstAttribute="top" secondItem="7AN-qX-fwD" secondAttribute="bottom" constant="17" id="Kse-TX-qKk"/>
                                         <constraint firstItem="siD-Gs-LzB" firstAttribute="centerY" secondItem="ODK-1i-JOY" secondAttribute="centerY" constant="-20.5" id="R6v-T9-hdT"/>
@@ -472,9 +472,9 @@
                                         <constraint firstItem="kUp-z6-qfW" firstAttribute="bottom" secondItem="ODK-1i-JOY" secondAttribute="bottomMargin" constant="-11" id="Z3o-12-1fD"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Xpn-H0-aGX" secondAttribute="bottom" constant="8" id="gy7-Jb-t1f"/>
                                         <constraint firstItem="7AN-qX-fwD" firstAttribute="top" secondItem="ODK-1i-JOY" secondAttribute="topMargin" id="kun-ml-7Av"/>
-                                        <constraint firstItem="siD-Gs-LzB" firstAttribute="trailing" secondItem="ODK-1i-JOY" secondAttribute="trailingMargin" constant="-21" id="lan-Bz-Vms"/>
+                                        <constraint firstItem="siD-Gs-LzB" firstAttribute="trailing" secondItem="ODK-1i-JOY" secondAttribute="trailingMargin" constant="-11" id="lan-Bz-Vms"/>
                                         <constraint firstItem="Xpn-H0-aGX" firstAttribute="leading" secondItem="7AN-qX-fwD" secondAttribute="leading" id="p6b-XG-Z4H"/>
-                                        <constraint firstItem="kUp-z6-qfW" firstAttribute="centerX" secondItem="siD-Gs-LzB" secondAttribute="centerX" constant="10" id="uMv-HA-asd"/>
+                                        <constraint firstItem="kUp-z6-qfW" firstAttribute="centerX" secondItem="siD-Gs-LzB" secondAttribute="centerX" id="uMv-HA-asd"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
