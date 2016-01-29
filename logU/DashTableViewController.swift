@@ -117,19 +117,22 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
 
         self.tableView.reloadData()
         
-        if Reachability.isConnectedToNetwork() {
-        dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+        if shouldUpdateDash {
+            if Reachability.isConnectedToNetwork() {
+                dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
             
-            OfflineRequest().OfflineFetchSubmit()
-            OfflineRequest().OfflineFetchDelete()
+                    OfflineRequest().OfflineFetchSubmit()
+                    OfflineRequest().OfflineFetchDelete()
             
-            JsonData().dataOfLift({ jsonString in
-                dataAfter = jsonString
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.loadAfter(dataAfter)
+                    JsonData().dataOfLift({ jsonString in
+                        dataAfter = jsonString
+                        dispatch_async(dispatch_get_main_queue()) {
+                            self.loadAfter(dataAfter)
+                        }
+                    })
                 }
-            })
-        }
+            }
+            shouldUpdateDash = false
         }
 
         self.tableView.reloadData()

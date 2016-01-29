@@ -8,6 +8,16 @@
 
 import UIKit
 
+
+var shouldUpdateDash: Bool = false
+var shouldUpdatePoundage: Bool = false
+var shouldUpdateSquat: Bool = false
+var shouldUpdateBench: Bool = false
+var shouldUpdateDeadlift: Bool = false
+var shouldUpdateMax: Bool = false
+var shouldUpdateWeek: Bool = false
+var shouldUpdateSettings: Bool = false
+
 class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate {
 
     let url_to_request:String = "https://loguapp.com/swift.php"
@@ -113,6 +123,15 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
 
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        shouldUpdateDash = true
+        shouldUpdatePoundage = true
+        shouldUpdateSquat = true
+        shouldUpdateBench = true
+        shouldUpdateDeadlift = true
+        shouldUpdateMax = true
+        shouldUpdateWeek = true
+        
         if logButton === sender {
             if (setsTextField.text == "") {
                 setsTextField.text = "0"

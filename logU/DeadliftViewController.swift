@@ -44,18 +44,21 @@ class DeadliftViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        if Reachability.isConnectedToNetwork() {
-            dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
-                GraphData().dataOfLifting(self.url_to_post, completion: { jsonString in
-                    dataDeadlift = jsonString
-                    dispatch_async(dispatch_get_main_queue(), {
-                        self.loadAfter(dataDeadlift)
-                    })
+        
+        if shouldUpdateDeadlift {
+            if Reachability.isConnectedToNetwork() {
+                dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+                    GraphData().dataOfLifting(self.url_to_post, completion: { jsonString in
+                        dataDeadlift = jsonString
+                        dispatch_async(dispatch_get_main_queue(), {
+                            self.loadAfter(dataDeadlift)
+                        })
                 
-                })
+                    })
+                }
             }
+            shouldUpdateDeadlift = false
         }
-
     }
     
     func loadAfter(object: Array<Dictionary<String, String>>) {

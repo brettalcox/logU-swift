@@ -44,16 +44,20 @@ class GraphViewController: UIViewController, UIActionSheetDelegate {
     
     override func viewDidAppear(animated: Bool) {
         
-        if Reachability.isConnectedToNetwork() {
-            dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
-                GraphData().dataOfLifting(self.url_to_request, completion: { jsonString in
-                    dataWeek = jsonString
-                    dispatch_async(dispatch_get_main_queue(), {
-                        self.loadAfter(dataWeek)
-                    })
+        if shouldUpdatePoundage {
             
-                })
+            if Reachability.isConnectedToNetwork() {
+                dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+                    GraphData().dataOfLifting(self.url_to_request, completion: { jsonString in
+                        dataWeek = jsonString
+                        dispatch_async(dispatch_get_main_queue(), {
+                        self.loadAfter(dataWeek)
+                        })
+            
+                    })
+                }
             }
+            shouldUpdatePoundage = false
         }
     }
     
