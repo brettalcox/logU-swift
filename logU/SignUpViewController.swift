@@ -62,22 +62,77 @@ class SignUpViewController: UIViewController {
 
         else {
             
-            let post: NSString = "username=\(username)&password=\(password)&email=\(email)&unit=\(userUnit)"
-            NSLog("PostData: %@", post);
+            if Reachability.isConnectedToNetwork() {
             
-            let url:NSURL = NSURL(string: "https://loguapp.com/swift_register.php")!
+                let post: NSString = "username=\(username)&password=\(password)&email=\(email)&unit=\(userUnit)"
+                NSLog("PostData: %@", post);
             
-            let postData:NSData = post.dataUsingEncoding(NSASCIIStringEncoding)!
+                let url:NSURL = NSURL(string: "https://loguapp.com/swift_register.php")!
             
-            let request:NSMutableURLRequest = NSMutableURLRequest(URL: url)
-            request.HTTPMethod = "POST"
-            request.timeoutInterval = 10
+                let postData:NSData = post.dataUsingEncoding(NSASCIIStringEncoding)!
             
-            var response: NSURLResponse?
+                let request:NSMutableURLRequest = NSMutableURLRequest(URL: url)
+                request.HTTPMethod = "POST"
+                request.timeoutInterval = 10
             
-            do {
-                let urlData: NSData? = try NSURLConnection.sendSynchronousRequest(request, returningResponse:&response)
-            } catch let error as NSError {
+                var response: NSURLResponse?
+            
+                do {
+                    let urlData: NSData? = try NSURLConnection.sendSynchronousRequest(request, returningResponse:&response)
+                } catch let error as NSError {
+                    let actionSheetController: UIAlertController = UIAlertController(title: "Connection Time Out", message: "Do you have a network connection?", preferredStyle: .Alert)
+                    let cancelAction: UIAlertAction = UIAlertAction(title: "Dismiss", style: .Cancel) { action -> Void in
+                        //Do some stuff
+                    }
+                    actionSheetController.addAction(cancelAction)
+                    self.presentViewController(actionSheetController, animated: true, completion: nil)
+                }
+            
+                let session = NSURLSession.sharedSession()
+                let task = session.uploadTaskWithRequest(request, fromData: postData, completionHandler:
+                    {(data,response,error) in
+                    
+                        guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
+                            if error?.code ==  NSURLErrorTimedOut {
+                                print("Time Out")
+                                //Call your method here.
+                            }
+                            print("error")
+                            return
+                        }
+                    
+                        let dataString = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
+                    
+                        dataResult = dataString
+                    
+                        if dataResult == " 1" {
+                            dispatch_async(dispatch_get_main_queue(), {
+                                let actionSheetController: UIAlertController = UIAlertController(title: "Creating Account Successful", message: "Login now!", preferredStyle: .Alert)
+                                let cancelAction: UIAlertAction = UIAlertAction(title: "Dismiss", style: .Cancel) { action -> Void in
+                                    //Do some stuff
+                                    self.performSegueWithIdentifier("exitToLogin", sender: self)
+                                }
+                                actionSheetController.addAction(cancelAction)
+                                self.presentViewController(actionSheetController, animated: true, completion: nil)
+                            })
+
+                        
+                        }
+                        else {
+                            dispatch_async(dispatch_get_main_queue(), {
+                                let actionSheetController: UIAlertController = UIAlertController(title: "Creating Account Failed", message: "Username is taken", preferredStyle: .Alert)
+                                let cancelAction: UIAlertAction = UIAlertAction(title: "Dismiss", style: .Cancel) { action -> Void in
+                                    //Do some stuff
+                                }
+                                actionSheetController.addAction(cancelAction)
+                                self.presentViewController(actionSheetController, animated: true, completion: nil)
+                            })
+                        }
+                    }
+                );
+                task.resume()
+            }
+            else if !Reachability.isConnectedToNetwork() {
                 let actionSheetController: UIAlertController = UIAlertController(title: "Connection Time Out", message: "Do you have a network connection?", preferredStyle: .Alert)
                 let cancelAction: UIAlertAction = UIAlertAction(title: "Dismiss", style: .Cancel) { action -> Void in
                     //Do some stuff
@@ -85,50 +140,6 @@ class SignUpViewController: UIViewController {
                 actionSheetController.addAction(cancelAction)
                 self.presentViewController(actionSheetController, animated: true, completion: nil)
             }
-            
-            let session = NSURLSession.sharedSession()
-            let task = session.uploadTaskWithRequest(request, fromData: postData, completionHandler:
-                {(data,response,error) in
-                    
-                    guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
-                        if error?.code ==  NSURLErrorTimedOut {
-                            print("Time Out")
-                            //Call your method here.
-                        }
-                        print("error")
-                        return
-                    }
-                    
-                    let dataString = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
-                    
-                    dataResult = dataString
-                    
-                    if dataResult == " 1" {
-                        dispatch_async(dispatch_get_main_queue(), {
-                            let actionSheetController: UIAlertController = UIAlertController(title: "Creating Account Successful", message: "Login now!", preferredStyle: .Alert)
-                            let cancelAction: UIAlertAction = UIAlertAction(title: "Dismiss", style: .Cancel) { action -> Void in
-                                //Do some stuff
-                                self.performSegueWithIdentifier("exitToLogin", sender: self)
-                            }
-                            actionSheetController.addAction(cancelAction)
-                            self.presentViewController(actionSheetController, animated: true, completion: nil)
-                        })
-
-                        
-                    }
-                    else {
-                        dispatch_async(dispatch_get_main_queue(), {
-                            let actionSheetController: UIAlertController = UIAlertController(title: "Creating Account Failed", message: "Username is taken", preferredStyle: .Alert)
-                            let cancelAction: UIAlertAction = UIAlertAction(title: "Dismiss", style: .Cancel) { action -> Void in
-                            //Do some stuff
-                            }
-                            actionSheetController.addAction(cancelAction)
-                            self.presentViewController(actionSheetController, animated: true, completion: nil)
-                        })
-                    }
-            }
-            );
-            task.resume()
         }
     }
     
