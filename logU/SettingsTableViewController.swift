@@ -25,6 +25,14 @@ class SettingsTableViewController: UITableViewController {
             Settings().updateUnit("0")
             defaults.setInteger(0, forKey: "Unit")
         }
+        
+        shouldUpdateDash = true
+        shouldUpdatePoundage = true
+        shouldUpdateSquat = true
+        shouldUpdateBench = true
+        shouldUpdateDeadlift = true
+        shouldUpdateMax = true
+        shouldUpdateWeek = true
     }
     
     override func viewDidLoad() {
