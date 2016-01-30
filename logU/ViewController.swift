@@ -14,8 +14,8 @@ var shouldUpdatePoundage: Bool = false
 var shouldUpdateSquat: Bool = false
 var shouldUpdateBench: Bool = false
 var shouldUpdateDeadlift: Bool = false
-var shouldUpdateMax: Bool = false
-var shouldUpdateWeek: Bool = false
+var shouldUpdateMax: Bool = true
+var shouldUpdateWeek: Bool = true
 var shouldUpdateSettings: Bool = false
 
 class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate {

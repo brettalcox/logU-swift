@@ -8,45 +8,58 @@
 
 import UIKit
 
+var LiftType: [String]! = []
+var Maxes: [String]! = []
+
 class MaxesTableViewController: UITableViewController {
     
     let url_to_request:String = "https://loguapp.com/swift8.php"
-
-    
-    var Lifts: [String]! = []
-    var Maxes: [String]! = []
     
     var indicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         
-        indicator = UIActivityIndicatorView()
-        var frame = indicator.frame
-        frame.origin.x = view.frame.size.width / 2
-        frame.origin.y = (view.frame.size.height / 2) - 40
-        indicator.frame = frame
-        indicator.activityIndicatorViewStyle = .Gray
-        indicator.startAnimating()
-        view.addSubview(indicator)
-        
-        if Reachability.isConnectedToNetwork() {
-            dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+        if shouldUpdateMax {
+            if Reachability.isConnectedToNetwork() {
+            
+                indicator = UIActivityIndicatorView()
+                var frame = indicator.frame
+                frame.origin.x = view.frame.size.width / 2
+                frame.origin.y = (view.frame.size.height / 2) - 40
+                indicator.frame = frame
+                indicator.activityIndicatorViewStyle = .Gray
+                indicator.startAnimating()
+                view.addSubview(indicator)
+            
+                dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
                 
-                GraphData().dataOfLifting(self.url_to_request, completion: { jsonString in
-                    dataAfter = jsonString
-                    dispatch_async(dispatch_get_main_queue()) {
-                        self.loadAfter(dataAfter)
-                    }
-                })
+                    GraphData().dataOfLifting(self.url_to_request, completion: { jsonString in
+                        dataAfter = jsonString
+                        dispatch_async(dispatch_get_main_queue()) {
+                            self.loadAfter(dataAfter)
+                        }
+                    })
+                }
             }
+            shouldUpdateMax = false
         }
-
+        self.tableView.reloadData()
     }
     
     override func viewDidAppear(animated: Bool) {
         
         if shouldUpdateMax {
             if Reachability.isConnectedToNetwork() {
+                
+                indicator = UIActivityIndicatorView()
+                var frame = indicator.frame
+                frame.origin.x = view.frame.size.width / 2
+                frame.origin.y = (view.frame.size.height / 2) - 40
+                indicator.frame = frame
+                indicator.activityIndicatorViewStyle = .Gray
+                indicator.startAnimating()
+                view.addSubview(indicator)
+                
                 dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
             
                     GraphData().dataOfLifting(self.url_to_request, completion: { jsonString in
@@ -59,16 +72,17 @@ class MaxesTableViewController: UITableViewController {
             }
             shouldUpdateMax = false
         }
+        self.tableView.reloadData()
     }
     
     func loadAfter(object: Array<Dictionary<String, String>>) {
         dataAfter = object
         
-        Lifts = []
+        LiftType = []
         Maxes = []
         
         for i in 0..<dataAfter.count {
-            Lifts.append(dataAfter[i]["lift"]!)
+            LiftType.append(dataAfter[i]["lift"]!)
             Maxes.append(dataAfter[i]["max"]!)
         }
         self.tableView.reloadData()
@@ -83,7 +97,7 @@ class MaxesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section:
         Int) -> Int
     {
-        return Lifts.count
+        return LiftType.count
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
@@ -93,7 +107,7 @@ class MaxesTableViewController: UITableViewController {
             forIndexPath: indexPath) as! MaxesTableViewCell
         // Sets the text of the Label in the Table View Cell
         
-        let lift = Lifts[indexPath.row]
+        let lift = LiftType[indexPath.row]
         let max = Maxes[indexPath.row]
         
         aCell.liftLabel.text = lift

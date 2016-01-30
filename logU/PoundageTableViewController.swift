@@ -8,46 +8,59 @@
 
 import UIKit
 
+var Weeks: [String]! = []
+var Poundage: [String]! = []
+
 class PoundageTableViewController: UITableViewController {
     
     let url_to_request:String = "https://loguapp.com/swift9.php"
-    
-    
-    var Weeks: [String]! = []
-    var Poundage: [String]! = []
     
     var indicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         
-        indicator = UIActivityIndicatorView()
-        var frame = indicator.frame
-        frame.origin.x = view.frame.size.width / 2
-        frame.origin.y = (view.frame.size.height / 2) - 40
-        indicator.frame = frame
-        indicator.activityIndicatorViewStyle = .Gray
-        indicator.startAnimating()
-        view.addSubview(indicator)
-        
-        if Reachability.isConnectedToNetwork() {
-            dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+        if shouldUpdateWeek {
+            if Reachability.isConnectedToNetwork() {
                 
-                GraphData().dataOfLifting(self.url_to_request, completion: { jsonString in
-                    dataAfter = jsonString
-                    print(jsonString)
-                    dispatch_async(dispatch_get_main_queue()) {
-                        self.loadAfter(dataAfter)
-                    }
-                })
+                indicator = UIActivityIndicatorView()
+                var frame = indicator.frame
+                frame.origin.x = view.frame.size.width / 2
+                frame.origin.y = (view.frame.size.height / 2) - 40
+                indicator.frame = frame
+                indicator.activityIndicatorViewStyle = .Gray
+                indicator.startAnimating()
+                view.addSubview(indicator)
+                
+                dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+                
+                    GraphData().dataOfLifting(self.url_to_request, completion: { jsonString in
+                        dataAfter = jsonString
+                        print(jsonString)
+                        dispatch_async(dispatch_get_main_queue()) {
+                            self.loadAfter(dataAfter)
+                        }
+                    })
+                }
             }
+            shouldUpdateWeek = false
         }
-        
+        self.tableView.reloadData()
     }
     
     override func viewDidAppear(animated: Bool) {
         
         if shouldUpdateWeek {
             if Reachability.isConnectedToNetwork() {
+                
+                indicator = UIActivityIndicatorView()
+                var frame = indicator.frame
+                frame.origin.x = view.frame.size.width / 2
+                frame.origin.y = (view.frame.size.height / 2) - 40
+                indicator.frame = frame
+                indicator.activityIndicatorViewStyle = .Gray
+                indicator.startAnimating()
+                view.addSubview(indicator)
+                
                 dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
                 
                     GraphData().dataOfLifting(self.url_to_request, completion: { jsonString in
@@ -60,6 +73,7 @@ class PoundageTableViewController: UITableViewController {
             }
             shouldUpdateWeek = false
         }
+        self.tableView.reloadData()
     }
     
     func loadAfter(object: Array<Dictionary<String, String>>) {

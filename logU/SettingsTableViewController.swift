@@ -53,6 +53,15 @@ class SettingsTableViewController: UITableViewController {
         if logoutAction === sender {
             defaults.setValue("", forKey: "USERNAME")
             defaults.setInteger(0, forKey: "ISLOGGEDIN")
+            
+            shouldUpdateDash = true
+            shouldUpdatePoundage = true
+            shouldUpdateSquat = true
+            shouldUpdateBench = true
+            shouldUpdateDeadlift = true
+            shouldUpdateMax = true
+            shouldUpdateWeek = true
+            
         }
     }
 
