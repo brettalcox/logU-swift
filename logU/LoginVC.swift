@@ -135,7 +135,6 @@ class LoginVC: UIViewController {
                         dispatch_async(dispatch_get_main_queue(), {
                             let actionSheetController: UIAlertController = UIAlertController(title: "Sign in Failed", message: "Username/Password is Incorrect", preferredStyle: .Alert)
                             let cancelAction: UIAlertAction = UIAlertAction(title: "Dismiss", style: .Cancel) { action -> Void in
-                                self.indicator.stopAnimating()
                                 self.loginButton.enabled = true
                                 self.signUpButton.enabled = true
                                 self.txtUsername.enabled = true
@@ -147,10 +146,14 @@ class LoginVC: UIViewController {
                         })
                         
                     }
+                    
                 }
                 
             );
-
+                
+                dispatch_sync(dispatch_get_main_queue(), {
+                    self.stopIndicator()
+                })
             task.resume()
             
             Settings().getUnit(username as String, completion: { jsonString in
@@ -166,5 +169,9 @@ class LoginVC: UIViewController {
     }
     }
 
+    
+    func stopIndicator() {
+        self.indicator.stopAnimating()
+    }
 }
 
