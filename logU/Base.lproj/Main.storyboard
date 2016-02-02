@@ -736,6 +736,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="TUS-Bh-B9b"/>
                     <connections>
+                        <outlet property="loginButton" destination="Ybw-rH-ZIH" id="K9z-Ta-YhC"/>
+                        <outlet property="signUpButton" destination="aK2-Y3-DiX" id="CKG-1l-ENx"/>
                         <outlet property="txtPassword" destination="0tQ-0y-2oa" id="aeg-dE-8tC"/>
                         <outlet property="txtUsername" destination="35M-CA-rt3" id="w9E-5e-0Q9"/>
                         <segue destination="dLN-94-LWx" kind="show" identifier="Dashboard" id="5QN-IN-gnc"/>

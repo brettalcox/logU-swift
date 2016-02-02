@@ -19,6 +19,11 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         
+        loginButton.enabled = true
+        signUpButton.enabled = true
+        txtUsername.enabled = true
+        txtPassword.enabled = true
+        
         if Reachability.isConnectedToNetwork() {
             OfflineRequest().OfflineFetchSubmit()
             OfflineRequest().OfflineFetchDelete()
@@ -28,6 +33,8 @@ class LoginVC: UIViewController {
     
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
     
     @IBAction func unwindToLogin(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
         
@@ -35,16 +42,21 @@ class LoginVC: UIViewController {
     
     @IBAction func signinTapped(sender : UIButton) {
         
-        UIApplication.sharedApplication().sendAction("resignFirstResponder", to:nil, from:nil, forEvent:nil)
-        
-        var username:NSString = txtUsername.text!
-        let password:NSString = txtPassword.text!
-        
         indicator = UIActivityIndicatorView()
         indicator.center = view.center
         indicator.activityIndicatorViewStyle = .Gray
         indicator.startAnimating()
         view.addSubview(indicator)
+        
+        loginButton.enabled = false
+        signUpButton.enabled = false
+        txtUsername.enabled = false
+        txtPassword.enabled = false
+        
+        UIApplication.sharedApplication().sendAction("resignFirstResponder", to:nil, from:nil, forEvent:nil)
+        
+        var username:NSString = txtUsername.text!
+        let password:NSString = txtPassword.text!
         
         if ( username.isEqualToString("") || password.isEqualToString("") ) {
             
@@ -54,8 +66,17 @@ class LoginVC: UIViewController {
             }
             actionSheetController.addAction(cancelAction)
             self.presentViewController(actionSheetController, animated: true, completion: nil)
+            
+            indicator.stopAnimating()
+            loginButton.enabled = true
+            signUpButton.enabled = true
+            txtUsername.enabled = true
+            txtPassword.enabled = true
+
 
         } else {
+            
+            dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
             
             let post:NSString = "username=\(username)&password=\(password)"
             
@@ -131,10 +152,13 @@ class LoginVC: UIViewController {
                 let defaults = NSUserDefaults.standardUserDefaults()
                 defaults.setInteger(Int(jsonString[0]["unit"]!)!, forKey: "Unit")
                 print(jsonString[0]["unit"])
+                
+            self.indicator.stopAnimating()
+
             })
             
         }
-        indicator.stopAnimating()
+    }
     }
 
 }
