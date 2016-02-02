@@ -135,6 +135,11 @@ class LoginVC: UIViewController {
                         dispatch_async(dispatch_get_main_queue(), {
                             let actionSheetController: UIAlertController = UIAlertController(title: "Sign in Failed", message: "Username/Password is Incorrect", preferredStyle: .Alert)
                             let cancelAction: UIAlertAction = UIAlertAction(title: "Dismiss", style: .Cancel) { action -> Void in
+                                self.indicator.stopAnimating()
+                                self.loginButton.enabled = true
+                                self.signUpButton.enabled = true
+                                self.txtUsername.enabled = true
+                                self.txtPassword.enabled = true
                             //Do some stuff
                             }
                             actionSheetController.addAction(cancelAction)
