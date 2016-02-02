@@ -227,6 +227,14 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
 
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             
+            //shouldUpdateDash = true
+            shouldUpdatePoundage = true
+            shouldUpdateSquat = true
+            shouldUpdateBench = true
+            shouldUpdateDeadlift = true
+            shouldUpdateMax = true
+            shouldUpdateWeek = true
+            
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
