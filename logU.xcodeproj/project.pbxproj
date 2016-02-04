@@ -13,6 +13,7 @@
 		B505D0251C55B5AE00C09549 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B505D0241C55B5AE00C09549 /* SettingsTableViewController.swift */; };
 		B505D0291C55C27500C09549 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B505D0281C55C27500C09549 /* SettingsTableViewCell.swift */; };
 		B505D02B1C55CEDB00C09549 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B505D02A1C55CEDB00C09549 /* Settings.swift */; };
+		B52FFA561C62F16A00C5F481 /* StatsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FFA551C62F16A00C5F481 /* StatsData.swift */; };
 		B56863DC1C58374B0065D641 /* DashData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56863DB1C58374B0065D641 /* DashData.swift */; };
 		B56863E01C59A1A70065D641 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56863DF1C59A1A70065D641 /* SignUpViewController.swift */; };
 		B5C6F1041C4F25F70016B70E /* logUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1031C4F25F70016B70E /* logUTests.swift */; };
@@ -109,6 +110,7 @@
 		B505D0241C55B5AE00C09549 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		B505D0281C55C27500C09549 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		B505D02A1C55CEDB00C09549 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		B52FFA551C62F16A00C5F481 /* StatsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsData.swift; sourceTree = "<group>"; };
 		B56863DB1C58374B0065D641 /* DashData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashData.swift; sourceTree = "<group>"; };
 		B56863DF1C59A1A70065D641 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B5C6F0EB1C4F25F70016B70E /* logU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = logU.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +210,7 @@
 				B5C6F11D1C4F26480016B70E /* Assets.xcassets */,
 				B5C6F11E1C4F26480016B70E /* BenchViewController.swift */,
 				B5C6F11F1C4F26480016B70E /* DashTableViewController.swift */,
+				B52FFA551C62F16A00C5F481 /* StatsData.swift */,
 				B5C6F1201C4F26480016B70E /* DeadliftViewController.swift */,
 				B5C6F1491C4F27520016B70E /* LaunchScreen.storyboard */,
 				B5C6F14B1C4F27520016B70E /* Main.storyboard */,
@@ -422,6 +425,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B52FFA561C62F16A00C5F481 /* StatsData.swift in Sources */,
 				B5C6F12A1C4F26480016B70E /* AppDelegate.swift in Sources */,
 				B5C6F1351C4F26480016B70E /* PageViewController.swift in Sources */,
 				B5C6F1321C4F26480016B70E /* JsonData.swift in Sources */,
