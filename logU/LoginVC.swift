@@ -98,6 +98,10 @@ class LoginVC: UIViewController {
             } catch let error as NSError {
                 let actionSheetController: UIAlertController = UIAlertController(title: "Connection Time Out", message: "Do you have a network connection?", preferredStyle: .Alert)
                 let cancelAction: UIAlertAction = UIAlertAction(title: "Dismiss", style: .Cancel) { action -> Void in
+                    self.loginButton.enabled = true
+                    self.signUpButton.enabled = true
+                    self.txtUsername.enabled = true
+                    self.txtPassword.enabled = true
                     //Do some stuff
                 }
                 actionSheetController.addAction(cancelAction)

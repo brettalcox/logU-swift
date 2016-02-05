@@ -14,6 +14,9 @@
 		B505D0291C55C27500C09549 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B505D0281C55C27500C09549 /* SettingsTableViewCell.swift */; };
 		B505D02B1C55CEDB00C09549 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B505D02A1C55CEDB00C09549 /* Settings.swift */; };
 		B52FFA561C62F16A00C5F481 /* StatsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FFA551C62F16A00C5F481 /* StatsData.swift */; };
+		B55E02431C64578A00DBACF6 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55E02401C64577300DBACF6 /* Eureka.framework */; };
+		B55E02441C64578A00DBACF6 /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B55E02401C64577300DBACF6 /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B55E02481C6457C200DBACF6 /* LogLift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55E02471C6457C200DBACF6 /* LogLift.swift */; };
 		B56863DC1C58374B0065D641 /* DashData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56863DB1C58374B0065D641 /* DashData.swift */; };
 		B56863E01C59A1A70065D641 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56863DF1C59A1A70065D641 /* SignUpViewController.swift */; };
 		B5C6F1041C4F25F70016B70E /* logUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1031C4F25F70016B70E /* logUTests.swift */; };
@@ -31,7 +34,6 @@
 		B5C6F1341C4F26480016B70E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1261C4F26480016B70E /* LoginVC.swift */; };
 		B5C6F1351C4F26480016B70E /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1271C4F26480016B70E /* PageViewController.swift */; };
 		B5C6F1361C4F26480016B70E /* SquatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1281C4F26480016B70E /* SquatViewController.swift */; };
-		B5C6F1371C4F26480016B70E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1291C4F26480016B70E /* ViewController.swift */; };
 		B5C6F1441C4F26EA0016B70E /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C6F13F1C4F26DD0016B70E /* Charts.framework */; };
 		B5C6F1451C4F26EA0016B70E /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5C6F13F1C4F26DD0016B70E /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5C6F14D1C4F27520016B70E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5C6F1491C4F27520016B70E /* LaunchScreen.storyboard */; };
@@ -45,6 +47,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B55E023F1C64577300DBACF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B55E02381C64577300DBACF6 /* Eureka.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 51729DEB1B9A4F5E004A00EB;
+			remoteInfo = Eureka;
+		};
+		B55E02411C64577300DBACF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B55E02381C64577300DBACF6 /* Eureka.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 51729DF51B9A4F5E004A00EB;
+			remoteInfo = EurekaTests;
+		};
+		B55E02451C64578A00DBACF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B55E02381C64577300DBACF6 /* Eureka.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 51729DEA1B9A4F5E004A00EB;
+			remoteInfo = Eureka;
+		};
 		B5C6F1001C4F25F70016B70E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B5C6F0E31C4F25F70016B70E /* Project object */;
@@ -97,6 +120,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				B5C6F1451C4F26EA0016B70E /* Charts.framework in Embed Frameworks */,
+				B55E02441C64578A00DBACF6 /* Eureka.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,6 +135,8 @@
 		B505D0281C55C27500C09549 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		B505D02A1C55CEDB00C09549 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		B52FFA551C62F16A00C5F481 /* StatsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsData.swift; sourceTree = "<group>"; };
+		B55E02381C64577300DBACF6 /* Eureka.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Eureka.xcodeproj; path = Eureka/Eureka.xcodeproj; sourceTree = SOURCE_ROOT; };
+		B55E02471C6457C200DBACF6 /* LogLift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLift.swift; sourceTree = "<group>"; };
 		B56863DB1C58374B0065D641 /* DashData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashData.swift; sourceTree = "<group>"; };
 		B56863DF1C59A1A70065D641 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B5C6F0EB1C4F25F70016B70E /* logU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = logU.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,7 +159,6 @@
 		B5C6F1261C4F26480016B70E /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		B5C6F1271C4F26480016B70E /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		B5C6F1281C4F26480016B70E /* SquatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquatViewController.swift; sourceTree = "<group>"; };
-		B5C6F1291C4F26480016B70E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B5C6F1381C4F26DD0016B70E /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		B5C6F14A1C4F27520016B70E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5C6F14C1C4F27520016B70E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -151,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5C6F1441C4F26EA0016B70E /* Charts.framework in Frameworks */,
+				B55E02431C64578A00DBACF6 /* Eureka.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +197,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B55E02391C64577300DBACF6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B55E02401C64577300DBACF6 /* Eureka.framework */,
+				B55E02421C64577300DBACF6 /* EurekaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		B5C6F0E21C4F25F70016B70E = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +241,7 @@
 				B5C6F15D1C4F45240016B70E /* MaxesTableViewCell.swift */,
 				B5C6F1591C4F3AFE0016B70E /* StatsTableViewCell.swift */,
 				B5C6F11C1C4F26480016B70E /* AppDelegate.swift */,
+				B55E02381C64577300DBACF6 /* Eureka.xcodeproj */,
 				B5C6F1381C4F26DD0016B70E /* Charts.xcodeproj */,
 				B5C6F11D1C4F26480016B70E /* Assets.xcassets */,
 				B5C6F11E1C4F26480016B70E /* BenchViewController.swift */,
@@ -222,10 +258,10 @@
 				B5C6F1261C4F26480016B70E /* LoginVC.swift */,
 				B5C6F1271C4F26480016B70E /* PageViewController.swift */,
 				B5C6F1281C4F26480016B70E /* SquatViewController.swift */,
-				B5C6F1291C4F26480016B70E /* ViewController.swift */,
 				8BB596DA1C513968003B98BA /* ConnectionTest.swift */,
 				8BB596DE1C513BE8003B98BA /* LiftDataModel.xcdatamodeld */,
 				8BB596E11C514449003B98BA /* OfflineRequest.swift */,
+				B55E02471C6457C200DBACF6 /* LogLift.swift */,
 			);
 			path = logU;
 			sourceTree = "<group>";
@@ -274,6 +310,7 @@
 			);
 			dependencies = (
 				B5C6F1471C4F26EA0016B70E /* PBXTargetDependency */,
+				B55E02461C64578A00DBACF6 /* PBXTargetDependency */,
 			);
 			name = logU;
 			productName = logU;
@@ -358,6 +395,10 @@
 					ProductGroup = B5C6F1391C4F26DD0016B70E /* Products */;
 					ProjectRef = B5C6F1381C4F26DD0016B70E /* Charts.xcodeproj */;
 				},
+				{
+					ProductGroup = B55E02391C64577300DBACF6 /* Products */;
+					ProjectRef = B55E02381C64577300DBACF6 /* Eureka.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -369,6 +410,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		B55E02401C64577300DBACF6 /* Eureka.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Eureka.framework;
+			remoteRef = B55E023F1C64577300DBACF6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B55E02421C64577300DBACF6 /* EurekaTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = EurekaTests.xctest;
+			remoteRef = B55E02411C64577300DBACF6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		B5C6F13F1C4F26DD0016B70E /* Charts.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -441,11 +496,11 @@
 				B5C6F15C1C4F40DF0016B70E /* MaxesTableViewController.swift in Sources */,
 				B5C6F1681C557ACD0016B70E /* PoundageTableViewCell.swift in Sources */,
 				B505D0251C55B5AE00C09549 /* SettingsTableViewController.swift in Sources */,
-				B5C6F1371C4F26480016B70E /* ViewController.swift in Sources */,
 				B56863DC1C58374B0065D641 /* DashData.swift in Sources */,
 				8BB596E01C513BE8003B98BA /* LiftDataModel.xcdatamodeld in Sources */,
 				B5C6F1331C4F26480016B70E /* LiftTableViewCell.swift in Sources */,
 				B505D02B1C55CEDB00C09549 /* Settings.swift in Sources */,
+				B55E02481C6457C200DBACF6 /* LogLift.swift in Sources */,
 				B5C6F1341C4F26480016B70E /* LoginVC.swift in Sources */,
 				B5C6F1301C4F26480016B70E /* GraphViewController.swift in Sources */,
 				B505D0291C55C27500C09549 /* SettingsTableViewCell.swift in Sources */,
@@ -474,6 +529,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B55E02461C64578A00DBACF6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Eureka;
+			targetProxy = B55E02451C64578A00DBACF6 /* PBXContainerItemProxy */;
+		};
 		B5C6F1011C4F25F70016B70E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B5C6F0EA1C4F25F70016B70E /* logU */;
