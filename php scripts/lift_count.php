@@ -8,5 +8,5 @@
         //$row0 = $pdo->query($sql0)->fetchAll(PDO::FETCH_ASSOC);
         $sql0 = "SELECT MAX(counted) AS count, lift FROM (SELECT COUNT(*) AS counted, lift, user FROM workout WHERE user = '$username' GROUP BY lift) AS counts GROUP BY lift";
         $row = $pdo->query($sql0)->fetchAll(PDO::FETCH_ASSOC);
-
+	echo json_encode($row, JSON_UNESCAPED_SLASHES);
 ?>
