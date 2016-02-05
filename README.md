@@ -19,9 +19,9 @@ This is the current iOS development of https://loguapp.com
 ### Log a Lift
 
 
-
-![alt tag](http://i.imgur.com/y7xqeAV.png&1)
-![alt tag](http://i.imgur.com/d0Inh5w.png&1)
+![alt tag](http://i.imgur.com/fA76L3d.png?1)
+![alt tag](http://i.imgur.com/glXNYfM.png?1)
+![alt tag](http://i.imgur.com/3SSuaU1.png?1)
 
 ### Swipe Between User Graphs
 
@@ -51,7 +51,7 @@ This is the current iOS development of https://loguapp.com
 
 
 
-![alt tag](http://i.imgur.com/WJ8pBsG.png?1)
+![alt tag](http://i.imgur.com/bcem50W.png?1)
 
 
 
