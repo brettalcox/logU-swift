@@ -85,6 +85,7 @@ class StatsTableViewController: UITableViewController {
         liftsLogged.text = dataWeek[0]["total_lifts"]
         totalSets.text = dataWeek[0]["total_sets"]
         totalReps.text = dataWeek[0]["total_reps"]
+        favoriteLift.text = dataWeek[0]["count"]
         
     }
 
@@ -168,7 +169,7 @@ class StatsTableViewController: UITableViewController {
         pieChartDataSet.colors = colors
 
         let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
-        pieChartData.setValueFont(UIFont .systemFontOfSize(6))
+        pieChartData.setValueFont(UIFont .systemFontOfSize(0))
         pieChartView.descriptionText = ""
         pieChartView.drawSliceTextEnabled = false
         pieChartView.legend.wordWrapEnabled = true
