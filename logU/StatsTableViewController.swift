@@ -45,21 +45,21 @@ class StatsTableViewController: UITableViewController {
             dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
                 GraphData().dataOfLifting(self.url_to_request, completion: { jsonString in
                     dataWeek = jsonString
-                    dispatch_async(dispatch_get_main_queue(), {
+                    dispatch_sync(dispatch_get_main_queue(), {
                         self.loadWilk(dataWeek)
                     })
                     
                 })
                 GraphData().dataOfLifting(self.url_rep_avg, completion: { jsonString in
                     dataWeek = jsonString
-                    dispatch_async(dispatch_get_main_queue(), {
+                    dispatch_sync(dispatch_get_main_queue(), {
                         self.loadRepAvg(dataWeek)
                     })
                     
                 })
                 GraphData().dataOfLifting(self.url_lift_count, completion: { jsonString in
                     dataWeek = jsonString
-                    dispatch_async(dispatch_get_main_queue(), {
+                    dispatch_sync(dispatch_get_main_queue(), {
                         self.loadLiftCount(dataWeek)
                     })
                     
