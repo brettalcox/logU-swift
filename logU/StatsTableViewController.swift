@@ -67,8 +67,43 @@ class StatsTableViewController: UITableViewController {
 
 
             }
+            shouldUpdateStats = false
         }
 
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        if shouldUpdateStats == true {
+            if Reachability.isConnectedToNetwork() {
+                dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+                    GraphData().dataOfLifting(self.url_to_request, completion: { jsonString in
+                        dataWeek = jsonString
+                        dispatch_sync(dispatch_get_main_queue(), {
+                            self.loadWilk(dataWeek)
+                        })
+                        
+                    })
+                    GraphData().dataOfLifting(self.url_rep_avg, completion: { jsonString in
+                        dataWeek = jsonString
+                        dispatch_sync(dispatch_get_main_queue(), {
+                            self.loadRepAvg(dataWeek)
+                        })
+                        
+                    })
+                    GraphData().dataOfLifting(self.url_lift_count, completion: { jsonString in
+                        dataWeek = jsonString
+                        dispatch_sync(dispatch_get_main_queue(), {
+                            self.loadLiftCount(dataWeek)
+                        })
+                        
+                    })
+                    
+                    
+                }
+            }
+            shouldUpdateStats = false
+        }
     }
     
     func loadWilk(object: Array<Dictionary<String, String>>) {

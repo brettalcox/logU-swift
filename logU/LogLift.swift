@@ -17,6 +17,7 @@ var shouldUpdateDeadlift: Bool = false
 var shouldUpdateMax: Bool = true
 var shouldUpdateWeek: Bool = true
 var shouldUpdateSettings: Bool = false
+var shouldUpdateStats: Bool = false
 
 
 var theDate:String?
@@ -74,6 +75,7 @@ class LogLift: FormViewController {
         shouldUpdateDeadlift = true
         shouldUpdateMax = true
         shouldUpdateWeek = true
+        shouldUpdateStats = true
         
         if logButton === sender {
             

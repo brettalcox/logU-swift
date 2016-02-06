@@ -163,8 +163,10 @@ class LoginVC: UIViewController {
             Settings().getUnit(username as String, completion: { jsonString in
                 let defaults = NSUserDefaults.standardUserDefaults()
                 defaults.setInteger(Int(jsonString[0]["unit"]!)!, forKey: "Unit")
-                print(jsonString[0]["unit"])
-                
+                defaults.setValue(String(jsonString[0]["gender"]!), forKey: "Gender")
+                defaults.setValue(Double(jsonString[0]["bodyweight"]!)!, forKey: "Bodyweight")
+                print(defaults.valueForKey("Gender"))
+    
             self.indicator.stopAnimating()
 
             })

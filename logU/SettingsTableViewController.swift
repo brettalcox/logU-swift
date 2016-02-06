@@ -11,56 +11,70 @@ import Eureka
 
 class SettingsTableViewController: FormViewController {
     
+    let defaults = NSUserDefaults.standardUserDefaults()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         form +++ Section("Settings")
             
-            <<< SegmentedRow<String>("Unit") {
-                $0.title = "Unit"
-                $0.options = ["Pounds", "Kilograms"]
+            <<< SegmentedRow<String>("Unit") { (row1 : SegmentedRow) -> Void in
+                row1.title = "Unit"
+                row1.options = ["Pounds", "Kilograms"]
                 
-                var unit = "1"
-                if unit == "1" {
-                    $0.value = "Pounds"
+                if String(defaults.valueForKey("Unit")!) == "1" {
+                    //Settings().updateUnit("1")
+                    row1.value = "Pounds"
+                }
+                if String(defaults.valueForKey("Unit")!) == "0" {
+                    //Settings().updateUnit("0")
+                    row1.value = "Kilograms"
+                }
+
+                
+                row1.onChange { row in
+                    self.form.rowByTag("Save Changes")?.disabled = false
+                    self.form.rowByTag("Save Changes")?.evaluateDisabled()
+                    self.form.rowByTag("Save Changes")?.updateCell()
+                    
+                }
+            }
+            <<< SegmentedRow<String>("Gender") { (row2 : SegmentedRow) -> Void in
+                row2.title = "Gender"
+                row2.options = ["Male", "Female"]
+
+                if String(defaults.valueForKey("Gender")!) == "M" {
+                    //Settings().updateUnit("1")
+                    row2.value = "Male"
+                }
+                if String(defaults.valueForKey("Gender")!) == "F" {
+                    //Settings().updateUnit("0")
+                    row2.value = "Female"
                 }
                 
-                $0.onChange { row in
+                row2.onChange { row in
                     self.form.rowByTag("Save Changes")?.disabled = false
                     self.form.rowByTag("Save Changes")?.evaluateDisabled()
                     self.form.rowByTag("Save Changes")?.updateCell()
                 }
             }
-            <<< SegmentedRow<String>("Gender") {
-                $0.title = "Gender"
-                $0.options = ["Male", "Female"]
-                
-                var sex = "F"
-                if sex == "F" {
-                    $0.value = "Female"
-                }
-                
-                $0.onChange { row in
-                    self.form.rowByTag("Save Changes")?.disabled = false
-                    self.form.rowByTag("Save Changes")?.evaluateDisabled()
-                    self.form.rowByTag("Save Changes")?.updateCell()
-                }
-            }
-            <<< IntRow("Current Weight") {
+            <<< DecimalRow("Current Weight") {
                 $0.title = "Current Weight"
-                $0.value = 190
+                $0.value = defaults.valueForKey("Bodyweight")! as! Double
                 
                 $0.onChange { row in
                     self.form.rowByTag("Save Changes")?.disabled = false
                     self.form.rowByTag("Save Changes")?.evaluateDisabled()
                     self.form.rowByTag("Save Changes")?.updateCell()
+                    
+                    //self.currentWeight = row.value!
                 }
                 
             }
-            <<< ButtonRow("Save Changes") { (row : ButtonRow) -> Void in
-                row.title = "Save Changes"
-                row.disabled = true
+            <<< ButtonRow("Save Changes") { (row4 : ButtonRow) -> Void in
+                row4.title = "Save Changes"
+                row4.disabled = true
                 
-                row.onCellSelection(self.saveTapped)
+                row4.onCellSelection(self.saveTapped)
             }
             
             +++ Section("Options")
@@ -83,24 +97,28 @@ class SettingsTableViewController: FormViewController {
         form.rowByTag("Save Changes")?.disabled = true
         form.rowByTag("Save Changes")?.evaluateDisabled()
         form.rowByTag("Save Changes")?.updateCell()
-    }
-
-    /*
-    let defaults = NSUserDefaults.standardUserDefaults()
-    
-    @IBOutlet weak var logoutAction: SettingsTableViewCell!
-    @IBOutlet weak var unitLabel: UILabel!
-    @IBOutlet weak var unitSwitch: UISwitch!
-    @IBAction func unitSwitched(sender: UISwitch) {
-        if unitSwitch.on {
-            unitLabel.text = "Lbs"
-            Settings().updateUnit("1")
-            defaults.setInteger(1, forKey: "Unit")
-        } else {
-            unitLabel.text = "Kgs"
-            Settings().updateUnit("0")
-            defaults.setInteger(0, forKey: "Unit")
+        
+        if String((form.values()["Unit"]!)!) == "Pounds" {
+            //Settings().updateUnit("1")
+            self.defaults.setInteger(1, forKey: "Unit")
         }
+        if String((form.values()["Unit"]!)!) == "Kilograms" {
+            //Settings().updateUnit("0")
+            self.defaults.setInteger(0, forKey: "Unit")
+        }
+
+        
+        if String((form.values()["Gender"]!)!) == "Male" {
+            self.defaults.setValue("M", forKey: "Gender")
+        }
+        
+        if String((form.values()["Gender"]!)!) == "Female" {
+            self.defaults.setValue("F", forKey: "Gender")
+        }
+        
+        defaults.setValue(String((form.values()["Current Weight"]!)!), forKey: "Bodyweight")
+        
+        Settings().updateUnit(String(defaults.valueForKey("Unit")!), gender: String(defaults.valueForKey("Gender")!), bodyweight: String(defaults.valueForKey("Bodyweight")!))
         
         shouldUpdateDash = true
         shouldUpdatePoundage = true
@@ -109,37 +127,6 @@ class SettingsTableViewController: FormViewController {
         shouldUpdateDeadlift = true
         shouldUpdateMax = true
         shouldUpdateWeek = true
+        shouldUpdateStats = true
     }
-    
-    override func viewDidLoad() {
-        if defaults.valueForKey("Unit") as! Int == 0 {
-            unitSwitch.setOn(false, animated: true)
-            unitLabel.text = "Kgs"
-        }
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        if defaults.valueForKey("Unit") as! Int == 0 {
-            unitSwitch.setOn(false, animated: true)
-            unitLabel.text = "Kgs"
-        }
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if logoutAction === sender {
-            defaults.setValue("", forKey: "USERNAME")
-            defaults.setInteger(0, forKey: "ISLOGGEDIN")
-            
-            shouldUpdateDash = true
-            shouldUpdatePoundage = true
-            shouldUpdateSquat = true
-            shouldUpdateBench = true
-            shouldUpdateDeadlift = true
-            shouldUpdateMax = true
-            shouldUpdateWeek = true
-            
-        }
-    }
-*/
-
 }

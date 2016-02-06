@@ -13,7 +13,7 @@ class Settings {
     let url_to_update = "https://loguapp.com/swift10.php"
     let url_to_get = "https://loguapp.com/swift11.php"
     
-    func updateUnit(unit: String) {
+    func updateUnit(unit: String, gender: String, bodyweight: String) {
         
             let url:NSURL = NSURL(string: url_to_update)!
             let session = NSURLSession.sharedSession()
@@ -22,7 +22,7 @@ class Settings {
             request.HTTPMethod = "POST"
             request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
             
-            let query = "username=\(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)&unit=\(unit)".dataUsingEncoding(NSUTF8StringEncoding)
+            let query = "username=\(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)&unit=\(unit)&gender=\(gender)&bodyweight=\(bodyweight)".dataUsingEncoding(NSUTF8StringEncoding)
             
             let task = session.uploadTaskWithRequest(request, fromData: query, completionHandler:
                 {(data,response,error) in
