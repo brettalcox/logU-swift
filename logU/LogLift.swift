@@ -68,16 +68,16 @@ class LogLift: FormViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        shouldUpdateDash = true
-        shouldUpdatePoundage = true
-        shouldUpdateSquat = true
-        shouldUpdateBench = true
-        shouldUpdateDeadlift = true
-        shouldUpdateMax = true
-        shouldUpdateWeek = true
-        shouldUpdateStats = true
-        
         if logButton === sender {
+            
+            shouldUpdateDash = true
+            shouldUpdatePoundage = true
+            shouldUpdateSquat = true
+            shouldUpdateBench = true
+            shouldUpdateDeadlift = true
+            shouldUpdateMax = true
+            shouldUpdateWeek = true
+            shouldUpdateStats = true
             
             if Reachability.isConnectedToNetwork() {
                 
