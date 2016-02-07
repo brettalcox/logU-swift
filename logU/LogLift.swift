@@ -52,17 +52,17 @@ class LogLift: FormViewController {
                 row.value = row.options[0]
             }
             
-            <<< TextRow("Sets") {
+            <<< IntRow("Sets") {
                 $0.title = "Sets"
-                set = $0.value
+                set = String($0.value)
             }
-            <<< TextRow("Reps") {
+            <<< IntRow("Reps") {
                 $0.title = "Reps"
-                rep = $0.value
+                rep = String($0.value)
             }
-            <<< TextRow("Weight") {
+            <<< DecimalRow("Weight") {
                 $0.title = "Weight"
-                weight = $0.value
+                weight = String($0.value)
         }
     }
     
