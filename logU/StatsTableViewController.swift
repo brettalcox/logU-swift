@@ -20,6 +20,8 @@ class StatsTableViewController: UITableViewController {
     var graphLift : [String]! = []
     var graphCount : [Double]! = []
     
+    var indicator: UIActivityIndicatorView!
+    
     @IBOutlet weak var wilkScore: UILabel!
     @IBOutlet weak var favoriteLift: UILabel!
     @IBOutlet weak var averageRep: UILabel!
@@ -42,6 +44,7 @@ class StatsTableViewController: UITableViewController {
         setChart(lifts, values: count)
 */
         if Reachability.isConnectedToNetwork() {
+            
             dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
                 GraphData().dataOfLifting(self.url_to_request, completion: { jsonString in
                     dataWeek = jsonString
@@ -75,7 +78,9 @@ class StatsTableViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         
         if shouldUpdateStats == true {
+            
             if Reachability.isConnectedToNetwork() {
+                
                 dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
                     GraphData().dataOfLifting(self.url_to_request, completion: { jsonString in
                         dataWeek = jsonString

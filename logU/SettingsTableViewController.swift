@@ -22,11 +22,9 @@ class SettingsTableViewController: FormViewController {
                 row1.options = ["Pounds", "Kilograms"]
                 
                 if String(defaults.valueForKey("Unit")!) == "1" {
-                    //Settings().updateUnit("1")
                     row1.value = "Pounds"
                 }
                 if String(defaults.valueForKey("Unit")!) == "0" {
-                    //Settings().updateUnit("0")
                     row1.value = "Kilograms"
                 }
 
@@ -43,11 +41,9 @@ class SettingsTableViewController: FormViewController {
                 row2.options = ["Male", "Female"]
 
                 if String(defaults.valueForKey("Gender")!) == "M" {
-                    //Settings().updateUnit("1")
                     row2.value = "Male"
                 }
                 if String(defaults.valueForKey("Gender")!) == "F" {
-                    //Settings().updateUnit("0")
                     row2.value = "Female"
                 }
                 
@@ -65,8 +61,6 @@ class SettingsTableViewController: FormViewController {
                     self.form.rowByTag("Save Changes")?.disabled = false
                     self.form.rowByTag("Save Changes")?.evaluateDisabled()
                     self.form.rowByTag("Save Changes")?.updateCell()
-                    
-                    //self.currentWeight = row.value!
                 }
                 
             }
@@ -84,8 +78,6 @@ class SettingsTableViewController: FormViewController {
                 $0.onCellSelection(self.buttonTapped)
 
         }
-        
-        //+++ Section("Save")
     }
     
     func buttonTapped(cell: ButtonCellOf<String>, row: ButtonRow) {
@@ -94,39 +86,40 @@ class SettingsTableViewController: FormViewController {
     }
     
     func saveTapped(cell: ButtonCellOf<String>, row: ButtonRow) {
-        form.rowByTag("Save Changes")?.disabled = true
-        form.rowByTag("Save Changes")?.evaluateDisabled()
-        form.rowByTag("Save Changes")?.updateCell()
         
-        if String((form.values()["Unit"]!)!) == "Pounds" {
-            //Settings().updateUnit("1")
-            self.defaults.setInteger(1, forKey: "Unit")
-        }
-        if String((form.values()["Unit"]!)!) == "Kilograms" {
-            //Settings().updateUnit("0")
-            self.defaults.setInteger(0, forKey: "Unit")
-        }
+        if form.rowByTag("Save Changes")?.isDisabled == false {
+        
+            form.rowByTag("Save Changes")?.disabled = true
+            form.rowByTag("Save Changes")?.evaluateDisabled()
+            form.rowByTag("Save Changes")?.updateCell()
+        
+            if String((form.values()["Unit"]!)!) == "Pounds" {
+                self.defaults.setInteger(1, forKey: "Unit")
+            }
+            if String((form.values()["Unit"]!)!) == "Kilograms" {
+                self.defaults.setInteger(0, forKey: "Unit")
+            }
 
+            if String((form.values()["Gender"]!)!) == "Male" {
+                self.defaults.setValue("M", forKey: "Gender")
+            }
         
-        if String((form.values()["Gender"]!)!) == "Male" {
-            self.defaults.setValue("M", forKey: "Gender")
+            if String((form.values()["Gender"]!)!) == "Female" {
+                self.defaults.setValue("F", forKey: "Gender")
+            }
+        
+            defaults.setValue(String((form.values()["Current Weight"]!)!), forKey: "Bodyweight")
+        
+            Settings().updateUnit(String(defaults.valueForKey("Unit")!), gender: String(defaults.valueForKey("Gender")!), bodyweight: String(defaults.valueForKey("Bodyweight")!))
+        
+            shouldUpdateDash = true
+            shouldUpdatePoundage = true
+            shouldUpdateSquat = true
+            shouldUpdateBench = true
+            shouldUpdateDeadlift = true
+            shouldUpdateMax = true
+            shouldUpdateWeek = true
+            shouldUpdateStats = true
         }
-        
-        if String((form.values()["Gender"]!)!) == "Female" {
-            self.defaults.setValue("F", forKey: "Gender")
-        }
-        
-        defaults.setValue(String((form.values()["Current Weight"]!)!), forKey: "Bodyweight")
-        
-        Settings().updateUnit(String(defaults.valueForKey("Unit")!), gender: String(defaults.valueForKey("Gender")!), bodyweight: String(defaults.valueForKey("Bodyweight")!))
-        
-        shouldUpdateDash = true
-        shouldUpdatePoundage = true
-        shouldUpdateSquat = true
-        shouldUpdateBench = true
-        shouldUpdateDeadlift = true
-        shouldUpdateMax = true
-        shouldUpdateWeek = true
-        shouldUpdateStats = true
     }
 }
