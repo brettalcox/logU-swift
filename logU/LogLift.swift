@@ -81,12 +81,12 @@ class LogLift: FormViewController {
             
             if Reachability.isConnectedToNetwork() {
                 
-                let tits = (form.values()["Date"]!)! as! NSDate
+                let dateValue = (form.values()["Date"]!)! as! NSDate
                 
                 let dateFormatter = NSDateFormatter()
                 dateFormatter.dateFormat = "yyyy-M-d HH:mm:ss Z"
                 
-                let date = dateFormatter.dateFromString(String(tits))!
+                let date = dateFormatter.dateFromString(String(dateValue))!
                 
                 dateFormatter.dateFormat = "M/d/yyyy"
                 

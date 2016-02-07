@@ -462,12 +462,12 @@
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8hD-rA-mKz">
                                 <rect key="frame" x="187" y="106" width="560" height="218"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="LogU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvZ-AC-eA7">
-                                        <rect key="frame" x="199" y="0.0" width="162" height="79"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="LogU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvZ-AC-eA7">
+                                        <rect key="frame" x="195" y="0.0" width="170" height="79"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="162" id="5VN-y6-biL"/>
+                                            <constraint firstAttribute="width" constant="170" id="5VN-y6-biL"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="66"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="66"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1027,23 +1027,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="logU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9nO-gN-pTI">
-                                <rect key="frame" x="249" y="127" width="102" height="51"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="102" id="JOD-vX-nhl"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sXG-W0-bUD">
-                                <rect key="frame" x="225" y="236" width="151" height="133"/>
+                                <rect key="frame" x="225" y="186" width="151" height="235"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7CD-i4-QmS">
-                                        <rect key="frame" x="0.0" y="0.0" width="151" height="133"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="151" height="201"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="woV-OC-SNN">
-                                                <rect key="frame" x="0.0" y="0.0" width="151" height="133"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="151" height="201"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4BU-H8-mJP">
                                                         <rect key="frame" x="0.0" y="0.0" width="151" height="30"/>
@@ -1070,30 +1061,48 @@
                                                             <action selector="unitSelected:" destination="6vV-7I-89e" eventType="valueChanged" id="7Re-fQ-kbC"/>
                                                         </connections>
                                                     </segmentedControl>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Q3F-0U-K86">
+                                                        <rect key="frame" x="0.0" y="138" width="151" height="29"/>
+                                                        <segments>
+                                                            <segment title="Male"/>
+                                                            <segment title="Female"/>
+                                                        </segments>
+                                                    </segmentedControl>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Current Weight" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="APj-7x-Gaz">
+                                                        <rect key="frame" x="0.0" y="171" width="151" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    </textField>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZ8-2b-3HS">
+                                        <rect key="frame" x="0.0" y="201" width="151" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="Create Account"/>
+                                        <connections>
+                                            <action selector="signUpTapped:" destination="6vV-7I-89e" eventType="touchUpInside" id="7le-P6-GeZ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZ8-2b-3HS">
-                                <rect key="frame" x="225" y="377" width="151" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Create Account"/>
-                                <connections>
-                                    <action selector="signUpTapped:" destination="6vV-7I-89e" eventType="touchUpInside" id="7le-P6-GeZ"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LogU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9nO-gN-pTI">
+                                <rect key="frame" x="216" y="85" width="169" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="169" id="LG4-Pr-19T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="66"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9nO-gN-pTI" firstAttribute="top" secondItem="NEd-H2-3u2" secondAttribute="bottom" constant="63" id="3Zj-m8-gxb"/>
-                            <constraint firstItem="sXG-W0-bUD" firstAttribute="top" secondItem="9nO-gN-pTI" secondAttribute="bottom" constant="58" id="KMc-nX-4je"/>
-                            <constraint firstItem="9nO-gN-pTI" firstAttribute="centerX" secondItem="eTp-hv-YXZ" secondAttribute="centerX" id="Yds-2z-HU5"/>
-                            <constraint firstItem="sXG-W0-bUD" firstAttribute="leading" secondItem="NZ8-2b-3HS" secondAttribute="leading" id="fHG-qy-Dri"/>
-                            <constraint firstItem="NZ8-2b-3HS" firstAttribute="top" secondItem="sXG-W0-bUD" secondAttribute="bottom" constant="8" symbolic="YES" id="gBq-XI-4P3"/>
-                            <constraint firstItem="sXG-W0-bUD" firstAttribute="centerX" secondItem="9nO-gN-pTI" secondAttribute="centerX" id="sWq-5b-HX3"/>
-                            <constraint firstItem="sXG-W0-bUD" firstAttribute="trailing" secondItem="NZ8-2b-3HS" secondAttribute="trailing" id="uTe-VM-iAE"/>
+                            <constraint firstItem="sXG-W0-bUD" firstAttribute="centerX" secondItem="eTp-hv-YXZ" secondAttribute="centerX" id="Dga-Fj-F6p"/>
+                            <constraint firstItem="sXG-W0-bUD" firstAttribute="top" secondItem="9nO-gN-pTI" secondAttribute="bottom" constant="25" id="goG-cm-bIb"/>
+                            <constraint firstItem="9nO-gN-pTI" firstAttribute="top" secondItem="NEd-H2-3u2" secondAttribute="bottom" constant="65" id="kbJ-E2-9Od"/>
+                            <constraint firstItem="sXG-W0-bUD" firstAttribute="centerX" secondItem="9nO-gN-pTI" secondAttribute="centerX" id="sJg-M0-AOP"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Create an Account" id="xoE-K7-XaQ">
