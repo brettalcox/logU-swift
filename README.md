@@ -5,6 +5,13 @@ logU is a simple workout tracker aimed towards strength athletes.
 This is the current iOS development of https://loguapp.com
 
 
+### LogU - Strength Logging
+
+
+![alt tag](http://i.imgur.com/N2PD0fV.png)
+![alt tag](http://i.imgur.com/8yvs3Hd.png)
+
+
 ### The Main User Dashboard
 
 
@@ -70,4 +77,4 @@ This is the current iOS development of https://loguapp.com
 ### User Settings
 
 
-![alt tag](http://i.imgur.com/PkGUhl3.png?1)
+![alt tag](http://i.imgur.com/n40Bo6M.png?1)
