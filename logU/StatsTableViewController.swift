@@ -45,6 +45,17 @@ class StatsTableViewController: UITableViewController {
 */
         if Reachability.isConnectedToNetwork() {
             
+            dispatch_async(dispatch_get_main_queue(), {
+            self.indicator = UIActivityIndicatorView()
+            var frame = self.indicator.frame
+            frame.origin.x = self.view.frame.size.width / 2
+            frame.origin.y = (self.view.frame.size.height / 2) - 40
+            self.indicator.frame = frame
+            self.indicator.activityIndicatorViewStyle = .Gray
+            self.indicator.startAnimating()
+            self.view.addSubview(self.indicator)
+                })
+            
             dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
                 GraphData().dataOfLifting(self.url_to_request, completion: { jsonString in
                     dataWeek = jsonString
@@ -68,7 +79,9 @@ class StatsTableViewController: UITableViewController {
                     
                 })
 
-
+                dispatch_sync(dispatch_get_main_queue(), {
+                    self.stopIndicator()
+                })
             }
             shouldUpdateStats = false
         }
@@ -80,6 +93,17 @@ class StatsTableViewController: UITableViewController {
         if shouldUpdateStats == true {
             
             if Reachability.isConnectedToNetwork() {
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.indicator = UIActivityIndicatorView()
+                    var frame = self.indicator.frame
+                    frame.origin.x = self.view.frame.size.width / 2
+                    frame.origin.y = (self.view.frame.size.height / 2) - 40
+                    self.indicator.frame = frame
+                    self.indicator.activityIndicatorViewStyle = .Gray
+                    self.indicator.startAnimating()
+                    self.view.addSubview(self.indicator)
+                })
                 
                 dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
                     GraphData().dataOfLifting(self.url_to_request, completion: { jsonString in
@@ -104,11 +128,17 @@ class StatsTableViewController: UITableViewController {
                         
                     })
                     
-                    
+                    dispatch_sync(dispatch_get_main_queue(), {
+                        self.stopIndicator()
+                    })
                 }
             }
             shouldUpdateStats = false
         }
+    }
+    
+    func stopIndicator() {
+        self.indicator.stopAnimating()
     }
     
     func loadWilk(object: Array<Dictionary<String, String>>) {
