@@ -134,6 +134,15 @@ class LoginVC: UIViewController {
                         dispatch_async(dispatch_get_main_queue(), {
                             self.performSegueWithIdentifier("Dashboard", sender: self)
                         })
+                        
+                        Settings().getUnit(username as String, completion: { jsonString in
+                            let defaults = NSUserDefaults.standardUserDefaults()
+                            defaults.setInteger(Int(jsonString[0]["unit"]!)!, forKey: "Unit")
+                            defaults.setValue(String(jsonString[0]["gender"]!), forKey: "Gender")
+                            defaults.setValue(Double(jsonString[0]["bodyweight"]!)!, forKey: "Bodyweight")
+                            print(defaults.valueForKey("Gender"))
+                            
+                        })
                     }
                     else {
                         dispatch_async(dispatch_get_main_queue(), {
@@ -160,17 +169,8 @@ class LoginVC: UIViewController {
                 })
             task.resume()
             
-            Settings().getUnit(username as String, completion: { jsonString in
-                let defaults = NSUserDefaults.standardUserDefaults()
-                defaults.setInteger(Int(jsonString[0]["unit"]!)!, forKey: "Unit")
-                defaults.setValue(String(jsonString[0]["gender"]!), forKey: "Gender")
-                defaults.setValue(Double(jsonString[0]["bodyweight"]!)!, forKey: "Bodyweight")
-                print(defaults.valueForKey("Gender"))
-    
             self.indicator.stopAnimating()
 
-            })
-            
         }
     }
     }

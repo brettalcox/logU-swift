@@ -36,7 +36,9 @@ class GraphData {
                 var myData: Array<Dictionary<String, String>> = []
                 do {
                     let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!, options: [NSJSONReadingOptions.MutableContainers, NSJSONReadingOptions.AllowFragments]) as? Array<Dictionary<String, String>>
-                    myData = jsonArray!
+                    if jsonArray != nil {
+                        myData = jsonArray!
+                    }
             
                 } catch let error as NSError {
                     print(error.localizedDescription)

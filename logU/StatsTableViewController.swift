@@ -143,20 +143,35 @@ class StatsTableViewController: UITableViewController {
     
     func loadWilk(object: Array<Dictionary<String, String>>) {
         
-        dataWeek = object
-        wilkScore.text = dataWeek[0]["wilks_coeff"]
-        
+        if object.count != 0 {
+            
+            dataWeek = object
+            wilkScore.text = dataWeek[0]["wilks_coeff"]
+            
+        } else {
+            wilkScore.text = "0"
+        }
     }
     
     func loadRepAvg(object: Array<Dictionary<String, String>>) {
         
-        dataWeek = object
-        averageRep.text = dataWeek[0]["average_reps"]
-        liftsLogged.text = dataWeek[0]["total_lifts"]
-        totalSets.text = dataWeek[0]["total_sets"]
-        totalReps.text = dataWeek[0]["total_reps"]
-        favoriteLift.text = dataWeek[0]["count"]
-        
+        if object.count != 0 {
+            
+            dataWeek = object
+            averageRep.text = dataWeek[0]["average_reps"]
+            totalSets.text = dataWeek[0]["total_sets"]
+            totalReps.text = dataWeek[0]["total_reps"]
+            favoriteLift.text = dataWeek[0]["count"]
+            liftsLogged.text = dataWeek[0]["total_lifts"]
+            
+        } else {
+            
+            averageRep.text = "0"
+            totalSets.text = "0"
+            totalReps.text = "0"
+            favoriteLift.text = "None"
+            liftsLogged.text = "0"
+        }
     }
 
     func loadLiftCount(object: Array<Dictionary<String, String>>) {
@@ -234,25 +249,26 @@ class StatsTableViewController: UITableViewController {
             colors.append(color)
         }
         
-        
-        let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
-        pieChartDataSet.colors = colors
+        if dataPoints.count != 0 || values.count != 0 {
 
-        let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
-        pieChartData.setValueFont(UIFont .systemFontOfSize(0))
-        pieChartView.descriptionText = ""
-        pieChartView.drawSliceTextEnabled = false
-        pieChartView.legend.wordWrapEnabled = true
-        pieChartView.data = pieChartData
-        
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = NSTextAlignment.Center
+            let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
+            pieChartDataSet.colors = colors
 
-        let myAttribute = [ NSFontAttributeName: UIFont.systemFontOfSize(9), NSParagraphStyleAttributeName: paragraphStyle]
-        let myString = NSMutableAttributedString(string: "Lift Breakdown", attributes: myAttribute )
+            let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
+            pieChartData.setValueFont(UIFont .systemFontOfSize(0))
+            pieChartView.descriptionText = ""
+            pieChartView.drawSliceTextEnabled = false
+            pieChartView.legend.wordWrapEnabled = true
+            pieChartView.data = pieChartData
         
-        pieChartView.centerAttributedText = myString
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = NSTextAlignment.Center
 
+            let myAttribute = [ NSFontAttributeName: UIFont.systemFontOfSize(9), NSParagraphStyleAttributeName: paragraphStyle]
+        
+            let myString = NSMutableAttributedString(string: "Lift Breakdown", attributes: myAttribute )
+            pieChartView.centerAttributedText = myString
+        }
         
     }
 }
