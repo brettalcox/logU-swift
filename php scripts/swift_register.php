@@ -41,14 +41,18 @@
                 username,
                 password,
                 salt,
-                email,
-		unit
+		email,
+                unit,
+		gender,
+		bodyweight
             ) VALUES (
                 :username,
                 :password,
                 :salt,
-                :email,
-		:unit
+		:email,
+		:unit,
+		:gender,
+		:bodyweight
             )
         ";
         
@@ -62,14 +66,19 @@
         }
         
 
+	$email = "0";
 	$unit = $_POST['unit'];
+	$gender = $_POST['gender'];
+	$bodyweight = $_POST['bodyweight'];
 
         $query_params = array(
             ':username' => $_POST['username'],
             ':password' => $password,
             ':salt' => $salt,
-            ':email' => $_POST['email'],
-	    ':unit' => $unit
+	    ':email' => $email,
+	    ':unit' => $unit,
+	    ':gender' => $gender,
+	    ':bodyweight' => $bodyweight
         );
         
         try
