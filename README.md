@@ -10,6 +10,7 @@ This is the current iOS development of https://loguapp.com
 
 ![alt tag](http://i.imgur.com/N2PD0fV.png)
 ![alt tag](http://i.imgur.com/8yvs3Hd.png)
+![alt tag](http://i.imgur.com/pTPUTBg.png?1)
 
 
 ### The Main User Dashboard
