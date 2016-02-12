@@ -34,7 +34,6 @@ class SignUpViewController : FormViewController {
                 
                 $0.value = "Pounds"
                 
-                
             }
             <<< SegmentedRow<String>("Gender") {
                 $0.title = "Gender"
@@ -82,7 +81,15 @@ class SignUpViewController : FormViewController {
                 self.presentViewController(actionSheetController, animated: true, completion: nil)
             } else {
                 
-                signUpRequest(String((form.values()["Username"]!)!), passwordInput: String((form.values()["Password"]!)!), unitInput: String((form.values()["Unit"]!)!), genderInput: String((form.values()["Gender"]!)!), weightInput: String((form.values()["Current Weight"]!)!))
+                var convertedUnit = String((form.values()["Unit"]!)!)
+                
+                if convertedUnit == "Pounds" {
+                    convertedUnit = "1"
+                } else {
+                    convertedUnit = "0"
+                }
+                
+                signUpRequest(String((form.values()["Username"]!)!), passwordInput: String((form.values()["Password"]!)!), unitInput: convertedUnit, genderInput: String((form.values()["Gender"]!)!), weightInput: String((form.values()["Current Weight"]!)!))
                 print("Account created!")
             }
             
