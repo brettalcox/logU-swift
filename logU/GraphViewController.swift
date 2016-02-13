@@ -112,6 +112,7 @@ class GraphViewController: UIViewController, UIActionSheetDelegate {
         
             let chartData = LineChartData(xVals: Date, dataSet: chartDataSet)
             poundageChartView.data =  chartData
+            poundageChartView.animate(yAxisDuration: 1.0)
         }
     }
     

@@ -196,25 +196,7 @@ class StatsTableViewController: UITableViewController {
     {
         return 4
     }
-    /*
-    override func tableView(tableView: UITableView, numberOfRowsInSection section:
-        Int) -> Int
-    {
-        return self.objects.count
-    }
-*/
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
-    {
-        // Allocates a Table View Cell
-        let aCell =
-        self.tableView.dequeueReusableCellWithIdentifier("cell",
-            forIndexPath: indexPath) as! StatsTableViewCell
-        // Sets the text of the Label in the Table View Cell
-        aCell.titleLabel.text = self.objects[indexPath.row]
-        return aCell
-    }
-    */
+
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         if indexPath.row == 0 && indexPath.section == 3 {
@@ -268,6 +250,7 @@ class StatsTableViewController: UITableViewController {
         
             let myString = NSMutableAttributedString(string: "Lift Breakdown", attributes: myAttribute )
             pieChartView.centerAttributedText = myString
+            pieChartView.animate(yAxisDuration: 1.0)
         }
         
     }

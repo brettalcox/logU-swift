@@ -108,6 +108,7 @@ class BenchViewController: UIViewController {
         
             let chartData = LineChartData(xVals: Date, dataSet: chartDataSet)
             benchChartView.data =  chartData
+            benchChartView.animate(yAxisDuration: 1.0)
         }
     }
     

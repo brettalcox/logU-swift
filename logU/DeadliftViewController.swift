@@ -108,6 +108,7 @@ class DeadliftViewController: UIViewController {
         
             let chartData = LineChartData(xVals: Date, dataSet: chartDataSet)
             deadliftChartView.data =  chartData
+            deadliftChartView.animate(yAxisDuration: 1.0)
         }
     }
     

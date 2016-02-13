@@ -107,6 +107,7 @@ class SquatViewController: UIViewController {
         
             let chartData = LineChartData(xVals: Date, dataSet: chartDataSet)
             squatChartView.data =  chartData
+            squatChartView.animate(yAxisDuration: 1.0)
         }
     }
 
