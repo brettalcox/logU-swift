@@ -18,6 +18,7 @@ var Reps: [String]! = []
 var Ids: [String]! = []
 
 var unfilteredTableData = [DashData]()
+var filteredTableData = [DashData]()
 
 class DashTableViewController: UITableViewController, UISearchResultsUpdating {
     
@@ -28,7 +29,6 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
     var indicator: UIActivityIndicatorView!
     
     var resultSearchController = UISearchController()
-    var filteredTableData = [DashData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -154,7 +154,7 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if (self.resultSearchController.active) {
-            return self.filteredTableData.count
+            return filteredTableData.count
         }
         else {
         return unfilteredTableData.count
@@ -210,31 +210,73 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
     
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
         if editingStyle == .Delete {
             // Delete the row from the data source
             let idToDelete = unfilteredTableData[indexPath.row].id
-            if Reachability.isConnectedToNetwork() {
-                dispatch_async(dispatch_get_global_queue(Int   (QOS_CLASS_USER_INITIATED.rawValue), 0)) {
-                        self.delete_request(idToDelete)
+            
+            if resultSearchController.active && resultSearchController.searchBar.text != "" {
+                let searchIdToDelete = filteredTableData[indexPath.row].id
+
+                if Reachability.isConnectedToNetwork() {
+                    dispatch_async(dispatch_get_global_queue(Int   (QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+                        self.delete_request(searchIdToDelete)
+                    }
                 }
-            }
+                filteredTableData.removeAtIndex(indexPath.row)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
 
-            if !Reachability.isConnectedToNetwork() {
-                OfflineRequest.coreDataDelete(idToDelete, date: unfilteredTableData[indexPath.row].date, lift: unfilteredTableData[indexPath.row].lift, sets: unfilteredTableData[indexPath.row].set, reps: unfilteredTableData[indexPath.row].rep, weight: unfilteredTableData[indexPath.row].weight)
-            }
-            
-            unfilteredTableData.removeAtIndex(indexPath.row)
+                shouldUpdateDash = true
+                shouldUpdatePoundage = true
+                shouldUpdateSquat = true
+                shouldUpdateBench = true
+                shouldUpdateDeadlift = true
+                shouldUpdateMax = true
+                shouldUpdateWeek = true
+                shouldUpdateStats = true
+                
+                if Reachability.isConnectedToNetwork() {
+                    
+                    dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+                        
+                        OfflineRequest().OfflineFetchSubmit()
+                        OfflineRequest().OfflineFetchDelete()
+                        
+                        JsonData().dataOfLift({ jsonString in
+                            dataAfter = jsonString
+                            dispatch_async(dispatch_get_main_queue()) {
+                                sleep(1)
+                                self.loadAfter(dataAfter)
+                            }
+                        })
+                    }
+                }
+                
+            } else {
 
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                if Reachability.isConnectedToNetwork() {
+                    dispatch_async(dispatch_get_global_queue(Int   (QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+                            self.delete_request(idToDelete)
+                    }
+                }
+
+                if !Reachability.isConnectedToNetwork() {
+                    OfflineRequest.coreDataDelete(idToDelete, date: unfilteredTableData[indexPath.row].date, lift: unfilteredTableData[indexPath.row].lift, sets: unfilteredTableData[indexPath.row].set, reps: unfilteredTableData[indexPath.row].rep, weight: unfilteredTableData[indexPath.row].weight)
+                }
             
-            //shouldUpdateDash = true
-            shouldUpdatePoundage = true
-            shouldUpdateSquat = true
-            shouldUpdateBench = true
-            shouldUpdateDeadlift = true
-            shouldUpdateMax = true
-            shouldUpdateWeek = true
-            shouldUpdateStats = true
+                unfilteredTableData.removeAtIndex(indexPath.row)
+
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+                shouldUpdateDash = true
+                shouldUpdatePoundage = true
+                shouldUpdateSquat = true
+                shouldUpdateBench = true
+                shouldUpdateDeadlift = true
+                shouldUpdateMax = true
+                shouldUpdateWeek = true
+                shouldUpdateStats = true
+            }
             
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
