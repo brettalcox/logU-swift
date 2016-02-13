@@ -19,13 +19,11 @@ class GraphViewController: UIViewController, UIActionSheetDelegate {
     var graphPoundage : [Double]! = []
 
     @IBOutlet weak var poundageChartView: LineChartView!
-    @IBAction func saveButton(sender: AnyObject) {
-        saveGraph()
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         self.automaticallyAdjustsScrollViewInsets = false;
         
         if Reachability.isConnectedToNetwork() {

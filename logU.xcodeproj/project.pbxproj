@@ -19,6 +19,7 @@
 		B55E02481C6457C200DBACF6 /* LogLift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55E02471C6457C200DBACF6 /* LogLift.swift */; };
 		B56863DC1C58374B0065D641 /* DashData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56863DB1C58374B0065D641 /* DashData.swift */; };
 		B56863E01C59A1A70065D641 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56863DF1C59A1A70065D641 /* SignUpViewController.swift */; };
+		B58E938F1C6EDFED00CFC8CA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E938E1C6EDFED00CFC8CA /* Theme.swift */; };
 		B5C6F1041C4F25F70016B70E /* logUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1031C4F25F70016B70E /* logUTests.swift */; };
 		B5C6F10F1C4F25F70016B70E /* logUUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F10E1C4F25F70016B70E /* logUUITests.swift */; };
 		B5C6F12A1C4F26480016B70E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F11C1C4F26480016B70E /* AppDelegate.swift */; };
@@ -32,7 +33,6 @@
 		B5C6F1321C4F26480016B70E /* JsonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1241C4F26480016B70E /* JsonData.swift */; };
 		B5C6F1331C4F26480016B70E /* LiftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1251C4F26480016B70E /* LiftTableViewCell.swift */; };
 		B5C6F1341C4F26480016B70E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1261C4F26480016B70E /* LoginVC.swift */; };
-		B5C6F1351C4F26480016B70E /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1271C4F26480016B70E /* PageViewController.swift */; };
 		B5C6F1361C4F26480016B70E /* SquatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1281C4F26480016B70E /* SquatViewController.swift */; };
 		B5C6F1441C4F26EA0016B70E /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C6F13F1C4F26DD0016B70E /* Charts.framework */; };
 		B5C6F1451C4F26EA0016B70E /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5C6F13F1C4F26DD0016B70E /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -44,6 +44,8 @@
 		B5C6F15E1C4F45240016B70E /* MaxesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F15D1C4F45240016B70E /* MaxesTableViewCell.swift */; };
 		B5C6F1681C557ACD0016B70E /* PoundageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1671C557ACD0016B70E /* PoundageTableViewCell.swift */; };
 		B5C6F16C1C557B4E0016B70E /* PoundageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F16B1C557B4E0016B70E /* PoundageTableViewController.swift */; };
+		B5F5D8981C6FA23B0037B51B /* GraphSegmented.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5D8971C6FA23B0037B51B /* GraphSegmented.swift */; };
+		B5F5D89D1C6FA3110037B51B /* SegmentedControlParentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5D89C1C6FA3110037B51B /* SegmentedControlParentVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +141,7 @@
 		B55E02471C6457C200DBACF6 /* LogLift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLift.swift; sourceTree = "<group>"; };
 		B56863DB1C58374B0065D641 /* DashData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashData.swift; sourceTree = "<group>"; };
 		B56863DF1C59A1A70065D641 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B58E938E1C6EDFED00CFC8CA /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		B5C6F0EB1C4F25F70016B70E /* logU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = logU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C6F0FF1C4F25F70016B70E /* logUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = logUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C6F1031C4F25F70016B70E /* logUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logUTests.swift; sourceTree = "<group>"; };
@@ -157,7 +160,6 @@
 		B5C6F1241C4F26480016B70E /* JsonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonData.swift; sourceTree = "<group>"; };
 		B5C6F1251C4F26480016B70E /* LiftTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftTableViewCell.swift; sourceTree = "<group>"; };
 		B5C6F1261C4F26480016B70E /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		B5C6F1271C4F26480016B70E /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		B5C6F1281C4F26480016B70E /* SquatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquatViewController.swift; sourceTree = "<group>"; };
 		B5C6F1381C4F26DD0016B70E /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		B5C6F14A1C4F27520016B70E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -168,6 +170,8 @@
 		B5C6F15D1C4F45240016B70E /* MaxesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaxesTableViewCell.swift; sourceTree = "<group>"; };
 		B5C6F1671C557ACD0016B70E /* PoundageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoundageTableViewCell.swift; sourceTree = "<group>"; };
 		B5C6F16B1C557B4E0016B70E /* PoundageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoundageTableViewController.swift; sourceTree = "<group>"; };
+		B5F5D8971C6FA23B0037B51B /* GraphSegmented.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphSegmented.swift; sourceTree = "<group>"; };
+		B5F5D89C1C6FA3110037B51B /* SegmentedControlParentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlParentVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,12 +260,14 @@
 				B5C6F1241C4F26480016B70E /* JsonData.swift */,
 				B5C6F1251C4F26480016B70E /* LiftTableViewCell.swift */,
 				B5C6F1261C4F26480016B70E /* LoginVC.swift */,
-				B5C6F1271C4F26480016B70E /* PageViewController.swift */,
 				B5C6F1281C4F26480016B70E /* SquatViewController.swift */,
 				8BB596DA1C513968003B98BA /* ConnectionTest.swift */,
 				8BB596DE1C513BE8003B98BA /* LiftDataModel.xcdatamodeld */,
 				8BB596E11C514449003B98BA /* OfflineRequest.swift */,
 				B55E02471C6457C200DBACF6 /* LogLift.swift */,
+				B58E938E1C6EDFED00CFC8CA /* Theme.swift */,
+				B5F5D8971C6FA23B0037B51B /* GraphSegmented.swift */,
+				B5F5D89C1C6FA3110037B51B /* SegmentedControlParentVC.swift */,
 			);
 			path = logU;
 			sourceTree = "<group>";
@@ -481,11 +487,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B52FFA561C62F16A00C5F481 /* StatsData.swift in Sources */,
+				B5F5D89D1C6FA3110037B51B /* SegmentedControlParentVC.swift in Sources */,
 				B5C6F12A1C4F26480016B70E /* AppDelegate.swift in Sources */,
-				B5C6F1351C4F26480016B70E /* PageViewController.swift in Sources */,
 				B5C6F1321C4F26480016B70E /* JsonData.swift in Sources */,
 				8BB596DB1C513968003B98BA /* ConnectionTest.swift in Sources */,
 				B5C6F12C1C4F26480016B70E /* BenchViewController.swift in Sources */,
+				B5F5D8981C6FA23B0037B51B /* GraphSegmented.swift in Sources */,
 				B5C6F15E1C4F45240016B70E /* MaxesTableViewCell.swift in Sources */,
 				8BB596E21C514449003B98BA /* OfflineRequest.swift in Sources */,
 				B5C6F12D1C4F26480016B70E /* DashTableViewController.swift in Sources */,
@@ -493,6 +500,7 @@
 				B5C6F1581C4F3A9E0016B70E /* StatsTableViewController.swift in Sources */,
 				B5C6F16C1C557B4E0016B70E /* PoundageTableViewController.swift in Sources */,
 				B5C6F1361C4F26480016B70E /* SquatViewController.swift in Sources */,
+				B58E938F1C6EDFED00CFC8CA /* Theme.swift in Sources */,
 				B5C6F15C1C4F40DF0016B70E /* MaxesTableViewController.swift in Sources */,
 				B5C6F1681C557ACD0016B70E /* PoundageTableViewCell.swift in Sources */,
 				B505D0251C55B5AE00C09549 /* SettingsTableViewController.swift in Sources */,

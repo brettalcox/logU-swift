@@ -17,12 +17,12 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         self.view.backgroundColor = UIColor.whiteColor()
         
-        let appearence = UIPageControl.appearance()
-        appearence.pageIndicatorTintColor = UIColor.lightGrayColor()
-        appearence.currentPageIndicatorTintColor = UIColor.grayColor()
+        //let appearence = UIPageControl.appearance()
+        //appearence.pageIndicatorTintColor = UIColor.lightGrayColor()
+        //appearence.currentPageIndicatorTintColor = UIColor.grayColor()
         
         self.dataSource = self
         self.delegate = self
@@ -37,8 +37,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         startingViewController = self.pages.first! as UIViewController
         self.setViewControllers([startingViewController], direction: .Forward, animated: false, completion: nil)
         
-        self.edgesForExtendedLayout = UIRectEdge.None
-        self.automaticallyAdjustsScrollViewInsets = false;
         
     }
     

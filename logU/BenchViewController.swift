@@ -21,9 +21,6 @@ class BenchViewController: UIViewController {
     var Date: [String]!
 
     @IBOutlet weak var benchChartView: LineChartView!
-    @IBAction func saveButton(sender: AnyObject) {
-        saveGraph()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

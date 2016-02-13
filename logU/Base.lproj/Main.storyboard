@@ -6,17 +6,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Graphs-->
-        <scene sceneID="kuZ-1S-wep">
-            <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="HsO-fj-Wmx" customClass="PageViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Graphs" id="WWR-43-547"/>
-                </pageViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GLd-ej-HXR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1504" y="782"/>
-        </scene>
         <!--Log a Lift-->
         <scene sceneID="qVl-ZP-hXs">
             <objects>
@@ -26,7 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="CgX-Tv-Xfb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hIJ-u3-3k1">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -52,38 +41,16 @@
             </objects>
             <point key="canvasLocation" x="-1190" y="-1023"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Sha-9R-JiL">
-            <objects>
-                <navigationController storyboardIdentifier="FirstNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L3U-cq-Ibz" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Pww-gy-4ng">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="etj-y8-KZw">
-                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="hbK-kt-rb8" kind="relationship" relationship="rootViewController" id="Yqj-Eg-EJY"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="O6z-8Y-G2x" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2320" y="-402"/>
-        </scene>
         <!--Weekly Poundage-->
         <scene sceneID="DlF-sO-ALN">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" id="hbK-kt-rb8" customClass="GraphViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstViewControllerId" extendedLayoutIncludesOpaqueBars="YES" id="hbK-kt-rb8" customClass="GraphViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NDy-Wd-M7H"/>
                         <viewControllerLayoutGuide type="bottom" id="XKW-Bw-A9w"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IFQ-80-JPC">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bgy-vc-aux" customClass="LineChartView" customModule="Charts">
@@ -100,35 +67,29 @@
                             <constraint firstItem="Bgy-vc-aux" firstAttribute="leading" secondItem="IFQ-80-JPC" secondAttribute="leadingMargin" id="wqa-OW-o5q"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Weekly Poundage" id="NeG-ND-yMu"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Weekly Poundage" id="nLi-NP-FoJ">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="fpz-20-mmU">
-                            <connections>
-                                <action selector="saveButton:" destination="hbK-kt-rb8" id="nPZ-RE-yKS"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationItem key="navigationItem" title="Weekly Poundage" id="nLi-NP-FoJ"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="poundageChartView" destination="Bgy-vc-aux" id="PUQ-Dc-QvT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEn-y8-edN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3070" y="-402"/>
+            <point key="canvasLocation" x="3022" y="-1162"/>
         </scene>
         <!--Squat-->
         <scene sceneID="pCv-zz-PPe">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="7yG-PY-eea" customClass="SquatViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewControllerId" extendedLayoutIncludesOpaqueBars="YES" id="7yG-PY-eea" customClass="SquatViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0jW-aA-Qlc"/>
                         <viewControllerLayoutGuide type="bottom" id="nhU-oy-jf6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oCC-Ci-IwK">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A8w-Ub-5MC" customClass="LineChartView" customModule="Charts">
@@ -145,51 +106,28 @@
                             <constraint firstItem="A8w-Ub-5MC" firstAttribute="top" secondItem="0jW-aA-Qlc" secondAttribute="bottom" id="yOu-HE-SgR"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Squat" id="7KS-xQ-IJZ"/>
-                    <navigationItem key="navigationItem" title="Squat" id="bAA-TP-uAn">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="cts-KW-kUD">
-                            <connections>
-                                <action selector="saveButton:" destination="7yG-PY-eea" id="XzF-AU-2BK"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Squat" id="bAA-TP-uAn"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="squatChartView" destination="A8w-Ub-5MC" id="v4g-QQ-Fwb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tPl-cW-hbK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3026" y="357"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Cma-Sf-jl1">
-            <objects>
-                <navigationController storyboardIdentifier="ThirdViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4ka-5Y-8W4" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="15H-I3-I1h">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="TLy-z4-Dkq">
-                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ent-1W-GqD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3936" y="1074"/>
+            <point key="canvasLocation" x="2978" y="-403"/>
         </scene>
         <!--Bench-->
         <scene sceneID="9vQ-uF-ueZ">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="ssg-YH-E6z" customClass="BenchViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThirdViewControllerId" extendedLayoutIncludesOpaqueBars="YES" id="ssg-YH-E6z" customClass="BenchViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g5h-RP-Da8"/>
                         <viewControllerLayoutGuide type="bottom" id="mUU-z9-phS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4YK-nV-p6V">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xbN-Sa-pgb" customClass="LineChartView" customModule="Charts">
@@ -206,55 +144,28 @@
                             <constraint firstAttribute="trailingMargin" secondItem="xbN-Sa-pgb" secondAttribute="trailing" id="gun-Wo-M5E"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Bench" id="07n-tZ-bkd"/>
-                    <navigationItem key="navigationItem" title="Bench" id="7Ah-Zt-EuK">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="qZv-96-zyM">
-                            <connections>
-                                <action selector="saveButton:" destination="ssg-YH-E6z" id="Bdg-hy-p8u"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Bench" id="7Ah-Zt-EuK"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="benchChartView" destination="xbN-Sa-pgb" id="QD7-EW-yPf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOT-vR-V3h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4650" y="1074"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="D79-z1-zbW">
-            <objects>
-                <navigationController storyboardIdentifier="FourthNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5zf-51-LCh" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Item" id="k6B-MS-eC2"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sid-jr-I9y">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" id="UVC-HI-ynG">
-                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="yGO-X1-Wna" kind="relationship" relationship="rootViewController" id="E2h-Bf-QGa"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eFO-Rx-3iq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3944" y="1826"/>
+            <point key="canvasLocation" x="2978" y="378"/>
         </scene>
         <!--Deadlift-->
         <scene sceneID="jsd-ZH-jmW">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="yGO-X1-Wna" customClass="DeadliftViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FourthViewControllerId" extendedLayoutIncludesOpaqueBars="YES" id="yGO-X1-Wna" customClass="DeadliftViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U0U-F6-oQl"/>
                         <viewControllerLayoutGuide type="bottom" id="eEe-Mc-zpO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YgE-er-Lhj">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZUZ-H1-9U2" customClass="LineChartView" customModule="Charts">
@@ -271,51 +182,24 @@
                             <constraint firstAttribute="trailingMargin" secondItem="ZUZ-H1-9U2" secondAttribute="trailing" id="uWb-BV-Xtc"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Deadlift" id="xBF-qN-1Z1"/>
-                    <navigationItem key="navigationItem" title="Deadlift" id="TW1-oC-zli">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="UY7-ou-sfp">
-                            <connections>
-                                <action selector="saveButton:" destination="yGO-X1-Wna" id="odP-i2-U3q"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Deadlift" id="TW1-oC-zli"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="deadliftChartView" destination="ZUZ-H1-9U2" id="8S0-lW-MTD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Hf-QA-gQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4673" y="1826"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="3ZR-Al-qLc">
-            <objects>
-                <navigationController storyboardIdentifier="SecondNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="r0p-Wc-eZ8" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Item" id="Xwe-5X-Xeg"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5VP-vk-guh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" id="btc-2z-8fy">
-                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="7yG-PY-eea" kind="relationship" relationship="rootViewController" id="eTU-59-49I"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kwM-jN-fqv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2320" y="357"/>
+            <point key="canvasLocation" x="3001" y="1130"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="q3I-Yd-Iz9">
             <objects>
                 <tableViewController title="Dashboard" id="1Qr-15-VoO" customClass="DashTableViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="87" sectionHeaderHeight="28" sectionFooterHeight="28" id="BEw-AV-hgN">
-                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -434,7 +318,7 @@
                         <viewControllerLayoutGuide type="bottom" id="HlS-bT-y8h"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="A3w-VF-KFD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -538,7 +422,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.33426445611723665" green="0.61668814735927835" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.59607843137254901" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="8hD-rA-mKz" firstAttribute="leading" secondItem="vRf-4x-lpI" secondAttribute="leadingMargin" id="8rd-Ch-7qu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8hD-rA-mKz" secondAttribute="trailing" id="vWI-kq-RPN"/>
@@ -587,15 +471,16 @@
         <scene sceneID="QmW-UZ-8TS">
             <objects>
                 <tabBarController storyboardIdentifier="MainTab" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dLN-94-LWx" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="1Iu-aV-HZY">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="1Iu-aV-HZY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="0Yk-Sq-dqJ" kind="relationship" relationship="viewControllers" id="gHV-ub-NXP"/>
-                        <segue destination="HsO-fj-Wmx" kind="relationship" relationship="viewControllers" id="Wk2-g5-uWx"/>
+                        <segue destination="JFu-P8-j46" kind="relationship" relationship="viewControllers" id="rrG-dh-erX"/>
                         <segue destination="k07-n3-ued" kind="relationship" relationship="viewControllers" id="xYM-RT-Doa"/>
                         <segue destination="YL9-4X-27f" kind="relationship" relationship="viewControllers" id="WLs-BE-Ug7"/>
                     </connections>
@@ -609,7 +494,7 @@
             <objects>
                 <tableViewController id="iKS-ey-D7z" customClass="StatsTableViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="kQf-Ge-RpD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -878,7 +763,7 @@
             <objects>
                 <tableViewController id="Whh-SA-y8k" customClass="MaxesTableViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="g0W-CF-DwV">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -934,7 +819,7 @@
             <objects>
                 <tableViewController id="x92-rr-BNi" customClass="PoundageTableViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eCO-XC-dmU">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -989,6 +874,7 @@
             <objects>
                 <navigationController id="k07-n3-ued" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="User Stats" id="c19-bV-zfB"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zZX-kJ-Xt0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1000,28 +886,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="18F-0w-5wT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1286" y="2301"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="sN2-60-PBl">
-            <objects>
-                <navigationController storyboardIdentifier="ThirdNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eTw-LP-lxV" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Item" id="mGM-Bc-Zvi"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="n8P-IE-srZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="R1S-5Z-5Xy">
-                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="ssg-YH-E6z" kind="relationship" relationship="rootViewController" id="Pro-NV-9DH"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bfG-vO-2LZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3936" y="1074"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5zI-yq-GF5">
@@ -1101,7 +965,7 @@
                 <navigationController navigationBarHidden="YES" id="YL9-4X-27f" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" id="eOa-Fh-Zct"/>
                     <toolbarItems/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eKo-Ye-Znx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1137,10 +1001,85 @@
             </objects>
             <point key="canvasLocation" x="-900" y="1519"/>
         </scene>
+        <!--Parent View Controller-->
+        <scene sceneID="IMe-jD-pJN">
+            <objects>
+                <viewController id="1G6-xb-m92" userLabel="Parent View Controller" customClass="ParentViewController" customModule="UISegmentedControlAsTabBarDemo_temp_caseinsensitive_rename" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mg8-kP-8da"/>
+                        <viewControllerLayoutGuide type="bottom" id="Net-Xz-MWe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a0z-p2-Fkg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ir9-bp-ZgV" userLabel="Content View">
+                                <rect key="frame" x="1" y="64" width="600" height="604"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="108" width="375" height="510"/>
+                                </variation>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="p70-iB-ELQ" customClass="GraphSegmented" customModule="logU" customModuleProvider="target">
+                                <rect key="frame" x="1" y="28" width="600" height="29"/>
+                                <segments>
+                                    <segment title="Poundage"/>
+                                    <segment title="Squat"/>
+                                    <segment title="Bench"/>
+                                    <segment title="Deadlift"/>
+                                </segments>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="72" width="375" height="29"/>
+                                </variation>
+                                <connections>
+                                    <action selector="switchTabs:" destination="1G6-xb-m92" eventType="valueChanged" id="Mix-kA-Yad"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ir9-bp-ZgV" firstAttribute="leading" secondItem="a0z-p2-Fkg" secondAttribute="leading" id="6aO-5z-yij"/>
+                            <constraint firstItem="Net-Xz-MWe" firstAttribute="top" secondItem="Ir9-bp-ZgV" secondAttribute="bottom" id="6d4-te-eR8"/>
+                            <constraint firstAttribute="trailing" secondItem="Ir9-bp-ZgV" secondAttribute="trailing" id="8KV-7N-Wfd"/>
+                            <constraint firstItem="p70-iB-ELQ" firstAttribute="leading" secondItem="a0z-p2-Fkg" secondAttribute="leading" id="HMW-rd-Byf"/>
+                            <constraint firstItem="Ir9-bp-ZgV" firstAttribute="top" secondItem="p70-iB-ELQ" secondAttribute="bottom" constant="8" id="Se3-gt-g5Q"/>
+                            <constraint firstItem="p70-iB-ELQ" firstAttribute="top" secondItem="mg8-kP-8da" secondAttribute="bottom" constant="8" id="SkS-TD-0Eo"/>
+                            <constraint firstAttribute="trailing" secondItem="p70-iB-ELQ" secondAttribute="trailing" id="cvM-lX-3me"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="User Graphs" id="Kk5-W6-o0k"/>
+                    <connections>
+                        <outlet property="contentView" destination="Ir9-bp-ZgV" id="rGt-DX-b2t"/>
+                        <outlet property="segmentedControl" destination="p70-iB-ELQ" id="uKI-zU-oTO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1XP-sU-Zn4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2182" y="-58"/>
+        </scene>
+        <!--Graphs-->
+        <scene sceneID="f1I-GA-uHI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JFu-P8-j46" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Graphs" id="OHa-g0-3mY"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="juc-ld-BY8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1G6-xb-m92" kind="relationship" relationship="rootViewController" id="ieZ-Nd-KoX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4RH-5o-LCM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1500" y="-58"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Euf-th-fe8"/>
-        <segue reference="qD1-yQ-ibE"/>
         <segue reference="4uB-Y3-VRi"/>
+        <segue reference="7jg-Cu-olp"/>
     </inferredMetricsTieBreakers>
 </document>

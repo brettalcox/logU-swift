@@ -17,6 +17,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let theme = ThemeManager.currentTheme()
+        ThemeManager.applyTheme(theme)
+        /*
+        UITabBar.appearance().backgroundImage = theme.tabBarBackgroundImage
+        
+        UITabBar.appearance().barTintColor = UIColor.grayColor()
+        UITabBar.appearance().tintColor = UIColor(red: 0/255.0, green: 152/255.0, blue: 255/255.0, alpha: 1.0)
+        
+        let tabIndicator = UIImage(named: "tabBarSelectionIndicator")?.imageWithRenderingMode(.AlwaysTemplate)
+        let tabResizableIndicator = tabIndicator?.resizableImageWithCapInsets(
+            UIEdgeInsets(top: 0, left: 2.0, bottom: 0, right: 2.0))
+        UITabBar.appearance().selectionIndicatorImage = tabResizableIndicator
+*/
+        
         return true
     }
 
