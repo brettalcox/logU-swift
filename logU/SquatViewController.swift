@@ -21,6 +21,9 @@ class SquatViewController: UIViewController {
     var Date: [String]!
     
     @IBOutlet weak var squatChartView: LineChartView!
+    @IBAction func longPress(sender: UILongPressGestureRecognizer) {
+        saveGraph()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -57,6 +57,9 @@
                                 <rect key="frame" x="145" y="43" width="310" height="425"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="nun-nV-apj" appends="YES" id="gOQ-fA-pEo"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -77,6 +80,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aEn-y8-edN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="nun-nV-apj">
+                    <connections>
+                        <action selector="longPress:" destination="hbK-kt-rb8" id="bsu-2t-XUg"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3022" y="-1162"/>
         </scene>
@@ -96,6 +104,9 @@
                                 <rect key="frame" x="180" y="236" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="f5h-JJ-bAi" appends="YES" id="E5n-Wa-hcb"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -115,6 +126,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tPl-cW-hbK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="f5h-JJ-bAi">
+                    <connections>
+                        <action selector="longPress:" destination="7yG-PY-eea" id="lY7-8g-Rdu"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2978" y="-403"/>
         </scene>
@@ -134,6 +150,9 @@
                                 <rect key="frame" x="172" y="175" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="njO-25-qy7" appends="YES" id="wyt-yL-C49"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -153,6 +172,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOT-vR-V3h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="njO-25-qy7">
+                    <connections>
+                        <action selector="longPress:" destination="ssg-YH-E6z" id="YGx-bd-qFk"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2978" y="378"/>
         </scene>
@@ -172,6 +196,9 @@
                                 <rect key="frame" x="175" y="236" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="OKR-nv-eyI" appends="YES" id="Gol-b5-YVq"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -191,6 +218,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Hf-QA-gQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="OKR-nv-eyI">
+                    <connections>
+                        <action selector="longPress:" destination="yGO-X1-Wna" id="BX6-y7-23G"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3001" y="1130"/>
         </scene>
@@ -1004,7 +1036,7 @@
         <!--Parent View Controller-->
         <scene sceneID="IMe-jD-pJN">
             <objects>
-                <viewController id="1G6-xb-m92" userLabel="Parent View Controller" customClass="ParentViewController" customModule="UISegmentedControlAsTabBarDemo_temp_caseinsensitive_rename" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1G6-xb-m92" userLabel="Parent View Controller" customClass="ParentViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mg8-kP-8da"/>
                         <viewControllerLayoutGuide type="bottom" id="Net-Xz-MWe"/>

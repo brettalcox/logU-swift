@@ -21,6 +21,9 @@ class BenchViewController: UIViewController {
     var Date: [String]!
 
     @IBOutlet weak var benchChartView: LineChartView!
+    @IBAction func longPress(sender: UILongPressGestureRecognizer) {
+        saveGraph()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

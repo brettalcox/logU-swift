@@ -19,6 +19,9 @@ class GraphViewController: UIViewController, UIActionSheetDelegate {
     var graphPoundage : [Double]! = []
 
     @IBOutlet weak var poundageChartView: LineChartView!
+    @IBAction func longPress(sender: UILongPressGestureRecognizer) {
+        saveGraph()
+    }
 
     
     override func viewDidLoad() {
