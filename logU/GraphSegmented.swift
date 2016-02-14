@@ -34,7 +34,7 @@ class GraphSegmented: UISegmentedControl {
         
         
         let normalTextAttributes = [
-            NSForegroundColorAttributeName: UIColor.blackColor(),
+            NSForegroundColorAttributeName: UIColor.darkGrayColor(),
             NSFontAttributeName: font
         ]
         

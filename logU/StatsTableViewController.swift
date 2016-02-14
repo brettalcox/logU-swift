@@ -251,6 +251,7 @@ class StatsTableViewController: UITableViewController {
             let myString = NSMutableAttributedString(string: "Lift Breakdown", attributes: myAttribute )
             pieChartView.centerAttributedText = myString
             pieChartView.animate(yAxisDuration: 1.0)
+            pieChartView.backgroundColor = UIColor.groupTableViewBackgroundColor()
         }
         
     }

@@ -19,6 +19,8 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         
+        addDoneButton()
+        
         loginButton.enabled = true
         signUpButton.enabled = true
         txtUsername.enabled = true
@@ -179,5 +181,18 @@ class LoginVC: UIViewController {
     func stopIndicator() {
         self.indicator.stopAnimating()
     }
+    
+    func addDoneButton() {
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace,
+            target: nil, action: nil)
+        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .Done,
+            target: view, action: Selector("endEditing:"))
+        keyboardToolbar.items = [flexBarButton, doneBarButton]
+        txtUsername.inputAccessoryView = keyboardToolbar
+        txtPassword.inputAccessoryView = keyboardToolbar
+    }
+    
 }
 

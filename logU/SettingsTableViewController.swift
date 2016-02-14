@@ -83,6 +83,7 @@ class SettingsTableViewController: FormViewController {
     func buttonTapped(cell: ButtonCellOf<String>, row: ButtonRow) {
         
         performSegueWithIdentifier("loggingOut", sender: nil)
+        self.navigationController?.navigationBarHidden = true
     }
     
     func saveTapped(cell: ButtonCellOf<String>, row: ButtonRow) {
