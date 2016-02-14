@@ -11,12 +11,10 @@ import UIKit
 let SelectedThemeKey = "SelectedTheme"
 
 enum Theme: Int {
-    case Default, Dark, Graphical
+    case Dark, Graphical
     
     var mainColor: UIColor {
         switch self {
-        case .Default:
-            return UIColor(red: 87.0/255.0, green: 188.0/255.0, blue: 95.0/255.0, alpha: 1.0)
         case .Dark:
             return UIColor(red: 0/255.0, green: 152/255.0, blue: 255/255.0, alpha: 1.0)
         case .Graphical:
@@ -26,9 +24,9 @@ enum Theme: Int {
     
     var barStyle: UIBarStyle {
         switch self {
-        case .Default, .Graphical:
-            return .Default
         case .Dark:
+            return .Black
+        default:
             return .Black
         }
     }
@@ -43,17 +41,15 @@ enum Theme: Int {
     
     var backgroundColor: UIColor {
         switch self {
-        case .Default, .Graphical:
-            return UIColor(white: 0.9, alpha: 1.0)
         case .Dark:
+            return UIColor(white: 0.8, alpha: 1.0)
+        default:
             return UIColor(white: 0.8, alpha: 1.0)
         }
     }
     
     var secondaryColor: UIColor {
         switch self {
-        case .Default:
-            return UIColor(red: 242.0/255.0, green: 101.0/255.0, blue: 34.0/255.0, alpha: 1.0)
         case .Dark:
             return UIColor(red: 0/255.0, green: 152/255.0, blue: 255/255.0, alpha: 1.0)
         case .Graphical:
@@ -66,9 +62,9 @@ enum Theme: Int {
 struct ThemeManager {
     static func currentTheme() -> Theme {
         if let storedTheme = NSUserDefaults.standardUserDefaults().valueForKey(SelectedThemeKey)?.integerValue {
-            return Theme(rawValue: 1)!
+            return Theme(rawValue: 0)!
         } else {
-            return .Default
+            return .Dark
         }
     }
     
