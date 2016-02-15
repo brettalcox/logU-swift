@@ -35,7 +35,51 @@ class LogLift: FormViewController {
     
     @IBAction func logPressed(sender: UIBarButtonItem) {
         
+        if Reachability.isConnectedToNetwork() {
+            
+            let dateValue = (form.values()["Date"]!)! as! NSDate
+            
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-M-d HH:mm:ss Z"
+            
+            let date = dateFormatter.dateFromString(String(dateValue))!
+            
+            dateFormatter.dateFormat = "M/d/yyyy"
+            
+            let formattedDateString = dateFormatter.stringFromDate(date)
+            
+            if (form.values()["Sets"]! == nil || form.values()["Reps"]! == nil || form.values()["Weight"]! == nil) {
+                let actionSheetController: UIAlertController = UIAlertController(title: "Logging Failed", message: "Please fill out all fields!", preferredStyle: .Alert)
+                let cancelAction: UIAlertAction = UIAlertAction(title: "Dismiss", style: .Cancel) { action -> Void in
+                    //Do some stuff
+                }
+                actionSheetController.addAction(cancelAction)
+                self.presentViewController(actionSheetController, animated: true, completion: nil)
+            } else {
+                
+                shouldUpdateDash = true
+                shouldUpdatePoundage = true
+                shouldUpdateSquat = true
+                shouldUpdateBench = true
+                shouldUpdateDeadlift = true
+                shouldUpdateMax = true
+                shouldUpdateWeek = true
+                shouldUpdateStats = true
+                
+                theDate = formattedDateString
+                lift = String((form.values()["Lift"]!)!)
+                set = String((form.values()["Sets"]!)!)
+                rep = String((form.values()["Reps"]!)!)
+                weight = String((form.values()["Weight"]!)!)
+                
+                print(theDate, lift!, set!, rep!, weight!)
+                upload_request()
+                performSegueWithIdentifier("unwindToDash", sender: nil)
+                
             }
+        }
+
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,62 +109,6 @@ class LogLift: FormViewController {
                 weight = String($0.value)
         }
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if logButton === sender {
-            
-            shouldUpdateDash = true
-            shouldUpdatePoundage = true
-            shouldUpdateSquat = true
-            shouldUpdateBench = true
-            shouldUpdateDeadlift = true
-            shouldUpdateMax = true
-            shouldUpdateWeek = true
-            shouldUpdateStats = true
-            
-            if Reachability.isConnectedToNetwork() {
-                
-                let dateValue = (form.values()["Date"]!)! as! NSDate
-                
-                let dateFormatter = NSDateFormatter()
-                dateFormatter.dateFormat = "yyyy-M-d HH:mm:ss Z"
-                
-                let date = dateFormatter.dateFromString(String(dateValue))!
-                
-                dateFormatter.dateFormat = "M/d/yyyy"
-                
-                let formattedDateString = dateFormatter.stringFromDate(date)
-                
-                if (form.values()["Sets"]! == nil || form.values()["Reps"]! == nil || form.values()["Weight"]! == nil) {
-                    let actionSheetController: UIAlertController = UIAlertController(title: "Logging Failed", message: "Please fill out all fields!", preferredStyle: .Alert)
-                    let cancelAction: UIAlertAction = UIAlertAction(title: "Dismiss", style: .Cancel) { action -> Void in
-                        //Do some stuff
-                    }
-                    actionSheetController.addAction(cancelAction)
-                    self.presentViewController(actionSheetController, animated: true, completion: nil)
-                } else {
-                    theDate = formattedDateString
-                    lift = String((form.values()["Lift"]!)!)
-                    set = String((form.values()["Sets"]!)!)
-                    rep = String((form.values()["Reps"]!)!)
-                    weight = String((form.values()["Weight"]!)!)
-                    
-                    print(theDate, lift!, set!, rep!, weight!)
-                    upload_request()
-
-                }
-
-            }
-            
-            if !Reachability.isConnectedToNetwork() {
-                OfflineRequest.coreDataInsert(theDate!, lift: lift!, sets: set!, reps: rep!, weight: weight!)
-                
-                DashTableViewController().OfflineTableInsert(theDate!, lift: lift!, set: set!, rep: rep!, weight: weight!)
-            }
-        }
-    }
-
     
     func upload_request()
     {

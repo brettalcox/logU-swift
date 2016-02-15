@@ -22,13 +22,12 @@
                     <navigationItem key="navigationItem" title="Log a Lift" id="Nfw-zm-mF0">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="5fQ-94-9bX">
                             <connections>
-                                <segue destination="RKH-OD-v87" kind="unwind" unwindAction="unwindToDashboard:towardsViewController:" id="Vqr-tx-PA4"/>
+                                <segue destination="RKH-OD-v87" kind="unwind" identifier="unwindToDash" unwindAction="unwindToDashboard:towardsViewController:" id="Faq-E5-vML"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Log" id="VKT-gr-o7M">
                             <connections>
                                 <action selector="logPressed:" destination="twL-v3-V0n" id="G7Q-dk-hmi"/>
-                                <segue destination="RKH-OD-v87" kind="unwind" unwindAction="unwindToDashboard:towardsViewController:" id="iyM-IN-B78"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
