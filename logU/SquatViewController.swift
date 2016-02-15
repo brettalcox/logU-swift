@@ -104,10 +104,14 @@ class SquatViewController: UIViewController {
             chartDataSet.drawCubicEnabled = true
             chartDataSet.drawFilledEnabled = true
             chartDataSet.drawCirclesEnabled = false
+            chartDataSet.fillColor = UIColor(red: 0/255.0, green: 152/255.0, blue: 255/255.0, alpha: 1.0)
+            chartDataSet.setColor(UIColor(red: 0/255.0, green: 152/255.0, blue: 255/255.0, alpha: 1.0))
+            chartDataSet.fillAlpha = 0.50
         
             let chartData = LineChartData(xVals: Date, dataSet: chartDataSet)
             squatChartView.data =  chartData
             squatChartView.animate(yAxisDuration: 1.0)
+            squatChartView.descriptionText = ""
         }
     }
 
