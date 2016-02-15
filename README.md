@@ -33,7 +33,7 @@ This is the current iOS development of https://loguapp.com
 
 
 
-![alt tag](http://i.imgur.com/0HzAzn9.png?1)
+![alt tag](http://i.imgur.com/1zTO9Ku.png?1)
 
 
 
