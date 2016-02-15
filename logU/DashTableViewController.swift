@@ -39,6 +39,7 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
             controller.dimsBackgroundDuringPresentation = false
             controller.searchBar.sizeToFit()
             controller.searchBar.placeholder = "Search Lift by Date"
+            controller.searchBar.keyboardType = UIKeyboardType.NumbersAndPunctuation
             
             self.tableView.tableHeaderView = controller.searchBar
             
