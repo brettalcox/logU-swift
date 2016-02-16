@@ -63,4 +63,4 @@ This is the current iOS development of https://loguapp.com
 ### User Settings
 
 
-![alt tag](http://i.imgur.com/TMt9y7X.png?1)
+![alt tag](http://i.imgur.com/QYdkVCZ.png?1)
