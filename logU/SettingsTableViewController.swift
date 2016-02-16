@@ -78,6 +78,13 @@ class SettingsTableViewController: FormViewController {
                 $0.onCellSelection(self.buttonTapped)
 
         }
+            +++ Section("Privacy")
+            <<< ButtonRow("Privacy") {
+                $0.title = "Privacy Policy"
+                
+                $0.onCellSelection(self.viewPrivacy)
+            }
+            
         
             +++ Section("Account Management")
             <<< ButtonRow("Delete Account") {
@@ -97,6 +104,10 @@ class SettingsTableViewController: FormViewController {
         performSegueWithIdentifier("loggingOut", sender: nil)
         self.navigationController?.navigationBarHidden = true
         globalUser = ""
+    }
+    
+    func viewPrivacy(cell: ButtonCellOf<String>, row: ButtonRow) {
+        performSegueWithIdentifier("showPrivacyPolicy", sender: nil)
     }
     
     func deleteAccount(cell: ButtonCellOf<String>, row: ButtonRow) {

@@ -358,6 +358,7 @@
                     <navigationItem key="navigationItem" title="Settings" id="PGr-NL-l7h"/>
                     <connections>
                         <segue destination="OZX-0a-4Rg" kind="show" identifier="loggingOut" id="R1l-bB-OIO"/>
+                        <segue destination="uxU-sK-yQI" kind="show" identifier="showPrivacyPolicy" id="F9a-gd-XNB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hvE-Zw-fzD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1007,6 +1008,44 @@
             </objects>
             <point key="canvasLocation" x="-2002" y="-1023"/>
         </scene>
+        <!--Privacy Policy-->
+        <scene sceneID="3iS-da-Pxd">
+            <objects>
+                <viewController id="uxU-sK-yQI" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JeF-jO-vh1"/>
+                        <viewControllerLayoutGuide type="bottom" id="6b2-Hw-ysx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SfN-rb-aqQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mrk-Fg-mQo">
+                                <rect key="frame" x="156" y="171" width="240" height="484"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">This is the main privacy policy for logU - A Strength Logger. logU collects a few pieces of user information to be used within your profile. The information obtained from a user in this app: username, password, gender, and bodyweight. 
+
+This data is collected to provide you with the most accurate representation of your current strength levels. Specifically, the username and password provide you with a unique user experience to keep your logged lifts stored and secured. In addition, the gender and bodyweight are used to generate a Wilks Coefficient, the formula that compares strength between varying genders and bodyweights. 
+
+This data will not be collected, transmitted, or used with anybody or anything outside of logU. This data will not be used to contact or identify a user in any way. This data is retained for the entirety of the user's account life, unless otherwise requested.</mutableString>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="mrk-Fg-mQo" secondAttribute="trailing" id="19Q-45-8Re"/>
+                            <constraint firstItem="mrk-Fg-mQo" firstAttribute="top" secondItem="JeF-jO-vh1" secondAttribute="bottom" id="bmV-7r-pJH"/>
+                            <constraint firstItem="6b2-Hw-ysx" firstAttribute="top" secondItem="mrk-Fg-mQo" secondAttribute="bottom" id="rtj-YR-erx"/>
+                            <constraint firstItem="mrk-Fg-mQo" firstAttribute="leading" secondItem="SfN-rb-aqQ" secondAttribute="leadingMargin" id="z3x-ge-d6I"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Privacy Policy" id="g5L-s2-f3K"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nlq-3b-EPC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="534" y="-1967"/>
+        </scene>
         <!--Settings-->
         <scene sceneID="4Pg-pC-va9">
             <objects>
@@ -1125,6 +1164,24 @@
             </objects>
             <point key="canvasLocation" x="1500" y="-58"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sGx-7G-DZJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="25M-kQ-xzS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d1F-a2-LrZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uxU-sK-yQI" kind="relationship" relationship="rootViewController" id="ebT-q2-kUR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ts-FW-eDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-156" y="-1967"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Contacts" width="25" height="25"/>
@@ -1133,8 +1190,9 @@
         <image name="Line Chart" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qD1-yQ-ibE"/>
         <segue reference="R1l-bB-OIO"/>
         <segue reference="4uB-Y3-VRi"/>
+        <segue reference="qD1-yQ-ibE"/>
+        <segue reference="F9a-gd-XNB"/>
     </inferredMetricsTieBreakers>
 </document>
