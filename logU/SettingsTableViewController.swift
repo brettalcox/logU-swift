@@ -71,19 +71,63 @@ class SettingsTableViewController: FormViewController {
                 row4.onCellSelection(self.saveTapped)
             }
             
-            +++ Section("Options")
+            +++ Section("Current Session")
             <<< ButtonRow("Logout") {
                 $0.title = "Logout"
                 
                 $0.onCellSelection(self.buttonTapped)
 
         }
+        
+            +++ Section("Account Management")
+            <<< ButtonRow("Delete Account") {
+                $0.title = "Delete Account"
+                
+                $0.onCellSelection(self.deleteAccount)
+        }
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        globalUser = defaults.valueForKey("USERNAME") as! String
     }
     
     func buttonTapped(cell: ButtonCellOf<String>, row: ButtonRow) {
         
         performSegueWithIdentifier("loggingOut", sender: nil)
         self.navigationController?.navigationBarHidden = true
+        globalUser = ""
+    }
+    
+    func deleteAccount(cell: ButtonCellOf<String>, row: ButtonRow) {
+        
+        let actionSheetController: UIAlertController = UIAlertController(title: "Delete Account?", message: "This will delete account and all lifts! Cannot be undone!", preferredStyle: .Alert)
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
+            //Do some stuff
+        }
+        let deleteAction: UIAlertAction = UIAlertAction(title: "Delete", style: .Default) { action -> Void in
+            
+            let actionSheetController: UIAlertController = UIAlertController(title: "Are you sure?", message: "Cannot be undone!", preferredStyle: .Alert)
+            let cancelAction: UIAlertAction = UIAlertAction(title: "No", style: .Cancel) { action -> Void in
+                //Do some stuff
+            }
+            let deleteAction: UIAlertAction = UIAlertAction(title: "Yes", style: .Default) { action -> Void in
+                
+                DeleteAccount().delete_request(globalUser!)
+                
+                globalUser = ""
+                self.performSegueWithIdentifier("loggingOut", sender: nil)
+                self.navigationController?.navigationBarHidden = true
+                
+            }
+            actionSheetController.addAction(cancelAction)
+            actionSheetController.addAction(deleteAction)
+            self.presentViewController(actionSheetController, animated: true, completion: nil)
+            
+        }
+        actionSheetController.addAction(cancelAction)
+        actionSheetController.addAction(deleteAction)
+        self.presentViewController(actionSheetController, animated: true, completion: nil)
     }
     
     func saveTapped(cell: ButtonCellOf<String>, row: ButtonRow) {

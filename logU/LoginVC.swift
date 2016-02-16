@@ -11,6 +11,7 @@ import Foundation
 import CoreData
 
 var dataResult = ""
+var globalUser: String?
 
 class LoginVC: UIViewController {
     
@@ -128,10 +129,13 @@ class LoginVC: UIViewController {
                     dataResult = dataString
 
                     if dataResult == " 1" {
+                        
                         var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
                         prefs.setObject(username, forKey: "USERNAME")
                         prefs.setInteger(1, forKey: "ISLOGGEDIN")
                         prefs.synchronize()
+                        
+                        globalUser = String(prefs.valueForKey("USERNAME"))
                         
                         dispatch_async(dispatch_get_main_queue(), {
                             self.performSegueWithIdentifier("Dashboard", sender: self)

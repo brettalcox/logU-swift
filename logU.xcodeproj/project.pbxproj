@@ -44,6 +44,7 @@
 		B5C6F15E1C4F45240016B70E /* MaxesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F15D1C4F45240016B70E /* MaxesTableViewCell.swift */; };
 		B5C6F1681C557ACD0016B70E /* PoundageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1671C557ACD0016B70E /* PoundageTableViewCell.swift */; };
 		B5C6F16C1C557B4E0016B70E /* PoundageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F16B1C557B4E0016B70E /* PoundageTableViewController.swift */; };
+		B5E812521C72A30100FA2DBC /* DeleteAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E812511C72A30100FA2DBC /* DeleteAccount.swift */; };
 		B5F5D8981C6FA23B0037B51B /* GraphSegmented.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5D8971C6FA23B0037B51B /* GraphSegmented.swift */; };
 		B5F5D89D1C6FA3110037B51B /* SegmentedControlParentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5D89C1C6FA3110037B51B /* SegmentedControlParentVC.swift */; };
 /* End PBXBuildFile section */
@@ -170,6 +171,7 @@
 		B5C6F15D1C4F45240016B70E /* MaxesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaxesTableViewCell.swift; sourceTree = "<group>"; };
 		B5C6F1671C557ACD0016B70E /* PoundageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoundageTableViewCell.swift; sourceTree = "<group>"; };
 		B5C6F16B1C557B4E0016B70E /* PoundageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoundageTableViewController.swift; sourceTree = "<group>"; };
+		B5E812511C72A30100FA2DBC /* DeleteAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeleteAccount.swift; path = ../DeleteAccount.swift; sourceTree = "<group>"; };
 		B5F5D8971C6FA23B0037B51B /* GraphSegmented.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphSegmented.swift; sourceTree = "<group>"; };
 		B5F5D89C1C6FA3110037B51B /* SegmentedControlParentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlParentVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -233,6 +235,7 @@
 		B5C6F0ED1C4F25F70016B70E /* logU */ = {
 			isa = PBXGroup;
 			children = (
+				B5E812511C72A30100FA2DBC /* DeleteAccount.swift */,
 				B56863DF1C59A1A70065D641 /* SignUpViewController.swift */,
 				B56863DB1C58374B0065D641 /* DashData.swift */,
 				B505D02A1C55CEDB00C09549 /* Settings.swift */,
@@ -371,7 +374,7 @@
 				TargetAttributes = {
 					B5C6F0EA1C4F25F70016B70E = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 5ZKVT2JH9J;
+						DevelopmentTeam = 54B57CN46G;
 					};
 					B5C6F0FE1C4F25F70016B70E = {
 						CreatedOnToolsVersion = 7.2;
@@ -506,6 +509,7 @@
 				B505D0251C55B5AE00C09549 /* SettingsTableViewController.swift in Sources */,
 				B56863DC1C58374B0065D641 /* DashData.swift in Sources */,
 				8BB596E01C513BE8003B98BA /* LiftDataModel.xcdatamodeld in Sources */,
+				B5E812521C72A30100FA2DBC /* DeleteAccount.swift in Sources */,
 				B5C6F1331C4F26480016B70E /* LiftTableViewCell.swift in Sources */,
 				B505D02B1C55CEDB00C09549 /* Settings.swift in Sources */,
 				B55E02481C6457C200DBACF6 /* LogLift.swift in Sources */,
@@ -667,11 +671,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = logU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = logU.logU;
+				PRODUCT_BUNDLE_IDENTIFIER = com.logu.logu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -682,11 +687,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = logU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = logU.logU;
+				PRODUCT_BUNDLE_IDENTIFIER = com.logu.logu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
