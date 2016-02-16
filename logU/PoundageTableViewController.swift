@@ -35,7 +35,6 @@ class PoundageTableViewController: UITableViewController {
                 
                     GraphData().dataOfLifting(self.url_to_request, completion: { jsonString in
                         dataAfter = jsonString
-                        print(jsonString)
                         dispatch_async(dispatch_get_main_queue()) {
                             self.loadAfter(dataAfter)
                         }

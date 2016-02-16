@@ -30,7 +30,6 @@ class GraphData {
             {(data,response,error) in
                 
                 guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
-                    print("error")
                     return
                 }
                 var myData: Array<Dictionary<String, String>> = []
@@ -41,7 +40,6 @@ class GraphData {
                     }
             
                 } catch let error as NSError {
-                    print(error.localizedDescription)
                 }
                 completion(Array<Dictionary<String, String>>(myData))
 

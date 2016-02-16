@@ -1023,11 +1023,11 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mrk-Fg-mQo">
                                 <rect key="frame" x="156" y="171" width="240" height="484"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">This is the main privacy policy for logU - A Strength Logger. logU collects a few pieces of user information to be used within your profile. The information obtained from a user in this app: username, password, gender, and bodyweight. 
+                                <string key="text">This is the main privacy policy for logU - A Strength Logger. logU collects a few pieces of user information to be used within your profile. The information obtained from a user in this app: username, password, gender, and bodyweight. 
 
 This data is collected to provide you with the most accurate representation of your current strength levels. Specifically, the username and password provide you with a unique user experience to keep your logged lifts stored and secured. In addition, the gender and bodyweight are used to generate a Wilks Coefficient, the formula that compares strength between varying genders and bodyweights. 
 
-This data will not be collected, transmitted, or used with anybody or anything outside of logU. This data will not be used to contact or identify a user in any way. This data is retained for the entirety of the user's account life, unless otherwise requested.</mutableString>
+This data will not be collected, transmitted, or used with anybody or anything outside of logU. This data will not be used to contact or identify a user in any way. This data is retained for the entirety of the user's account life, unless otherwise requested.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
