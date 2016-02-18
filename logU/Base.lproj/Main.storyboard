@@ -107,19 +107,38 @@
                                     <outletCollection property="gestureRecognizers" destination="f5h-JJ-bAi" appends="YES" id="E5n-Wa-hcb"/>
                                 </connections>
                             </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yK-ny-uPs">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Reset Graph" id="iML-6J-KDg">
+                                        <connections>
+                                            <action selector="reloadGraph:" destination="7yG-PY-eea" id="kcH-Q0-qpp"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="EBJ-aj-ISo"/>
+                                    <barButtonItem title="Filter Graph" id="UrX-Z3-dRL">
+                                        <connections>
+                                            <action selector="filterGraph:" destination="7yG-PY-eea" id="eAS-Lv-oeE"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="nhU-oy-jf6" firstAttribute="top" secondItem="A8w-Ub-5MC" secondAttribute="bottom" id="4oV-ZM-QcG"/>
-                            <constraint firstItem="A8w-Ub-5MC" firstAttribute="leading" secondItem="oCC-Ci-IwK" secondAttribute="leadingMargin" id="Mpy-IV-8h3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="A8w-Ub-5MC" secondAttribute="trailing" id="Tr2-K1-lDK"/>
-                            <constraint firstItem="A8w-Ub-5MC" firstAttribute="top" secondItem="0jW-aA-Qlc" secondAttribute="bottom" id="yOu-HE-SgR"/>
+                            <constraint firstItem="2yK-ny-uPs" firstAttribute="bottom" secondItem="nhU-oy-jf6" secondAttribute="top" id="CBl-ib-jY2"/>
+                            <constraint firstItem="A8w-Ub-5MC" firstAttribute="leading" secondItem="oCC-Ci-IwK" secondAttribute="leadingMargin" id="iR9-AD-xCn"/>
+                            <constraint firstItem="A8w-Ub-5MC" firstAttribute="top" secondItem="0jW-aA-Qlc" secondAttribute="bottom" id="k1N-H5-X9c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="A8w-Ub-5MC" secondAttribute="trailing" id="p7i-34-exx"/>
+                            <constraint firstItem="2yK-ny-uPs" firstAttribute="leading" secondItem="oCC-Ci-IwK" secondAttribute="leading" id="r4A-7h-SXH"/>
+                            <constraint firstAttribute="trailing" secondItem="2yK-ny-uPs" secondAttribute="trailing" id="sYp-lT-gZu"/>
+                            <constraint firstItem="2yK-ny-uPs" firstAttribute="top" secondItem="A8w-Ub-5MC" secondAttribute="bottom" id="yCY-fM-dEa"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Squat" id="7KS-xQ-IJZ"/>
                     <navigationItem key="navigationItem" title="Squat" id="bAA-TP-uAn"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="squatChartView" destination="A8w-Ub-5MC" id="v4g-QQ-Fwb"/>
                     </connections>
@@ -153,13 +172,32 @@
                                     <outletCollection property="gestureRecognizers" destination="njO-25-qy7" appends="YES" id="wyt-yL-C49"/>
                                 </connections>
                             </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHO-yr-fZz">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Reset Graph" id="juG-8y-p5k">
+                                        <connections>
+                                            <action selector="reloadGraph:" destination="ssg-YH-E6z" id="dtu-fD-zfR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="28S-a3-gdy"/>
+                                    <barButtonItem title="Filter Graph" id="13A-jx-SLw">
+                                        <connections>
+                                            <action selector="filterGraph:" destination="ssg-YH-E6z" id="IuG-CS-MYq"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xbN-Sa-pgb" firstAttribute="top" secondItem="g5h-RP-Da8" secondAttribute="bottom" id="VFb-ht-Vwz"/>
-                            <constraint firstItem="mUU-z9-phS" firstAttribute="top" secondItem="xbN-Sa-pgb" secondAttribute="bottom" id="dGp-5N-irk"/>
-                            <constraint firstItem="xbN-Sa-pgb" firstAttribute="leading" secondItem="4YK-nV-p6V" secondAttribute="leadingMargin" id="fYq-1j-XPw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xbN-Sa-pgb" secondAttribute="trailing" id="gun-Wo-M5E"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xbN-Sa-pgb" secondAttribute="trailing" id="0WQ-p0-ccY"/>
+                            <constraint firstItem="HHO-yr-fZz" firstAttribute="top" secondItem="xbN-Sa-pgb" secondAttribute="bottom" id="4rX-iA-tfm"/>
+                            <constraint firstAttribute="trailing" secondItem="HHO-yr-fZz" secondAttribute="trailing" id="6g7-3H-X4Q"/>
+                            <constraint firstItem="xbN-Sa-pgb" firstAttribute="leading" secondItem="4YK-nV-p6V" secondAttribute="leadingMargin" id="Tkh-AX-rU5"/>
+                            <constraint firstItem="HHO-yr-fZz" firstAttribute="leading" secondItem="4YK-nV-p6V" secondAttribute="leading" id="V3s-JU-G2P"/>
+                            <constraint firstItem="xbN-Sa-pgb" firstAttribute="top" secondItem="g5h-RP-Da8" secondAttribute="bottom" id="W2t-zM-7b6"/>
+                            <constraint firstItem="HHO-yr-fZz" firstAttribute="bottom" secondItem="mUU-z9-phS" secondAttribute="top" id="yEZ-qL-ZBP"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Bench" id="07n-tZ-bkd"/>
@@ -199,13 +237,32 @@
                                     <outletCollection property="gestureRecognizers" destination="OKR-nv-eyI" appends="YES" id="Gol-b5-YVq"/>
                                 </connections>
                             </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Um-5c-cTa">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Reset Graph" id="AMR-7I-pcs">
+                                        <connections>
+                                            <action selector="reloadGraph:" destination="yGO-X1-Wna" id="NK0-aH-bIt"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="PeM-ia-Cxc"/>
+                                    <barButtonItem title="Filter Graph" id="xga-Zl-YB5">
+                                        <connections>
+                                            <action selector="filterGraph:" destination="yGO-X1-Wna" id="TDk-kx-dpR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eEe-Mc-zpO" firstAttribute="top" secondItem="ZUZ-H1-9U2" secondAttribute="bottom" id="SM9-OC-Eo4"/>
-                            <constraint firstItem="ZUZ-H1-9U2" firstAttribute="leading" secondItem="YgE-er-Lhj" secondAttribute="leadingMargin" id="T4K-cz-8gI"/>
-                            <constraint firstItem="ZUZ-H1-9U2" firstAttribute="top" secondItem="U0U-F6-oQl" secondAttribute="bottom" id="moQ-uO-nI6"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZUZ-H1-9U2" secondAttribute="trailing" id="uWb-BV-Xtc"/>
+                            <constraint firstItem="5Um-5c-cTa" firstAttribute="top" secondItem="ZUZ-H1-9U2" secondAttribute="bottom" id="8iy-WW-y8q"/>
+                            <constraint firstAttribute="trailing" secondItem="5Um-5c-cTa" secondAttribute="trailing" id="NpE-hj-MdN"/>
+                            <constraint firstItem="5Um-5c-cTa" firstAttribute="bottom" secondItem="eEe-Mc-zpO" secondAttribute="top" id="Wuc-d1-m8m"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZUZ-H1-9U2" secondAttribute="trailing" id="XEm-a6-Erx"/>
+                            <constraint firstItem="5Um-5c-cTa" firstAttribute="leading" secondItem="YgE-er-Lhj" secondAttribute="leading" id="dZ3-4q-D7p"/>
+                            <constraint firstItem="ZUZ-H1-9U2" firstAttribute="top" secondItem="U0U-F6-oQl" secondAttribute="bottom" id="hnb-xe-EKF"/>
+                            <constraint firstItem="ZUZ-H1-9U2" firstAttribute="leading" secondItem="YgE-er-Lhj" secondAttribute="leadingMargin" id="mGj-dA-6WA"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Deadlift" id="xBF-qN-1Z1"/>
@@ -1023,11 +1080,11 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mrk-Fg-mQo">
                                 <rect key="frame" x="156" y="171" width="240" height="484"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">This is the main privacy policy for logU - A Strength Logger. logU collects a few pieces of user information to be used within your profile. The information obtained from a user in this app: username, password, gender, and bodyweight. 
+                                <string key="text">This is the main privacy policy for logU - A Strength Logger. logU collects a few pieces of user information to be used within your profile. The information obtained from a user in this app: username, password, gender, and bodyweight. 
 
 This data is collected to provide you with the most accurate representation of your current strength levels. Specifically, the username and password provide you with a unique user experience to keep your logged lifts stored and secured. In addition, the gender and bodyweight are used to generate a Wilks Coefficient, the formula that compares strength between varying genders and bodyweights. 
 
-This data will not be collected, transmitted, or used with anybody or anything outside of logU. This data will not be used to contact or identify a user in any way. This data is retained for the entirety of the user's account life, unless otherwise requested.</mutableString>
+This data will not be collected, transmitted, or used with anybody or anything outside of logU. This data will not be used to contact or identify a user in any way. This data is retained for the entirety of the user's account life, unless otherwise requested.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1134,7 +1191,9 @@ This data will not be collected, transmitted, or used with anybody or anything o
                             <constraint firstAttribute="trailing" secondItem="p70-iB-ELQ" secondAttribute="trailing" id="cvM-lX-3me"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="User Graphs" id="Kk5-W6-o0k"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="contentView" destination="Ir9-bp-ZgV" id="rGt-DX-b2t"/>
                         <outlet property="segmentedControl" destination="p70-iB-ELQ" id="uKI-zU-oTO"/>
