@@ -37,9 +37,7 @@ class LoginVC: UIViewController {
             Settings().getUnit(globalUser! as String, completion: { jsonString in
                 prefs.setInteger(Int(jsonString[0]["unit"]!)!, forKey: "Unit")
                 prefs.setValue(String(jsonString[0]["gender"]!), forKey: "Gender")
-                prefs.setValue(Double(jsonString[0]["bodyweight"]!)!, forKey: "Bodyweight")
-                //print(defaults.valueForKey("Gender"))
-                
+                prefs.setValue(Double(jsonString[0]["bodyweight"]!)!, forKey: "Bodyweight")                
             })
 
         } else {

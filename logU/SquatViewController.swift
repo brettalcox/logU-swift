@@ -128,7 +128,6 @@ class SquatViewController: UIViewController {
                     })
                 }
             }
-            shouldUpdateSquat = false
         }
     }
     
@@ -151,6 +150,13 @@ class SquatViewController: UIViewController {
         } else {
             label = setsTextField!.text! + "x" + repsTextField!.text!
         }
+        
+        if shouldUpdateSquat {
+            label = ""
+        }
+        
+        shouldUpdateSquat = false
+
         setLineChart(graphLift, values: graphWeight, label: label)
     }
     

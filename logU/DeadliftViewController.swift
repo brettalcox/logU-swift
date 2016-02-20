@@ -129,7 +129,6 @@ class DeadliftViewController: UIViewController {
                     })
                 }
             }
-            shouldUpdateDeadlift = false
         }
     }
     
@@ -152,6 +151,12 @@ class DeadliftViewController: UIViewController {
         } else {
             label = setsTextField!.text! + "x" + repsTextField!.text!
         }
+        
+        if shouldUpdateDeadlift {
+            label = ""
+        }
+        shouldUpdateDeadlift = false
+
         setLineChart(graphLift, values: graphWeight, label: label)
     }
 

@@ -130,7 +130,6 @@ class BenchViewController: UIViewController {
                     })
                 }
             }
-            shouldUpdateBench = false
         }
 
     }
@@ -154,6 +153,12 @@ class BenchViewController: UIViewController {
         } else {
             label = setsTextField!.text! + "x" + repsTextField!.text!
         }
+        
+        if shouldUpdateBench {
+            label = ""
+        }
+        shouldUpdateBench = false
+
         setLineChart(graphLift, values: graphWeight, label: label)
     }
     
