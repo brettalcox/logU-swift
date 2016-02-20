@@ -61,20 +61,23 @@ class BenchViewController: UIViewController {
                 dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
                     GraphData().dataOfLiftingFiltered("https://loguapp.com/swift_filter_graph.php", sets: self.setsTextField!.text!, reps: self.repsTextField!.text!, lift: "Bench", completion: { jsonString in
                         dataBench = jsonString
-                        dispatch_async(dispatch_get_main_queue(), {
-                            self.loadAfter(dataBench)
-                        })
                         
+                        if dataBench.count != 0 {
+                            dispatch_async(dispatch_get_main_queue(), {
+                                self.loadAfter(dataBench)
+                            })
+                        } else {
+                            
+                            let actionSheetController: UIAlertController = UIAlertController(title: "Filter Graph Failed", message: "Data for this set/rep combo doesn't exist!", preferredStyle: .Alert)
+                            let cancelAction: UIAlertAction = UIAlertAction(title: "Dismiss", style: .Cancel) { action -> Void in
+                                //Do some stuff
+                            }
+                            actionSheetController.addAction(cancelAction)
+                            self.presentViewController(actionSheetController, animated: true, completion: nil)
+                        }
                     })
                 }
-                
-                var label: String!
-                if self.setsTextField!.text == nil || self.repsTextField!.text == nil {
-                    label = ""
-                } else {
-                    label = self.setsTextField!.text! + "x" + self.repsTextField!.text!
-                }
-                self.setLineChart(self.graphLift, values: self.graphWeight, label: label)
+
             }
             
             
