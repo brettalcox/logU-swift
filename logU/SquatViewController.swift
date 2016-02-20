@@ -77,17 +77,22 @@ class SquatViewController: UIViewController {
                 }
 
             }
-
             
         }
         
         actionSheetController.addTextFieldWithConfigurationHandler { (setsField) in
+            
+            setsField.addTarget(self, action: "textChanged:", forControlEvents: .EditingChanged)
+            
             setsField.placeholder = "Sets"
             setsField.keyboardType = UIKeyboardType.NumberPad
             self.setsTextField = setsField
             
         }
         actionSheetController.addTextFieldWithConfigurationHandler { (repsField) in
+            
+            repsField.addTarget(self, action: "textChanged:", forControlEvents: .EditingChanged)
+            
             repsField.placeholder = "Reps"
             repsField.keyboardType = UIKeyboardType.NumberPad
             self.repsTextField = repsField
@@ -95,8 +100,18 @@ class SquatViewController: UIViewController {
         
         actionSheetController.addAction(cancelAction)
         actionSheetController.addAction(submitAction)
+        submitAction.enabled = false
+
         self.presentViewController(actionSheetController, animated: true, completion: nil)
 
+    }
+    
+    func textChanged(sender:AnyObject) {
+        let tf = sender as! UITextField
+        var resp : UIResponder = tf
+        while !(resp is UIAlertController) { resp = resp.nextResponder()! }
+        let alert = resp as! UIAlertController
+        (alert.actions[1] as UIAlertAction).enabled = (setsTextField?.text != "" && repsTextField?.text != "" && setsTextField?.text?.hasPrefix("0") == false && repsTextField?.text?.hasPrefix("0") == false)
     }
     
     override func viewDidLoad() {

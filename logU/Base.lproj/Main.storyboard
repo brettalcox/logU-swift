@@ -110,13 +110,13 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yK-ny-uPs">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="Reset Graph" id="iML-6J-KDg">
+                                    <barButtonItem image="Clear Filters" id="iML-6J-KDg">
                                         <connections>
                                             <action selector="reloadGraph:" destination="7yG-PY-eea" id="kcH-Q0-qpp"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="EBJ-aj-ISo"/>
-                                    <barButtonItem title="Filter Graph" id="UrX-Z3-dRL">
+                                    <barButtonItem image="Filter" id="UrX-Z3-dRL">
                                         <connections>
                                             <action selector="filterGraph:" destination="7yG-PY-eea" id="eAS-Lv-oeE"/>
                                         </connections>
@@ -175,18 +175,19 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHO-yr-fZz">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="Reset Graph" id="juG-8y-p5k">
+                                    <barButtonItem image="Clear Filters" id="juG-8y-p5k">
                                         <connections>
                                             <action selector="reloadGraph:" destination="ssg-YH-E6z" id="dtu-fD-zfR"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="28S-a3-gdy"/>
-                                    <barButtonItem title="Filter Graph" id="13A-jx-SLw">
+                                    <barButtonItem image="Filter" id="13A-jx-SLw">
                                         <connections>
                                             <action selector="filterGraph:" destination="ssg-YH-E6z" id="IuG-CS-MYq"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
+                                <color key="barTintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -240,18 +241,19 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Um-5c-cTa">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="Reset Graph" id="AMR-7I-pcs">
+                                    <barButtonItem image="Clear Filters" id="AMR-7I-pcs">
                                         <connections>
                                             <action selector="reloadGraph:" destination="yGO-X1-Wna" id="NK0-aH-bIt"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="PeM-ia-Cxc"/>
-                                    <barButtonItem title="Filter Graph" id="xga-Zl-YB5">
+                                    <barButtonItem image="Filter" id="xga-Zl-YB5">
                                         <connections>
                                             <action selector="filterGraph:" destination="yGO-X1-Wna" id="TDk-kx-dpR"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
+                                <color key="barTintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1243,8 +1245,10 @@ This data will not be collected, transmitted, or used with anybody or anything o
         </scene>
     </scenes>
     <resources>
+        <image name="Clear Filters" width="25" height="25"/>
         <image name="Contacts" width="25" height="25"/>
         <image name="Dumbbell" width="25" height="25"/>
+        <image name="Filter" width="25" height="25"/>
         <image name="Home" width="25" height="25"/>
         <image name="Line Chart" width="25" height="25"/>
     </resources>
