@@ -28,8 +28,11 @@ class BenchViewController: UIViewController {
         saveGraph()
     }
     
+    @IBOutlet weak var reloadButton: UIBarButtonItem!
+    
     @IBAction func reloadGraph(sender: UIBarButtonItem) {
         
+        reloadButton.enabled = false
         setsTextField = nil
         repsTextField = nil
         
@@ -77,7 +80,7 @@ class BenchViewController: UIViewController {
                         }
                     })
                 }
-
+                self.reloadButton.enabled = true
             }
             
         }
@@ -120,6 +123,7 @@ class BenchViewController: UIViewController {
         super.viewDidLoad()
         
         self.automaticallyAdjustsScrollViewInsets = false;
+        reloadButton.enabled = false
         
         if Reachability.isConnectedToNetwork() {
             dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
