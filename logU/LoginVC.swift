@@ -22,24 +22,26 @@ class LoginVC: UIViewController {
         
         var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
         
-        if String((prefs.valueForKey("ISLOGGEDIN"))!) == "1" {
+        if prefs.valueForKey("ISLOGGEDIN") != nil {
+            if String((prefs.valueForKey("ISLOGGEDIN"))!) == "1" {
             
-            loginButton.enabled = false
-            signUpButton.enabled = false
-            txtUsername.enabled = false
-            txtPassword.enabled = false
+                loginButton.enabled = false
+                signUpButton.enabled = false
+                txtUsername.enabled = false
+                txtPassword.enabled = false
             
-            dispatch_async(dispatch_get_main_queue(), {
-                self.performSegueWithIdentifier("Dashboard", sender: self)
-            })
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.performSegueWithIdentifier("Dashboard", sender: self)
+                })
             
-            globalUser = String((prefs.valueForKey("USERNAME"))!)
-            Settings().getUnit(globalUser! as String, completion: { jsonString in
-                prefs.setInteger(Int(jsonString[0]["unit"]!)!, forKey: "Unit")
-                prefs.setValue(String(jsonString[0]["gender"]!), forKey: "Gender")
-                prefs.setValue(Double(jsonString[0]["bodyweight"]!)!, forKey: "Bodyweight")                
-            })
+                globalUser = String((prefs.valueForKey("USERNAME"))!)
+                Settings().getUnit(globalUser! as String, completion: { jsonString  in
+                    prefs.setInteger(Int(jsonString[0]["unit"]!)!, forKey: "Unit")
+                    prefs.setValue(String(jsonString[0]["gender"]!), forKey: "Gender")
+                    prefs.setValue(Double(jsonString[0]["bodyweight"]!)!, forKey: "Bodyweight")
+                })
 
+            }
         } else {
         
             addDoneButton()
