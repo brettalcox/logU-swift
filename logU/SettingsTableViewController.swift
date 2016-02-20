@@ -104,6 +104,9 @@ class SettingsTableViewController: FormViewController {
         performSegueWithIdentifier("loggingOut", sender: nil)
         self.navigationController?.navigationBarHidden = true
         globalUser = ""
+        defaults.setObject("", forKey: "USERNAME")
+        defaults.setValue(0, forKey: "ISLOGGEDIN")
+        defaults.synchronize()
     }
     
     func viewPrivacy(cell: ButtonCellOf<String>, row: ButtonRow) {
@@ -127,6 +130,10 @@ class SettingsTableViewController: FormViewController {
                 DeleteAccount().delete_request(globalUser!)
                 
                 globalUser = ""
+                self.defaults.setObject("", forKey: "USERNAME")
+                self.defaults.setValue(0, forKey: "ISLOGGEDIN")
+                self.defaults.synchronize()
+
                 self.performSegueWithIdentifier("loggingOut", sender: nil)
                 self.navigationController?.navigationBarHidden = true
                 

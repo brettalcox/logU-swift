@@ -20,16 +20,41 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         
-        addDoneButton()
+        var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
         
-        loginButton.enabled = true
-        signUpButton.enabled = true
-        txtUsername.enabled = true
-        txtPassword.enabled = true
+        if String((prefs.valueForKey("ISLOGGEDIN"))!) == "1" {
+            
+            loginButton.enabled = false
+            signUpButton.enabled = false
+            txtUsername.enabled = false
+            txtPassword.enabled = false
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                self.performSegueWithIdentifier("Dashboard", sender: self)
+            })
+            
+            globalUser = String((prefs.valueForKey("USERNAME"))!)
+            Settings().getUnit(globalUser! as String, completion: { jsonString in
+                prefs.setInteger(Int(jsonString[0]["unit"]!)!, forKey: "Unit")
+                prefs.setValue(String(jsonString[0]["gender"]!), forKey: "Gender")
+                prefs.setValue(Double(jsonString[0]["bodyweight"]!)!, forKey: "Bodyweight")
+                //print(defaults.valueForKey("Gender"))
+                
+            })
+
+        } else {
         
-        if Reachability.isConnectedToNetwork() {
-            OfflineRequest().OfflineFetchSubmit()
-            OfflineRequest().OfflineFetchDelete()
+            addDoneButton()
+        
+            loginButton.enabled = true
+            signUpButton.enabled = true
+            txtUsername.enabled = true
+            txtPassword.enabled = true
+        
+            if Reachability.isConnectedToNetwork() {
+                OfflineRequest().OfflineFetchSubmit()
+                OfflineRequest().OfflineFetchDelete()
+            }
         }
         
     }
@@ -133,6 +158,7 @@ class LoginVC: UIViewController {
                         var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
                         prefs.setObject(username, forKey: "USERNAME")
                         prefs.setInteger(1, forKey: "ISLOGGEDIN")
+                        prefs.setObject("1", forKey: "ISLOGGED")
                         prefs.synchronize()
                         
                         globalUser = String(prefs.valueForKey("USERNAME"))
