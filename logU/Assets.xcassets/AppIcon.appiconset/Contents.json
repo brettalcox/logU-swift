@@ -33,13 +33,21 @@
     {
       "size" : "57x57",
       "idiom" : "iphone",
+<<<<<<< HEAD
+      "filename" : "Icon-60@2x-2.png",
+=======
       "filename" : "Icon-60@2x-3.png",
+>>>>>>> release
       "scale" : "1x"
     },
     {
       "size" : "57x57",
       "idiom" : "iphone",
+<<<<<<< HEAD
+      "filename" : "Icon-60@2x-3.png",
+=======
       "filename" : "Icon-60@2x-2.png",
+>>>>>>> release
       "scale" : "2x"
     },
     {

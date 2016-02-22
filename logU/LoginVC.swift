@@ -18,26 +18,50 @@ class LoginVC: UIViewController {
     var lifting = [NSManagedObject]()
     var indicator: UIActivityIndicatorView!
     
-    override func viewDidLoad() {
-        
-        addDoneButton()
-        
-        loginButton.enabled = true
-        signUpButton.enabled = true
-        txtUsername.enabled = true
-        txtPassword.enabled = true
-        
-        if Reachability.isConnectedToNetwork() {
-            OfflineRequest().OfflineFetchSubmit()
-            OfflineRequest().OfflineFetchDelete()
-        }
-        
-    }
-    
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
+    
+    override func viewDidLoad() {
+        
+        var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        addDoneButton()
+        
+        if prefs.valueForKey("ISLOGGEDIN") != nil {
+            if String((prefs.valueForKey("ISLOGGEDIN"))!) == "1" {
+            
+                loginButton.enabled = false
+                signUpButton.enabled = false
+                txtUsername.enabled = false
+                txtPassword.enabled = false
+            
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.performSegueWithIdentifier("Dashboard", sender: self)
+                })
+            
+                globalUser = String((prefs.valueForKey("USERNAME"))!)
+                Settings().getUnit(globalUser! as String, completion: { jsonString  in
+                    prefs.setInteger(Int(jsonString[0]["unit"]!)!, forKey: "Unit")
+                    prefs.setValue(String(jsonString[0]["gender"]!), forKey: "Gender")
+                    prefs.setValue(Double(jsonString[0]["bodyweight"]!)!, forKey: "Bodyweight")
+                })
+
+            }
+        } else {
+            
+            loginButton.enabled = true
+            signUpButton.enabled = true
+            txtUsername.enabled = true
+            txtPassword.enabled = true
+        
+            if Reachability.isConnectedToNetwork() {
+                OfflineRequest().OfflineFetchSubmit()
+                OfflineRequest().OfflineFetchDelete()
+            }
+        }
+        
+    }
     
     @IBAction func unwindToLogin(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
         
@@ -131,6 +155,7 @@ class LoginVC: UIViewController {
                         var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
                         prefs.setObject(username, forKey: "USERNAME")
                         prefs.setInteger(1, forKey: "ISLOGGEDIN")
+                        prefs.setObject("1", forKey: "ISLOGGED")
                         prefs.synchronize()
                         
                         globalUser = String(prefs.valueForKey("USERNAME"))

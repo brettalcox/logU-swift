@@ -107,20 +107,40 @@
                                     <outletCollection property="gestureRecognizers" destination="f5h-JJ-bAi" appends="YES" id="E5n-Wa-hcb"/>
                                 </connections>
                             </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yK-ny-uPs">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem image="Clear Filters" id="iML-6J-KDg">
+                                        <connections>
+                                            <action selector="reloadGraph:" destination="7yG-PY-eea" id="kcH-Q0-qpp"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="EBJ-aj-ISo"/>
+                                    <barButtonItem image="Filter" id="UrX-Z3-dRL">
+                                        <connections>
+                                            <action selector="filterGraph:" destination="7yG-PY-eea" id="eAS-Lv-oeE"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="nhU-oy-jf6" firstAttribute="top" secondItem="A8w-Ub-5MC" secondAttribute="bottom" id="4oV-ZM-QcG"/>
-                            <constraint firstItem="A8w-Ub-5MC" firstAttribute="leading" secondItem="oCC-Ci-IwK" secondAttribute="leadingMargin" id="Mpy-IV-8h3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="A8w-Ub-5MC" secondAttribute="trailing" id="Tr2-K1-lDK"/>
-                            <constraint firstItem="A8w-Ub-5MC" firstAttribute="top" secondItem="0jW-aA-Qlc" secondAttribute="bottom" id="yOu-HE-SgR"/>
+                            <constraint firstItem="2yK-ny-uPs" firstAttribute="bottom" secondItem="nhU-oy-jf6" secondAttribute="top" id="CBl-ib-jY2"/>
+                            <constraint firstItem="A8w-Ub-5MC" firstAttribute="leading" secondItem="oCC-Ci-IwK" secondAttribute="leadingMargin" id="iR9-AD-xCn"/>
+                            <constraint firstItem="A8w-Ub-5MC" firstAttribute="top" secondItem="0jW-aA-Qlc" secondAttribute="bottom" id="k1N-H5-X9c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="A8w-Ub-5MC" secondAttribute="trailing" id="p7i-34-exx"/>
+                            <constraint firstItem="2yK-ny-uPs" firstAttribute="leading" secondItem="oCC-Ci-IwK" secondAttribute="leading" id="r4A-7h-SXH"/>
+                            <constraint firstAttribute="trailing" secondItem="2yK-ny-uPs" secondAttribute="trailing" id="sYp-lT-gZu"/>
+                            <constraint firstItem="2yK-ny-uPs" firstAttribute="top" secondItem="A8w-Ub-5MC" secondAttribute="bottom" id="yCY-fM-dEa"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Squat" id="7KS-xQ-IJZ"/>
                     <navigationItem key="navigationItem" title="Squat" id="bAA-TP-uAn"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="reloadButton" destination="iML-6J-KDg" id="N9p-uu-had"/>
                         <outlet property="squatChartView" destination="A8w-Ub-5MC" id="v4g-QQ-Fwb"/>
                     </connections>
                 </viewController>
@@ -153,13 +173,33 @@
                                     <outletCollection property="gestureRecognizers" destination="njO-25-qy7" appends="YES" id="wyt-yL-C49"/>
                                 </connections>
                             </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHO-yr-fZz">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem image="Clear Filters" id="juG-8y-p5k">
+                                        <connections>
+                                            <action selector="reloadGraph:" destination="ssg-YH-E6z" id="dtu-fD-zfR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="28S-a3-gdy"/>
+                                    <barButtonItem image="Filter" id="13A-jx-SLw">
+                                        <connections>
+                                            <action selector="filterGraph:" destination="ssg-YH-E6z" id="IuG-CS-MYq"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xbN-Sa-pgb" firstAttribute="top" secondItem="g5h-RP-Da8" secondAttribute="bottom" id="VFb-ht-Vwz"/>
-                            <constraint firstItem="mUU-z9-phS" firstAttribute="top" secondItem="xbN-Sa-pgb" secondAttribute="bottom" id="dGp-5N-irk"/>
-                            <constraint firstItem="xbN-Sa-pgb" firstAttribute="leading" secondItem="4YK-nV-p6V" secondAttribute="leadingMargin" id="fYq-1j-XPw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xbN-Sa-pgb" secondAttribute="trailing" id="gun-Wo-M5E"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xbN-Sa-pgb" secondAttribute="trailing" id="0WQ-p0-ccY"/>
+                            <constraint firstItem="HHO-yr-fZz" firstAttribute="top" secondItem="xbN-Sa-pgb" secondAttribute="bottom" id="4rX-iA-tfm"/>
+                            <constraint firstAttribute="trailing" secondItem="HHO-yr-fZz" secondAttribute="trailing" id="6g7-3H-X4Q"/>
+                            <constraint firstItem="xbN-Sa-pgb" firstAttribute="leading" secondItem="4YK-nV-p6V" secondAttribute="leadingMargin" id="Tkh-AX-rU5"/>
+                            <constraint firstItem="HHO-yr-fZz" firstAttribute="leading" secondItem="4YK-nV-p6V" secondAttribute="leading" id="V3s-JU-G2P"/>
+                            <constraint firstItem="xbN-Sa-pgb" firstAttribute="top" secondItem="g5h-RP-Da8" secondAttribute="bottom" id="W2t-zM-7b6"/>
+                            <constraint firstItem="HHO-yr-fZz" firstAttribute="bottom" secondItem="mUU-z9-phS" secondAttribute="top" id="yEZ-qL-ZBP"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Bench" id="07n-tZ-bkd"/>
@@ -168,6 +208,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="benchChartView" destination="xbN-Sa-pgb" id="QD7-EW-yPf"/>
+                        <outlet property="reloadButton" destination="juG-8y-p5k" id="TyO-ft-8dr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOT-vR-V3h" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -199,13 +240,33 @@
                                     <outletCollection property="gestureRecognizers" destination="OKR-nv-eyI" appends="YES" id="Gol-b5-YVq"/>
                                 </connections>
                             </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Um-5c-cTa">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem image="Clear Filters" id="AMR-7I-pcs">
+                                        <connections>
+                                            <action selector="reloadGraph:" destination="yGO-X1-Wna" id="NK0-aH-bIt"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="PeM-ia-Cxc"/>
+                                    <barButtonItem image="Filter" id="xga-Zl-YB5">
+                                        <connections>
+                                            <action selector="filterGraph:" destination="yGO-X1-Wna" id="TDk-kx-dpR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eEe-Mc-zpO" firstAttribute="top" secondItem="ZUZ-H1-9U2" secondAttribute="bottom" id="SM9-OC-Eo4"/>
-                            <constraint firstItem="ZUZ-H1-9U2" firstAttribute="leading" secondItem="YgE-er-Lhj" secondAttribute="leadingMargin" id="T4K-cz-8gI"/>
-                            <constraint firstItem="ZUZ-H1-9U2" firstAttribute="top" secondItem="U0U-F6-oQl" secondAttribute="bottom" id="moQ-uO-nI6"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZUZ-H1-9U2" secondAttribute="trailing" id="uWb-BV-Xtc"/>
+                            <constraint firstItem="5Um-5c-cTa" firstAttribute="top" secondItem="ZUZ-H1-9U2" secondAttribute="bottom" id="8iy-WW-y8q"/>
+                            <constraint firstAttribute="trailing" secondItem="5Um-5c-cTa" secondAttribute="trailing" id="NpE-hj-MdN"/>
+                            <constraint firstItem="5Um-5c-cTa" firstAttribute="bottom" secondItem="eEe-Mc-zpO" secondAttribute="top" id="Wuc-d1-m8m"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZUZ-H1-9U2" secondAttribute="trailing" id="XEm-a6-Erx"/>
+                            <constraint firstItem="5Um-5c-cTa" firstAttribute="leading" secondItem="YgE-er-Lhj" secondAttribute="leading" id="dZ3-4q-D7p"/>
+                            <constraint firstItem="ZUZ-H1-9U2" firstAttribute="top" secondItem="U0U-F6-oQl" secondAttribute="bottom" id="hnb-xe-EKF"/>
+                            <constraint firstItem="ZUZ-H1-9U2" firstAttribute="leading" secondItem="YgE-er-Lhj" secondAttribute="leadingMargin" id="mGj-dA-6WA"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Deadlift" id="xBF-qN-1Z1"/>
@@ -214,6 +275,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="deadliftChartView" destination="ZUZ-H1-9U2" id="8S0-lW-MTD"/>
+                        <outlet property="reloadButton" destination="AMR-7I-pcs" id="EsO-Km-XH0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Hf-QA-gQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -464,10 +526,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="TUS-Bh-B9b"/>
                     <connections>
-                        <outlet property="loginButton" destination="Ybw-rH-ZIH" id="K9z-Ta-YhC"/>
-                        <outlet property="signUpButton" destination="aK2-Y3-DiX" id="CKG-1l-ENx"/>
-                        <outlet property="txtPassword" destination="0tQ-0y-2oa" id="aeg-dE-8tC"/>
-                        <outlet property="txtUsername" destination="35M-CA-rt3" id="w9E-5e-0Q9"/>
+                        <outlet property="loginButton" destination="Ybw-rH-ZIH" id="cbX-kF-s2v"/>
+                        <outlet property="signUpButton" destination="aK2-Y3-DiX" id="ul1-V1-EHz"/>
+                        <outlet property="txtPassword" destination="0tQ-0y-2oa" id="rAl-fr-Buw"/>
+                        <outlet property="txtUsername" destination="35M-CA-rt3" id="zJc-ab-goJ"/>
                         <segue destination="dLN-94-LWx" kind="show" identifier="Dashboard" id="5QN-IN-gnc"/>
                     </connections>
                 </viewController>
@@ -1134,7 +1196,9 @@ This data will not be collected, transmitted, or used with anybody or anything o
                             <constraint firstAttribute="trailing" secondItem="p70-iB-ELQ" secondAttribute="trailing" id="cvM-lX-3me"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="User Graphs" id="Kk5-W6-o0k"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="contentView" destination="Ir9-bp-ZgV" id="rGt-DX-b2t"/>
                         <outlet property="segmentedControl" destination="p70-iB-ELQ" id="uKI-zU-oTO"/>
@@ -1184,8 +1248,10 @@ This data will not be collected, transmitted, or used with anybody or anything o
         </scene>
     </scenes>
     <resources>
+        <image name="Clear Filters" width="25" height="25"/>
         <image name="Contacts" width="25" height="25"/>
         <image name="Dumbbell" width="25" height="25"/>
+        <image name="Filter" width="25" height="25"/>
         <image name="Home" width="25" height="25"/>
         <image name="Line Chart" width="25" height="25"/>
     </resources>
