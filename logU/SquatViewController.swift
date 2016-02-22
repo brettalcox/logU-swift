@@ -66,6 +66,7 @@ class SquatViewController: UIViewController {
                         if dataSquat.count != 0 {
                             dispatch_async(dispatch_get_main_queue(), {
                                 self.loadAfter(dataSquat)
+                                self.reloadButton.enabled = true
                             })
                         } else {
                             
@@ -78,7 +79,6 @@ class SquatViewController: UIViewController {
                         }
                     })
                 }
-                self.reloadButton.enabled = true
             }
             
         }
@@ -157,7 +157,6 @@ class SquatViewController: UIViewController {
     func loadAfter(object: Array<Dictionary<String, String>>) {
         var label: String!
         dataSquat = object
-        print(dataSquat.count)
         
         graphLift = []
         graphWeight = []

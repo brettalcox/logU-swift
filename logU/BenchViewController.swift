@@ -68,6 +68,7 @@ class BenchViewController: UIViewController {
                         if dataBench.count != 0 {
                             dispatch_async(dispatch_get_main_queue(), {
                                 self.loadAfter(dataBench)
+                                self.reloadButton.enabled = true
                             })
                         } else {
                             
@@ -80,7 +81,6 @@ class BenchViewController: UIViewController {
                         }
                     })
                 }
-                self.reloadButton.enabled = true
             }
             
         }
