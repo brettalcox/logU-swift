@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let theme = ThemeManager.currentTheme()
         ThemeManager.applyTheme(theme)
+
+        IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.sharedManager().shouldToolbarUsesTextFieldTintColor = true
+
         /*
         UITabBar.appearance().backgroundImage = theme.tabBarBackgroundImage
         

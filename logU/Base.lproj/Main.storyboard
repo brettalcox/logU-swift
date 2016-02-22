@@ -481,7 +481,7 @@
                                                                     <constraint firstAttribute="height" constant="30" id="tq8-QQ-djz"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" secureTextEntry="YES"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>

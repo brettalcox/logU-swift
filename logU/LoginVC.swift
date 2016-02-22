@@ -13,7 +13,7 @@ import CoreData
 var dataResult = ""
 var globalUser: String?
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, UITextFieldDelegate {
     
     var lifting = [NSManagedObject]()
     var indicator: UIActivityIndicatorView!
@@ -26,7 +26,10 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         
         var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        addDoneButton()
+        //addDoneButton()
+        
+        txtUsername.delegate = self
+        txtPassword.delegate = self
         
         if prefs.valueForKey("ISLOGGEDIN") != nil {
             if String((prefs.valueForKey("ISLOGGEDIN"))!) == "1" {
@@ -65,6 +68,14 @@ class LoginVC: UIViewController {
     
     @IBAction func unwindToLogin(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
         
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if (textField.returnKeyType==UIReturnKeyType.Go)
+        {
+            signinTapped(loginButton)
+        }
+        return true
     }
     
     @IBAction func signinTapped(sender : UIButton) {
