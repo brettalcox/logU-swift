@@ -36,7 +36,6 @@ class OfflineRequest {
                 try managedContext.save()
                 lifting.append(insert)
             } catch let error as NSError {
-                print("Could not save")
             }
         
         }
@@ -54,7 +53,6 @@ class OfflineRequest {
             try managedContext.save()
             deleting.append(delete)
         } catch let error as NSError {
-            print("Could not save")
         }
         let predicate = NSPredicate(format: "(username == %@) AND (date == %@) AND (lift == %@) AND (sets == %@) AND (reps == %@) AND (weight == %@)", "\(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)", "\(date)", "\(lift)", "\(sets)", "\(reps)", "\(weight)")
         let deleteFetchRequest = NSFetchRequest(entityName: "Insert")
@@ -63,7 +61,6 @@ class OfflineRequest {
             let fetchedEntities = try managedContext.executeFetchRequest(deleteFetchRequest)
             for entities in fetchedEntities {
                 managedContext.deleteObject(entities as! NSManagedObject)
-                print(entities)
             }
         } catch {
         }
@@ -86,7 +83,6 @@ class OfflineRequest {
             let results = try managedContext.executeFetchRequest(fetchRequest)
             lifting = results as! [NSManagedObject]
         } catch let error as NSError {
-            print("Could not fetch")
         }
 
         if lifting.count != 0 {
@@ -106,7 +102,6 @@ class OfflineRequest {
                     {(data,response,error) in
                 
                         guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
-                            print("error")
                             return
                         }
                 
@@ -149,7 +144,6 @@ class OfflineRequest {
             let results = try managedContext.executeFetchRequest(fetchRequest)
             deleting = results as! [NSManagedObject]
         } catch let error as NSError {
-            print("Could not fetch")
         }
 
         if deleting.count != 0 {
@@ -170,7 +164,6 @@ class OfflineRequest {
                     {(data,response,error) in
                         
                         guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
-                            print("error")
                             return
                         }
 
@@ -213,7 +206,6 @@ class OfflineRequest {
             let results = try managedContext.executeFetchRequest(fetchRequest)
             lifting = results as! [NSManagedObject]
         } catch let error as NSError {
-            print("Could not fetch")
         }
         
         return lifting

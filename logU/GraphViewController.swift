@@ -33,7 +33,6 @@ class GraphViewController: UIViewController, UIActionSheetDelegate {
             dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
                     GraphData().dataOfLifting(self.url_to_request, completion: { jsonString in
                         dataWeek = jsonString
-                        print(dataWeek)
                         dispatch_async(dispatch_get_main_queue(), {
                             self.loadAfter(dataWeek)
                         })
@@ -73,13 +72,6 @@ class GraphViewController: UIViewController, UIActionSheetDelegate {
             graphPoundage.append(Double(dataWeek[i]["pounds"]!)!)
         }
         
-        print(graphPoundage)
-        print(graphWeek)
-        
-        for i in 0..<object.count {
-            print(graphWeek[i])
-            print(graphPoundage[i])
-        }
         Date = graphWeek
         
         setLineChart(graphWeek, values: graphPoundage )

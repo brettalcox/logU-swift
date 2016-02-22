@@ -15,7 +15,6 @@ class DeleteAccount {
     
     func delete_request(userToDelete: String)
     {
-        print(userToDelete)
         let url:NSURL = NSURL(string: url_delete_request)!
         let session = NSURLSession.sharedSession()
         
@@ -29,12 +28,8 @@ class DeleteAccount {
             {(data,response,error) in
                 
                 guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
-                    print("error")
                     return
                 }
-                
-                let dataString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-                print(dataString)
             }
         );
         

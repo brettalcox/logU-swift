@@ -72,7 +72,6 @@ class LogLift: FormViewController {
                 rep = String((form.values()["Reps"]!)!)
                 weight = String((form.values()["Weight"]!)!)
                 
-                print(theDate, lift!, set!, rep!, weight!)
                 upload_request()
                 performSegueWithIdentifier("unwindToDash", sender: nil)
                 
@@ -125,12 +124,10 @@ class LogLift: FormViewController {
             {(data,response,error) in
                 
                 guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
-                    print("error")
                     return
                 }
                 
                 let dataString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-                print(dataString)
             }
         );
         

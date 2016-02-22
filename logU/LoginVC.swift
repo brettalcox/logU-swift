@@ -141,10 +141,8 @@ class LoginVC: UIViewController {
                     
                     guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
                         if error?.code ==  NSURLErrorTimedOut {
-                            print("Time Out")
                             //Call your method here.
                         }
-                        print("error")
                         return
                     }
                     
@@ -171,7 +169,6 @@ class LoginVC: UIViewController {
                             defaults.setInteger(Int(jsonString[0]["unit"]!)!, forKey: "Unit")
                             defaults.setValue(String(jsonString[0]["gender"]!), forKey: "Gender")
                             defaults.setValue(Double(jsonString[0]["bodyweight"]!)!, forKey: "Bodyweight")
-                            print(defaults.valueForKey("Gender"))
                             
                         })
                     }

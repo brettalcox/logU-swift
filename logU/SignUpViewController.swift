@@ -90,7 +90,6 @@ class SignUpViewController : FormViewController {
                 }
                 
                 signUpRequest(String((form.values()["Username"]!)!), passwordInput: String((form.values()["Password"]!)!), unitInput: convertedUnit, genderInput: String((form.values()["Gender"]!)!), weightInput: String((form.values()["Current Weight"]!)!))
-                print("Account created!")
             }
             
         }
@@ -127,10 +126,8 @@ class SignUpViewController : FormViewController {
                 
                 guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
                     if error?.code ==  NSURLErrorTimedOut {
-                        print("Time Out")
                         //Call your method here.
                     }
-                    print("error")
                     return
                 }
                 

@@ -28,7 +28,6 @@ class Settings {
                 {(data,response,error) in
                     
                     guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
-                        print("error")
                         return
                     }
                 }
@@ -52,7 +51,6 @@ class Settings {
             {(data,response,error) in
                 
                 guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
-                    print("error")
                     return
                 }
                 var myData: Array<Dictionary<String, String>> = []
@@ -63,7 +61,6 @@ class Settings {
                     }
                     
                 } catch let error as NSError {
-                    print(error.localizedDescription)
                 }
                 completion(Array<Dictionary<String, String>>(myData))
                 
