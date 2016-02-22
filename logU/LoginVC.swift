@@ -18,9 +18,15 @@ class LoginVC: UIViewController {
     var lifting = [NSManagedObject]()
     var indicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var txtUsername: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
+    
     override func viewDidLoad() {
         
         var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        addDoneButton()
         
         if prefs.valueForKey("ISLOGGEDIN") != nil {
             if String((prefs.valueForKey("ISLOGGEDIN"))!) == "1" {
@@ -43,9 +49,7 @@ class LoginVC: UIViewController {
 
             }
         } else {
-        
-            addDoneButton()
-        
+            
             loginButton.enabled = true
             signUpButton.enabled = true
             txtUsername.enabled = true
@@ -58,11 +62,6 @@ class LoginVC: UIViewController {
         }
         
     }
-    
-    @IBOutlet weak var txtUsername: UITextField!
-    @IBOutlet weak var txtPassword: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var signUpButton: UIButton!
     
     @IBAction func unwindToLogin(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
         

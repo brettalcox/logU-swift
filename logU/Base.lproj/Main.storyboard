@@ -122,7 +122,7 @@
                                         </connections>
                                     </barButtonItem>
                                 </items>
-                                <color key="barTintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="barTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -188,7 +188,7 @@
                                         </connections>
                                     </barButtonItem>
                                 </items>
-                                <color key="barTintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="barTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -255,7 +255,7 @@
                                         </connections>
                                     </barButtonItem>
                                 </items>
-                                <color key="barTintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="barTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -526,10 +526,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="TUS-Bh-B9b"/>
                     <connections>
-                        <outlet property="loginButton" destination="Ybw-rH-ZIH" id="K9z-Ta-YhC"/>
-                        <outlet property="signUpButton" destination="aK2-Y3-DiX" id="CKG-1l-ENx"/>
-                        <outlet property="txtPassword" destination="0tQ-0y-2oa" id="aeg-dE-8tC"/>
-                        <outlet property="txtUsername" destination="35M-CA-rt3" id="w9E-5e-0Q9"/>
+                        <outlet property="loginButton" destination="Ybw-rH-ZIH" id="cbX-kF-s2v"/>
+                        <outlet property="signUpButton" destination="aK2-Y3-DiX" id="ul1-V1-EHz"/>
+                        <outlet property="txtPassword" destination="0tQ-0y-2oa" id="rAl-fr-Buw"/>
+                        <outlet property="txtUsername" destination="35M-CA-rt3" id="zJc-ab-goJ"/>
                         <segue destination="dLN-94-LWx" kind="show" identifier="Dashboard" id="5QN-IN-gnc"/>
                     </connections>
                 </viewController>
