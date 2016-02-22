@@ -18,7 +18,7 @@ enum Theme: Int {
         case .Dark:
             return UIColor(red: 0/255.0, green: 152/255.0, blue: 255/255.0, alpha: 1.0)
         case .Graphical:
-            return UIColor(red: 10.0/255.0, green: 10.0/255.0, blue: 10.0/255.0, alpha: 1.0)
+            return UIColor(red: 0/255.0, green: 152/255.0, blue: 255/255.0, alpha: 1.0)
         }
     }
     
@@ -32,11 +32,11 @@ enum Theme: Int {
     }
     
     var navigationBackgroundImage: UIImage? {
-        return self == .Graphical ? UIImage(named: "navBackground") : nil
+        return self == .Dark ? UIImage(named: "navBackground") : nil
     }
     
     var tabBarBackgroundImage: UIImage? {
-        return self == .Graphical ? UIImage(named: "tabBarBackground") : nil
+        return self == .Dark ? UIImage(named: "tabBarBackground") : nil
     }
     
     var backgroundColor: UIColor {
@@ -53,7 +53,7 @@ enum Theme: Int {
         case .Dark:
             return UIColor(red: 0/255.0, green: 152/255.0, blue: 255/255.0, alpha: 1.0)
         case .Graphical:
-            return UIColor(red: 140.0/255.0, green: 50.0/255.0, blue: 48.0/255.0, alpha: 1.0)
+            return UIColor(red: 0/255.0, green: 152/255.0, blue: 255/255.0, alpha: 1.0)
         }
     }
     
@@ -77,14 +77,15 @@ struct ThemeManager {
         let sharedApplication = UIApplication.sharedApplication()
         sharedApplication.delegate?.window??.tintColor = theme.mainColor
         UINavigationBar.appearance().barStyle = theme.barStyle
+        UINavigationBar.appearance().barTintColor = UIColor(red: 51/255.0, green: 51/255.0, blue: 51/255.0, alpha: 1.0)
         UINavigationBar.appearance().setBackgroundImage(theme.navigationBackgroundImage, forBarMetrics: .Default)
+        UITabBar.appearance().barTintColor = UIColor(red: 51/255.0, green: 51/255.0, blue: 51/255.0, alpha: 1.0)
+        //UITabBar.appearance().barStyle = theme.barStyle
+        //UITabBar.appearance().backgroundImage = theme.tabBarBackgroundImage
         
-        UITabBar.appearance().barStyle = theme.barStyle
-        UITabBar.appearance().backgroundImage = theme.tabBarBackgroundImage
-        
-        let tabIndicator = UIImage(named: "tabBarSelectionIndicator")?.imageWithRenderingMode(.AlwaysTemplate)
-        let tabResizableIndicator = tabIndicator?.resizableImageWithCapInsets(
-            UIEdgeInsets(top: 0, left: 2.0, bottom: 0, right: 2.0))
-        UITabBar.appearance().selectionIndicatorImage = tabResizableIndicator
+        //let tabIndicator = UIImage(named: "tabBarSelectionIndicator")?.imageWithRenderingMode(.AlwaysTemplate)
+        //let tabResizableIndicator = tabIndicator?.resizableImageWithCapInsets(
+            //UIEdgeInsets(top: 2.0, left: 0, bottom: 0, right: 2.0))
+        //UITabBar.appearance().selectionIndicatorImage = tabResizableIndicator
     }
 }
