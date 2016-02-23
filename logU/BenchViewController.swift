@@ -81,6 +81,13 @@ class BenchViewController: UIViewController {
                         }
                     })
                 }
+            } else {
+                let actionSheetController: UIAlertController = UIAlertController(title: "Connection Time Out", message: "Do you have a network connection?", preferredStyle: .Alert)
+                let cancelAction: UIAlertAction = UIAlertAction(title: "Dismiss", style: .Cancel) { action -> Void in
+                    //Do some stuff
+                }
+                actionSheetController.addAction(cancelAction)
+                self.presentViewController(actionSheetController, animated: true, completion: nil)
             }
             
         }
