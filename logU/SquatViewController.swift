@@ -66,6 +66,7 @@ class SquatViewController: UIViewController {
                         if dataSquat.count != 0 {
                             dispatch_async(dispatch_get_main_queue(), {
                                 self.loadAfter(dataSquat)
+                                self.reloadButton.enabled = true
                             })
                         } else {
                             
@@ -78,7 +79,13 @@ class SquatViewController: UIViewController {
                         }
                     })
                 }
-                self.reloadButton.enabled = true
+            } else {
+                let actionSheetController: UIAlertController = UIAlertController(title: "Connection Time Out", message: "Do you have a network connection?", preferredStyle: .Alert)
+                let cancelAction: UIAlertAction = UIAlertAction(title: "Dismiss", style: .Cancel) { action -> Void in
+                    //Do some stuff
+                }
+                actionSheetController.addAction(cancelAction)
+                self.presentViewController(actionSheetController, animated: true, completion: nil)
             }
             
         }
@@ -157,7 +164,6 @@ class SquatViewController: UIViewController {
     func loadAfter(object: Array<Dictionary<String, String>>) {
         var label: String!
         dataSquat = object
-        print(dataSquat.count)
         
         graphLift = []
         graphWeight = []

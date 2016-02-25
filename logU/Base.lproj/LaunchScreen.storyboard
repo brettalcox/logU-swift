@@ -16,10 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LogU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrN-gc-ZMI">
-                                <rect key="frame" x="196" y="250" width="209" height="99"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="logU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrN-gc-ZMI">
+                                <rect key="frame" x="196" y="250" width="210" height="99"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="209" id="cMO-Bs-ZEJ"/>
+                                    <constraint firstAttribute="width" constant="300" id="cMO-Bs-ZEJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="82"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

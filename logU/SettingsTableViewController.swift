@@ -107,6 +107,15 @@ class SettingsTableViewController: FormViewController {
         defaults.setObject("", forKey: "USERNAME")
         defaults.setValue(0, forKey: "ISLOGGEDIN")
         defaults.synchronize()
+        
+        shouldUpdateDash = true
+        shouldUpdatePoundage = true
+        shouldUpdateSquat = true
+        shouldUpdateBench = true
+        shouldUpdateDeadlift = true
+        shouldUpdateMax = true
+        shouldUpdateWeek = true
+        shouldUpdateStats = true
     }
     
     func viewPrivacy(cell: ButtonCellOf<String>, row: ButtonRow) {

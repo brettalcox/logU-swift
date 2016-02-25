@@ -35,28 +35,27 @@ class LogLift: FormViewController {
     
     @IBAction func logPressed(sender: UIBarButtonItem) {
         
-        if Reachability.isConnectedToNetwork() {
+        let dateValue = (form.values()["Date"]!)! as! NSDate
             
-            let dateValue = (form.values()["Date"]!)! as! NSDate
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-M-d HH:mm:ss Z"
             
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "yyyy-M-d HH:mm:ss Z"
+        let date = dateFormatter.dateFromString(String(dateValue))!
             
-            let date = dateFormatter.dateFromString(String(dateValue))!
+        dateFormatter.dateFormat = "M/d/yyyy"
             
-            dateFormatter.dateFormat = "M/d/yyyy"
+        let formattedDateString = dateFormatter.stringFromDate(date)
             
-            let formattedDateString = dateFormatter.stringFromDate(date)
-            
-            if (form.values()["Sets"]! == nil || form.values()["Reps"]! == nil || form.values()["Weight"]! == nil) {
-                let actionSheetController: UIAlertController = UIAlertController(title: "Logging Failed", message: "Please fill out all fields!", preferredStyle: .Alert)
-                let cancelAction: UIAlertAction = UIAlertAction(title: "Dismiss", style: .Cancel) { action -> Void in
+        if (form.values()["Sets"]! == nil || form.values()["Reps"]! == nil || form.values()["Weight"]! == nil) {
+            let actionSheetController: UIAlertController = UIAlertController(title: "Logging Failed", message: "Please fill out all fields!", preferredStyle: .Alert)
+            let cancelAction: UIAlertAction = UIAlertAction(title: "Dismiss", style: .Cancel) { action -> Void in
                     //Do some stuff
-                }
-                actionSheetController.addAction(cancelAction)
-                self.presentViewController(actionSheetController, animated: true, completion: nil)
-            } else {
+            }
+            actionSheetController.addAction(cancelAction)
+            self.presentViewController(actionSheetController, animated: true, completion: nil)
+        } else {
                 
+            if Reachability.isConnectedToNetwork() {
                 shouldUpdateDash = true
                 shouldUpdatePoundage = true
                 shouldUpdateSquat = true
@@ -74,9 +73,30 @@ class LogLift: FormViewController {
                 
                 upload_request()
                 performSegueWithIdentifier("unwindToDash", sender: nil)
+            } else {
                 
+                shouldUpdateDash = true
+                shouldUpdatePoundage = true
+                shouldUpdateSquat = true
+                shouldUpdateBench = true
+                shouldUpdateDeadlift = true
+                shouldUpdateMax = true
+                shouldUpdateWeek = true
+                shouldUpdateStats = true
+                
+                theDate = formattedDateString
+                lift = String((form.values()["Lift"]!)!)
+                set = String((form.values()["Sets"]!)!)
+                rep = String((form.values()["Reps"]!)!)
+                weight = String((form.values()["Weight"]!)!)
+                
+                OfflineRequest.coreDataInsert(theDate!, lift: lift!, sets: set!, reps: rep!, weight: weight!)
+                DashTableViewController().OfflineTableInsert(theDate!, lift: lift!, set: set!, rep: rep!, weight: weight!)
+                performSegueWithIdentifier("unwindToDash", sender: nil)
+
             }
-        }
+            
+            }
 
     }
     
@@ -91,7 +111,7 @@ class LogLift: FormViewController {
             <<< PickerInlineRow<String>("Lift") { (row : PickerInlineRow<String>) -> Void in
                 
                 row.title = "Lift"
-                row.options = ["Squat", "Pause Squat", "Front Squat", "Bench", "Close Grip Bench", "Incline Bench", "Decline Bench", "Pause Bench", "Floor Press", "Deadlift", "Deficit Deadlift", "Pause Deadlift", "Snatch Grip Deadlift", "Overhead Press", "Sots Press", "Pullups", "Dips", "Bent Over Rows", "Kroc Rows", "Upright Rows", "Straight Bar Bicep Curls", "EZ Bar Bicep Curls", "Barbell Bicep Curls", "Hammer Curls", "Snatch", "Clean and Jerk", "Power Clean", "Power Snatch", "Hang Clean", "Hang Snatch", "Leg Press", "Leg Extension", "Leg Curl", "Chest Fly", "Lat Pulldown", "Shoulder Fly", "Lateral Raise", "Shoulder Shrug", "Tricep Extension", "Dumbbell Bench", "Dumbbell Press", "Skullcrushers", "21's", "Hack Squat", "Zerker Squat"]
+                row.options = ["Squat", "Pause Squat", "Front Squat", "Bench", "Close Grip Bench", "Incline Bench", "Decline Bench", "Pause Bench", "Floor Press", "Deadlift", "Deficit Deadlift", "Pause Deadlift", "Snatch Grip Deadlift", "Overhead Press", "Sots Press", "Pullups", "Dips", "Push Ups", "Bent Over Rows", "Kroc Rows", "Upright Rows", "Straight Bar Bicep Curls", "EZ Bar Bicep Curls", "Barbell Bicep Curls", "Hammer Curls", "Snatch", "Clean and Jerk", "Power Clean", "Power Snatch", "Hang Clean", "Hang Snatch", "Snatch Pulls", "Clean Pulls", "Leg Press", "Leg Extension", "Leg Curl", "Chest Fly", "Lat Pulldown", "Shoulder Fly", "Lateral Raise", "Shoulder Shrug", "Tricep Extension", "Dumbbell Bench", "Dumbbell Press", "Skullcrushers", "21's", "Hack Squat", "Zerker Squat", "Walking", "Jogging", "Sprinting", "Cycling", "Swimming", "Elliptical", "Stairs", "25m Sprint", "50m Sprint", "100m Sprint", "200m Sprint"]
                 row.value = row.options[0]
             }
             

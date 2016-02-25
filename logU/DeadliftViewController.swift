@@ -67,6 +67,7 @@ class DeadliftViewController: UIViewController {
                         if dataDeadlift.count != 0 {
                             dispatch_async(dispatch_get_main_queue(), {
                                 self.loadAfter(dataDeadlift)
+                                self.reloadButton.enabled = true
                             })
                         } else {
                             
@@ -79,7 +80,6 @@ class DeadliftViewController: UIViewController {
                         }
                     })
                 }
-                self.reloadButton.enabled = true
 
             }
             
