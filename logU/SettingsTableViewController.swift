@@ -116,6 +116,7 @@ class SettingsTableViewController: FormViewController {
         shouldUpdateMax = true
         shouldUpdateWeek = true
         shouldUpdateStats = true
+        shouldUpdateFrequency = true
     }
     
     func viewPrivacy(cell: ButtonCellOf<String>, row: ButtonRow) {

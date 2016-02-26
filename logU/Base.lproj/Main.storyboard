@@ -1063,7 +1063,7 @@
                             <outlet property="delegate" destination="IjE-e9-dV0" id="JHf-qc-Qpk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="CAq-b1-8Tx"/>
+                    <navigationItem key="navigationItem" title="Weekly Frequency" id="CDF-ld-asQ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="col-mg-Ri3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -33,7 +33,6 @@ class FrequencyTableViewController: UITableViewController {
                     
                     GraphData().dataOfLifting(self.url_to_request, completion: { jsonString in
                         dataAfter = jsonString
-                        print(dataAfter)
                         dispatch_async(dispatch_get_main_queue()) {
                             self.loadAfter(dataAfter)
                         }
@@ -110,7 +109,11 @@ class FrequencyTableViewController: UITableViewController {
         let theFrequency = frequency[indexPath.row]
         
         aCell.weekLabel.text = "Week " + week
-        aCell.frequencyLabel.text = theFrequency + " workouts"
+        if theFrequency == "1" {
+            aCell.frequencyLabel.text = theFrequency + " workout"
+        } else {
+            aCell.frequencyLabel.text = theFrequency + " workouts"
+        }
         return aCell
     }
 
