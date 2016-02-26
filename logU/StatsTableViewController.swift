@@ -33,6 +33,7 @@ class StatsTableViewController: UITableViewController {
     override func viewDidLoad() {
         self.objects.append("One Rep Maxes")
         self.objects.append("Weekly Poundage")
+        self.objects.append("Weekly Frequency")
         /*
         wilkScore.text = "355"
         favoriteLift.text = "Squat"
@@ -208,6 +209,12 @@ class StatsTableViewController: UITableViewController {
             self.performSegueWithIdentifier("showPoundage", sender: self)
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
+        }
+        
+        if indexPath.row == 2 && indexPath.section == 3 {
+            self.performSegueWithIdentifier("showFrequency", sender: self)
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            
         }
     }
     

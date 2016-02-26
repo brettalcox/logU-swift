@@ -24,6 +24,8 @@
 		B5787C371C7AA2B400694C44 /* JsonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5787C361C7AA2B400694C44 /* JsonData.swift */; };
 		B5787C391C7AA36D00694C44 /* DeleteAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5787C381C7AA36D00694C44 /* DeleteAccount.swift */; };
 		B58E938F1C6EDFED00CFC8CA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E938E1C6EDFED00CFC8CA /* Theme.swift */; };
+		B5AEB2F11C7FF8F6006FC791 /* FrequencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AEB2F01C7FF8F6006FC791 /* FrequencyTableViewCell.swift */; };
+		B5AEB2F31C7FF9A5006FC791 /* FrequencyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AEB2F21C7FF9A5006FC791 /* FrequencyTableViewController.swift */; };
 		B5C6F1041C4F25F70016B70E /* logUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1031C4F25F70016B70E /* logUTests.swift */; };
 		B5C6F10F1C4F25F70016B70E /* logUUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F10E1C4F25F70016B70E /* logUUITests.swift */; };
 		B5C6F12A1C4F26480016B70E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F11C1C4F26480016B70E /* AppDelegate.swift */; };
@@ -164,6 +166,8 @@
 		B5787C361C7AA2B400694C44 /* JsonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonData.swift; sourceTree = "<group>"; };
 		B5787C381C7AA36D00694C44 /* DeleteAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteAccount.swift; sourceTree = "<group>"; };
 		B58E938E1C6EDFED00CFC8CA /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		B5AEB2F01C7FF8F6006FC791 /* FrequencyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyTableViewCell.swift; sourceTree = "<group>"; };
+		B5AEB2F21C7FF9A5006FC791 /* FrequencyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyTableViewController.swift; sourceTree = "<group>"; };
 		B5C6F0EB1C4F25F70016B70E /* logU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = logU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C6F0FF1C4F25F70016B70E /* logUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = logUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C6F1031C4F25F70016B70E /* logUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logUTests.swift; sourceTree = "<group>"; };
@@ -272,6 +276,8 @@
 				B5787C361C7AA2B400694C44 /* JsonData.swift */,
 				B5C6F1671C557ACD0016B70E /* PoundageTableViewCell.swift */,
 				B5C6F16B1C557B4E0016B70E /* PoundageTableViewController.swift */,
+				B5AEB2F01C7FF8F6006FC791 /* FrequencyTableViewCell.swift */,
+				B5AEB2F21C7FF9A5006FC791 /* FrequencyTableViewController.swift */,
 				B5C6F1571C4F3A9E0016B70E /* StatsTableViewController.swift */,
 				B5C6F15B1C4F40DF0016B70E /* MaxesTableViewController.swift */,
 				B5C6F15D1C4F45240016B70E /* MaxesTableViewCell.swift */,
@@ -543,7 +549,9 @@
 				B5C6F12D1C4F26480016B70E /* DashTableViewController.swift in Sources */,
 				B5787C371C7AA2B400694C44 /* JsonData.swift in Sources */,
 				B5C6F15A1C4F3AFE0016B70E /* StatsTableViewCell.swift in Sources */,
+				B5AEB2F11C7FF8F6006FC791 /* FrequencyTableViewCell.swift in Sources */,
 				B5C6F1581C4F3A9E0016B70E /* StatsTableViewController.swift in Sources */,
+				B5AEB2F31C7FF9A5006FC791 /* FrequencyTableViewController.swift in Sources */,
 				B5C6F16C1C557B4E0016B70E /* PoundageTableViewController.swift in Sources */,
 				B5C6F1361C4F26480016B70E /* SquatViewController.swift in Sources */,
 				B58E938F1C6EDFED00CFC8CA /* Theme.swift in Sources */,

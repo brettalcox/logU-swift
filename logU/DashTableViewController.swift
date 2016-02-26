@@ -230,6 +230,7 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
                 shouldUpdateMax = true
                 shouldUpdateWeek = true
                 shouldUpdateStats = true
+                shouldUpdateFrequency = true
                 
                 if Reachability.isConnectedToNetwork() {
                     
@@ -272,6 +273,7 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
                 shouldUpdateMax = true
                 shouldUpdateWeek = true
                 shouldUpdateStats = true
+                shouldUpdateFrequency = true
             }
             
         } else if editingStyle == .Insert {

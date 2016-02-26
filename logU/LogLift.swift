@@ -18,6 +18,7 @@ var shouldUpdateMax: Bool = true
 var shouldUpdateWeek: Bool = true
 var shouldUpdateSettings: Bool = false
 var shouldUpdateStats: Bool = false
+var shouldUpdateFrequency: Bool = true
 
 
 var theDate:String?
@@ -64,6 +65,7 @@ class LogLift: FormViewController {
                 shouldUpdateMax = true
                 shouldUpdateWeek = true
                 shouldUpdateStats = true
+                shouldUpdateFrequency = true
                 
                 theDate = formattedDateString
                 lift = String((form.values()["Lift"]!)!)
@@ -83,6 +85,7 @@ class LogLift: FormViewController {
                 shouldUpdateMax = true
                 shouldUpdateWeek = true
                 shouldUpdateStats = true
+                shouldUpdateFrequency = true
                 
                 theDate = formattedDateString
                 lift = String((form.values()["Lift"]!)!)
