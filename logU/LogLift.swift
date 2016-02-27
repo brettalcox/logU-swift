@@ -59,9 +59,6 @@ class LogLift: FormViewController {
             if Reachability.isConnectedToNetwork() {
                 shouldUpdateDash = true
                 shouldUpdatePoundage = true
-                shouldUpdateSquat = true
-                shouldUpdateBench = true
-                shouldUpdateDeadlift = true
                 shouldUpdateMax = true
                 shouldUpdateWeek = true
                 shouldUpdateStats = true
@@ -72,6 +69,18 @@ class LogLift: FormViewController {
                 set = String((form.values()["Sets"]!)!)
                 rep = String((form.values()["Reps"]!)!)
                 weight = String((form.values()["Weight"]!)!)
+                
+                if lift == "Squat" {
+                    shouldUpdateSquat = true
+                }
+                
+                if lift == "Bench" {
+                    shouldUpdateBench = true
+                }
+                
+                if lift == "Deadlift" {
+                    shouldUpdateDeadlift = true
+                }
                 
                 upload_request()
                 performSegueWithIdentifier("unwindToDash", sender: nil)
@@ -79,9 +88,6 @@ class LogLift: FormViewController {
                 
                 shouldUpdateDash = true
                 shouldUpdatePoundage = true
-                shouldUpdateSquat = true
-                shouldUpdateBench = true
-                shouldUpdateDeadlift = true
                 shouldUpdateMax = true
                 shouldUpdateWeek = true
                 shouldUpdateStats = true
@@ -92,6 +98,19 @@ class LogLift: FormViewController {
                 set = String((form.values()["Sets"]!)!)
                 rep = String((form.values()["Reps"]!)!)
                 weight = String((form.values()["Weight"]!)!)
+                
+                if lift == "Squat" {
+                    shouldUpdateSquat = true
+                }
+                
+                if lift == "Bench" {
+                    shouldUpdateBench = true
+                }
+                
+                if lift == "Deadlift" {
+                    shouldUpdateDeadlift = true
+                }
+
                 
                 OfflineRequest.coreDataInsert(theDate!, lift: lift!, sets: set!, reps: rep!, weight: weight!)
                 DashTableViewController().OfflineTableInsert(theDate!, lift: lift!, set: set!, rep: rep!, weight: weight!)
