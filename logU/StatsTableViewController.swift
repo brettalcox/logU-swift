@@ -14,6 +14,8 @@ class StatsTableViewController: UITableViewController {
     let url_to_request:String = "https://loguapp.com/wilks_score.php"
     let url_rep_avg:String = "https://loguapp.com/rep_average.php"
     let url_lift_count:String = "https://loguapp.com/lift_count.php"
+    let url_wilks_percentile:String = "https://loguapp.com/swift_wilks_percentile.php"
+    let url_average_frequency:String = "https://loguapp.com/average_frequency.php"
     
     var objects = [String]()
 
@@ -28,6 +30,8 @@ class StatsTableViewController: UITableViewController {
     @IBOutlet weak var liftsLogged: UILabel!
     @IBOutlet weak var totalSets: UILabel!
     @IBOutlet weak var totalReps: UILabel!
+    @IBOutlet weak var frequencyWorkout: UILabel!
+    @IBOutlet weak var wilkPercentile: UILabel!
     @IBOutlet weak var pieChartView: PieChartView!
     
     override func viewDidLoad() {
@@ -76,6 +80,20 @@ class StatsTableViewController: UITableViewController {
                     dataWeek = jsonString
                     dispatch_sync(dispatch_get_main_queue(), {
                         self.loadLiftCount(dataWeek)
+                    })
+                    
+                })
+                GraphData().dataOfLifting(self.url_wilks_percentile, completion: { jsonString in
+                    dataWeek = jsonString
+                    dispatch_sync(dispatch_get_main_queue(), {
+                        self.loadWilksPercentile(dataWeek)
+                    })
+                    
+                })
+                GraphData().dataOfLifting(self.url_average_frequency, completion: { jsonString in
+                    dataWeek = jsonString
+                    dispatch_sync(dispatch_get_main_queue(), {
+                        self.loadAverageFrequency(dataWeek)
                     })
                     
                 })
@@ -128,7 +146,20 @@ class StatsTableViewController: UITableViewController {
                         })
                         
                     })
-                    
+                    GraphData().dataOfLifting(self.url_wilks_percentile, completion: { jsonString in
+                        dataWeek = jsonString
+                        dispatch_sync(dispatch_get_main_queue(), {
+                            self.loadWilksPercentile(dataWeek)
+                        })
+                        
+                    })
+                    GraphData().dataOfLifting(self.url_average_frequency, completion: { jsonString in
+                        dataWeek = jsonString
+                        dispatch_sync(dispatch_get_main_queue(), {
+                            self.loadAverageFrequency(dataWeek)
+                        })
+                        
+                    })
                     dispatch_sync(dispatch_get_main_queue(), {
                         self.stopIndicator()
                     })
@@ -193,25 +224,44 @@ class StatsTableViewController: UITableViewController {
 
     }
     
+    func loadWilksPercentile(object: Array<Dictionary<String, String>>) {
+        if object.count != 0 {
+            dataWeek = object
+            wilkPercentile.text = dataWeek[0]["percentrank"]
+        } else {
+            wilkPercentile.text = "None"
+        }
+    }
+    
+    func loadAverageFrequency(object: Array<Dictionary<String, String>>) {
+        if object.count != 0 {
+            dataWeek = object
+            frequencyWorkout.text = dataWeek[0]["average_freq"]
+        } else {
+            frequencyWorkout.text = "0"
+        }
+    }
+
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
-        return 4
+        return 5
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        if indexPath.row == 0 && indexPath.section == 3 {
+        if indexPath.row == 0 && indexPath.section == 4 {
             self.performSegueWithIdentifier("showMaxes", sender: self)
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
         
-        if indexPath.row == 1 && indexPath.section == 3 {
+        if indexPath.row == 1 && indexPath.section == 4 {
             self.performSegueWithIdentifier("showPoundage", sender: self)
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
         }
         
-        if indexPath.row == 2 && indexPath.section == 3 {
+        if indexPath.row == 2 && indexPath.section == 4 {
             self.performSegueWithIdentifier("showFrequency", sender: self)
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
             
