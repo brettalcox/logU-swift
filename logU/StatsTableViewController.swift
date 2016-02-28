@@ -76,6 +76,7 @@ class StatsTableViewController: UITableViewController {
                 })
                 GraphData().dataOfLifting(self.url_wilks_percentile, completion: { jsonString in
                     dataWeek = jsonString
+                    print(dataWeek)
                     dispatch_sync(dispatch_get_main_queue(), {
                         self.loadWilksPercentile(dataWeek)
                     })
@@ -218,7 +219,7 @@ class StatsTableViewController: UITableViewController {
     func loadWilksPercentile(object: Array<Dictionary<String, String>>) {
         if object.count != 0 {
             dataWeek = object
-            wilkPercentile.text = dataWeek[0]["percentrank"]
+            wilkPercentile.text = dataWeek[0]["rank"]
         } else {
             wilkPercentile.text = "None"
         }
