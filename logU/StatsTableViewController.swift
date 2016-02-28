@@ -38,16 +38,7 @@ class StatsTableViewController: UITableViewController {
         self.objects.append("One Rep Maxes")
         self.objects.append("Weekly Poundage")
         self.objects.append("Weekly Frequency")
-        /*
-        wilkScore.text = "355"
-        favoriteLift.text = "Squat"
-        averageRep.text = "3.46"
 
-        let lifts = ["Squat", "Bench", "Deadlift", "Pullups", "Dips", "Close Grip Bench", "Pause Squat", "Snatch Grip Deadlift", "Overhead Press"]
-        let count: [Double] = [20, 4, 6, 3, 12, 16, 7, 11, 3]
-        
-        setChart(lifts, values: count)
-*/
         if Reachability.isConnectedToNetwork() {
             
             dispatch_async(dispatch_get_main_queue(), {
