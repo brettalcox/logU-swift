@@ -76,7 +76,6 @@ class StatsTableViewController: UITableViewController {
                 })
                 GraphData().dataOfLifting(self.url_wilks_percentile, completion: { jsonString in
                     dataWeek = jsonString
-                    print(dataWeek)
                     dispatch_sync(dispatch_get_main_queue(), {
                         self.loadWilksPercentile(dataWeek)
                     })

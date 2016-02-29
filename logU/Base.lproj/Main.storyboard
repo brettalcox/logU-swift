@@ -794,7 +794,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ACY-bj-SWS">
                                                             <rect key="frame" x="0.0" y="0.0" width="301" height="86"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="logU Wilks Rank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNh-FH-KiQ">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="logU Wilks Rank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNh-FH-KiQ">
                                                                     <rect key="frame" x="98" y="0.0" width="105" height="43"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -1417,10 +1417,10 @@ This data will not be collected, transmitted, or used with anybody or anything o
         </scene>
     </scenes>
     <resources>
-        <image name="Clear Filters" width="25" height="25"/>
+        <image name="Clear Filters" width="16" height="16"/>
         <image name="Contacts" width="25" height="25"/>
         <image name="Dumbbell" width="25" height="25"/>
-        <image name="Filter" width="25" height="25"/>
+        <image name="Filter" width="16" height="16"/>
         <image name="Home" width="25" height="25"/>
         <image name="Line Chart" width="25" height="25"/>
     </resources>
