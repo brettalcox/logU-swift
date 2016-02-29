@@ -18,7 +18,7 @@ This is the current iOS development of https://loguapp.com
 ### The Main User Dashboard
 
 
-![alt tag](http://i.imgur.com/RgZemz8.png?1)
+![alt tag](http://i.imgur.com/3cZqE2R.png?1)
 
 
 ### Search for a Lift
@@ -35,17 +35,19 @@ This is the current iOS development of https://loguapp.com
 ### User Graphs (save graph with a long press)
 
 
+![alt tag](http://i.imgur.com/IxB6AUz.png?1)
 
-![alt tag](http://i.imgur.com/1zTO9Ku.png?1)
 
+### Filter Graphs
+
+
+![alt tag](http://i.imgur.com/S90JOhq.png?1)
 
 
 ### User Statistics
 
 
-
-![alt tag](http://i.imgur.com/8mmVMX2.png?1)
-
+![alt tag](http://i.imgur.com/rTj56r4.png?1)
 
 
 ### One Rep Maxes
@@ -58,6 +60,12 @@ This is the current iOS development of https://loguapp.com
 
 
 ![alt tag](http://i.imgur.com/kaSv9Nz.png?1)
+
+
+### Weekly Frequency
+
+
+![alt tag](http://i.imgur.com/czzIxPq.png?1)
 
 
 ### User Settings
