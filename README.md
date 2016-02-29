@@ -1,6 +1,6 @@
 # logU-swift
 
-logU is a simple workout tracker aimed towards strength athletes.
+logU is a simple workout logger aimed towards strength/weightlifting athletes.
 
 This is the current iOS development of https://loguapp.com
 
@@ -8,10 +8,10 @@ This is the current iOS development of https://loguapp.com
 ![alt tag](https://raw.githubusercontent.com/brettalcox/logU-swift/master/logU/Assets.xcassets/AppIcon.appiconset/App%20Icon%20%5BRounded%5D/Icon-76%402x.png)
 
 
-### LogU - Strength Logging
+### logU - A Strength Logger
 
 
-![alt tag](http://i.imgur.com/Hw6xbnX.png?1)
+![alt tag](http://i.imgur.com/wNYaBLO.png?1)
 ![alt tag](http://i.imgur.com/eQMkMIS.png?1)
 
 
