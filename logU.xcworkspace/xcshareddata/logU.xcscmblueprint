@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4F9D53F2303969D465A150E833530EAD7E1B924B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "4F9D53F2303969D465A150E833530EAD7E1B924B" : 0,
+    "83BADBC5501CE21C43EFAD0B4239602133296C18" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "03DFE807-AE05-4D52-BBDB-A94AC8AD8C73",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "4F9D53F2303969D465A150E833530EAD7E1B924B" : "logU\/",
+    "83BADBC5501CE21C43EFAD0B4239602133296C18" : "logU\/Eureka\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "logU",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "logU.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/brettalcox\/logU-swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4F9D53F2303969D465A150E833530EAD7E1B924B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/xmartlabs\/Eureka.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "83BADBC5501CE21C43EFAD0B4239602133296C18"
+    }
+  ]
+}
