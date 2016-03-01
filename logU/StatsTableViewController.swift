@@ -33,6 +33,7 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
     @IBOutlet weak var totalReps: UILabel!
     @IBOutlet weak var frequencyWorkout: UILabel!
     @IBOutlet weak var wilkPercentile: UILabel!
+    @IBOutlet weak var strengthLabel: UILabel!
     @IBOutlet weak var pieChartView: PieChartView!
     
     var statsTipView : EasyTipView!
@@ -46,7 +47,7 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
             preferences.drawing.font = UIFont(name: "HelveticaNeue-Light", size: 14)!
             preferences.drawing.textAlignment = NSTextAlignment.Justified
         
-            self.statsTipView = EasyTipView(text: "Wilks Score: Also called relative strength. Takes your Big 3 maxes and scores relative to a lifter of any bodyweight or gender.\n\nlogU Wilks Rank: Based on your Wilks Score, this is your rank among the logU community, with 1 being the highest.\n\nAverage Frequency: On average, how many times you make it to the gym each week.")
+            self.statsTipView = EasyTipView(text: "Wilks Score: How strong you are based on your bodyweight and gender. Takes your Big 3 maxes and scores relative to a lifter of any bodyweight or gender.\n\nStrength Level: The higher your Wilks Score, the higher your strength level. Ranges from \"Untrained\" all the way to \"Elite\"\n\nlogU Wilks Rank: Based on your Wilks Score, this is your rank among the logU community, with 1 being the highest.\n\nAverage Frequency: On average, how many times you make it to the gym each week.")
             self.statsTipView.show(forItem: self.helpButton, withinSuperView: self.navigationController?.view)
             
         } else {
@@ -214,6 +215,37 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
             
             dataWeek = object
             wilkScore.text = dataWeek[0]["wilks_coeff"]
+            let wilks = dataWeek[0]["wilks_coeff"]
+            let wilks_case = Int(wilks!)!
+            
+            
+            
+            switch wilks_case {
+            case 0..<120:
+                strengthLabel.text = "Untrained"
+            case _ where wilks_case == 120:
+                strengthLabel.text = "Untrained"
+            case 121..<200:
+                strengthLabel.text = "Untrained"
+            case _ where wilks_case == 200:
+                strengthLabel.text = "Novice"
+            case 201..<238:
+                strengthLabel.text = "Novice"
+            case _ where wilks_case == 238:
+                strengthLabel.text = "Intermediate"
+            case 239..<326:
+                strengthLabel.text = "Intermediate"
+            case _ where wilks_case == 326:
+                strengthLabel.text = "Advanced"
+            case 327..<414:
+                strengthLabel.text = "Advanced"
+            case _ where wilks_case == 414:
+                strengthLabel.text = "Elite"
+            case _ where wilks_case > 414:
+                strengthLabel.text = "Elite"
+            default:
+                strengthLabel.text = "---"
+            }
             
         } else {
             wilkScore.text = "0"
@@ -264,7 +296,7 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
             dataWeek = object
             wilkPercentile.text = dataWeek[0]["rank"]
         } else {
-            wilkPercentile.text = "None"
+            wilkPercentile.text = "---"
         }
     }
     
