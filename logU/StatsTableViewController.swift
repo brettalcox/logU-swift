@@ -334,7 +334,8 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
             pieChartView.drawSliceTextEnabled = false
             pieChartView.legend.wordWrapEnabled = true
             pieChartView.data = pieChartData
-        
+
+            
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.alignment = NSTextAlignment.Center
 
