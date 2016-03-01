@@ -8,8 +8,9 @@
 
 import UIKit
 import Charts
+import EasyTipView
 
-class StatsTableViewController: UITableViewController {
+class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
     
     let url_to_request:String = "https://loguapp.com/wilks_score.php"
     let url_rep_avg:String = "https://loguapp.com/rep_average.php"
@@ -34,7 +35,43 @@ class StatsTableViewController: UITableViewController {
     @IBOutlet weak var wilkPercentile: UILabel!
     @IBOutlet weak var pieChartView: PieChartView!
     
+    var statsTipView : EasyTipView!
+    @IBOutlet weak var helpButton: UIBarButtonItem!
+    
+    @IBAction func helpClicked(sender: UIBarButtonItem) {
+        
+        if self.statsTipView == nil {
+        var preferences = EasyTipView.globalPreferences
+        preferences.drawing.foregroundColor = UIColor.whiteColor()
+        preferences.drawing.font = UIFont(name: "HelveticaNeue-Light", size: 14)!
+        preferences.drawing.textAlignment = NSTextAlignment.Justified
+        
+        self.statsTipView = EasyTipView(text: "Wilks Score: Takes your Squat, Bench, Deadlift total, bodyweight, and gender to compare you against another lifter of any gender or weight.\n\nlogU Wilks Rank: Based on your Wilks Score, this is your rank among the logU community. 1 being the highest.\n\nAverage Frequency: On average, how many times you make it to the gym each week.")
+        self.statsTipView.show(forItem: self.helpButton, withinSuperView: self.navigationController?.view)
+            
+        } else {
+            self.statsTipView.dismiss()
+            self.statsTipView = nil
+        }
+    }
+    
+    func easyTipViewDidDismiss(tipView: EasyTipView) {
+        statsTipView = nil
+        print("shit down my throat")
+    }
+    
     override func viewDidLoad() {
+        
+        var preferences = EasyTipView.Preferences()
+        
+        preferences.drawing.font = UIFont(name: "Futura-Medium", size: 13)!
+        preferences.drawing.foregroundColor = UIColor.whiteColor()
+        preferences.drawing.backgroundColor = UIColor(red: 0/255.0, green: 152/255.0, blue: 255/255.0, alpha: 1.0)
+        preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
+        //preferences.positioning.bubbleVInset = 10
+        
+        EasyTipView.globalPreferences = preferences
+
         self.objects.append("One Rep Maxes")
         self.objects.append("Weekly Poundage")
         self.objects.append("Weekly Frequency")

@@ -603,7 +603,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="98" id="hqK-7l-YA1" customClass="StatsTableViewCell" customModule="logU" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="hqK-7l-YA1" id="Vtc-9Q-Hwl">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hqK-7l-YA1" id="Vtc-9Q-Hwl">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="97"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -613,19 +613,20 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="6pP-Ce-WVD">
                                                             <rect key="frame" x="0.0" y="0.0" width="195" height="74"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wilks Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0Y-GV-kTM">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wilks Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eon-vW-aJj">
                                                                     <rect key="frame" x="0.0" y="0.0" width="195" height="31"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5UO-zJ-8Y2">
+                                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5UO-zJ-8Y2">
                                                                     <rect key="frame" x="0.0" y="31" width="195" height="43"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
+                                                            <gestureRecognizers/>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Jgl-bO-eNE">
                                                             <rect key="frame" x="195" y="0.0" width="194" height="74"/>
@@ -800,8 +801,8 @@
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0QJ-zM-GTT">
-                                                                    <rect key="frame" x="128" y="43" width="46" height="43"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0QJ-zM-GTT">
+                                                                    <rect key="frame" x="138" y="43" width="26" height="43"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -817,8 +818,8 @@
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qw8-qQ-La2">
-                                                                    <rect key="frame" x="145" y="43" width="12" height="43"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qw8-qQ-La2">
+                                                                    <rect key="frame" x="138" y="43" width="26" height="43"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -933,11 +934,18 @@
                             <outlet property="delegate" destination="iKS-ey-D7z" id="392-jb-Rhd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="User Stats" id="IDj-u5-JV7"/>
+                    <navigationItem key="navigationItem" title="User Stats" id="IDj-u5-JV7">
+                        <barButtonItem key="rightBarButtonItem" image="Help" id="UYV-Ap-zMw">
+                            <connections>
+                                <action selector="helpClicked:" destination="iKS-ey-D7z" id="Og2-qd-ddp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="averageRep" destination="CEr-eb-FcS" id="s2o-EB-E9L"/>
                         <outlet property="favoriteLift" destination="WmB-E8-nTi" id="dHO-uq-Nmy"/>
                         <outlet property="frequencyWorkout" destination="Qw8-qQ-La2" id="Fy2-tN-2J7"/>
+                        <outlet property="helpButton" destination="UYV-Ap-zMw" id="Dac-Um-TIF"/>
                         <outlet property="liftsLogged" destination="ccH-kh-Ub2" id="XrR-MI-FPn"/>
                         <outlet property="pieChartView" destination="XlQ-Ci-ONu" id="bcX-6s-XlX"/>
                         <outlet property="tableView" destination="kQf-Ge-RpD" id="xd2-bw-Nc6"/>
@@ -1421,6 +1429,7 @@ This data will not be collected, transmitted, or used with anybody or anything o
         <image name="Contacts" width="25" height="25"/>
         <image name="Dumbbell" width="25" height="25"/>
         <image name="Filter" width="16" height="16"/>
+        <image name="Help" width="25" height="25"/>
         <image name="Home" width="25" height="25"/>
         <image name="Line Chart" width="25" height="25"/>
     </resources>
