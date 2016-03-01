@@ -41,13 +41,13 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
     @IBAction func helpClicked(sender: UIBarButtonItem) {
         
         if self.statsTipView == nil {
-        var preferences = EasyTipView.globalPreferences
-        preferences.drawing.foregroundColor = UIColor.whiteColor()
-        preferences.drawing.font = UIFont(name: "HelveticaNeue-Light", size: 14)!
-        preferences.drawing.textAlignment = NSTextAlignment.Justified
+            var preferences = EasyTipView.globalPreferences
+            preferences.drawing.foregroundColor = UIColor.whiteColor()
+            preferences.drawing.font = UIFont(name: "HelveticaNeue-Light", size: 14)!
+            preferences.drawing.textAlignment = NSTextAlignment.Justified
         
-        self.statsTipView = EasyTipView(text: "Wilks Score: Takes your Squat, Bench, Deadlift total, bodyweight, and gender to compare you against another lifter of any gender or weight.\n\nlogU Wilks Rank: Based on your Wilks Score, this is your rank among the logU community. 1 being the highest.\n\nAverage Frequency: On average, how many times you make it to the gym each week.")
-        self.statsTipView.show(forItem: self.helpButton, withinSuperView: self.navigationController?.view)
+            self.statsTipView = EasyTipView(text: "Wilks Score: Also called relative strength. Takes your Big 3 maxes and scores relative to a lifter of any bodyweight or gender.\n\nlogU Wilks Rank: Based on your Wilks Score, this is your rank among the logU community, with 1 being the highest.\n\nAverage Frequency: On average, how many times you make it to the gym each week.")
+            self.statsTipView.show(forItem: self.helpButton, withinSuperView: self.navigationController?.view)
             
         } else {
             self.statsTipView.dismiss()
@@ -58,7 +58,13 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
     
     func easyTipViewDidDismiss(tipView: EasyTipView) {
         statsTipView = nil
-        print("shit down my throat")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        if self.statsTipView != nil {
+            self.statsTipView.dismiss()
+            self.statsTipView = nil
+        }
     }
     
     override func viewDidLoad() {
