@@ -53,6 +53,7 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
             self.statsTipView.dismiss()
             self.statsTipView = nil
         }
+        
     }
     
     func easyTipViewDidDismiss(tipView: EasyTipView) {
