@@ -13,8 +13,6 @@
 		B505D0251C55B5AE00C09549 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B505D0241C55B5AE00C09549 /* SettingsTableViewController.swift */; };
 		B505D0291C55C27500C09549 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B505D0281C55C27500C09549 /* SettingsTableViewCell.swift */; };
 		B505D02B1C55CEDB00C09549 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B505D02A1C55CEDB00C09549 /* Settings.swift */; };
-		B5069C351C7ABE7A00E0BBC4 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5069C341C7ABE6300E0BBC4 /* IQKeyboardManagerSwift.framework */; };
-		B5069C361C7ABE7A00E0BBC4 /* IQKeyboardManagerSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5069C341C7ABE6300E0BBC4 /* IQKeyboardManagerSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B52FFA561C62F16A00C5F481 /* StatsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FFA551C62F16A00C5F481 /* StatsData.swift */; };
 		B55E02431C64578A00DBACF6 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55E02401C64577300DBACF6 /* Eureka.framework */; };
 		B55E02441C64578A00DBACF6 /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B55E02401C64577300DBACF6 /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -24,6 +22,8 @@
 		B5787C371C7AA2B400694C44 /* JsonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5787C361C7AA2B400694C44 /* JsonData.swift */; };
 		B5787C391C7AA36D00694C44 /* DeleteAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5787C381C7AA36D00694C44 /* DeleteAccount.swift */; };
 		B58E938F1C6EDFED00CFC8CA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E938E1C6EDFED00CFC8CA /* Theme.swift */; };
+		B5AEB2F11C7FF8F6006FC791 /* FrequencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AEB2F01C7FF8F6006FC791 /* FrequencyTableViewCell.swift */; };
+		B5AEB2F31C7FF9A5006FC791 /* FrequencyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AEB2F21C7FF9A5006FC791 /* FrequencyTableViewController.swift */; };
 		B5C6F1041C4F25F70016B70E /* logUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1031C4F25F70016B70E /* logUTests.swift */; };
 		B5C6F10F1C4F25F70016B70E /* logUUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F10E1C4F25F70016B70E /* logUUITests.swift */; };
 		B5C6F12A1C4F26480016B70E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F11C1C4F26480016B70E /* AppDelegate.swift */; };
@@ -49,23 +49,10 @@
 		B5C6F16C1C557B4E0016B70E /* PoundageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F16B1C557B4E0016B70E /* PoundageTableViewController.swift */; };
 		B5F5D8981C6FA23B0037B51B /* GraphSegmented.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5D8971C6FA23B0037B51B /* GraphSegmented.swift */; };
 		B5F5D89D1C6FA3110037B51B /* SegmentedControlParentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5D89C1C6FA3110037B51B /* SegmentedControlParentVC.swift */; };
+		C681BE885C54F2E0D318C54E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF0D323F1ACAA97C55B4611 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B5069C331C7ABE6300E0BBC4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5069C2F1C7ABE6200E0BBC4 /* IQKeyboardManagerSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 757983591B886B3D00F8E41F;
-			remoteInfo = IQKeyboardManagerSwift;
-		};
-		B5069C371C7ABE7A00E0BBC4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5069C2F1C7ABE6200E0BBC4 /* IQKeyboardManagerSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 757983581B886B3D00F8E41F;
-			remoteInfo = IQKeyboardManagerSwift;
-		};
 		B55E023F1C64577300DBACF6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B55E02381C64577300DBACF6 /* Eureka.xcodeproj */;
@@ -139,7 +126,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				B5C6F1451C4F26EA0016B70E /* Charts.framework in Embed Frameworks */,
-				B5069C361C7ABE7A00E0BBC4 /* IQKeyboardManagerSwift.framework in Embed Frameworks */,
 				B55E02441C64578A00DBACF6 /* Eureka.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -148,14 +134,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3601FF037A14C8202DF4EBF8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		8662D7FD95C3E17426C38563 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8BB596DA1C513968003B98BA /* ConnectionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionTest.swift; sourceTree = "<group>"; };
 		8BB596DF1C513BE8003B98BA /* LiftDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LiftDataModel.xcdatamodel; sourceTree = "<group>"; };
 		8BB596E11C514449003B98BA /* OfflineRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfflineRequest.swift; sourceTree = "<group>"; };
+		ACF0D323F1ACAA97C55B4611 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B505D0241C55B5AE00C09549 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		B505D0281C55C27500C09549 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		B505D02A1C55CEDB00C09549 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		B5069C101C7AB66500E0BBC4 /* logU-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "logU-Bridging-Header.h"; sourceTree = "<group>"; };
-		B5069C2F1C7ABE6200E0BBC4 /* IQKeyboardManagerSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IQKeyboardManagerSwift.xcodeproj; path = IQKeyboardManagerSwift/IQKeyboardManagerSwift.xcodeproj; sourceTree = "<group>"; };
 		B52FFA551C62F16A00C5F481 /* StatsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsData.swift; sourceTree = "<group>"; };
 		B55E02381C64577300DBACF6 /* Eureka.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Eureka.xcodeproj; path = Eureka/Eureka.xcodeproj; sourceTree = SOURCE_ROOT; };
 		B55E02471C6457C200DBACF6 /* LogLift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLift.swift; sourceTree = "<group>"; };
@@ -164,6 +152,8 @@
 		B5787C361C7AA2B400694C44 /* JsonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonData.swift; sourceTree = "<group>"; };
 		B5787C381C7AA36D00694C44 /* DeleteAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteAccount.swift; sourceTree = "<group>"; };
 		B58E938E1C6EDFED00CFC8CA /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		B5AEB2F01C7FF8F6006FC791 /* FrequencyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyTableViewCell.swift; sourceTree = "<group>"; };
+		B5AEB2F21C7FF9A5006FC791 /* FrequencyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyTableViewController.swift; sourceTree = "<group>"; };
 		B5C6F0EB1C4F25F70016B70E /* logU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = logU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C6F0FF1C4F25F70016B70E /* logUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = logUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C6F1031C4F25F70016B70E /* logUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logUTests.swift; sourceTree = "<group>"; };
@@ -201,8 +191,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5C6F1441C4F26EA0016B70E /* Charts.framework in Frameworks */,
-				B5069C351C7ABE7A00E0BBC4 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				B55E02431C64578A00DBACF6 /* Eureka.framework in Frameworks */,
+				C681BE885C54F2E0D318C54E /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,12 +213,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B5069C301C7ABE6200E0BBC4 /* Products */ = {
+		1DD5D21B4CEA8AC2976CD0CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B5069C341C7ABE6300E0BBC4 /* IQKeyboardManagerSwift.framework */,
+				ACF0D323F1ACAA97C55B4611 /* Pods.framework */,
 			);
-			name = Products;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		B55E02391C64577300DBACF6 /* Products */ = {
@@ -247,6 +237,8 @@
 				B5C6F1021C4F25F70016B70E /* logUTests */,
 				B5C6F10D1C4F25F70016B70E /* logUUITests */,
 				B5C6F0EC1C4F25F70016B70E /* Products */,
+				CCBB029C4878176050EEA2A5 /* Pods */,
+				1DD5D21B4CEA8AC2976CD0CA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -272,12 +264,13 @@
 				B5787C361C7AA2B400694C44 /* JsonData.swift */,
 				B5C6F1671C557ACD0016B70E /* PoundageTableViewCell.swift */,
 				B5C6F16B1C557B4E0016B70E /* PoundageTableViewController.swift */,
+				B5AEB2F01C7FF8F6006FC791 /* FrequencyTableViewCell.swift */,
+				B5AEB2F21C7FF9A5006FC791 /* FrequencyTableViewController.swift */,
 				B5C6F1571C4F3A9E0016B70E /* StatsTableViewController.swift */,
 				B5C6F15B1C4F40DF0016B70E /* MaxesTableViewController.swift */,
 				B5C6F15D1C4F45240016B70E /* MaxesTableViewCell.swift */,
 				B5C6F1591C4F3AFE0016B70E /* StatsTableViewCell.swift */,
 				B5C6F11C1C4F26480016B70E /* AppDelegate.swift */,
-				B5069C2F1C7ABE6200E0BBC4 /* IQKeyboardManagerSwift.xcodeproj */,
 				B55E02381C64577300DBACF6 /* Eureka.xcodeproj */,
 				B5C6F1381C4F26DD0016B70E /* Charts.xcodeproj */,
 				B5C6F11D1C4F26480016B70E /* Assets.xcassets */,
@@ -333,6 +326,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		CCBB029C4878176050EEA2A5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3601FF037A14C8202DF4EBF8 /* Pods.debug.xcconfig */,
+				8662D7FD95C3E17426C38563 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -340,17 +342,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5C6F1131C4F25F70016B70E /* Build configuration list for PBXNativeTarget "logU" */;
 			buildPhases = (
+				6354BFBA6ECFA8DE6CCF200D /* Check Pods Manifest.lock */,
 				B5C6F0E71C4F25F70016B70E /* Sources */,
 				B5C6F0E81C4F25F70016B70E /* Frameworks */,
 				B5C6F0E91C4F25F70016B70E /* Resources */,
 				B5C6F1481C4F26EA0016B70E /* Embed Frameworks */,
+				F66FD0123B84CB5E08C4FE90 /* Embed Pods Frameworks */,
+				06E6CA1823C07C7E748D8A15 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				B5C6F1471C4F26EA0016B70E /* PBXTargetDependency */,
 				B55E02461C64578A00DBACF6 /* PBXTargetDependency */,
-				B5069C381C7ABE7A00E0BBC4 /* PBXTargetDependency */,
 			);
 			name = logU;
 			productName = logU;
@@ -439,10 +443,6 @@
 					ProductGroup = B55E02391C64577300DBACF6 /* Products */;
 					ProjectRef = B55E02381C64577300DBACF6 /* Eureka.xcodeproj */;
 				},
-				{
-					ProductGroup = B5069C301C7ABE6200E0BBC4 /* Products */;
-					ProjectRef = B5069C2F1C7ABE6200E0BBC4 /* IQKeyboardManagerSwift.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -454,13 +454,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		B5069C341C7ABE6300E0BBC4 /* IQKeyboardManagerSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = IQKeyboardManagerSwift.framework;
-			remoteRef = B5069C331C7ABE6300E0BBC4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		B55E02401C64577300DBACF6 /* Eureka.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -526,6 +519,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06E6CA1823C07C7E748D8A15 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6354BFBA6ECFA8DE6CCF200D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F66FD0123B84CB5E08C4FE90 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B5C6F0E71C4F25F70016B70E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -543,7 +584,9 @@
 				B5C6F12D1C4F26480016B70E /* DashTableViewController.swift in Sources */,
 				B5787C371C7AA2B400694C44 /* JsonData.swift in Sources */,
 				B5C6F15A1C4F3AFE0016B70E /* StatsTableViewCell.swift in Sources */,
+				B5AEB2F11C7FF8F6006FC791 /* FrequencyTableViewCell.swift in Sources */,
 				B5C6F1581C4F3A9E0016B70E /* StatsTableViewController.swift in Sources */,
+				B5AEB2F31C7FF9A5006FC791 /* FrequencyTableViewController.swift in Sources */,
 				B5C6F16C1C557B4E0016B70E /* PoundageTableViewController.swift in Sources */,
 				B5C6F1361C4F26480016B70E /* SquatViewController.swift in Sources */,
 				B58E938F1C6EDFED00CFC8CA /* Theme.swift in Sources */,
@@ -583,11 +626,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B5069C381C7ABE7A00E0BBC4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = IQKeyboardManagerSwift;
-			targetProxy = B5069C371C7ABE7A00E0BBC4 /* PBXContainerItemProxy */;
-		};
 		B55E02461C64578A00DBACF6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Eureka;
@@ -715,6 +753,7 @@
 		};
 		B5C6F1141C4F25F70016B70E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3601FF037A14C8202DF4EBF8 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -732,6 +771,7 @@
 		};
 		B5C6F1151C4F25F70016B70E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8662D7FD95C3E17426C38563 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

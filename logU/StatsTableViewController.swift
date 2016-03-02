@@ -8,17 +8,24 @@
 
 import UIKit
 import Charts
+import EasyTipView
 
-class StatsTableViewController: UITableViewController {
+class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
     
     let url_to_request:String = "https://loguapp.com/wilks_score.php"
     let url_rep_avg:String = "https://loguapp.com/rep_average.php"
     let url_lift_count:String = "https://loguapp.com/lift_count.php"
+    let url_wilks_percentile:String = "https://loguapp.com/swift_wilks_percentile.php"
+    let url_average_frequency:String = "https://loguapp.com/average_frequency.php"
+    let url_lift_cat:String = "https://loguapp.com/radar_graph.php"
     
     var objects = [String]()
 
     var graphLift : [String]! = []
     var graphCount : [Double]! = []
+    
+    var radarWeight : [Double]! = []
+    var radarLift : [String]! = []
     
     var indicator: UIActivityIndicatorView!
     
@@ -28,21 +35,63 @@ class StatsTableViewController: UITableViewController {
     @IBOutlet weak var liftsLogged: UILabel!
     @IBOutlet weak var totalSets: UILabel!
     @IBOutlet weak var totalReps: UILabel!
+    @IBOutlet weak var frequencyWorkout: UILabel!
+    @IBOutlet weak var wilkPercentile: UILabel!
+    @IBOutlet weak var strengthLabel: UILabel!
     @IBOutlet weak var pieChartView: PieChartView!
+    @IBOutlet weak var radarChartView: RadarChartView!
+    
+    var statsTipView : EasyTipView!
+    @IBOutlet weak var helpButton: UIBarButtonItem!
+    
+    @IBAction func savePress(sender: UILongPressGestureRecognizer) {
+        saveGraph()
+    }
+    
+    @IBAction func helpClicked(sender: UIBarButtonItem) {
+        
+        if self.statsTipView == nil {
+            var preferences = EasyTipView.globalPreferences
+            preferences.drawing.textAlignment = NSTextAlignment.Justified
+            preferences.positioning.maxWidth = CGFloat(250)
+        
+            self.statsTipView = EasyTipView(text: "Wilks Score: How strong you are based on your bodyweight and gender. Takes your Big 3 maxes and scores relative to a lifter of any bodyweight or gender.\n\nStrength Level: The higher your Wilks Score, the higher your strength level. Ranges from \"Untrained\" all the way to \"Elite\"\n\nlogU Wilks Rank: Based on your Wilks Score, this is your rank among the logU community, with 1 being the highest.\n\nTargeted Muscle: Represents which muscles you hit most based on muscle recruitment. \n\nAverage Frequency: On average, how many times you make it to the gym each week.", preferences: preferences)
+            
+            self.statsTipView.show(forItem: self.helpButton, withinSuperView: self.navigationController?.view)
+            
+        } else {
+            self.statsTipView.dismiss()
+            self.statsTipView = nil
+        }
+        
+    }
+    
+    func easyTipViewDidDismiss(tipView: EasyTipView) {
+        statsTipView = nil
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        if self.statsTipView != nil {
+            self.statsTipView.dismiss()
+            self.statsTipView = nil
+        }
+    }
     
     override func viewDidLoad() {
+        
+        var preferences = EasyTipView.Preferences()
+        
+        preferences.drawing.font = UIFont(name: "Futura-Medium", size: 12)!
+        preferences.drawing.foregroundColor = UIColor.whiteColor()
+        preferences.drawing.backgroundColor = UIColor(red: 0/255.0, green: 152/255.0, blue: 255/255.0, alpha: 1.0)
+        preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
+        
+        EasyTipView.globalPreferences = preferences
+
         self.objects.append("One Rep Maxes")
         self.objects.append("Weekly Poundage")
-        /*
-        wilkScore.text = "355"
-        favoriteLift.text = "Squat"
-        averageRep.text = "3.46"
+        self.objects.append("Weekly Frequency")
 
-        let lifts = ["Squat", "Bench", "Deadlift", "Pullups", "Dips", "Close Grip Bench", "Pause Squat", "Snatch Grip Deadlift", "Overhead Press"]
-        let count: [Double] = [20, 4, 6, 3, 12, 16, 7, 11, 3]
-        
-        setChart(lifts, values: count)
-*/
         if Reachability.isConnectedToNetwork() {
             
             dispatch_async(dispatch_get_main_queue(), {
@@ -77,6 +126,28 @@ class StatsTableViewController: UITableViewController {
                         self.loadLiftCount(dataWeek)
                     })
                     
+                })
+                GraphData().dataOfLifting(self.url_wilks_percentile, completion: { jsonString in
+                    dataWeek = jsonString
+                    dispatch_sync(dispatch_get_main_queue(), {
+                        self.loadWilksPercentile(dataWeek)
+                    })
+                    
+                })
+                GraphData().dataOfLifting(self.url_average_frequency, completion: { jsonString in
+                    dataWeek = jsonString
+                    dispatch_sync(dispatch_get_main_queue(), {
+                        self.loadAverageFrequency(dataWeek)
+                    })
+                    
+                })
+                
+                GraphData().dataOfLifting(self.url_lift_cat, completion: {
+                    jsonString in
+                    dataWeek = jsonString
+                    dispatch_sync(dispatch_get_main_queue(), {
+                        self.loadRadarChart(dataWeek)
+                    })
                 })
 
                 dispatch_sync(dispatch_get_main_queue(), {
@@ -127,7 +198,28 @@ class StatsTableViewController: UITableViewController {
                         })
                         
                     })
-                    
+                    GraphData().dataOfLifting(self.url_wilks_percentile, completion: { jsonString in
+                        dataWeek = jsonString
+                        dispatch_sync(dispatch_get_main_queue(), {
+                            self.loadWilksPercentile(dataWeek)
+                        })
+                        
+                    })
+                    GraphData().dataOfLifting(self.url_average_frequency, completion: { jsonString in
+                        dataWeek = jsonString
+                        dispatch_sync(dispatch_get_main_queue(), {
+                            self.loadAverageFrequency(dataWeek)
+                        })
+                        
+                    })
+                    GraphData().dataOfLifting(self.url_lift_cat, completion: {
+                        jsonString in
+                        dataWeek = jsonString
+                        dispatch_sync(dispatch_get_main_queue(), {
+                            self.loadRadarChart(dataWeek)
+                        })
+                    })
+
                     dispatch_sync(dispatch_get_main_queue(), {
                         self.stopIndicator()
                     })
@@ -147,6 +239,35 @@ class StatsTableViewController: UITableViewController {
             
             dataWeek = object
             wilkScore.text = dataWeek[0]["wilks_coeff"]
+            let wilks = dataWeek[0]["wilks_coeff"]
+            let wilks_case = Int(wilks!)!
+            
+            switch wilks_case {
+            case 0..<120:
+                strengthLabel.text = "Untrained"
+            case _ where wilks_case == 120:
+                strengthLabel.text = "Untrained"
+            case 121..<200:
+                strengthLabel.text = "Untrained"
+            case _ where wilks_case == 200:
+                strengthLabel.text = "Novice"
+            case 201..<238:
+                strengthLabel.text = "Novice"
+            case _ where wilks_case == 238:
+                strengthLabel.text = "Intermediate"
+            case 239..<326:
+                strengthLabel.text = "Intermediate"
+            case _ where wilks_case == 326:
+                strengthLabel.text = "Advanced"
+            case 327..<414:
+                strengthLabel.text = "Advanced"
+            case _ where wilks_case == 414:
+                strengthLabel.text = "Elite"
+            case _ where wilks_case > 414:
+                strengthLabel.text = "Elite"
+            default:
+                strengthLabel.text = "---"
+            }
             
         } else {
             wilkScore.text = "0"
@@ -185,33 +306,67 @@ class StatsTableViewController: UITableViewController {
             graphLift.append(dataWeek[i]["lift"]!)
             graphCount.append(Double(dataWeek[i]["count"]!)!)
         }
-
-        var lifts = graphLift
-        
-        setChart(lifts, values: graphCount)
-
+    }
+    
+    func loadWilksPercentile(object: Array<Dictionary<String, String>>) {
+        if object.count != 0 {
+            dataWeek = object
+            wilkPercentile.text = dataWeek[0]["rank"]
+        } else {
+            wilkPercentile.text = "---"
+        }
+    }
+    
+    func loadAverageFrequency(object: Array<Dictionary<String, String>>) {
+        if object.count != 0 {
+            dataWeek = object
+            frequencyWorkout.text = dataWeek[0]["average_freq"]
+        } else {
+            frequencyWorkout.text = "0"
+        }
+    }
+    
+    func loadRadarChart(object: Array<Dictionary<String, String>>) {
+        if object.count != 0 {
+            dataWeek = object
+            radarLift = []
+            radarWeight = []
+            
+            for i in 0..<object.count {
+                radarLift.append(dataWeek[i]["category"]!)
+                radarWeight.append(Double(dataWeek[i]["weighted"]!)!)
+            }
+            
+            setRadar(radarLift, values: radarWeight)
+        }
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
-        return 4
+        return 5
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        if indexPath.row == 0 && indexPath.section == 3 {
+        if indexPath.row == 0 && indexPath.section == 4 {
             self.performSegueWithIdentifier("showMaxes", sender: self)
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
         
-        if indexPath.row == 1 && indexPath.section == 3 {
+        if indexPath.row == 1 && indexPath.section == 4 {
             self.performSegueWithIdentifier("showPoundage", sender: self)
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
         }
+        
+        if indexPath.row == 2 && indexPath.section == 4 {
+            self.performSegueWithIdentifier("showFrequency", sender: self)
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            
+        }
     }
     
-    func setChart(dataPoints: [String], values: [Double]) {
+    func setRadar(dataPoints: [String], values: [Double]) {
         
         var dataEntries: [ChartDataEntry] = []
         
@@ -220,39 +375,43 @@ class StatsTableViewController: UITableViewController {
             dataEntries.append(dataEntry)
         }
         
-        var colors: [UIColor] = []
-        
-        for i in 0..<dataPoints.count {
-            let red = Double(arc4random_uniform(256))
-            let green = Double(arc4random_uniform(256))
-            let blue = Double(arc4random_uniform(256))
-            
-            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
-            colors.append(color)
-        }
-        
         if dataPoints.count != 0 || values.count != 0 {
-
-            let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
-            pieChartDataSet.colors = colors
-
-            let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
-            pieChartData.setValueFont(UIFont .systemFontOfSize(0))
-            pieChartView.descriptionText = ""
-            pieChartView.drawSliceTextEnabled = false
-            pieChartView.legend.wordWrapEnabled = true
-            pieChartView.data = pieChartData
+            let radarChartDataSet = RadarChartDataSet(yVals: dataEntries, label: "")
+            let radarChartData = RadarChartData(xVals: dataPoints, dataSet: radarChartDataSet)
+            
+            radarChartDataSet.drawFilledEnabled = true
+            radarChartDataSet.fillColor = UIColor(red: 0/255.0, green: 152/255.0, blue: 255/255.0, alpha: 1.0)
+            radarChartDataSet.setColor(UIColor(red: 0/255.0, green: 152/255.0, blue: 255/255.0, alpha: 1.0))
+            //chartDataSet.fillAlpha = 0.50
+            radarChartData.setValueFont(UIFont .systemFontOfSize(0))
+            
+            radarChartView.xAxis.labelFont = UIFont .systemFontOfSize(10)
+            radarChartView.rotationEnabled = false
+            radarChartView.animate(yAxisDuration: 1.0)
+            radarChartView.descriptionText = ""
+            radarChartView.data = radarChartData
+            radarChartView.backgroundColor = UIColor.groupTableViewBackgroundColor()
+            radarChartView.legend.enabled = false
+            radarChartView.highlightPerTapEnabled = false
+            radarChartView.yAxis.drawLabelsEnabled = false
+            
+        }
+    }
+    
+    func saveGraph() {
         
-            let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.alignment = NSTextAlignment.Center
-
-            let myAttribute = [ NSFontAttributeName: UIFont.systemFontOfSize(9), NSParagraphStyleAttributeName: paragraphStyle]
+        let alert = UIAlertController(title: "Save Chart View?", message: "Select an option", preferredStyle: UIAlertControllerStyle.ActionSheet)
         
-            let myString = NSMutableAttributedString(string: "Lift Breakdown", attributes: myAttribute )
-            pieChartView.centerAttributedText = myString
-            pieChartView.animate(yAxisDuration: 1.0)
-            pieChartView.backgroundColor = UIColor.groupTableViewBackgroundColor()
+        let libButton = UIAlertAction(title: "Save to Camera Roll", style: UIAlertActionStyle.Default) { (alert: UIAlertAction!) -> Void in
+            self.radarChartView.saveToCameraRoll()
         }
         
+        let cancelButton = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (alert: UIAlertAction!) -> Void in
+        }
+        
+        alert.addAction(libButton)
+        alert.addAction(cancelButton)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
+
 }
