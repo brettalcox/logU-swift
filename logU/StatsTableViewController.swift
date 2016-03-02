@@ -48,11 +48,11 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
         
         if self.statsTipView == nil {
             var preferences = EasyTipView.globalPreferences
-            preferences.drawing.foregroundColor = UIColor.whiteColor()
-            preferences.drawing.font = UIFont(name: "HelveticaNeue-Light", size: 14)!
             preferences.drawing.textAlignment = NSTextAlignment.Justified
+            preferences.positioning.maxWidth = CGFloat(300)
         
-            self.statsTipView = EasyTipView(text: "Wilks Score: How strong you are based on your bodyweight and gender. Takes your Big 3 maxes and scores relative to a lifter of any bodyweight or gender.\n\nStrength Level: The higher your Wilks Score, the higher your strength level. Ranges from \"Untrained\" all the way to \"Elite\"\n\nlogU Wilks Rank: Based on your Wilks Score, this is your rank among the logU community, with 1 being the highest.\n\nAverage Frequency: On average, how many times you make it to the gym each week.")
+            self.statsTipView = EasyTipView(text: "Targeted Muscle: Represents muscle recruitment across all workouts to date, weighted by level of engagement (prime mover, synergists, antagonists, stabilizers, etc)\n\nWilks Score: How strong you are based on your bodyweight and gender. Takes your Big 3 maxes and scores relative to a lifter of any bodyweight or gender.\n\nStrength Level: The higher your Wilks Score, the higher your strength level. Ranges from \"Untrained\" all the way to \"Elite\"\n\nlogU Wilks Rank: Based on your Wilks Score, this is your rank among the logU community, with 1 being the highest.\n\nAverage Frequency: On average, how many times you make it to the gym each week.", preferences: preferences)
+            
             self.statsTipView.show(forItem: self.helpButton, withinSuperView: self.navigationController?.view)
             
         } else {
@@ -77,11 +77,10 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
         
         var preferences = EasyTipView.Preferences()
         
-        preferences.drawing.font = UIFont(name: "Futura-Medium", size: 13)!
+        preferences.drawing.font = UIFont(name: "Futura-Medium", size: 12)!
         preferences.drawing.foregroundColor = UIColor.whiteColor()
         preferences.drawing.backgroundColor = UIColor(red: 0/255.0, green: 152/255.0, blue: 255/255.0, alpha: 1.0)
         preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
-        //preferences.positioning.bubbleVInset = 10
         
         EasyTipView.globalPreferences = preferences
 
@@ -297,10 +296,6 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
             graphLift.append(dataWeek[i]["lift"]!)
             graphCount.append(Double(dataWeek[i]["count"]!)!)
         }
-
-        var lifts = graphLift
-        
-        setChart(lifts, values: graphCount)
     }
     
     func loadWilksPercentile(object: Array<Dictionary<String, String>>) {
@@ -339,73 +334,27 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
-        return 6
+        return 5
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        if indexPath.row == 0 && indexPath.section == 5 {
+        if indexPath.row == 0 && indexPath.section == 4 {
             self.performSegueWithIdentifier("showMaxes", sender: self)
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
         
-        if indexPath.row == 1 && indexPath.section == 5 {
+        if indexPath.row == 1 && indexPath.section == 4 {
             self.performSegueWithIdentifier("showPoundage", sender: self)
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
         }
         
-        if indexPath.row == 2 && indexPath.section == 5 {
+        if indexPath.row == 2 && indexPath.section == 4 {
             self.performSegueWithIdentifier("showFrequency", sender: self)
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
             
         }
-    }
-    
-    func setChart(dataPoints: [String], values: [Double]) {
-        
-        var dataEntries: [ChartDataEntry] = []
-        
-        for i in 0..<dataPoints.count {
-            let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
-            dataEntries.append(dataEntry)
-        }
-        
-        var colors: [UIColor] = []
-        
-        for i in 0..<dataPoints.count {
-            let red = Double(arc4random_uniform(256))
-            let green = Double(arc4random_uniform(256))
-            let blue = Double(arc4random_uniform(256))
-            
-            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
-            colors.append(color)
-        }
-        
-        if dataPoints.count != 0 || values.count != 0 {
-
-            let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
-            pieChartDataSet.colors = colors
-
-            let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
-            pieChartData.setValueFont(UIFont .systemFontOfSize(0))
-            pieChartView.descriptionText = ""
-            pieChartView.drawSliceTextEnabled = false
-            pieChartView.legend.wordWrapEnabled = true
-            pieChartView.data = pieChartData
-
-            
-            let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.alignment = NSTextAlignment.Center
-
-            let myAttribute = [ NSFontAttributeName: UIFont.systemFontOfSize(9), NSParagraphStyleAttributeName: paragraphStyle]
-        
-            let myString = NSMutableAttributedString(string: "Lift Breakdown", attributes: myAttribute )
-            pieChartView.centerAttributedText = myString
-            pieChartView.animate(yAxisDuration: 1.0)
-            pieChartView.backgroundColor = UIColor.groupTableViewBackgroundColor()
-        }
-        
     }
     
     func setRadar(dataPoints: [String], values: [Double]) {
@@ -421,7 +370,13 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
             let radarChartDataSet = RadarChartDataSet(yVals: dataEntries, label: "")
             let radarChartData = RadarChartData(xVals: dataPoints, dataSet: radarChartDataSet)
             
+            radarChartDataSet.drawFilledEnabled = true
+            radarChartDataSet.fillColor = UIColor(red: 0/255.0, green: 152/255.0, blue: 255/255.0, alpha: 1.0)
+            radarChartDataSet.setColor(UIColor(red: 0/255.0, green: 152/255.0, blue: 255/255.0, alpha: 1.0))
+            //chartDataSet.fillAlpha = 0.50
             radarChartData.setValueFont(UIFont .systemFontOfSize(0))
+            
+            radarChartView.animate(yAxisDuration: 1.0)
             radarChartView.descriptionText = ""
             radarChartView.data = radarChartData
             radarChartView.backgroundColor = UIColor.groupTableViewBackgroundColor()
