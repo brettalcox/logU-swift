@@ -678,24 +678,41 @@
                             </tableViewSection>
                             <tableViewSection id="48d-Vk-asu">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="255" id="9i4-p8-NUp">
-                                        <rect key="frame" x="0.0" y="98" width="600" height="255"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="290" id="9i4-p8-NUp">
+                                        <rect key="frame" x="0.0" y="98" width="600" height="290"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9i4-p8-NUp" id="f65-aj-0RH">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="254"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="289"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cst-YE-HOy" customClass="RadarChartView" customModule="Charts">
                                                     <rect key="frame" x="180" y="63" width="240" height="128"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <gestureRecognizers/>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="ivg-Ni-VcQ" appends="YES" id="Ziv-VF-aBp"/>
+                                                    </connections>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Targeted Muscle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Do2-iO-KZN">
+                                                    <rect key="frame" x="214" y="8" width="173" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="173" id="KQn-c4-wwQ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstItem="Cst-YE-HOy" firstAttribute="leading" secondItem="f65-aj-0RH" secondAttribute="leadingMargin" id="0Cp-yc-OIp"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Cst-YE-HOy" secondAttribute="trailing" id="IA5-jD-BS8"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Cst-YE-HOy" secondAttribute="bottom" id="MLJ-Ow-B7Q"/>
-                                                <constraint firstItem="Cst-YE-HOy" firstAttribute="top" secondItem="f65-aj-0RH" secondAttribute="topMargin" id="zYC-pI-6Hc"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Cst-YE-HOy" secondAttribute="bottom" id="8OS-SN-Oqp"/>
+                                                <constraint firstItem="Cst-YE-HOy" firstAttribute="top" secondItem="Do2-iO-KZN" secondAttribute="bottom" constant="34" id="DEE-FH-Nkn"/>
+                                                <constraint firstItem="Do2-iO-KZN" firstAttribute="centerX" secondItem="f65-aj-0RH" secondAttribute="centerX" id="RmB-xA-FQT"/>
+                                                <constraint firstItem="Do2-iO-KZN" firstAttribute="top" secondItem="f65-aj-0RH" secondAttribute="topMargin" id="Ui8-HU-U41"/>
+                                                <constraint firstItem="Do2-iO-KZN" firstAttribute="centerX" secondItem="Cst-YE-HOy" secondAttribute="centerX" id="Y1q-ZC-rgI"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Cst-YE-HOy" secondAttribute="trailing" id="gsI-cc-ujB"/>
+                                                <constraint firstItem="Cst-YE-HOy" firstAttribute="top" secondItem="Do2-iO-KZN" secondAttribute="bottom" constant="6" id="oxJ-BZ-gIi"/>
+                                                <constraint firstItem="Cst-YE-HOy" firstAttribute="leading" secondItem="f65-aj-0RH" secondAttribute="leadingMargin" id="zgf-W7-TRS"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -704,7 +721,7 @@
                             <tableViewSection headerTitle="" id="A3y-Gd-rF9">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="92" id="Wqa-E7-bdE" customClass="StatsTableViewCell" customModule="logU" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="353" width="600" height="92"/>
+                                        <rect key="frame" x="0.0" y="388" width="600" height="92"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wqa-E7-bdE" id="gI0-x1-kBe">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="91"/>
@@ -781,7 +798,7 @@
                             <tableViewSection id="PBk-bg-gfp">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="87" id="t83-oY-uKm" customClass="StatsTableViewCell" customModule="logU" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="445" width="600" height="87"/>
+                                        <rect key="frame" x="0.0" y="480" width="600" height="87"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t83-oY-uKm" id="sqU-rm-Axv">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="86"/>
@@ -858,7 +875,7 @@
                             <tableViewSection headerTitle="" id="vaA-e2-Gsj">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="UmJ-pE-aTj" customClass="StatsTableViewCell" customModule="logU" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="532" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="567" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UmJ-pE-aTj" id="FBY-tY-kiW">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
@@ -886,7 +903,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="d1H-CV-scZ" customClass="StatsTableViewCell" customModule="logU" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="576" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="611" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d1H-CV-scZ" id="2Vr-aV-rf5">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
@@ -914,7 +931,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="vmO-xe-nmp" customClass="StatsTableViewCell" customModule="logU" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="620" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="655" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vmO-xe-nmp" id="zHz-BL-i2T">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
@@ -975,6 +992,11 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R6H-dz-HJX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="ivg-Ni-VcQ">
+                    <connections>
+                        <action selector="savePress:" destination="iKS-ey-D7z" id="6uF-kL-scR"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-584" y="2797"/>
         </scene>

@@ -21,13 +21,14 @@ class SettingsTableViewController: FormViewController {
                 row1.title = "Unit"
                 row1.options = ["Pounds", "Kilograms"]
                 
-                if String(defaults.valueForKey("Unit")!) == "1" {
-                    row1.value = "Pounds"
+                if Reachability.isConnectedToNetwork() {
+                    if String(defaults.valueForKey("Unit")!) == "1" {
+                        row1.value = "Pounds"
+                    }
+                    if String(defaults.valueForKey("Unit")!) == "0" {
+                        row1.value = "Kilograms"
+                    }
                 }
-                if String(defaults.valueForKey("Unit")!) == "0" {
-                    row1.value = "Kilograms"
-                }
-
                 
                 row1.onChange { row in
                     self.form.rowByTag("Save Changes")?.disabled = false
@@ -39,12 +40,14 @@ class SettingsTableViewController: FormViewController {
             <<< SegmentedRow<String>("Gender") { (row2 : SegmentedRow) -> Void in
                 row2.title = "Gender"
                 row2.options = ["Male", "Female"]
-
-                if String(defaults.valueForKey("Gender")!) == "M" {
-                    row2.value = "Male"
-                }
-                if String(defaults.valueForKey("Gender")!) == "F" {
-                    row2.value = "Female"
+                
+                if Reachability.isConnectedToNetwork() {
+                    if String(defaults.valueForKey("Gender")!) == "M" {
+                        row2.value = "Male"
+                    }
+                    if String(defaults.valueForKey("Gender")!) == "F" {
+                        row2.value = "Female"
+                    }
                 }
                 
                 row2.onChange { row in
@@ -55,7 +58,10 @@ class SettingsTableViewController: FormViewController {
             }
             <<< DecimalRow("Current Weight") {
                 $0.title = "Current Weight"
-                $0.value = defaults.valueForKey("Bodyweight")! as! Double
+                
+                if Reachability.isConnectedToNetwork() {
+                    $0.value = defaults.valueForKey("Bodyweight")! as! Double
+                }
                 
                 $0.onChange { row in
                     self.form.rowByTag("Save Changes")?.disabled = false

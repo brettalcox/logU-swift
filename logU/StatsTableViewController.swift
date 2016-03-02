@@ -44,6 +44,10 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
     var statsTipView : EasyTipView!
     @IBOutlet weak var helpButton: UIBarButtonItem!
     
+    @IBAction func savePress(sender: UILongPressGestureRecognizer) {
+        saveGraph()
+    }
+    
     @IBAction func helpClicked(sender: UIBarButtonItem) {
         
         if self.statsTipView == nil {
@@ -51,7 +55,7 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
             preferences.drawing.textAlignment = NSTextAlignment.Justified
             preferences.positioning.maxWidth = CGFloat(300)
         
-            self.statsTipView = EasyTipView(text: "Targeted Muscle: Represents muscle recruitment across all workouts to date, weighted by level of engagement (prime mover, synergists, antagonists, stabilizers, etc)\n\nWilks Score: How strong you are based on your bodyweight and gender. Takes your Big 3 maxes and scores relative to a lifter of any bodyweight or gender.\n\nStrength Level: The higher your Wilks Score, the higher your strength level. Ranges from \"Untrained\" all the way to \"Elite\"\n\nlogU Wilks Rank: Based on your Wilks Score, this is your rank among the logU community, with 1 being the highest.\n\nAverage Frequency: On average, how many times you make it to the gym each week.", preferences: preferences)
+            self.statsTipView = EasyTipView(text: "Wilks Score: How strong you are based on your bodyweight and gender. Takes your Big 3 maxes and scores relative to a lifter of any bodyweight or gender.\n\nStrength Level: The higher your Wilks Score, the higher your strength level. Ranges from \"Untrained\" all the way to \"Elite\"\n\nlogU Wilks Rank: Based on your Wilks Score, this is your rank among the logU community, with 1 being the highest.\n\nTargeted Muscle: Represents which muscles you hit most based on muscle recruitment. \n\nAverage Frequency: On average, how many times you make it to the gym each week.", preferences: preferences)
             
             self.statsTipView.show(forItem: self.helpButton, withinSuperView: self.navigationController?.view)
             
@@ -208,6 +212,14 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
                         })
                         
                     })
+                    GraphData().dataOfLifting(self.url_lift_cat, completion: {
+                        jsonString in
+                        dataWeek = jsonString
+                        dispatch_sync(dispatch_get_main_queue(), {
+                            self.loadRadarChart(dataWeek)
+                        })
+                    })
+
                     dispatch_sync(dispatch_get_main_queue(), {
                         self.stopIndicator()
                     })
@@ -229,8 +241,6 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
             wilkScore.text = dataWeek[0]["wilks_coeff"]
             let wilks = dataWeek[0]["wilks_coeff"]
             let wilks_case = Int(wilks!)!
-            
-            
             
             switch wilks_case {
             case 0..<120:
@@ -330,7 +340,6 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
             setRadar(radarLift, values: radarWeight)
         }
     }
-
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
@@ -376,6 +385,8 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
             //chartDataSet.fillAlpha = 0.50
             radarChartData.setValueFont(UIFont .systemFontOfSize(0))
             
+            radarChartView.xAxis.labelFont = UIFont .systemFontOfSize(10)
+            radarChartView.rotationEnabled = false
             radarChartView.animate(yAxisDuration: 1.0)
             radarChartView.descriptionText = ""
             radarChartView.data = radarChartData
@@ -386,4 +397,21 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
             
         }
     }
+    
+    func saveGraph() {
+        
+        let alert = UIAlertController(title: "Save Chart View?", message: "Select an option", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        
+        let libButton = UIAlertAction(title: "Save to Camera Roll", style: UIAlertActionStyle.Default) { (alert: UIAlertAction!) -> Void in
+            self.radarChartView.saveToCameraRoll()
+        }
+        
+        let cancelButton = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (alert: UIAlertAction!) -> Void in
+        }
+        
+        alert.addAction(libButton)
+        alert.addAction(cancelButton)
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+
 }
