@@ -13,8 +13,6 @@
 		B505D0251C55B5AE00C09549 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B505D0241C55B5AE00C09549 /* SettingsTableViewController.swift */; };
 		B505D0291C55C27500C09549 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B505D0281C55C27500C09549 /* SettingsTableViewCell.swift */; };
 		B505D02B1C55CEDB00C09549 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B505D02A1C55CEDB00C09549 /* Settings.swift */; };
-		B5069C351C7ABE7A00E0BBC4 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5069C341C7ABE6300E0BBC4 /* IQKeyboardManagerSwift.framework */; };
-		B5069C361C7ABE7A00E0BBC4 /* IQKeyboardManagerSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5069C341C7ABE6300E0BBC4 /* IQKeyboardManagerSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B52FFA561C62F16A00C5F481 /* StatsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FFA551C62F16A00C5F481 /* StatsData.swift */; };
 		B55E02431C64578A00DBACF6 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55E02401C64577300DBACF6 /* Eureka.framework */; };
 		B55E02441C64578A00DBACF6 /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B55E02401C64577300DBACF6 /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -55,20 +53,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B5069C331C7ABE6300E0BBC4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5069C2F1C7ABE6200E0BBC4 /* IQKeyboardManagerSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 757983591B886B3D00F8E41F;
-			remoteInfo = IQKeyboardManagerSwift;
-		};
-		B5069C371C7ABE7A00E0BBC4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5069C2F1C7ABE6200E0BBC4 /* IQKeyboardManagerSwift.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 757983581B886B3D00F8E41F;
-			remoteInfo = IQKeyboardManagerSwift;
-		};
 		B55E023F1C64577300DBACF6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B55E02381C64577300DBACF6 /* Eureka.xcodeproj */;
@@ -142,7 +126,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				B5C6F1451C4F26EA0016B70E /* Charts.framework in Embed Frameworks */,
-				B5069C361C7ABE7A00E0BBC4 /* IQKeyboardManagerSwift.framework in Embed Frameworks */,
 				B55E02441C64578A00DBACF6 /* Eureka.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -161,7 +144,6 @@
 		B505D0281C55C27500C09549 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		B505D02A1C55CEDB00C09549 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		B5069C101C7AB66500E0BBC4 /* logU-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "logU-Bridging-Header.h"; sourceTree = "<group>"; };
-		B5069C2F1C7ABE6200E0BBC4 /* IQKeyboardManagerSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IQKeyboardManagerSwift.xcodeproj; path = IQKeyboardManagerSwift/IQKeyboardManagerSwift.xcodeproj; sourceTree = "<group>"; };
 		B52FFA551C62F16A00C5F481 /* StatsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsData.swift; sourceTree = "<group>"; };
 		B55E02381C64577300DBACF6 /* Eureka.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Eureka.xcodeproj; path = Eureka/Eureka.xcodeproj; sourceTree = SOURCE_ROOT; };
 		B55E02471C6457C200DBACF6 /* LogLift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLift.swift; sourceTree = "<group>"; };
@@ -209,7 +191,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5C6F1441C4F26EA0016B70E /* Charts.framework in Frameworks */,
-				B5069C351C7ABE7A00E0BBC4 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				B55E02431C64578A00DBACF6 /* Eureka.framework in Frameworks */,
 				C681BE885C54F2E0D318C54E /* Pods.framework in Frameworks */,
 			);
@@ -238,14 +219,6 @@
 				ACF0D323F1ACAA97C55B4611 /* Pods.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B5069C301C7ABE6200E0BBC4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B5069C341C7ABE6300E0BBC4 /* IQKeyboardManagerSwift.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		B55E02391C64577300DBACF6 /* Products */ = {
@@ -298,7 +271,6 @@
 				B5C6F15D1C4F45240016B70E /* MaxesTableViewCell.swift */,
 				B5C6F1591C4F3AFE0016B70E /* StatsTableViewCell.swift */,
 				B5C6F11C1C4F26480016B70E /* AppDelegate.swift */,
-				B5069C2F1C7ABE6200E0BBC4 /* IQKeyboardManagerSwift.xcodeproj */,
 				B55E02381C64577300DBACF6 /* Eureka.xcodeproj */,
 				B5C6F1381C4F26DD0016B70E /* Charts.xcodeproj */,
 				B5C6F11D1C4F26480016B70E /* Assets.xcassets */,
@@ -383,7 +355,6 @@
 			dependencies = (
 				B5C6F1471C4F26EA0016B70E /* PBXTargetDependency */,
 				B55E02461C64578A00DBACF6 /* PBXTargetDependency */,
-				B5069C381C7ABE7A00E0BBC4 /* PBXTargetDependency */,
 			);
 			name = logU;
 			productName = logU;
@@ -472,10 +443,6 @@
 					ProductGroup = B55E02391C64577300DBACF6 /* Products */;
 					ProjectRef = B55E02381C64577300DBACF6 /* Eureka.xcodeproj */;
 				},
-				{
-					ProductGroup = B5069C301C7ABE6200E0BBC4 /* Products */;
-					ProjectRef = B5069C2F1C7ABE6200E0BBC4 /* IQKeyboardManagerSwift.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -487,13 +454,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		B5069C341C7ABE6300E0BBC4 /* IQKeyboardManagerSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = IQKeyboardManagerSwift.framework;
-			remoteRef = B5069C331C7ABE6300E0BBC4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		B55E02401C64577300DBACF6 /* Eureka.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -666,11 +626,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B5069C381C7ABE7A00E0BBC4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = IQKeyboardManagerSwift;
-			targetProxy = B5069C371C7ABE7A00E0BBC4 /* PBXContainerItemProxy */;
-		};
 		B55E02461C64578A00DBACF6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Eureka;
