@@ -24,7 +24,8 @@ This is the current iOS development of https://loguapp.com
 ### Search for a Lift
 
 
-![alt tag](http://i.imgur.com/IFjX298.png?1)
+![alt tag](http://i.imgur.com/2sZ03pG.png?1)
+
 
 ### Log a Lift
 
@@ -47,7 +48,13 @@ This is the current iOS development of https://loguapp.com
 ### User Statistics
 
 
-![alt tag](http://i.imgur.com/rTj56r4.png?1)
+![alt tag](http://i.imgur.com/D1Od53e.png?1)
+
+
+### Help if you need it.
+
+
+![alt tag](http://i.imgur.com/1x9tt2h.png?1)
 
 
 ### One Rep Maxes
