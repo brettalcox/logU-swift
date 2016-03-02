@@ -17,11 +17,15 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
     let url_lift_count:String = "https://loguapp.com/lift_count.php"
     let url_wilks_percentile:String = "https://loguapp.com/swift_wilks_percentile.php"
     let url_average_frequency:String = "https://loguapp.com/average_frequency.php"
+    let url_lift_cat:String = "https://loguapp.com/radar_graph.php"
     
     var objects = [String]()
 
     var graphLift : [String]! = []
     var graphCount : [Double]! = []
+    
+    var radarWeight : [Double]! = []
+    var radarLift : [String]! = []
     
     var indicator: UIActivityIndicatorView!
     
@@ -35,6 +39,7 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
     @IBOutlet weak var wilkPercentile: UILabel!
     @IBOutlet weak var strengthLabel: UILabel!
     @IBOutlet weak var pieChartView: PieChartView!
+    @IBOutlet weak var radarChartView: RadarChartView!
     
     var statsTipView : EasyTipView!
     @IBOutlet weak var helpButton: UIBarButtonItem!
@@ -132,6 +137,14 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
                         self.loadAverageFrequency(dataWeek)
                     })
                     
+                })
+                
+                GraphData().dataOfLifting(self.url_lift_cat, completion: {
+                    jsonString in
+                    dataWeek = jsonString
+                    dispatch_sync(dispatch_get_main_queue(), {
+                        self.loadRadarChart(dataWeek)
+                    })
                 })
 
                 dispatch_sync(dispatch_get_main_queue(), {
@@ -288,7 +301,6 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
         var lifts = graphLift
         
         setChart(lifts, values: graphCount)
-
     }
     
     func loadWilksPercentile(object: Array<Dictionary<String, String>>) {
@@ -308,27 +320,42 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
             frequencyWorkout.text = "0"
         }
     }
+    
+    func loadRadarChart(object: Array<Dictionary<String, String>>) {
+        if object.count != 0 {
+            dataWeek = object
+            radarLift = []
+            radarWeight = []
+            
+            for i in 0..<object.count {
+                radarLift.append(dataWeek[i]["category"]!)
+                radarWeight.append(Double(dataWeek[i]["weighted"]!)!)
+            }
+            
+            setRadar(radarLift, values: radarWeight)
+        }
+    }
 
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
-        return 5
+        return 6
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        if indexPath.row == 0 && indexPath.section == 4 {
+        if indexPath.row == 0 && indexPath.section == 5 {
             self.performSegueWithIdentifier("showMaxes", sender: self)
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
         
-        if indexPath.row == 1 && indexPath.section == 4 {
+        if indexPath.row == 1 && indexPath.section == 5 {
             self.performSegueWithIdentifier("showPoundage", sender: self)
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
         }
         
-        if indexPath.row == 2 && indexPath.section == 4 {
+        if indexPath.row == 2 && indexPath.section == 5 {
             self.performSegueWithIdentifier("showFrequency", sender: self)
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
             
@@ -379,5 +406,29 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
             pieChartView.backgroundColor = UIColor.groupTableViewBackgroundColor()
         }
         
+    }
+    
+    func setRadar(dataPoints: [String], values: [Double]) {
+        
+        var dataEntries: [ChartDataEntry] = []
+        
+        for i in 0..<dataPoints.count {
+            let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
+            dataEntries.append(dataEntry)
+        }
+        
+        if dataPoints.count != 0 || values.count != 0 {
+            let radarChartDataSet = RadarChartDataSet(yVals: dataEntries, label: "")
+            let radarChartData = RadarChartData(xVals: dataPoints, dataSet: radarChartDataSet)
+            
+            radarChartData.setValueFont(UIFont .systemFontOfSize(0))
+            radarChartView.descriptionText = ""
+            radarChartView.data = radarChartData
+            radarChartView.backgroundColor = UIColor.groupTableViewBackgroundColor()
+            radarChartView.legend.enabled = false
+            radarChartView.highlightPerTapEnabled = false
+            radarChartView.yAxis.drawLabelsEnabled = false
+            
+        }
     }
 }
