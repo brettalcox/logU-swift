@@ -59,6 +59,7 @@ class GraphViewController: UIViewController, UIActionSheetDelegate {
             }
             shouldUpdatePoundage = false
         }
+        
     }
     
     func loadAfter(object: Array<Dictionary<String, String>>) {

@@ -29,6 +29,7 @@ class DeadliftViewController: UIViewController {
     }
     
     @IBOutlet weak var reloadButton: UIBarButtonItem!
+    @IBOutlet weak var filterButton: UIBarButtonItem!
     
     @IBAction func reloadGraph(sender: UIBarButtonItem) {
         
@@ -183,6 +184,12 @@ class DeadliftViewController: UIViewController {
         }
         shouldUpdateDeadlift = false
 
+        if graphLift.count != 0 {
+            self.filterButton.enabled = true
+        } else {
+            self.filterButton.enabled = false
+        }
+        
         setLineChart(graphLift, values: graphWeight, label: label)
     }
 
