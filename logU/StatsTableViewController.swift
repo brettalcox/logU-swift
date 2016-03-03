@@ -327,6 +327,7 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
     }
     
     func loadRadarChart(object: Array<Dictionary<String, String>>) {
+        
         if object.count != 0 {
             dataWeek = object
             radarLift = []
@@ -337,7 +338,10 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
                 radarWeight.append(Double(dataWeek[i]["weighted"]!)!)
             }
             
-            setRadar(radarLift, values: radarWeight)
+            let sum = radarWeight.reduce(0, combine: +)
+            if sum != 0 {
+                setRadar(radarLift, values: radarWeight)
+            }
         }
     }
     
