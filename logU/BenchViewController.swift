@@ -29,6 +29,7 @@ class BenchViewController: UIViewController {
     }
     
     @IBOutlet weak var reloadButton: UIBarButtonItem!
+    @IBOutlet weak var filterButton: UIBarButtonItem!
     
     @IBAction func reloadGraph(sender: UIBarButtonItem) {
         
@@ -131,6 +132,7 @@ class BenchViewController: UIViewController {
         
         self.automaticallyAdjustsScrollViewInsets = false;
         reloadButton.enabled = false
+        filterButton.enabled = false
         
         if Reachability.isConnectedToNetwork() {
             dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
@@ -188,6 +190,12 @@ class BenchViewController: UIViewController {
         }
         shouldUpdateBench = false
 
+        if graphLift.count != 0 {
+            self.filterButton.enabled = true
+        } else {
+            self.filterButton.enabled = false
+        }
+        
         setLineChart(graphLift, values: graphWeight, label: label)
     }
     
