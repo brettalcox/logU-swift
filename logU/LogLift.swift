@@ -26,6 +26,7 @@ var lift:String?
 var set:String?
 var rep:String?
 var weight:String?
+var intensity:String?
 
 class LogLift: FormViewController {
     
@@ -69,6 +70,7 @@ class LogLift: FormViewController {
                 set = String((form.values()["Sets"]!)!)
                 rep = String((form.values()["Reps"]!)!)
                 weight = String((form.values()["Weight"]!)!)
+                intensity = String((form.values()["Intensity"]!)!)
                 
                 if lift == "Squat" {
                     shouldUpdateSquat = true
@@ -148,7 +150,16 @@ class LogLift: FormViewController {
             <<< DecimalRow("Weight") {
                 $0.title = "Weight"
                 weight = String($0.value)
+            }
+            <<< SliderRow("Intensity") {
+                $0.title = " Intensity"
+                $0.value = 50.0
+                $0.steps = 100
+                $0.maximumValue = 100
+                $0.minimumValue = 0
         }
+
+        
     }
     
     func upload_request()
@@ -160,7 +171,7 @@ class LogLift: FormViewController {
         request.HTTPMethod = "POST"
         request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
         
-        let query = "name=\(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)&date=\(theDate!)&lift=\(lift!)&sets=\(set!)&reps=\(rep!)&weight=\(weight!)".dataUsingEncoding(NSUTF8StringEncoding)
+        let query = "name=\(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)&date=\(theDate!)&lift=\(lift!)&sets=\(set!)&reps=\(rep!)&weight=\(weight!)&intensity=\(intensity!)".dataUsingEncoding(NSUTF8StringEncoding)
         
         let task = session.uploadTaskWithRequest(request, fromData: query, completionHandler:
             {(data,response,error) in
