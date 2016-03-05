@@ -410,7 +410,11 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="---" id="O7x-iZ-tJ7">
-                        <barButtonItem key="rightBarButtonItem" title="Update" id="JmS-8y-qvC"/>
+                        <barButtonItem key="rightBarButtonItem" title="Update" id="JmS-8y-qvC">
+                            <connections>
+                                <action selector="updatePressed:" destination="DEW-DF-WwI" id="LgN-6x-KhN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="updateButton" destination="JmS-8y-qvC" id="yTF-Gh-b9B"/>

@@ -153,7 +153,7 @@ class LogLift: FormViewController {
             }
             <<< SliderRow("Intensity") {
                 $0.title = " Intensity"
-                $0.value = 50.0
+                $0.value = 0
                 $0.steps = 100
                 $0.maximumValue = 100
                 $0.minimumValue = 0
