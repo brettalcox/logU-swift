@@ -32,6 +32,7 @@ class EditLift: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateButton.enabled = false
+        viewTitle.title = dateValue
 
         form +++ Section("Edit Lift")
             <<< DateInlineRow("Date"){
@@ -125,6 +126,7 @@ class EditLift: FormViewController {
                 shouldUpdateStats = true
                 shouldUpdateFrequency = true
                 
+                viewTitle.title = formattedDateString
                 dateValue = formattedDateString
                 liftValue = String((form.values()["Lift"]!)!)
                 stringSets = String((form.values()["Sets"]!)!)
@@ -178,7 +180,6 @@ class EditLift: FormViewController {
                     return
                 }
                 
-                let dataString = NSString(data: data!, encoding: NSUTF8StringEncoding)
             }
         );
         
