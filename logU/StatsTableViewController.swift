@@ -10,7 +10,7 @@ import UIKit
 import Charts
 import EasyTipView
 
-class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
+class StatsTableViewController: UITableViewController, EasyTipViewDelegate, UIGestureRecognizerDelegate {
     
     let url_to_request:String = "https://loguapp.com/wilks_score.php"
     let url_rep_avg:String = "https://loguapp.com/rep_average.php"
@@ -405,6 +405,9 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
     func saveGraph() {
         
         let alert = UIAlertController(title: "Save Chart View?", message: "Select an option", preferredStyle: UIAlertControllerStyle.ActionSheet)
+
+        alert.popoverPresentationController?.sourceView = self.view
+        alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.width / 2.0, (self.view.bounds.height - 115.0), 1.0, 1.0)
         
         let libButton = UIAlertAction(title: "Save to Camera Roll", style: UIAlertActionStyle.Default) { (alert: UIAlertAction!) -> Void in
             self.radarChartView.saveToCameraRoll()
