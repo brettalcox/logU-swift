@@ -171,6 +171,8 @@ class EditLift: FormViewController {
         request.HTTPMethod = "POST"
         request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
         
+        request.timeoutInterval = 10
+        
         let query = "date=\(dateValue!)&lift=\(liftValue!)&sets=\(stringSets!)&reps=\(stringReps!)&weight=\(stringWeight!)&intensity=\(stringIntensity!)&id=\(stringID!)".dataUsingEncoding(NSUTF8StringEncoding)
         
         let task = session.uploadTaskWithRequest(request, fromData: query, completionHandler:
