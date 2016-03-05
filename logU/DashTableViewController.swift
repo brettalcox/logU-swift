@@ -212,10 +212,20 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
             
             let editLiftViewController = segue.destinationViewController as! EditLift
 
-            if let selectedLiftCell = sender as? LiftTableViewCell {
-                let indexPath = tableView.indexPathForCell(selectedLiftCell)!
-                let selectedLift = unfilteredTableData[indexPath.row]
-                editLiftViewController.setLabels(selectedLift)
+            if !(self.resultSearchController.active) {
+
+                if let selectedLiftCell = sender as? LiftTableViewCell {
+                    let indexPath = tableView.indexPathForCell(selectedLiftCell)!
+                    let selectedLift = unfilteredTableData[indexPath.row]
+                    editLiftViewController.setLabels(selectedLift)
+                }
+            } else {
+                
+                if let selectedLiftCell = sender as? LiftTableViewCell {
+                    let indexPath = tableView.indexPathForCell(selectedLiftCell)!
+                    let selectedLift = filteredTableData[indexPath.row]
+                    editLiftViewController.setLabels(selectedLift)
+                }
             }
         }
     }
