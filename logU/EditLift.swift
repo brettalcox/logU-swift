@@ -19,6 +19,7 @@ class EditLift: FormViewController {
     var repsValue: Int?
     var weightValue: Double?
     var intensityValue: Float?
+    var noteValue: String?
     
     var stringSets: String?
     var stringReps: String?
@@ -80,7 +81,7 @@ class EditLift: FormViewController {
                 }
             }
             <<< SliderRow("Intensity") {
-                $0.title = "Intensity"
+                $0.title = " Intensity"
                 $0.value = intensityValue
                 $0.steps = 100
                 $0.maximumValue = 100
@@ -88,7 +89,14 @@ class EditLift: FormViewController {
                 $0.onChange { row in
                     self.updateButton.enabled = true
                 }
-        }
+            }
+            <<< TextRow("Notes") {
+                $0.title = "Notes"
+                $0.value = noteValue
+                $0.onChange { row in
+                    self.updateButton.enabled = true
+                }
+            }
 
     }
     
@@ -133,6 +141,7 @@ class EditLift: FormViewController {
                 stringReps = String((form.values()["Reps"]!)!)
                 stringWeight = String((form.values()["Weight"]!)!)
                 stringIntensity = String((form.values()["Intensity"]!)!)
+                noteValue = String((form.values()["Notes"]!)!)
                 
                 if lift == "Squat" {
                     shouldUpdateSquat = true
@@ -160,6 +169,7 @@ class EditLift: FormViewController {
         weightValue = Double(entryLiftData.weight)
         intensityValue = Float(entryLiftData.intensity)
         stringID = String(entryLiftData.id)
+        noteValue = String(entryLiftData.note)
     }
     
     func upload_request() {
@@ -173,7 +183,7 @@ class EditLift: FormViewController {
         
         request.timeoutInterval = 10
         
-        let query = "date=\(dateValue!)&lift=\(liftValue!)&sets=\(stringSets!)&reps=\(stringReps!)&weight=\(stringWeight!)&intensity=\(stringIntensity!)&id=\(stringID!)".dataUsingEncoding(NSUTF8StringEncoding)
+        let query = "date=\(dateValue!)&lift=\(liftValue!)&sets=\(stringSets!)&reps=\(stringReps!)&weight=\(stringWeight!)&intensity=\(stringIntensity!)&id=\(stringID!)&notes=\(noteValue!)".dataUsingEncoding(NSUTF8StringEncoding)
         
         let task = session.uploadTaskWithRequest(request, fromData: query, completionHandler:
             {(data,response,error) in

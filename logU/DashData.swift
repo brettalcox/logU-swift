@@ -17,8 +17,9 @@ class DashData {
     var weight: String
     var id: String
     var intensity: String
+    var note: String
     
-    init (date: String, lift: String, set: String, rep: String, weight: String, id: String, intensity: String) {
+    init (date: String, lift: String, set: String, rep: String, weight: String, id: String, intensity: String, note: String) {
         self.date = date
         self.lift = lift
         self.set = set
@@ -26,5 +27,6 @@ class DashData {
         self.weight = weight
         self.id = id
         self.intensity = intensity
+        self.note = note
     }
 }

@@ -350,6 +350,12 @@
                                             <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQI-ez-Lgi">
+                                            <rect key="frame" x="215" y="17" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="7AN-qX-fwD" firstAttribute="trailing" secondItem="Xpn-H0-aGX" secondAttribute="trailing" id="14g-oS-vCj"/>
@@ -372,6 +378,7 @@
                                     <outlet property="idLabel" destination="tsD-2i-N6B" id="O9U-v4-rPj"/>
                                     <outlet property="intensityLabel" destination="zVY-4X-QRK" id="lln-KB-twj"/>
                                     <outlet property="liftLabel" destination="Xpn-H0-aGX" id="Uke-JN-0mN"/>
+                                    <outlet property="notesLabel" destination="IQI-ez-Lgi" id="RJO-Cz-LlF"/>
                                     <outlet property="poundsLabel" destination="siD-Gs-LzB" id="8SA-90-uIU"/>
                                     <outlet property="setsRepsLabel" destination="kUp-z6-qfW" id="3th-VM-hRN"/>
                                     <segue destination="DEW-DF-WwI" kind="show" identifier="ShowDetail" id="kaM-XF-qA2"/>

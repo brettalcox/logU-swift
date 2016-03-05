@@ -27,6 +27,7 @@ var set:String?
 var rep:String?
 var weight:String?
 var intensity:String?
+var notes:String?
 
 class LogLift: FormViewController {
     
@@ -71,6 +72,7 @@ class LogLift: FormViewController {
                 rep = String((form.values()["Reps"]!)!)
                 weight = String((form.values()["Weight"]!)!)
                 intensity = String((form.values()["Intensity"]!)!)
+                notes = String((form.values()["Notes"]!)!)
                 
                 if lift == "Squat" {
                     shouldUpdateSquat = true
@@ -157,6 +159,10 @@ class LogLift: FormViewController {
                 $0.steps = 100
                 $0.maximumValue = 100
                 $0.minimumValue = 0
+            }
+            <<< TextRow("Notes") {
+                $0.title = "Notes"
+                $0.placeholder = "i.e. \"275 bar weight, +120 chains.\""
         }
 
         
@@ -171,7 +177,7 @@ class LogLift: FormViewController {
         request.HTTPMethod = "POST"
         request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
         
-        let query = "name=\(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)&date=\(theDate!)&lift=\(lift!)&sets=\(set!)&reps=\(rep!)&weight=\(weight!)&intensity=\(intensity!)".dataUsingEncoding(NSUTF8StringEncoding)
+        let query = "name=\(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)&date=\(theDate!)&lift=\(lift!)&sets=\(set!)&reps=\(rep!)&weight=\(weight!)&intensity=\(intensity!)&notes=\(notes!)".dataUsingEncoding(NSUTF8StringEncoding)
         
         let task = session.uploadTaskWithRequest(request, fromData: query, completionHandler:
             {(data,response,error) in
