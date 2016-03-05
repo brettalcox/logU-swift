@@ -294,7 +294,7 @@
         <scene sceneID="q3I-Yd-Iz9">
             <objects>
                 <tableViewController title="Dashboard" id="1Qr-15-VoO" customClass="DashTableViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" id="BEw-AV-hgN">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="71" sectionHeaderHeight="28" sectionFooterHeight="28" id="BEw-AV-hgN">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -344,6 +344,12 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVY-4X-QRK">
+                                            <rect key="frame" x="215" y="3" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="7AN-qX-fwD" firstAttribute="trailing" secondItem="Xpn-H0-aGX" secondAttribute="trailing" id="14g-oS-vCj"/>
@@ -364,9 +370,11 @@
                                 <connections>
                                     <outlet property="dateLabel" destination="7AN-qX-fwD" id="3V7-DG-VZ3"/>
                                     <outlet property="idLabel" destination="tsD-2i-N6B" id="O9U-v4-rPj"/>
+                                    <outlet property="intensityLabel" destination="zVY-4X-QRK" id="lln-KB-twj"/>
                                     <outlet property="liftLabel" destination="Xpn-H0-aGX" id="Uke-JN-0mN"/>
                                     <outlet property="poundsLabel" destination="siD-Gs-LzB" id="8SA-90-uIU"/>
                                     <outlet property="setsRepsLabel" destination="kUp-z6-qfW" id="3th-VM-hRN"/>
+                                    <segue destination="DEW-DF-WwI" kind="show" identifier="ShowDetail" id="kaM-XF-qA2"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -375,7 +383,7 @@
                             <outlet property="delegate" destination="1Qr-15-VoO" id="AI5-Rg-Zgy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Dashboard" id="xAf-Cc-hxZ">
+                    <navigationItem key="navigationItem" title="My Log" id="xAf-Cc-hxZ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="098-Gv-oRZ">
                             <connections>
                                 <segue destination="Iju-lq-YR9" kind="show" id="8tD-D2-oSs"/>
@@ -387,6 +395,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTX-Ro-ia3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1182" y="-283"/>
+        </scene>
+        <!-- - -->
+        <scene sceneID="wlH-4B-EQZ">
+            <objects>
+                <viewController id="DEW-DF-WwI" customClass="EditLift" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AkY-uH-3nO"/>
+                        <viewControllerLayoutGuide type="bottom" id="DRc-tp-S4i"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rke-hJ-SsL">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="---" id="O7x-iZ-tJ7">
+                        <barButtonItem key="rightBarButtonItem" title="Update" id="JmS-8y-qvC"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="updateButton" destination="JmS-8y-qvC" id="yTF-Gh-b9B"/>
+                        <outlet property="viewTitle" destination="O7x-iZ-tJ7" id="5HV-JG-UzH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pmQ-yf-3Rv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-462" y="-282"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="XPj-8l-Yfz">

@@ -21,6 +21,7 @@
 		B56863E01C59A1A70065D641 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56863DF1C59A1A70065D641 /* SignUpViewController.swift */; };
 		B5787C371C7AA2B400694C44 /* JsonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5787C361C7AA2B400694C44 /* JsonData.swift */; };
 		B5787C391C7AA36D00694C44 /* DeleteAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5787C381C7AA36D00694C44 /* DeleteAccount.swift */; };
+		B586A19B1C8A6BF9006636D7 /* EditLift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B586A19A1C8A6BF9006636D7 /* EditLift.swift */; };
 		B58E938F1C6EDFED00CFC8CA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E938E1C6EDFED00CFC8CA /* Theme.swift */; };
 		B5AEB2F11C7FF8F6006FC791 /* FrequencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AEB2F01C7FF8F6006FC791 /* FrequencyTableViewCell.swift */; };
 		B5AEB2F31C7FF9A5006FC791 /* FrequencyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AEB2F21C7FF9A5006FC791 /* FrequencyTableViewController.swift */; };
@@ -151,6 +152,7 @@
 		B56863DF1C59A1A70065D641 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B5787C361C7AA2B400694C44 /* JsonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonData.swift; sourceTree = "<group>"; };
 		B5787C381C7AA36D00694C44 /* DeleteAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteAccount.swift; sourceTree = "<group>"; };
+		B586A19A1C8A6BF9006636D7 /* EditLift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditLift.swift; sourceTree = "<group>"; };
 		B58E938E1C6EDFED00CFC8CA /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		B5AEB2F01C7FF8F6006FC791 /* FrequencyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyTableViewCell.swift; sourceTree = "<group>"; };
 		B5AEB2F21C7FF9A5006FC791 /* FrequencyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyTableViewController.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 		B5C6F0ED1C4F25F70016B70E /* logU */ = {
 			isa = PBXGroup;
 			children = (
+				B586A19A1C8A6BF9006636D7 /* EditLift.swift */,
 				B5787C381C7AA36D00694C44 /* DeleteAccount.swift */,
 				B56863DF1C59A1A70065D641 /* SignUpViewController.swift */,
 				B56863DB1C58374B0065D641 /* DashData.swift */,
@@ -596,6 +599,7 @@
 				B56863DC1C58374B0065D641 /* DashData.swift in Sources */,
 				8BB596E01C513BE8003B98BA /* LiftDataModel.xcdatamodeld in Sources */,
 				B5C6F1331C4F26480016B70E /* LiftTableViewCell.swift in Sources */,
+				B586A19B1C8A6BF9006636D7 /* EditLift.swift in Sources */,
 				B505D02B1C55CEDB00C09549 /* Settings.swift in Sources */,
 				B55E02481C6457C200DBACF6 /* LogLift.swift in Sources */,
 				B5C6F1341C4F26480016B70E /* LoginVC.swift in Sources */,
