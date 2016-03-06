@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>DeviceKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>EasyTipView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>6D5582A770D2D972AF726C5637839A03</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>7C57575B6424B464B670D33FED322BE0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E9B5C577F89B2F2EBCB51E034A136673</key>
+		<key>CE4FF4C931E2983440EB7B7EBB52147D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EF78824223C74AA13AE655CD2ACF32A3</key>
+		<key>E9B5C577F89B2F2EBCB51E034A136673</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -23,6 +23,8 @@
 		B5787C391C7AA36D00694C44 /* DeleteAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5787C381C7AA36D00694C44 /* DeleteAccount.swift */; };
 		B586A19B1C8A6BF9006636D7 /* EditLift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B586A19A1C8A6BF9006636D7 /* EditLift.swift */; };
 		B58E938F1C6EDFED00CFC8CA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E938E1C6EDFED00CFC8CA /* Theme.swift */; };
+		B5A54A841C8CCB320011DED9 /* DeviceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A54A7C1C8CCB0C0011DED9 /* DeviceKit.framework */; };
+		B5A54A851C8CCB320011DED9 /* DeviceKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5A54A7C1C8CCB0C0011DED9 /* DeviceKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5AEB2F11C7FF8F6006FC791 /* FrequencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AEB2F01C7FF8F6006FC791 /* FrequencyTableViewCell.swift */; };
 		B5AEB2F31C7FF9A5006FC791 /* FrequencyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AEB2F21C7FF9A5006FC791 /* FrequencyTableViewController.swift */; };
 		B5C6F1041C4F25F70016B70E /* logUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1031C4F25F70016B70E /* logUTests.swift */; };
@@ -75,6 +77,41 @@
 			remoteGlobalIDString = 51729DEA1B9A4F5E004A00EB;
 			remoteInfo = Eureka;
 		};
+		B5A54A7B1C8CCB0C0011DED9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5A54A721C8CCB0C0011DED9 /* DeviceKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 95CBDB6F1BFD2B5F0065FC66;
+			remoteInfo = "DeviceKit-iOS";
+		};
+		B5A54A7D1C8CCB0C0011DED9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5A54A721C8CCB0C0011DED9 /* DeviceKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 95CBDB791BFD2B5F0065FC66;
+			remoteInfo = "DeviceKit-iOSTests";
+		};
+		B5A54A7F1C8CCB0C0011DED9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5A54A721C8CCB0C0011DED9 /* DeviceKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 95CBDB8C1BFD2B720065FC66;
+			remoteInfo = "DeviceKit-tvOS";
+		};
+		B5A54A811C8CCB0C0011DED9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5A54A721C8CCB0C0011DED9 /* DeviceKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 95CBDB951BFD2B720065FC66;
+			remoteInfo = "DeviceKit-tvOSTests";
+		};
+		B5A54A861C8CCB320011DED9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5A54A721C8CCB0C0011DED9 /* DeviceKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 95CBDB6E1BFD2B5F0065FC66;
+			remoteInfo = "DeviceKit-iOS";
+		};
 		B5C6F1001C4F25F70016B70E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B5C6F0E31C4F25F70016B70E /* Project object */;
@@ -126,6 +163,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B5A54A851C8CCB320011DED9 /* DeviceKit.framework in Embed Frameworks */,
 				B5C6F1451C4F26EA0016B70E /* Charts.framework in Embed Frameworks */,
 				B55E02441C64578A00DBACF6 /* Eureka.framework in Embed Frameworks */,
 			);
@@ -154,8 +192,10 @@
 		B5787C381C7AA36D00694C44 /* DeleteAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteAccount.swift; sourceTree = "<group>"; };
 		B586A19A1C8A6BF9006636D7 /* EditLift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditLift.swift; sourceTree = "<group>"; };
 		B58E938E1C6EDFED00CFC8CA /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		B5A54A721C8CCB0C0011DED9 /* DeviceKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DeviceKit.xcodeproj; path = "DeviceKit-master/DeviceKit.xcodeproj"; sourceTree = "<group>"; };
 		B5AEB2F01C7FF8F6006FC791 /* FrequencyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyTableViewCell.swift; sourceTree = "<group>"; };
 		B5AEB2F21C7FF9A5006FC791 /* FrequencyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyTableViewController.swift; sourceTree = "<group>"; };
+		B5C6E7931C8CC9180096D267 /* DeviceKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceKit.framework; path = "Pods/../build/Debug-iphoneos/DeviceKit.framework"; sourceTree = "<group>"; };
 		B5C6F0EB1C4F25F70016B70E /* logU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = logU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C6F0FF1C4F25F70016B70E /* logUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = logUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C6F1031C4F25F70016B70E /* logUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logUTests.swift; sourceTree = "<group>"; };
@@ -195,6 +235,7 @@
 				B5C6F1441C4F26EA0016B70E /* Charts.framework in Frameworks */,
 				B55E02431C64578A00DBACF6 /* Eureka.framework in Frameworks */,
 				C681BE885C54F2E0D318C54E /* Pods.framework in Frameworks */,
+				B5A54A841C8CCB320011DED9 /* DeviceKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +259,7 @@
 		1DD5D21B4CEA8AC2976CD0CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B5C6E7931C8CC9180096D267 /* DeviceKit.framework */,
 				ACF0D323F1ACAA97C55B4611 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -228,6 +270,17 @@
 			children = (
 				B55E02401C64577300DBACF6 /* Eureka.framework */,
 				B55E02421C64577300DBACF6 /* EurekaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B5A54A731C8CCB0C0011DED9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5A54A7C1C8CCB0C0011DED9 /* DeviceKit.framework */,
+				B5A54A7E1C8CCB0C0011DED9 /* DeviceKit-iOSTests.xctest */,
+				B5A54A801C8CCB0C0011DED9 /* DeviceKit.framework */,
+				B5A54A821C8CCB0C0011DED9 /* DeviceKit-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -274,6 +327,7 @@
 				B5C6F15D1C4F45240016B70E /* MaxesTableViewCell.swift */,
 				B5C6F1591C4F3AFE0016B70E /* StatsTableViewCell.swift */,
 				B5C6F11C1C4F26480016B70E /* AppDelegate.swift */,
+				B5A54A721C8CCB0C0011DED9 /* DeviceKit.xcodeproj */,
 				B55E02381C64577300DBACF6 /* Eureka.xcodeproj */,
 				B5C6F1381C4F26DD0016B70E /* Charts.xcodeproj */,
 				B5C6F11D1C4F26480016B70E /* Assets.xcassets */,
@@ -358,6 +412,7 @@
 			dependencies = (
 				B5C6F1471C4F26EA0016B70E /* PBXTargetDependency */,
 				B55E02461C64578A00DBACF6 /* PBXTargetDependency */,
+				B5A54A871C8CCB320011DED9 /* PBXTargetDependency */,
 			);
 			name = logU;
 			productName = logU;
@@ -443,6 +498,10 @@
 					ProjectRef = B5C6F1381C4F26DD0016B70E /* Charts.xcodeproj */;
 				},
 				{
+					ProductGroup = B5A54A731C8CCB0C0011DED9 /* Products */;
+					ProjectRef = B5A54A721C8CCB0C0011DED9 /* DeviceKit.xcodeproj */;
+				},
+				{
 					ProductGroup = B55E02391C64577300DBACF6 /* Products */;
 					ProjectRef = B55E02381C64577300DBACF6 /* Eureka.xcodeproj */;
 				},
@@ -469,6 +528,34 @@
 			fileType = wrapper.cfbundle;
 			path = EurekaTests.xctest;
 			remoteRef = B55E02411C64577300DBACF6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B5A54A7C1C8CCB0C0011DED9 /* DeviceKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DeviceKit.framework;
+			remoteRef = B5A54A7B1C8CCB0C0011DED9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B5A54A7E1C8CCB0C0011DED9 /* DeviceKit-iOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "DeviceKit-iOSTests.xctest";
+			remoteRef = B5A54A7D1C8CCB0C0011DED9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B5A54A801C8CCB0C0011DED9 /* DeviceKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DeviceKit.framework;
+			remoteRef = B5A54A7F1C8CCB0C0011DED9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B5A54A821C8CCB0C0011DED9 /* DeviceKit-tvOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "DeviceKit-tvOSTests.xctest";
+			remoteRef = B5A54A811C8CCB0C0011DED9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		B5C6F13F1C4F26DD0016B70E /* Charts.framework */ = {
@@ -635,6 +722,11 @@
 			name = Eureka;
 			targetProxy = B55E02451C64578A00DBACF6 /* PBXContainerItemProxy */;
 		};
+		B5A54A871C8CCB320011DED9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "DeviceKit-iOS";
+			targetProxy = B5A54A861C8CCB320011DED9 /* PBXContainerItemProxy */;
+		};
 		B5C6F1011C4F25F70016B70E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B5C6F0EA1C4F25F70016B70E /* logU */;
@@ -763,6 +855,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = logU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -781,6 +877,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = logU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
