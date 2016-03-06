@@ -72,7 +72,11 @@ class LogLift: FormViewController {
                 rep = String((form.values()["Reps"]!)!)
                 weight = String((form.values()["Weight"]!)!)
                 intensity = String((form.values()["Intensity"]!)!)
-                notes = String((form.values()["Notes"]!)!)
+                if (form.values()["Notes"]!) == nil {
+                    notes = ""
+                } else {
+                    notes = String((form.values()["Notes"]!)!)
+                }
                 
                 if lift == "Squat" {
                     shouldUpdateSquat = true

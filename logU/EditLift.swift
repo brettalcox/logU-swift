@@ -141,7 +141,11 @@ class EditLift: FormViewController {
                 stringReps = String((form.values()["Reps"]!)!)
                 stringWeight = String((form.values()["Weight"]!)!)
                 stringIntensity = String((form.values()["Intensity"]!)!)
-                noteValue = String((form.values()["Notes"]!)!)
+                if (form.values()["Notes"]!) == nil {
+                    noteValue = ""
+                } else {
+                    noteValue = String((form.values()["Notes"]!)!)
+                }
                 
                 if lift == "Squat" {
                     shouldUpdateSquat = true
