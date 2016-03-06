@@ -4,3 +4,4 @@ use_frameworks!
 
 pod 'EasyTipView', '~> 0.1.3'
 pod 'IQKeyboardManagerSwift'
+pod 'DeviceKit', '~> 0.3.0'
