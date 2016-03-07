@@ -24,7 +24,7 @@ class JsonData {
         myData = data
     }
     
-    func dataOfLift(completion: (Array<Dictionary<String, String>>) -> ()) {//url: String) -> ([String], [String], [String], [String], [String], [String])? {
+    func dataOfLift(completion: (Array<Dictionary<String, String>>) -> ()) {
         
         let urlName:NSURL = NSURL(string: "https:loguapp.com/swift6.php")!
         let session = NSURLSession.sharedSession()

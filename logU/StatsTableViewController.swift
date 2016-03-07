@@ -10,7 +10,7 @@ import UIKit
 import Charts
 import EasyTipView
 
-class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
+class StatsTableViewController: UITableViewController, EasyTipViewDelegate, UIGestureRecognizerDelegate {
     
     let url_to_request:String = "https://loguapp.com/wilks_score.php"
     let url_rep_avg:String = "https://loguapp.com/rep_average.php"
@@ -55,7 +55,7 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
             preferences.drawing.textAlignment = NSTextAlignment.Justified
             preferences.positioning.maxWidth = CGFloat(250)
         
-            self.statsTipView = EasyTipView(text: "Wilks Score: How strong you are based on your bodyweight and gender. Takes your Big 3 maxes and scores relative to a lifter of any bodyweight or gender.\n\nStrength Level: The higher your Wilks Score, the higher your strength level. Ranges from \"Untrained\" all the way to \"Elite\"\n\nlogU Wilks Rank: Based on your Wilks Score, this is your rank among the logU community, with 1 being the highest.\n\nTargeted Muscle: Represents which muscles you hit most based on muscle recruitment. \n\nAverage Frequency: On average, how many times you make it to the gym each week.", preferences: preferences)
+            self.statsTipView = EasyTipView(text: "Wilks Score: How strong you are based on your bodyweight and gender. Takes your Big 3 maxes and scores relative to a lifter of any bodyweight or gender.\n\nStrength Level: The higher your Wilks Score, the higher your strength level. Ranges from \"Untrained\" all the way to \"Elite\"\n\nlogU Wilks Rank: Based on your Wilks Score, this is your rank among the logU community, with 1 being the highest.\n\nTargeted Muscle: Represents which muscles you hit most based on muscle recruitment. \n\nAverage Frequency: On average, how many times you make it to the gym each week.", preferences: preferences, delegate: self)
             
             self.statsTipView.show(forItem: self.helpButton, withinSuperView: self.navigationController?.view)
             
@@ -405,6 +405,9 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate {
     func saveGraph() {
         
         let alert = UIAlertController(title: "Save Chart View?", message: "Select an option", preferredStyle: UIAlertControllerStyle.ActionSheet)
+
+        alert.popoverPresentationController?.sourceView = self.view
+        alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.width / 2.0, (self.view.bounds.height - 115.0), 1.0, 1.0)
         
         let libButton = UIAlertAction(title: "Save to Camera Roll", style: UIAlertActionStyle.Default) { (alert: UIAlertAction!) -> Void in
             self.radarChartView.saveToCameraRoll()

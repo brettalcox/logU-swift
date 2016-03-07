@@ -99,8 +99,8 @@ public extension EasyTipView {
         self.arrange(withinSuperview: superview)
         self.transform = CGAffineTransformMakeScale(0, 0)
         
-        //let tap = UITapGestureRecognizer(target: self, action: "handleTap")
-        //self.addGestureRecognizer(tap)
+        let tap = UITapGestureRecognizer(target: self, action: "handleTap")
+        self.addGestureRecognizer(tap)
         
         superview.addSubview(self)
         

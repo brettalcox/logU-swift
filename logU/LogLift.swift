@@ -26,6 +26,8 @@ var lift:String?
 var set:String?
 var rep:String?
 var weight:String?
+var intensity:String?
+var notes:String?
 
 class LogLift: FormViewController {
     
@@ -69,6 +71,12 @@ class LogLift: FormViewController {
                 set = String((form.values()["Sets"]!)!)
                 rep = String((form.values()["Reps"]!)!)
                 weight = String((form.values()["Weight"]!)!)
+                intensity = String((form.values()["Intensity"]!)!)
+                if (form.values()["Notes"]!) == nil {
+                    notes = ""
+                } else {
+                    notes = String((form.values()["Notes"]!)!)
+                }
                 
                 if lift == "Squat" {
                     shouldUpdateSquat = true
@@ -133,7 +141,7 @@ class LogLift: FormViewController {
             <<< PickerInlineRow<String>("Lift") { (row : PickerInlineRow<String>) -> Void in
                 
                 row.title = "Lift"
-                row.options = ["Squat", "Pause Squat", "Front Squat", "Bench", "Close Grip Bench", "Incline Bench", "Decline Bench", "Pause Bench", "Floor Press", "Deadlift", "Deficit Deadlift", "Pause Deadlift", "Snatch Grip Deadlift", "Overhead Press", "Sots Press", "Pullups", "Dips", "Push Ups", "Bent Over Rows", "Kroc Rows", "Upright Rows", "Straight Bar Bicep Curls", "EZ Bar Bicep Curls", "Barbell Bicep Curls", "Hammer Curls", "Snatch", "Clean and Jerk", "Power Clean", "Power Snatch", "Hang Clean", "Hang Snatch", "Snatch Pulls", "Clean Pulls", "Leg Press", "Leg Extension", "Leg Curl", "Chest Fly", "Lat Pulldown", "Shoulder Fly", "Lateral Raise", "Shoulder Shrug", "Tricep Extension", "Dumbbell Bench", "Dumbbell Press", "Skullcrushers", "21's", "Hack Squat", "Zerker Squat"]
+                row.options = ["Squat", "Pause Squat", "Front Squat", "Box Squat", "Hack Squat", "Zerker Squat", "Pin Squat", "Good Mornings", "Bench", "Close Grip Bench", "Incline Bench", "Decline Bench", "Pause Bench", "Floor Press", "Pin Press", "Deadlift", "Deficit Deadlift", "Pause Deadlift", "Snatch Grip Deadlift", "Straight Leg Deadlift", "Romanian Deadlift", "Overhead Press", "Sots Press", "Pullups", "Dips", "Push Ups", "Bent Over Rows", "T-Bar Rows", "Kroc Rows", "Upright Rows", "Cable Upright Rows", "Cable Seated Rows", "Straight Bar Bicep Curls", "EZ Bar Bicep Curls", "Barbell Bicep Curls", "Hammer Curls", "Cable Curls", "Chest Fly", "Cable Standing Fly", "Lat Pulldown", "Shoulder Fly", "Lateral Raise", "Shoulder Shrug", "Tricep Extension", "Tricep Pushdown", "Dumbbell Bench", "Dumbbell Incline Press", "Dumbbell Press", "Skullcrushers", "21's", "Leg Press", "Leg Extension", "Leg Curl", "Standing Calf Raise", "Seated Calf Raise", "Snatch", "Clean and Jerk", "Power Clean", "Power Snatch", "Hang Clean", "Hang Snatch", "Snatch Pulls", "Clean Pulls"]
                 row.value = row.options[0]
             }
             
@@ -148,7 +156,20 @@ class LogLift: FormViewController {
             <<< DecimalRow("Weight") {
                 $0.title = "Weight"
                 weight = String($0.value)
+            }
+            <<< SliderRow("Intensity") {
+                $0.title = "Intensity"
+                $0.value = 0
+                $0.steps = 100
+                $0.maximumValue = 100
+                $0.minimumValue = 0
+            }
+            <<< TextRow("Notes") {
+                $0.title = "Notes"
+                $0.placeholder = "i.e. \"275 bar weight, +120 chains.\""
         }
+
+        
     }
     
     func upload_request()
@@ -160,7 +181,7 @@ class LogLift: FormViewController {
         request.HTTPMethod = "POST"
         request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
         
-        let query = "name=\(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)&date=\(theDate!)&lift=\(lift!)&sets=\(set!)&reps=\(rep!)&weight=\(weight!)".dataUsingEncoding(NSUTF8StringEncoding)
+        let query = "name=\(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)&date=\(theDate!)&lift=\(lift!)&sets=\(set!)&reps=\(rep!)&weight=\(weight!)&intensity=\(intensity!)&notes=\(notes!)".dataUsingEncoding(NSUTF8StringEncoding)
         
         let task = session.uploadTaskWithRequest(request, fromData: query, completionHandler:
             {(data,response,error) in

@@ -59,7 +59,7 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
         indicator.activityIndicatorViewStyle = .Gray
         indicator.startAnimating()
         view.addSubview(indicator)
-        
+
         if Reachability.isConnectedToNetwork() {
             
         dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
@@ -82,7 +82,7 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
             var tableInsert = [DashData]()
             for i in 0..<Lifting.count {
                 
-                tableInsert.append(DashData(date: lifting[i].valueForKey("date")! as! String, lift: lifting[i].valueForKey("lift")! as! String, set: lifting[i].valueForKey("sets")! as! String, rep: lifting[i].valueForKey("reps")! as! String, weight: lifting[i].valueForKey("weight")! as! String, id: "0"))
+                tableInsert.append(DashData(date: lifting[i].valueForKey("date")! as! String, lift: lifting[i].valueForKey("lift")! as! String, set: lifting[i].valueForKey("sets")! as! String, rep: lifting[i].valueForKey("reps")! as! String, weight: lifting[i].valueForKey("weight")! as! String, id: "0", intensity: "0", note: "None"))
                 unfilteredTableData.append(tableInsert[i])
 
             }
@@ -97,11 +97,11 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
     
     func loadAfter(object: Array<Dictionary<String, String>>) {
         dataAfter = object
-
+        
         unfilteredTableData = []
         for i in 0..<dataAfter.count {
-            
-            unfilteredTableData.append(DashData(date: dataAfter[i]["date"]!, lift: dataAfter[i]["lift"]!, set: dataAfter[i]["sets"]!, rep: dataAfter[i]["reps"]!, weight: dataAfter[i]["weight"]!, id: dataAfter[i]["id"]!))
+
+            unfilteredTableData.append(DashData(date: dataAfter[i]["date"]!, lift: dataAfter[i]["lift"]!, set: dataAfter[i]["sets"]!, rep: dataAfter[i]["reps"]!, weight: dataAfter[i]["weight"]!, id: dataAfter[i]["id"]!, intensity: dataAfter[i]["intensity"]!, note: dataAfter[i]["notes"]!))
         }
         self.tableView.reloadData()
         indicator.stopAnimating()
@@ -111,7 +111,17 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
         self.definesPresentationContext = true
         self.navigationController?.extendedLayoutIncludesOpaqueBars = true
 
+        indicator.stopAnimating()
         self.tableView.reloadData()
+        
+        indicator = UIActivityIndicatorView()
+        var frame = indicator.frame
+        frame.origin.x = view.frame.size.width / 2
+        frame.origin.y = (view.frame.size.height / 2) - 40
+        indicator.frame = frame
+        indicator.activityIndicatorViewStyle = .Gray
+        indicator.startAnimating()
+        view.addSubview(indicator)
         
         if shouldUpdateDash {
             if Reachability.isConnectedToNetwork() {
@@ -130,6 +140,7 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
             }
             shouldUpdateDash = false
         }
+        indicator.stopAnimating()
 
         self.tableView.reloadData()
     }
@@ -168,6 +179,8 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
             cell.poundsLabel.text = filteredTableData[indexPath.row].weight
             cell.setsRepsLabel.text = filteredTableData[indexPath.row].set + "x" + filteredTableData[indexPath.row].rep
             cell.idLabel.text = filteredTableData[indexPath.row].id
+            cell.intensityLabel.text = filteredTableData[indexPath.row].intensity
+            cell.notesLabel.text = filteredTableData[indexPath.row].note
 
         }
         else {
@@ -177,6 +190,8 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
             cell.poundsLabel.text = unfilteredTableData[indexPath.row].weight
             cell.setsRepsLabel.text = unfilteredTableData[indexPath.row].set + "x" + unfilteredTableData[indexPath.row].rep
             cell.idLabel.text = unfilteredTableData[indexPath.row].id
+            cell.intensityLabel.text = unfilteredTableData[indexPath.row].intensity
+            cell.notesLabel.text = unfilteredTableData[indexPath.row].note
         }
         
         return cell
@@ -202,6 +217,30 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         
         return true
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowDetail" {
+            // Get the cell that generated this segue.
+            
+            let editLiftViewController = segue.destinationViewController as! EditLift
+
+            if !(self.resultSearchController.active) {
+
+                if let selectedLiftCell = sender as? LiftTableViewCell {
+                    let indexPath = tableView.indexPathForCell(selectedLiftCell)!
+                    let selectedLift = unfilteredTableData[indexPath.row]
+                    editLiftViewController.setLabels(selectedLift)
+                }
+            } else {
+                
+                if let selectedLiftCell = sender as? LiftTableViewCell {
+                    let indexPath = tableView.indexPathForCell(selectedLiftCell)!
+                    let selectedLift = filteredTableData[indexPath.row]
+                    editLiftViewController.setLabels(selectedLift)
+                }
+            }
+        }
     }
     
     // Override to support editing the table view.
@@ -309,7 +348,7 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
     
     func OfflineTableInsert(date: String, lift: String, set: String, rep: String, weight: String) {
         
-        let tableInsert = DashData(date: date, lift: lift, set: set, rep: rep, weight: weight, id: "0")
+        let tableInsert = DashData(date: date, lift: lift, set: set, rep: rep, weight: weight, id: "0", intensity: "0", note: "None")
         
         unfilteredTableData.insert(tableInsert, atIndex: 0)
     }
