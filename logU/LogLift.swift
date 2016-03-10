@@ -184,7 +184,7 @@ class LogLift: FormViewController {
                     cell.editing = false
                     cell.userInteractionEnabled = false
                     cell.textView.textColor = UIColor .lightGrayColor()
-                    cell.textView.font = UIFont .systemFontOfSize(10)
+                    cell.textView.font = UIFont .systemFontOfSize(11)
                     
             }
 

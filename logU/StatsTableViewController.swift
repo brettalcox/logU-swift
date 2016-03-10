@@ -38,7 +38,6 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate, UIGe
     @IBOutlet weak var frequencyWorkout: UILabel!
     @IBOutlet weak var wilkPercentile: UILabel!
     @IBOutlet weak var strengthLabel: UILabel!
-    @IBOutlet weak var pieChartView: PieChartView!
     @IBOutlet weak var radarChartView: RadarChartView!
     
     var statsTipView : EasyTipView!
@@ -156,7 +155,8 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate, UIGe
             }
             shouldUpdateStats = false
         }
-
+        radarChartView.noDataText = "Log some lifts with an intensity value!"
+        radarChartView.infoTextColor = UIColor(red: 0/255.0, green: 152/255.0, blue: 255/255.0, alpha: 1.0)
     }
     
     override func viewDidAppear(animated: Bool) {

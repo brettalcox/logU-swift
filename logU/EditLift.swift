@@ -147,15 +147,15 @@ class EditLift: FormViewController {
                     noteValue = String((form.values()["Notes"]!)!)
                 }
                 
-                if lift == "Squat" {
+                if liftValue == "Squat" {
                     shouldUpdateSquat = true
                 }
                 
-                if lift == "Bench" {
+                if liftValue == "Bench" {
                     shouldUpdateBench = true
                 }
                 
-                if lift == "Deadlift" {
+                if liftValue == "Deadlift" {
                     shouldUpdateDeadlift = true
                 }
                 
