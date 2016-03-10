@@ -160,7 +160,7 @@ class LogLift: FormViewController {
             <<< SliderRow("Intensity") {
                 $0.title = "Intensity"
                 $0.value = 0
-                $0.steps = 100
+                $0.steps = 20
                 $0.maximumValue = 100
                 $0.minimumValue = 0
             }
@@ -168,8 +168,26 @@ class LogLift: FormViewController {
                 $0.title = "Notes"
                 $0.placeholder = "i.e. \"275 bar weight, +120 chains.\""
         }
-
         
+        form +++ Section() { section in
+            let separatorLineView = self.tableView!
+            separatorLineView.separatorColor = UIColor .groupTableViewBackgroundColor()
+            }
+            <<< TextAreaRow("Label") {
+                $0.value = "Intensity will be used to provide an INOL (Intensity and Number of Lifts) value for the Targeted Muscle graph. Values of 0 will not be graphed.\n\nIntensity, similar to RPE (Rating of Perceived Exertion), can be viewed as the difficulty of the lift.\n\nExamples: \n1 rep short of failure: 90%\n2-4 reps short of failure: 80%\n1x2-3 @ 85% of 1RM: 50-60%"
+                
+                $0.disabled = true
+                }.cellSetup { cell, row in
+                    cell.backgroundColor = UIColor .clearColor()
+                    cell.textView.backgroundColor = UIColor .clearColor()
+                    cell.textView.editable = false
+                    cell.editing = false
+                    cell.userInteractionEnabled = false
+                    cell.textView.textColor = UIColor .lightGrayColor()
+                    cell.textView.font = UIFont .systemFontOfSize(10)
+                    
+            }
+
     }
     
     func upload_request()

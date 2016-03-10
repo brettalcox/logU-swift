@@ -83,7 +83,7 @@ class EditLift: FormViewController {
             <<< SliderRow("Intensity") {
                 $0.title = "Intensity"
                 $0.value = intensityValue
-                $0.steps = 100
+                $0.steps = 20
                 $0.maximumValue = 100
                 $0.minimumValue = 0
                 $0.onChange { row in
