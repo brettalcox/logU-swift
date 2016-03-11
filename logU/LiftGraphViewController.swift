@@ -38,13 +38,12 @@ class LiftGraphViewController: UIViewController {
                 })
             }
         }
-        liftChartView.noDataText = "Log some squats!"
+        liftChartView.noDataText = "Log some lifts!"
         liftChartView.infoTextColor = UIColor(red: 0/255.0, green: 152/255.0, blue: 255/255.0, alpha: 1.0)
     }
     
     override func viewDidAppear(animated: Bool) {
-        
-        if shouldUpdateSquat {
+        /*
             if Reachability.isConnectedToNetwork() {
                 dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
                     GraphData().dataOfLiftGraphs(self.url_to_post, liftParam: self.liftName!, completion: { jsonString in
@@ -57,7 +56,7 @@ class LiftGraphViewController: UIViewController {
                     })
                 }
             }
-        }
+*/
     }
     
     func loadAfter(object: Array<Dictionary<String, String>>) {
@@ -91,7 +90,7 @@ class LiftGraphViewController: UIViewController {
         }
         */
         
-        if shouldUpdateSquat {
+        if shouldUpdateGraphs {
             label = ""
         }
         
@@ -99,7 +98,7 @@ class LiftGraphViewController: UIViewController {
         
         setLineChart(graphLift, values: graphWeight, label: label)
         
-        shouldUpdateSquat = false
+        shouldUpdateGraphs = false
     }
     
     override func didReceiveMemoryWarning() {

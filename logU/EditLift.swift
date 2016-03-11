@@ -133,6 +133,7 @@ class EditLift: FormViewController {
                 shouldUpdateWeek = true
                 shouldUpdateStats = true
                 shouldUpdateFrequency = true
+                shouldUpdateGraphs = true
                 
                 viewTitle.title = formattedDateString
                 dateValue = formattedDateString
@@ -145,18 +146,6 @@ class EditLift: FormViewController {
                     noteValue = ""
                 } else {
                     noteValue = String((form.values()["Notes"]!)!)
-                }
-                
-                if liftValue == "Squat" {
-                    shouldUpdateSquat = true
-                }
-                
-                if liftValue == "Bench" {
-                    shouldUpdateBench = true
-                }
-                
-                if liftValue == "Deadlift" {
-                    shouldUpdateDeadlift = true
                 }
                 
                 upload_request()

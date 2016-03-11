@@ -643,7 +643,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="d23-Dx-fIc">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d23-Dx-fIc" id="gTv-jv-UIv">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -1117,7 +1117,7 @@
                         <color key="sectionIndexTrackingBackgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="wH7-3L-4eZ" customClass="MaxesTableViewCell" customModule="logU" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wH7-3L-4eZ" id="zqx-sr-H3H">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -1176,7 +1176,7 @@
                         <color key="sectionIndexTrackingBackgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Set-uZ-Ory" customClass="PoundageTableViewCell" customModule="logU" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Set-uZ-Ory" id="afq-tf-KZa">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -1236,7 +1236,7 @@
                         <color key="sectionIndexTrackingBackgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="iqg-DK-5uV" customClass="FrequencyTableViewCell" customModule="logU" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iqg-DK-5uV" id="7NO-ZC-h5I">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -1294,7 +1294,7 @@
                         <color key="sectionIndexTrackingBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="CST-zN-bGI" customClass="GraphLiftNameCell" customModule="logU" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CST-zN-bGI" id="yRx-7s-qdb">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
@@ -1716,12 +1716,12 @@ This data will not be collected, transmitted, or used with anybody or anything o
         <image name="Line Chart" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2ab-MR-6bB"/>
-        <segue reference="d6R-bG-Emd"/>
         <segue reference="R1l-bB-OIO"/>
         <segue reference="F9a-gd-XNB"/>
-        <segue reference="4uB-Y3-VRi"/>
-        <segue reference="gM6-x4-DUo"/>
         <segue reference="qD1-yQ-ibE"/>
+        <segue reference="gM6-x4-DUo"/>
+        <segue reference="d6R-bG-Emd"/>
+        <segue reference="4uB-Y3-VRi"/>
+        <segue reference="Quu-xr-t5E"/>
     </inferredMetricsTieBreakers>
 </document>

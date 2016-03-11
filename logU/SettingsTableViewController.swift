@@ -116,9 +116,6 @@ class SettingsTableViewController: FormViewController {
         
         shouldUpdateDash = true
         shouldUpdatePoundage = true
-        shouldUpdateSquat = true
-        shouldUpdateBench = true
-        shouldUpdateDeadlift = true
         shouldUpdateMax = true
         shouldUpdateWeek = true
         shouldUpdateStats = true
@@ -193,9 +190,6 @@ class SettingsTableViewController: FormViewController {
         
             shouldUpdateDash = true
             shouldUpdatePoundage = true
-            shouldUpdateSquat = true
-            shouldUpdateBench = true
-            shouldUpdateDeadlift = true
             shouldUpdateMax = true
             shouldUpdateWeek = true
             shouldUpdateStats = true

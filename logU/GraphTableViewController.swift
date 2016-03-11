@@ -17,7 +17,7 @@ class GraphTableViewController: UITableViewController {
     var indicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
-        if shouldUpdateMax {
+        if shouldUpdateGraphs {
             if Reachability.isConnectedToNetwork() {
                 
                 indicator = UIActivityIndicatorView()
@@ -39,7 +39,7 @@ class GraphTableViewController: UITableViewController {
                     })
                 }
             }
-            shouldUpdateMax = false
+            shouldUpdateGraphs = false
         }
         self.tableView.reloadData()
 

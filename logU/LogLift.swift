@@ -11,9 +11,7 @@ import Eureka
 
 var shouldUpdateDash: Bool = false
 var shouldUpdatePoundage: Bool = false
-var shouldUpdateSquat: Bool = false
-var shouldUpdateBench: Bool = false
-var shouldUpdateDeadlift: Bool = false
+var shouldUpdateGraphs: Bool = true
 var shouldUpdateMax: Bool = true
 var shouldUpdateWeek: Bool = true
 var shouldUpdateSettings: Bool = false
@@ -65,6 +63,7 @@ class LogLift: FormViewController {
                 shouldUpdateWeek = true
                 shouldUpdateStats = true
                 shouldUpdateFrequency = true
+                shouldUpdateGraphs = true
                 
                 theDate = formattedDateString
                 lift = String((form.values()["Lift"]!)!)
@@ -76,18 +75,6 @@ class LogLift: FormViewController {
                     notes = ""
                 } else {
                     notes = String((form.values()["Notes"]!)!)
-                }
-                
-                if lift == "Squat" {
-                    shouldUpdateSquat = true
-                }
-                
-                if lift == "Bench" {
-                    shouldUpdateBench = true
-                }
-                
-                if lift == "Deadlift" {
-                    shouldUpdateDeadlift = true
                 }
                 
                 upload_request()
@@ -106,19 +93,6 @@ class LogLift: FormViewController {
                 set = String((form.values()["Sets"]!)!)
                 rep = String((form.values()["Reps"]!)!)
                 weight = String((form.values()["Weight"]!)!)
-                
-                if lift == "Squat" {
-                    shouldUpdateSquat = true
-                }
-                
-                if lift == "Bench" {
-                    shouldUpdateBench = true
-                }
-                
-                if lift == "Deadlift" {
-                    shouldUpdateDeadlift = true
-                }
-
                 
                 OfflineRequest.coreDataInsert(theDate!, lift: lift!, sets: set!, reps: rep!, weight: weight!)
                 DashTableViewController().OfflineTableInsert(theDate!, lift: lift!, set: set!, rep: rep!, weight: weight!)

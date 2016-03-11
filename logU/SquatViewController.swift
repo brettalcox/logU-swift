@@ -148,7 +148,7 @@ class SquatViewController: UIViewController {
     }
 
     override func viewDidAppear(animated: Bool) {
-        
+        /*
         if shouldUpdateSquat {
             if Reachability.isConnectedToNetwork() {
                 dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
@@ -163,6 +163,7 @@ class SquatViewController: UIViewController {
                 }
             }
         }
+*/
     }
     
     func loadAfter(object: Array<Dictionary<String, String>>) {
@@ -184,7 +185,7 @@ class SquatViewController: UIViewController {
         } else {
             label = setsTextField!.text! + "x" + repsTextField!.text!
         }
-        
+        /*
         if shouldUpdateSquat {
             label = ""
         }
@@ -198,6 +199,7 @@ class SquatViewController: UIViewController {
         setLineChart(graphLift, values: graphWeight, label: label)
     
         shouldUpdateSquat = false
+*/
     }
     
     override func didReceiveMemoryWarning() {

@@ -263,9 +263,6 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
 
                 shouldUpdateDash = true
                 shouldUpdatePoundage = true
-                shouldUpdateSquat = true
-                shouldUpdateBench = true
-                shouldUpdateDeadlift = true
                 shouldUpdateMax = true
                 shouldUpdateWeek = true
                 shouldUpdateStats = true
@@ -306,9 +303,6 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
             
                 shouldUpdateDash = true
                 shouldUpdatePoundage = true
-                shouldUpdateSquat = true
-                shouldUpdateBench = true
-                shouldUpdateDeadlift = true
                 shouldUpdateMax = true
                 shouldUpdateWeek = true
                 shouldUpdateStats = true

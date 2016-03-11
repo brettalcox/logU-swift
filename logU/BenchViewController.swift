@@ -151,7 +151,7 @@ class BenchViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        
+        /*
         if shouldUpdateBench {
             if Reachability.isConnectedToNetwork() {
                 dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
@@ -165,7 +165,7 @@ class BenchViewController: UIViewController {
                 }
             }
         }
-
+*/
     }
     
     func loadAfter(object: Array<Dictionary<String, String>>) {
@@ -187,12 +187,12 @@ class BenchViewController: UIViewController {
         } else {
             label = setsTextField!.text! + "x" + repsTextField!.text!
         }
-        
+        /*
         if shouldUpdateBench {
             label = ""
         }
         shouldUpdateBench = false
-
+*/
         if graphLift.count != 0 {
             self.filterButton.enabled = true
         } else {
