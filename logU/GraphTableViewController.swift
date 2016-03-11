@@ -12,6 +12,7 @@ var liftName: [String]! = []
 
 class GraphTableViewController: UITableViewController {
     
+    var nameOfLift: String?
     let url_to_request:String = "https://loguapp.com/swift8.php"
     var indicator: UIActivityIndicatorView!
 
@@ -66,7 +67,7 @@ class GraphTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section:
@@ -86,6 +87,18 @@ class GraphTableViewController: UITableViewController {
         
         aCell.liftNameLabel.text = lift
         return aCell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        
+        if(segue.identifier == "showGraph") {
+            let vc = segue.destinationViewController as! LiftGraphViewController
+            if let indexPath = tableView.indexPathForSelectedRow {
+                vc.liftName = liftName[indexPath.row]
+                vc.navigationItem.title = liftName[indexPath.row]
+            }
+        }
     }
 
     

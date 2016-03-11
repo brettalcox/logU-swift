@@ -14,10 +14,11 @@ var dataLift: Array<Dictionary<String, String>> = []
 class LiftGraphViewController: UIViewController {
 
     @IBOutlet weak var liftChartView: LineChartView!
-    let url_to_post:String = "https://loguapp.com/swift3.php"
+    let url_to_post:String = "https://loguapp.com/lift_graph.php"
     var graphLift : [String]! = []
     var graphWeight : [Double]! = []
     var Date: [String]!
+    var liftName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,7 @@ class LiftGraphViewController: UIViewController {
         
         if Reachability.isConnectedToNetwork() {
             dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
-                GraphData().dataOfLifting(self.url_to_post, completion: { jsonString in
+                GraphData().dataOfLiftGraphs(self.url_to_post, liftParam: self.liftName!, completion: { jsonString in
                     dataLift = jsonString
                     dispatch_async(dispatch_get_main_queue(), {
                         self.loadAfter(dataLift)
@@ -46,7 +47,7 @@ class LiftGraphViewController: UIViewController {
         if shouldUpdateSquat {
             if Reachability.isConnectedToNetwork() {
                 dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
-                    GraphData().dataOfLifting(self.url_to_post, completion: { jsonString in
+                    GraphData().dataOfLiftGraphs(self.url_to_post, liftParam: self.liftName!, completion: { jsonString in
                         dataLift = jsonString
                         
                         dispatch_async(dispatch_get_main_queue(), {

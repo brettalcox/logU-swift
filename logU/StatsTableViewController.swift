@@ -352,6 +352,9 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate, UIGe
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
+        if indexPath.row == 0 && indexPath.section == 4 {
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
         if indexPath.row == 1 && indexPath.section == 4 {
             self.performSegueWithIdentifier("showMaxes", sender: self)
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
