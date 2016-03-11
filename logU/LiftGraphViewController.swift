@@ -126,7 +126,7 @@ class LiftGraphViewController: UIViewController {
                 dataEntries.append(dataEntry)
             }
             
-            let chartDataSet = LineChartDataSet(yVals: dataEntries, label: label + " " + "Squat")
+            let chartDataSet = LineChartDataSet(yVals: dataEntries, label: label + " " + liftName!)
             chartDataSet.drawCubicEnabled = true
             chartDataSet.drawFilledEnabled = true
             chartDataSet.drawCirclesEnabled = false
