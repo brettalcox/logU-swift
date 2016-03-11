@@ -921,8 +921,37 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="" id="vaA-e2-Gsj">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="UmJ-pE-aTj" customClass="StatsTableViewCell" customModule="logU" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="v8J-or-xv5" customClass="StatsTableViewCell" customModule="logU" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="561" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v8J-or-xv5" id="ZdX-DT-xCV">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Graphs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucx-Xo-7qO">
+                                                    <rect key="frame" x="15" y="11" width="220" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="220" id="cIJ-xh-2ZM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ucx-Xo-7qO" firstAttribute="leading" secondItem="ZdX-DT-xCV" secondAttribute="leadingMargin" constant="7" id="22z-HR-Uyn"/>
+                                                <constraint firstItem="ucx-Xo-7qO" firstAttribute="centerY" secondItem="ZdX-DT-xCV" secondAttribute="centerY" id="6c8-D8-Bg5"/>
+                                                <constraint firstItem="ucx-Xo-7qO" firstAttribute="top" secondItem="ZdX-DT-xCV" secondAttribute="topMargin" constant="3" id="7Oi-EJ-GCa"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="ucx-Xo-7qO" id="ixD-hK-i36"/>
+                                            <segue destination="59w-h9-cGZ" kind="show" id="d6R-bG-Emd"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="UmJ-pE-aTj" customClass="StatsTableViewCell" customModule="logU" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="605" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UmJ-pE-aTj" id="FBY-tY-kiW">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
@@ -950,7 +979,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="d1H-CV-scZ" customClass="StatsTableViewCell" customModule="logU" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="605" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="649" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d1H-CV-scZ" id="2Vr-aV-rf5">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
@@ -978,7 +1007,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="vmO-xe-nmp" customClass="StatsTableViewCell" customModule="logU" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="649" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="693" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vmO-xe-nmp" id="zHz-BL-i2T">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
@@ -1059,7 +1088,7 @@
                         <color key="sectionIndexTrackingBackgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="wH7-3L-4eZ" customClass="MaxesTableViewCell" customModule="logU" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wH7-3L-4eZ" id="zqx-sr-H3H">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -1104,7 +1133,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCj-RH-bZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1010" y="2099"/>
+            <point key="canvasLocation" x="1362" y="1683"/>
         </scene>
         <!--Weekly Poundage-->
         <scene sceneID="i6t-Y8-HjD">
@@ -1118,7 +1147,7 @@
                         <color key="sectionIndexTrackingBackgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Set-uZ-Ory" customClass="PoundageTableViewCell" customModule="logU" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Set-uZ-Ory" id="afq-tf-KZa">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -1164,7 +1193,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kWZ-gd-Fbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1010" y="2788"/>
+            <point key="canvasLocation" x="1362" y="2372"/>
         </scene>
         <!--Weekly Frequency-->
         <scene sceneID="L5Y-iJ-fAw">
@@ -1178,7 +1207,7 @@
                         <color key="sectionIndexTrackingBackgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="iqg-DK-5uV" customClass="FrequencyTableViewCell" customModule="logU" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iqg-DK-5uV" id="7NO-ZC-h5I">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -1222,7 +1251,89 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="col-mg-Ri3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1010" y="3494"/>
+            <point key="canvasLocation" x="1362" y="3078"/>
+        </scene>
+        <!--User Graphs-->
+        <scene sceneID="wNJ-sC-KcO">
+            <objects>
+                <tableViewController id="59w-h9-cGZ" customClass="GraphTableViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="qC8-5T-X2r">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="sectionIndexTrackingBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="CST-zN-bGI" customClass="GraphLiftNameCell" customModule="logU" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CST-zN-bGI" id="yRx-7s-qdb">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gj7-QM-Mza">
+                                            <rect key="frame" x="17" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="gj7-QM-Mza" firstAttribute="leading" secondItem="yRx-7s-qdb" secondAttribute="leadingMargin" constant="9" id="0lE-L9-omk"/>
+                                        <constraint firstItem="gj7-QM-Mza" firstAttribute="centerY" secondItem="yRx-7s-qdb" secondAttribute="centerY" id="DMW-TG-2s9"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="liftNameLabel" destination="gj7-QM-Mza" id="xzR-ne-l9e"/>
+                                    <segue destination="B7k-lR-9g7" kind="show" id="Quu-xr-t5E"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="59w-h9-cGZ" id="lBh-u7-gHH"/>
+                            <outlet property="delegate" destination="59w-h9-cGZ" id="vwa-ZC-3YL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="User Graphs" id="y6I-09-zq1"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2fw-ap-xbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1362" y="3828"/>
+        </scene>
+        <!--Lift Graph View Controller-->
+        <scene sceneID="D7O-Pe-NWl">
+            <objects>
+                <viewController id="B7k-lR-9g7" customClass="LiftGraphViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Es5-uK-1hz"/>
+                        <viewControllerLayoutGuide type="bottom" id="ty2-JW-X7f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GXu-Cu-f66">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qzf-Sw-SvT" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Qzf-Sw-SvT" firstAttribute="top" secondItem="Es5-uK-1hz" secondAttribute="bottom" id="5Vu-6q-5ox"/>
+                            <constraint firstItem="Qzf-Sw-SvT" firstAttribute="leading" secondItem="GXu-Cu-f66" secondAttribute="leadingMargin" id="QY9-fE-lZU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qzf-Sw-SvT" secondAttribute="trailing" id="ejC-Vu-BC5"/>
+                            <constraint firstItem="ty2-JW-X7f" firstAttribute="top" secondItem="Qzf-Sw-SvT" secondAttribute="bottom" id="nOp-fn-Iyx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="OxC-bM-OrD"/>
+                    <connections>
+                        <outlet property="liftChartView" destination="Qzf-Sw-SvT" id="eyv-KJ-v55"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ksQ-wW-TLF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2782" y="3838"/>
         </scene>
         <!--User Stats-->
         <scene sceneID="aWn-Dc-pPv">
@@ -1276,7 +1387,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PCk-9Q-Ux4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="278" y="2099"/>
+            <point key="canvasLocation" x="630" y="1683"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="O0U-pv-Xu1">
@@ -1294,7 +1405,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cEP-fI-z6b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="278" y="2824"/>
+            <point key="canvasLocation" x="630" y="2408"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Yx3-GV-7IQ">
@@ -1506,7 +1617,43 @@ This data will not be collected, transmitted, or used with anybody or anything o
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nTs-Rq-MWK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="278" y="3494"/>
+            <point key="canvasLocation" x="630" y="3078"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bSF-xr-gky">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9ht-9j-Czx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TsD-0S-a5M">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="59w-h9-cGZ" kind="relationship" relationship="rootViewController" id="eMc-Rl-klP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L54-56-tci" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="630" y="3828"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="96p-qn-Puq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KJJ-CS-tUq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lRQ-hG-TPa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="B7k-lR-9g7" kind="relationship" relationship="rootViewController" id="2ab-MR-6bB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vPA-J7-cvu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2090" y="3838"/>
         </scene>
     </scenes>
     <resources>
@@ -1519,10 +1666,12 @@ This data will not be collected, transmitted, or used with anybody or anything o
         <image name="Line Chart" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="v6M-ld-xAY"/>
         <segue reference="R1l-bB-OIO"/>
-        <segue reference="qD1-yQ-ibE"/>
-        <segue reference="4uB-Y3-VRi"/>
-        <segue reference="gM6-x4-DUo"/>
         <segue reference="F9a-gd-XNB"/>
+        <segue reference="M2p-au-UOX"/>
+        <segue reference="7jg-Cu-olp"/>
+        <segue reference="eMc-Rl-klP"/>
+        <segue reference="Quu-xr-t5E"/>
     </inferredMetricsTieBreakers>
 </document>

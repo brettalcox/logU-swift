@@ -14,6 +14,9 @@
 		B505D0291C55C27500C09549 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B505D0281C55C27500C09549 /* SettingsTableViewCell.swift */; };
 		B505D02B1C55CEDB00C09549 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B505D02A1C55CEDB00C09549 /* Settings.swift */; };
 		B52FFA561C62F16A00C5F481 /* StatsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FFA551C62F16A00C5F481 /* StatsData.swift */; };
+		B551853F1C925BCA00C6D8A9 /* GraphTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B551853E1C925BCA00C6D8A9 /* GraphTableViewController.swift */; };
+		B55185471C925DFC00C6D8A9 /* GraphLiftNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55185461C925DFC00C6D8A9 /* GraphLiftNameCell.swift */; };
+		B55185491C9261DA00C6D8A9 /* LiftGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55185481C9261DA00C6D8A9 /* LiftGraphViewController.swift */; };
 		B55E02431C64578A00DBACF6 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55E02401C64577300DBACF6 /* Eureka.framework */; };
 		B55E02441C64578A00DBACF6 /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B55E02401C64577300DBACF6 /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B55E02481C6457C200DBACF6 /* LogLift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55E02471C6457C200DBACF6 /* LogLift.swift */; };
@@ -184,6 +187,9 @@
 		B505D02A1C55CEDB00C09549 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		B5069C101C7AB66500E0BBC4 /* logU-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "logU-Bridging-Header.h"; sourceTree = "<group>"; };
 		B52FFA551C62F16A00C5F481 /* StatsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsData.swift; sourceTree = "<group>"; };
+		B551853E1C925BCA00C6D8A9 /* GraphTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphTableViewController.swift; sourceTree = "<group>"; };
+		B55185461C925DFC00C6D8A9 /* GraphLiftNameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphLiftNameCell.swift; sourceTree = "<group>"; };
+		B55185481C9261DA00C6D8A9 /* LiftGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftGraphViewController.swift; sourceTree = "<group>"; };
 		B55E02381C64577300DBACF6 /* Eureka.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Eureka.xcodeproj; path = Eureka/Eureka.xcodeproj; sourceTree = SOURCE_ROOT; };
 		B55E02471C6457C200DBACF6 /* LogLift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLift.swift; sourceTree = "<group>"; };
 		B56863DB1C58374B0065D641 /* DashData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashData.swift; sourceTree = "<group>"; };
@@ -310,6 +316,9 @@
 		B5C6F0ED1C4F25F70016B70E /* logU */ = {
 			isa = PBXGroup;
 			children = (
+				B55185481C9261DA00C6D8A9 /* LiftGraphViewController.swift */,
+				B55185461C925DFC00C6D8A9 /* GraphLiftNameCell.swift */,
+				B551853E1C925BCA00C6D8A9 /* GraphTableViewController.swift */,
 				B586A19A1C8A6BF9006636D7 /* EditLift.swift */,
 				B5787C381C7AA36D00694C44 /* DeleteAccount.swift */,
 				B56863DF1C59A1A70065D641 /* SignUpViewController.swift */,
@@ -684,7 +693,9 @@
 				B5C6F1681C557ACD0016B70E /* PoundageTableViewCell.swift in Sources */,
 				B505D0251C55B5AE00C09549 /* SettingsTableViewController.swift in Sources */,
 				B56863DC1C58374B0065D641 /* DashData.swift in Sources */,
+				B551853F1C925BCA00C6D8A9 /* GraphTableViewController.swift in Sources */,
 				8BB596E01C513BE8003B98BA /* LiftDataModel.xcdatamodeld in Sources */,
+				B55185491C9261DA00C6D8A9 /* LiftGraphViewController.swift in Sources */,
 				B5C6F1331C4F26480016B70E /* LiftTableViewCell.swift in Sources */,
 				B586A19B1C8A6BF9006636D7 /* EditLift.swift in Sources */,
 				B505D02B1C55CEDB00C09549 /* Settings.swift in Sources */,
@@ -695,6 +706,7 @@
 				B5C6F12F1C4F26480016B70E /* GraphData.swift in Sources */,
 				B56863E01C59A1A70065D641 /* SignUpViewController.swift in Sources */,
 				B5C6F12E1C4F26480016B70E /* DeadliftViewController.swift in Sources */,
+				B55185471C925DFC00C6D8A9 /* GraphLiftNameCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
