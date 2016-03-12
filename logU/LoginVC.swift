@@ -38,6 +38,10 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 signUpButton.enabled = false
                 txtUsername.enabled = false
                 txtPassword.enabled = false
+                
+                if prefs.valueForKey("GPS") == nil {
+                    prefs.setInteger(0, forKey: "GPS")
+                }
             
                 dispatch_async(dispatch_get_main_queue(), {
                     self.performSegueWithIdentifier("Dashboard", sender: self)
@@ -57,6 +61,10 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             signUpButton.enabled = true
             txtUsername.enabled = true
             txtPassword.enabled = true
+            
+            if prefs.valueForKey("GPS") == nil {
+                prefs.setInteger(0, forKey: "GPS")
+            }
         
             if Reachability.isConnectedToNetwork() {
                 OfflineRequest().OfflineFetchSubmit()

@@ -30,6 +30,8 @@
 		B5A54A851C8CCB320011DED9 /* DeviceKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5A54A7C1C8CCB0C0011DED9 /* DeviceKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5AEB2F11C7FF8F6006FC791 /* FrequencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AEB2F01C7FF8F6006FC791 /* FrequencyTableViewCell.swift */; };
 		B5AEB2F31C7FF9A5006FC791 /* FrequencyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AEB2F21C7FF9A5006FC791 /* FrequencyTableViewController.swift */; };
+		B5B5D7F91C9386EB00C10D4E /* CommunityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5D7F81C9386EB00C10D4E /* CommunityTableViewController.swift */; };
+		B5B5D8011C938C1B00C10D4E /* CommunityMapPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B5D8001C938C1B00C10D4E /* CommunityMapPoints.swift */; };
 		B5C6F1041C4F25F70016B70E /* logUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1031C4F25F70016B70E /* logUTests.swift */; };
 		B5C6F10F1C4F25F70016B70E /* logUUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F10E1C4F25F70016B70E /* logUUITests.swift */; };
 		B5C6F12A1C4F26480016B70E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F11C1C4F26480016B70E /* AppDelegate.swift */; };
@@ -201,6 +203,8 @@
 		B5A54A721C8CCB0C0011DED9 /* DeviceKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DeviceKit.xcodeproj; path = "DeviceKit-master/DeviceKit.xcodeproj"; sourceTree = "<group>"; };
 		B5AEB2F01C7FF8F6006FC791 /* FrequencyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyTableViewCell.swift; sourceTree = "<group>"; };
 		B5AEB2F21C7FF9A5006FC791 /* FrequencyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyTableViewController.swift; sourceTree = "<group>"; };
+		B5B5D7F81C9386EB00C10D4E /* CommunityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityTableViewController.swift; sourceTree = "<group>"; };
+		B5B5D8001C938C1B00C10D4E /* CommunityMapPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityMapPoints.swift; sourceTree = "<group>"; };
 		B5C6E7931C8CC9180096D267 /* DeviceKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceKit.framework; path = "Pods/../build/Debug-iphoneos/DeviceKit.framework"; sourceTree = "<group>"; };
 		B5C6F0EB1C4F25F70016B70E /* logU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = logU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C6F0FF1C4F25F70016B70E /* logUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = logUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -316,6 +320,8 @@
 		B5C6F0ED1C4F25F70016B70E /* logU */ = {
 			isa = PBXGroup;
 			children = (
+				B5B5D8001C938C1B00C10D4E /* CommunityMapPoints.swift */,
+				B5B5D7F81C9386EB00C10D4E /* CommunityTableViewController.swift */,
 				B55185481C9261DA00C6D8A9 /* LiftGraphViewController.swift */,
 				B55185461C925DFC00C6D8A9 /* GraphLiftNameCell.swift */,
 				B551853E1C925BCA00C6D8A9 /* GraphTableViewController.swift */,
@@ -675,6 +681,7 @@
 				B5F5D89D1C6FA3110037B51B /* SegmentedControlParentVC.swift in Sources */,
 				B5C6F12A1C4F26480016B70E /* AppDelegate.swift in Sources */,
 				8BB596DB1C513968003B98BA /* ConnectionTest.swift in Sources */,
+				B5B5D7F91C9386EB00C10D4E /* CommunityTableViewController.swift in Sources */,
 				B5C6F12C1C4F26480016B70E /* BenchViewController.swift in Sources */,
 				B5F5D8981C6FA23B0037B51B /* GraphSegmented.swift in Sources */,
 				B5787C391C7AA36D00694C44 /* DeleteAccount.swift in Sources */,
@@ -697,6 +704,7 @@
 				8BB596E01C513BE8003B98BA /* LiftDataModel.xcdatamodeld in Sources */,
 				B55185491C9261DA00C6D8A9 /* LiftGraphViewController.swift in Sources */,
 				B5C6F1331C4F26480016B70E /* LiftTableViewCell.swift in Sources */,
+				B5B5D8011C938C1B00C10D4E /* CommunityMapPoints.swift in Sources */,
 				B586A19B1C8A6BF9006636D7 /* EditLift.swift in Sources */,
 				B505D02B1C55CEDB00C09549 /* Settings.swift in Sources */,
 				B55E02481C6457C200DBACF6 /* LogLift.swift in Sources */,

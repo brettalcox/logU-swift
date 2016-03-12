@@ -8,6 +8,8 @@
 
 import UIKit
 import Eureka
+import MapKit
+import CoreLocation
 
 var shouldUpdateDash: Bool = false
 var shouldUpdatePoundage: Bool = false
@@ -26,11 +28,17 @@ var rep:String?
 var weight:String?
 var intensity:String?
 var notes:String?
+var lat:String?
+var lon:String?
 
-class LogLift: FormViewController {
+class LogLift: FormViewController, CLLocationManagerDelegate {
     
     let url_to_request:String = "https://loguapp.com/swift.php"
-    let url_to_post:String = "https://loguapp.com/swift2.php"
+    let url_to_post:String = "https://loguapp.com/log_with_gps.php"
+    let url_to_post_nogps:String = "https://loguapp.com/swift2.php"
+    var locationManager: CLLocationManager!
+    var currentLocation: CLLocationCoordinate2D?
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     @IBOutlet weak var logButton: UIBarButtonItem!
     
@@ -64,6 +72,23 @@ class LogLift: FormViewController {
                 shouldUpdateStats = true
                 shouldUpdateFrequency = true
                 shouldUpdateGraphs = true
+                
+                if (CLLocationManager.locationServicesEnabled())
+                {
+                    locationManager = CLLocationManager()
+                    locationManager.delegate = self
+                    locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                    locationManager.requestWhenInUseAuthorization()
+                    
+                    if Int(String((defaults.valueForKey("GPS"))!)) == 1 {
+                        locationManager.startUpdatingLocation()
+
+                        lat = (locationManager.location?.coordinate.latitude.description)!
+                        lon = (locationManager.location?.coordinate.longitude.description)!
+                        
+                        locationManager.stopUpdatingLocation()
+                    }
+                }
                 
                 theDate = formattedDateString
                 lift = String((form.values()["Lift"]!)!)
@@ -102,6 +127,12 @@ class LogLift: FormViewController {
             
             }
 
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        currentLocation = locValue
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
     }
     
     override func viewDidLoad() {
@@ -166,27 +197,79 @@ class LogLift: FormViewController {
     
     func upload_request()
     {
-        let url:NSURL = NSURL(string: url_to_post)!
-        let session = NSURLSession.sharedSession()
-        
-        let request = NSMutableURLRequest(URL: url)
-        request.HTTPMethod = "POST"
-        request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
-        
-        let query = "name=\(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)&date=\(theDate!)&lift=\(lift!)&sets=\(set!)&reps=\(rep!)&weight=\(weight!)&intensity=\(intensity!)&notes=\(notes!)".dataUsingEncoding(NSUTF8StringEncoding)
-        
-        let task = session.uploadTaskWithRequest(request, fromData: query, completionHandler:
-            {(data,response,error) in
+        if (CLLocationManager.locationServicesEnabled()) {
+            if Int(String((defaults.valueForKey("GPS"))!)) == 1 {
                 
-                guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
-                    return
-                }
+                let url:NSURL = NSURL(string: url_to_post)!
+                let session = NSURLSession.sharedSession()
                 
-                let dataString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                let request = NSMutableURLRequest(URL: url)
+                request.HTTPMethod = "POST"
+                request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
+
+                let query = "name=\(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)&date=\(theDate!)&lift=\(lift!)&sets=\(set!)&reps=\(rep!)&weight=\(weight!)&intensity=\(intensity!)&notes=\(notes!)&latitude=\(lat!)&longitude=\(lon!)".dataUsingEncoding(NSUTF8StringEncoding)
+                
+                let task = session.uploadTaskWithRequest(request, fromData: query, completionHandler:
+                    {(data,response,error) in
+                        
+                        guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
+                            return
+                        }
+                        
+                        let dataString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                    }
+                );
+                
+                task.resume()
+            } else {
+                
+                let url:NSURL = NSURL(string: url_to_post_nogps)!
+                let session = NSURLSession.sharedSession()
+                
+                let request = NSMutableURLRequest(URL: url)
+                request.HTTPMethod = "POST"
+                request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
+
+                let query = "name=\(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)&date=\(theDate!)&lift=\(lift!)&sets=\(set!)&reps=\(rep!)&weight=\(weight!)&intensity=\(intensity!)&notes=\(notes!)".dataUsingEncoding(NSUTF8StringEncoding)
+                
+                let task = session.uploadTaskWithRequest(request, fromData: query, completionHandler:
+                    {(data,response,error) in
+                        
+                        guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
+                            return
+                        }
+                        
+                        let dataString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                    }
+                );
+                
+                task.resume()
+
             }
-        );
-        
-        task.resume()
+        } else {
+            let url:NSURL = NSURL(string: url_to_post_nogps)!
+            let session = NSURLSession.sharedSession()
+            
+            let request = NSMutableURLRequest(URL: url)
+            request.HTTPMethod = "POST"
+            request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
+
+         let query = "name=\(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)&date=\(theDate!)&lift=\(lift!)&sets=\(set!)&reps=\(rep!)&weight=\(weight!)&intensity=\(intensity!)&notes=\(notes!)".dataUsingEncoding(NSUTF8StringEncoding)
+            
+            let task = session.uploadTaskWithRequest(request, fromData: query, completionHandler:
+                {(data,response,error) in
+                    
+                    guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
+                        return
+                    }
+                    
+                    let dataString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                }
+            );
+            
+            task.resume()
+
+        }
         
     }
 

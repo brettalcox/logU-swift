@@ -85,12 +85,28 @@ class SettingsTableViewController: FormViewController {
 
         }
             +++ Section("Privacy")
+            <<< SwitchRow("GPS") {
+                $0.title = "Log GPS on Community Map"
+                //defaults.synchronize()
+                if Int(String((defaults.valueForKey("GPS"))!)) == 1 {
+                    $0.value = true
+                } else {
+                    $0.value = false
+                }
+                }.onChange({ row in
+                    if row.value == true {
+                        self.defaults.setInteger(1, forKey: "GPS")
+                    }
+                    else {
+                        self.defaults.setInteger(0, forKey: "GPS")
+                    }
+                })
+            
             <<< ButtonRow("Privacy") {
                 $0.title = "Privacy Policy"
                 
                 $0.onCellSelection(self.viewPrivacy)
             }
-            
         
             +++ Section("Account Management")
             <<< ButtonRow("Delete Account") {

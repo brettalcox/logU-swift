@@ -91,7 +91,7 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
             self.tableView.reloadData()
         }
         
-        navigationItem.leftBarButtonItem = editButtonItem()
+        //navigationItem.leftBarButtonItem = editButtonItem()
         
     }
     
