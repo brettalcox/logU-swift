@@ -38,15 +38,11 @@ class CommunityTableViewController: UITableViewController {
     }
     
     func loadMapCoords(object: Array<Dictionary<String, String>>) {
-        print(object)
         if object.count != 0 {
             dataPoints = []
             var coordinate: CLLocationCoordinate2D
             
             for i in 0..<object.count {
-                print(object[i]["latitude"])
-                print(object[i]["longitude"])
-
                 dataPoints.append(CommunityPoints(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(object[i]["latitude"]!)!, longitude: CLLocationDegrees(object[i]["longitude"]!)!)))
             }
             
@@ -57,7 +53,6 @@ class CommunityTableViewController: UITableViewController {
     }
         
     func getGpsCoordinates(url: String, completion: (Array<Dictionary<String, String>>) -> ()) {
-        print("titty piss")
         let urlName:NSURL = NSURL(string: url)!
         let session = NSURLSession.sharedSession()
         let data = NSData(contentsOfURL: NSURL(string: url)!)
@@ -77,7 +72,6 @@ class CommunityTableViewController: UITableViewController {
                     let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!, options: [NSJSONReadingOptions.MutableContainers, NSJSONReadingOptions.AllowFragments]) as? Array<Dictionary<String, String>>
                     if jsonArray != nil {
                         myData = jsonArray!
-                        print(myData)
                     }
                     
                 } catch let error as NSError {
