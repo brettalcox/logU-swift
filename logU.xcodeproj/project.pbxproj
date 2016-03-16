@@ -36,15 +36,12 @@
 		B5C6F10F1C4F25F70016B70E /* logUUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F10E1C4F25F70016B70E /* logUUITests.swift */; };
 		B5C6F12A1C4F26480016B70E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F11C1C4F26480016B70E /* AppDelegate.swift */; };
 		B5C6F12B1C4F26480016B70E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5C6F11D1C4F26480016B70E /* Assets.xcassets */; };
-		B5C6F12C1C4F26480016B70E /* BenchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F11E1C4F26480016B70E /* BenchViewController.swift */; };
 		B5C6F12D1C4F26480016B70E /* DashTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F11F1C4F26480016B70E /* DashTableViewController.swift */; };
-		B5C6F12E1C4F26480016B70E /* DeadliftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1201C4F26480016B70E /* DeadliftViewController.swift */; };
 		B5C6F12F1C4F26480016B70E /* GraphData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1211C4F26480016B70E /* GraphData.swift */; };
 		B5C6F1301C4F26480016B70E /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1221C4F26480016B70E /* GraphViewController.swift */; };
 		B5C6F1311C4F26480016B70E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5C6F1231C4F26480016B70E /* Info.plist */; };
 		B5C6F1331C4F26480016B70E /* LiftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1251C4F26480016B70E /* LiftTableViewCell.swift */; };
 		B5C6F1341C4F26480016B70E /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1261C4F26480016B70E /* LoginVC.swift */; };
-		B5C6F1361C4F26480016B70E /* SquatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1281C4F26480016B70E /* SquatViewController.swift */; };
 		B5C6F1441C4F26EA0016B70E /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C6F13F1C4F26DD0016B70E /* Charts.framework */; };
 		B5C6F1451C4F26EA0016B70E /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5C6F13F1C4F26DD0016B70E /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5C6F14D1C4F27520016B70E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5C6F1491C4F27520016B70E /* LaunchScreen.storyboard */; };
@@ -55,8 +52,6 @@
 		B5C6F15E1C4F45240016B70E /* MaxesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F15D1C4F45240016B70E /* MaxesTableViewCell.swift */; };
 		B5C6F1681C557ACD0016B70E /* PoundageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1671C557ACD0016B70E /* PoundageTableViewCell.swift */; };
 		B5C6F16C1C557B4E0016B70E /* PoundageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F16B1C557B4E0016B70E /* PoundageTableViewController.swift */; };
-		B5F5D8981C6FA23B0037B51B /* GraphSegmented.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5D8971C6FA23B0037B51B /* GraphSegmented.swift */; };
-		B5F5D89D1C6FA3110037B51B /* SegmentedControlParentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F5D89C1C6FA3110037B51B /* SegmentedControlParentVC.swift */; };
 		C681BE885C54F2E0D318C54E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF0D323F1ACAA97C55B4611 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -187,7 +182,6 @@
 		B505D0241C55B5AE00C09549 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		B505D0281C55C27500C09549 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		B505D02A1C55CEDB00C09549 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		B5069C101C7AB66500E0BBC4 /* logU-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "logU-Bridging-Header.h"; sourceTree = "<group>"; };
 		B52FFA551C62F16A00C5F481 /* StatsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsData.swift; sourceTree = "<group>"; };
 		B551853E1C925BCA00C6D8A9 /* GraphTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphTableViewController.swift; sourceTree = "<group>"; };
 		B55185461C925DFC00C6D8A9 /* GraphLiftNameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphLiftNameCell.swift; sourceTree = "<group>"; };
@@ -215,15 +209,12 @@
 		B5C6F1101C4F25F70016B70E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5C6F11C1C4F26480016B70E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5C6F11D1C4F26480016B70E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B5C6F11E1C4F26480016B70E /* BenchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BenchViewController.swift; sourceTree = "<group>"; };
 		B5C6F11F1C4F26480016B70E /* DashTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashTableViewController.swift; sourceTree = "<group>"; };
-		B5C6F1201C4F26480016B70E /* DeadliftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeadliftViewController.swift; sourceTree = "<group>"; };
 		B5C6F1211C4F26480016B70E /* GraphData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphData.swift; sourceTree = "<group>"; };
 		B5C6F1221C4F26480016B70E /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		B5C6F1231C4F26480016B70E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5C6F1251C4F26480016B70E /* LiftTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftTableViewCell.swift; sourceTree = "<group>"; };
 		B5C6F1261C4F26480016B70E /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		B5C6F1281C4F26480016B70E /* SquatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquatViewController.swift; sourceTree = "<group>"; };
 		B5C6F1381C4F26DD0016B70E /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		B5C6F14A1C4F27520016B70E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5C6F14C1C4F27520016B70E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -233,8 +224,6 @@
 		B5C6F15D1C4F45240016B70E /* MaxesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaxesTableViewCell.swift; sourceTree = "<group>"; };
 		B5C6F1671C557ACD0016B70E /* PoundageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoundageTableViewCell.swift; sourceTree = "<group>"; };
 		B5C6F16B1C557B4E0016B70E /* PoundageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoundageTableViewController.swift; sourceTree = "<group>"; };
-		B5F5D8971C6FA23B0037B51B /* GraphSegmented.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphSegmented.swift; sourceTree = "<group>"; };
-		B5F5D89C1C6FA3110037B51B /* SegmentedControlParentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlParentVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -346,10 +335,8 @@
 				B55E02381C64577300DBACF6 /* Eureka.xcodeproj */,
 				B5C6F1381C4F26DD0016B70E /* Charts.xcodeproj */,
 				B5C6F11D1C4F26480016B70E /* Assets.xcassets */,
-				B5C6F11E1C4F26480016B70E /* BenchViewController.swift */,
 				B5C6F11F1C4F26480016B70E /* DashTableViewController.swift */,
 				B52FFA551C62F16A00C5F481 /* StatsData.swift */,
-				B5C6F1201C4F26480016B70E /* DeadliftViewController.swift */,
 				B5C6F1491C4F27520016B70E /* LaunchScreen.storyboard */,
 				B5C6F14B1C4F27520016B70E /* Main.storyboard */,
 				B5C6F1211C4F26480016B70E /* GraphData.swift */,
@@ -357,15 +344,11 @@
 				B5C6F1231C4F26480016B70E /* Info.plist */,
 				B5C6F1251C4F26480016B70E /* LiftTableViewCell.swift */,
 				B5C6F1261C4F26480016B70E /* LoginVC.swift */,
-				B5C6F1281C4F26480016B70E /* SquatViewController.swift */,
 				8BB596DA1C513968003B98BA /* ConnectionTest.swift */,
 				8BB596DE1C513BE8003B98BA /* LiftDataModel.xcdatamodeld */,
 				8BB596E11C514449003B98BA /* OfflineRequest.swift */,
 				B55E02471C6457C200DBACF6 /* LogLift.swift */,
 				B58E938E1C6EDFED00CFC8CA /* Theme.swift */,
-				B5F5D8971C6FA23B0037B51B /* GraphSegmented.swift */,
-				B5F5D89C1C6FA3110037B51B /* SegmentedControlParentVC.swift */,
-				B5069C101C7AB66500E0BBC4 /* logU-Bridging-Header.h */,
 			);
 			path = logU;
 			sourceTree = "<group>";
@@ -678,12 +661,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B52FFA561C62F16A00C5F481 /* StatsData.swift in Sources */,
-				B5F5D89D1C6FA3110037B51B /* SegmentedControlParentVC.swift in Sources */,
 				B5C6F12A1C4F26480016B70E /* AppDelegate.swift in Sources */,
 				8BB596DB1C513968003B98BA /* ConnectionTest.swift in Sources */,
 				B5B5D7F91C9386EB00C10D4E /* CommunityTableViewController.swift in Sources */,
-				B5C6F12C1C4F26480016B70E /* BenchViewController.swift in Sources */,
-				B5F5D8981C6FA23B0037B51B /* GraphSegmented.swift in Sources */,
 				B5787C391C7AA36D00694C44 /* DeleteAccount.swift in Sources */,
 				B5C6F15E1C4F45240016B70E /* MaxesTableViewCell.swift in Sources */,
 				8BB596E21C514449003B98BA /* OfflineRequest.swift in Sources */,
@@ -694,7 +674,6 @@
 				B5C6F1581C4F3A9E0016B70E /* StatsTableViewController.swift in Sources */,
 				B5AEB2F31C7FF9A5006FC791 /* FrequencyTableViewController.swift in Sources */,
 				B5C6F16C1C557B4E0016B70E /* PoundageTableViewController.swift in Sources */,
-				B5C6F1361C4F26480016B70E /* SquatViewController.swift in Sources */,
 				B58E938F1C6EDFED00CFC8CA /* Theme.swift in Sources */,
 				B5C6F15C1C4F40DF0016B70E /* MaxesTableViewController.swift in Sources */,
 				B5C6F1681C557ACD0016B70E /* PoundageTableViewCell.swift in Sources */,
@@ -713,7 +692,6 @@
 				B505D0291C55C27500C09549 /* SettingsTableViewCell.swift in Sources */,
 				B5C6F12F1C4F26480016B70E /* GraphData.swift in Sources */,
 				B56863E01C59A1A70065D641 /* SignUpViewController.swift in Sources */,
-				B5C6F12E1C4F26480016B70E /* DeadliftViewController.swift in Sources */,
 				B55185471C925DFC00C6D8A9 /* GraphLiftNameCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -884,7 +862,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.logu.logu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "logU/logU-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -906,7 +884,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.logu.logu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "logU/logU-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};

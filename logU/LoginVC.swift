@@ -15,7 +15,7 @@ var globalUser: String?
 
 class LoginVC: UIViewController, UITextFieldDelegate {
     
-    var lifting = [NSManagedObject]()
+    //var lifting = [NSManagedObject]()
     var indicator: UIActivityIndicatorView!
     
     @IBOutlet weak var txtUsername: UITextField!
@@ -99,7 +99,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         txtUsername.enabled = false
         txtPassword.enabled = false
         
-        UIApplication.sharedApplication().sendAction("resignFirstResponder", to:nil, from:nil, forEvent:nil)
+        //UIApplication.sharedApplication().sendAction("resignFirstResponder", to:nil, from:nil, forEvent:nil)
         
         var username:NSString = txtUsername.text!
         let password:NSString = txtPassword.text!

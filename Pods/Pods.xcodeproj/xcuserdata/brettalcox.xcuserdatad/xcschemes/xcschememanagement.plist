@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FBAnnotationClusteringSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>IQKeyboardManagerSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,12 +27,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>423C10F04A172BB11C7A3702F8F09B90</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7C57575B6424B464B670D33FED322BE0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CE4FF4C931E2983440EB7B7EBB52147D</key>
+		<key>9646E64402D8ECBB28325E34EC5C4EBA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

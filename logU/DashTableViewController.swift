@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 var dataAfter: Array<Dictionary<String, String>> = []
 
@@ -23,12 +24,10 @@ var filteredTableData = [DashData]()
 class DashTableViewController: UITableViewController, UISearchResultsUpdating {
     
     let searchController = UISearchController(searchResultsController: nil)
-    
     let url_to_post:String = "https://loguapp.com/swift7.php"
-    
     var indicator: UIActivityIndicatorView!
-    
     var resultSearchController = UISearchController()
+    var locationManager: CLLocationManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,6 +94,10 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
         
     }
     
+    override func viewDidDisappear(animated: Bool) {
+        self.searchController.removeFromParentViewController()
+    }
+    
     func loadAfter(object: Array<Dictionary<String, String>>) {
         dataAfter = object
         
@@ -143,6 +146,12 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
         indicator.stopAnimating()
 
         self.tableView.reloadData()
+        
+        if (CLLocationManager.locationServicesEnabled()) {
+            locationManager = CLLocationManager()
+            locationManager.requestWhenInUseAuthorization()
+        }
+
     }
     
     
