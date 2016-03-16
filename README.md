@@ -30,13 +30,25 @@ This is the current iOS development of https://loguapp.com
 ### Log a Lift
 
 
-![alt tag](http://i.imgur.com/0HzAzn9.png?1)
+![alt tag](http://i.imgur.com/A7jt0Ii.png?1)
+
+
+### Update a Lift
+
+
+![alt tag](http://i.imgur.com/RfpzU9O.png?1)
+
+
+### Graphs for all lifts completed
+
+
+![alt tag](http://i.imgur.com/XiYJMow.png?1)
 
 
 ### User Graphs (save graph with a long press)
 
 
-![alt tag](http://i.imgur.com/IxB6AUz.png?1)
+![alt tag](http://i.imgur.com/yCpvpTo.png?1)
 
 
 ### Filter Graphs
@@ -48,7 +60,7 @@ This is the current iOS development of https://loguapp.com
 ### User Statistics
 
 
-![alt tag](http://i.imgur.com/D1Od53e.png?1)
+![alt tag](http://i.imgur.com/NM443qh.png?1)
 
 
 ### Help if you need it.
@@ -56,6 +68,11 @@ This is the current iOS development of https://loguapp.com
 
 ![alt tag](http://i.imgur.com/1x9tt2h.png?1)
 
+
+### See where other lifts are being logged. (View is currently in progress)
+
+
+![alt tag](http://i.imgur.com/7wezih5.png?1)
 
 ### One Rep Maxes
 
@@ -78,4 +95,4 @@ This is the current iOS development of https://loguapp.com
 ### User Settings
 
 
-![alt tag](http://i.imgur.com/QYdkVCZ.png?1)
+![alt tag](http://i.imgur.com/VuJYkr0.png?1)
