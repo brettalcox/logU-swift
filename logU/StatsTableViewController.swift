@@ -341,6 +341,9 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate, UIGe
             let sum = radarWeight.reduce(0, combine: +)
             if sum != 0 {
                 setRadar(radarLift, values: radarWeight)
+                radarChartView.userInteractionEnabled = true
+            } else {
+                radarChartView.userInteractionEnabled = false
             }
         }
     }
@@ -376,7 +379,7 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate, UIGe
     func setRadar(dataPoints: [String], values: [Double]) {
         
         var dataEntries: [ChartDataEntry] = []
-        
+
         for i in 0..<dataPoints.count {
             let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
             dataEntries.append(dataEntry)
@@ -392,6 +395,7 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate, UIGe
             //chartDataSet.fillAlpha = 0.50
             radarChartData.setValueFont(UIFont .systemFontOfSize(0))
             
+            radarChartView.userInteractionEnabled = true
             radarChartView.xAxis.labelFont = UIFont .systemFontOfSize(10)
             radarChartView.rotationEnabled = false
             radarChartView.animate(yAxisDuration: 1.0)
