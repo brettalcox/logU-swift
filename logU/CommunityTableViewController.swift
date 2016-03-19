@@ -12,6 +12,7 @@ import CoreLocation
 import FBAnnotationClusteringSwift
 
 var mapCoords: Array<Dictionary<String, String>> = []
+var hasLoaded: Bool = false
 
 class CommunityTableViewController: UITableViewController, CLLocationManagerDelegate {
 
@@ -25,8 +26,7 @@ class CommunityTableViewController: UITableViewController, CLLocationManagerDele
         super.viewDidLoad()
         self.communityMap.delegate = self
 
-        if !shouldUpdateMap {
-            
+        if !hasLoaded {
             if (CLLocationManager.locationServicesEnabled())
             {
                 locationManager = CLLocationManager()
@@ -36,31 +36,34 @@ class CommunityTableViewController: UITableViewController, CLLocationManagerDele
             }
             loadMap()
             locationManager.stopUpdatingLocation()
-
         }
     }
     
     override func viewDidAppear(animated: Bool) {
         self.communityMap.delegate = self
         
-        if shouldUpdateMap {
-            if (CLLocationManager.locationServicesEnabled())
-            {
-                locationManager = CLLocationManager()
-                locationManager.delegate = self
-                locationManager.desiredAccuracy = kCLLocationAccuracyBest
-                locationManager.startUpdatingLocation()
+        if hasLoaded {
+            if shouldUpdateMap {
+                if (CLLocationManager.locationServicesEnabled())
+                {
+                    locationManager = CLLocationManager()
+                    locationManager.delegate = self
+                    locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                    locationManager.startUpdatingLocation()
+                }
+                
+                clusteringManager = FBClusteringManager()
+                loadMap()
+                locationManager.stopUpdatingLocation()
+                locationManager.delegate = nil
+                
+                shouldUpdateMap = false
+            } else {
+                loadMapCoords(mapCoords)
             }
 
-            clusteringManager = FBClusteringManager()
-            loadMap()
-            locationManager.stopUpdatingLocation()
-            locationManager.delegate = nil
-            
-            shouldUpdateMap = false
-        } else {
-            loadMapCoords(mapCoords)
         }
+        hasLoaded = true
     }
     
     override func viewDidDisappear(animated: Bool) {
