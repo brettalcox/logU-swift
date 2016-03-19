@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>This will log where you logged your lift. Visible to all members of the logU community.</string>
+	<string></string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This will log where you logged your lift. Visible to all members of the logU community.</string>
+	<string>This will log where you logged your lift. Visible to all members of the logU community, however, your username is not linked to it.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
