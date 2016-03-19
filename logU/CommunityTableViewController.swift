@@ -37,18 +37,7 @@ class CommunityTableViewController: UITableViewController, CLLocationManagerDele
         self.communityMap.delegate = self
 
         if Reachability.isConnectedToNetwork() {
-            /*
-            dispatch_async(dispatch_get_main_queue(), {
-                self.indicator = UIActivityIndicatorView()
-                var frame = self.indicator.frame
-                frame.origin.x = self.view.frame.size.width / 2
-                frame.origin.y = (self.view.frame.size.height / 2) - 40
-                self.indicator.frame = frame
-                self.indicator.activityIndicatorViewStyle = .Gray
-                self.indicator.startAnimating()
-                self.view.addSubview(self.indicator)
-            })
-            */
+
             dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
                 GraphData().dataOfLifting(self.url_com_stats, completion: { jsonString in
                     dataWeek = jsonString
@@ -58,11 +47,6 @@ class CommunityTableViewController: UITableViewController, CLLocationManagerDele
                     
                 })
             }
-            /*
-            dispatch_sync(dispatch_get_main_queue(), {
-                self.stopIndicator()
-            })
-*/
             
         }
 
@@ -78,36 +62,6 @@ class CommunityTableViewController: UITableViewController, CLLocationManagerDele
             loadMap()
             locationManager.stopUpdatingLocation()
         }
-        /*
-        if Reachability.isConnectedToNetwork() {
-            
-            dispatch_async(dispatch_get_main_queue(), {
-                self.indicator = UIActivityIndicatorView()
-                var frame = self.indicator.frame
-                frame.origin.x = self.view.frame.size.width / 2
-                frame.origin.y = (self.view.frame.size.height / 2) - 40
-                self.indicator.frame = frame
-                self.indicator.activityIndicatorViewStyle = .Gray
-                self.indicator.startAnimating()
-                self.view.addSubview(self.indicator)
-            })
-            
-            dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
-                GraphData().dataOfLifting(self.url_com_stats, completion: { jsonString in
-                    dataWeek = jsonString
-                    dispatch_sync(dispatch_get_main_queue(), {
-                        self.loadStats(dataWeek)
-                    })
-                    
-                })
-            }
-            
-            dispatch_sync(dispatch_get_main_queue(), {
-                self.stopIndicator()
-            })
-
-        }
-*/
 
     }
     
@@ -138,18 +92,7 @@ class CommunityTableViewController: UITableViewController, CLLocationManagerDele
         
         if shouldUpdateComm {
             if Reachability.isConnectedToNetwork() {
-                
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.indicator = UIActivityIndicatorView()
-                    var frame = self.indicator.frame
-                    frame.origin.x = self.view.frame.size.width / 2
-                    frame.origin.y = (self.view.frame.size.height / 2) - 40
-                    self.indicator.frame = frame
-                    self.indicator.activityIndicatorViewStyle = .Gray
-                    self.indicator.startAnimating()
-                    self.view.addSubview(self.indicator)
-                })
-                
+
                 dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
                     GraphData().dataOfLifting(self.url_com_stats, completion: { jsonString in
                         dataWeek = jsonString
@@ -159,10 +102,6 @@ class CommunityTableViewController: UITableViewController, CLLocationManagerDele
                         
                     })
                 }
-                
-                dispatch_sync(dispatch_get_main_queue(), {
-                    self.stopIndicator()
-                })
                 
             }
 
