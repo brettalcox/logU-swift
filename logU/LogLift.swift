@@ -20,6 +20,7 @@ var shouldUpdateSettings: Bool = false
 var shouldUpdateStats: Bool = false
 var shouldUpdateFrequency: Bool = true
 var shouldUpdateMap: Bool = false
+var shouldUpdateComm: Bool = false
 
 
 var theDate:String?
@@ -74,6 +75,7 @@ class LogLift: FormViewController, CLLocationManagerDelegate {
                 shouldUpdateFrequency = true
                 shouldUpdateGraphs = true
                 shouldUpdateMap = true
+                shouldUpdateComm = true
 
                 if (CLLocationManager.locationServicesEnabled())
                 {

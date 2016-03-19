@@ -21,11 +21,52 @@ class CommunityTableViewController: UITableViewController, CLLocationManagerDele
     
     var clusteringManager = FBClusteringManager()
     var locationManager: CLLocationManager!
+    var indicator: UIActivityIndicatorView!
+    
+    let url_com_stats: String = "https://loguapp.com/community_stats.php"
+    
+    @IBOutlet weak var totalPoundage: UILabel!
+    @IBOutlet weak var totalLifts: UILabel!
+    @IBOutlet weak var favoriteLift: UILabel!
+    @IBOutlet weak var totalSets: UILabel!
+    @IBOutlet weak var totalReps: UILabel!
+    @IBOutlet weak var averageReps: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.communityMap.delegate = self
 
+        if Reachability.isConnectedToNetwork() {
+            /*
+            dispatch_async(dispatch_get_main_queue(), {
+                self.indicator = UIActivityIndicatorView()
+                var frame = self.indicator.frame
+                frame.origin.x = self.view.frame.size.width / 2
+                frame.origin.y = (self.view.frame.size.height / 2) - 40
+                self.indicator.frame = frame
+                self.indicator.activityIndicatorViewStyle = .Gray
+                self.indicator.startAnimating()
+                self.view.addSubview(self.indicator)
+            })
+            */
+            dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+                GraphData().dataOfLifting(self.url_com_stats, completion: { jsonString in
+                    dataWeek = jsonString
+                    dispatch_sync(dispatch_get_main_queue(), {
+                        self.loadStats(dataWeek)
+                    })
+                    
+                })
+            }
+            /*
+            dispatch_sync(dispatch_get_main_queue(), {
+                self.stopIndicator()
+            })
+*/
+            
+        }
+
+        
         if !hasLoaded {
             if (CLLocationManager.locationServicesEnabled())
             {
@@ -37,6 +78,37 @@ class CommunityTableViewController: UITableViewController, CLLocationManagerDele
             loadMap()
             locationManager.stopUpdatingLocation()
         }
+        /*
+        if Reachability.isConnectedToNetwork() {
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                self.indicator = UIActivityIndicatorView()
+                var frame = self.indicator.frame
+                frame.origin.x = self.view.frame.size.width / 2
+                frame.origin.y = (self.view.frame.size.height / 2) - 40
+                self.indicator.frame = frame
+                self.indicator.activityIndicatorViewStyle = .Gray
+                self.indicator.startAnimating()
+                self.view.addSubview(self.indicator)
+            })
+            
+            dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+                GraphData().dataOfLifting(self.url_com_stats, completion: { jsonString in
+                    dataWeek = jsonString
+                    dispatch_sync(dispatch_get_main_queue(), {
+                        self.loadStats(dataWeek)
+                    })
+                    
+                })
+            }
+            
+            dispatch_sync(dispatch_get_main_queue(), {
+                self.stopIndicator()
+            })
+
+        }
+*/
+
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -63,6 +135,40 @@ class CommunityTableViewController: UITableViewController, CLLocationManagerDele
             }
 
         }
+        
+        if shouldUpdateComm {
+            if Reachability.isConnectedToNetwork() {
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.indicator = UIActivityIndicatorView()
+                    var frame = self.indicator.frame
+                    frame.origin.x = self.view.frame.size.width / 2
+                    frame.origin.y = (self.view.frame.size.height / 2) - 40
+                    self.indicator.frame = frame
+                    self.indicator.activityIndicatorViewStyle = .Gray
+                    self.indicator.startAnimating()
+                    self.view.addSubview(self.indicator)
+                })
+                
+                dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+                    GraphData().dataOfLifting(self.url_com_stats, completion: { jsonString in
+                        dataWeek = jsonString
+                        dispatch_sync(dispatch_get_main_queue(), {
+                            self.loadStats(dataWeek)
+                        })
+                        
+                    })
+                }
+                
+                dispatch_sync(dispatch_get_main_queue(), {
+                    self.stopIndicator()
+                })
+                
+            }
+
+        }
+        
+        shouldUpdateComm = false
         hasLoaded = true
     }
     
@@ -85,6 +191,21 @@ class CommunityTableViewController: UITableViewController, CLLocationManagerDele
             let region = MKCoordinateRegion(center: location.coordinate, span: span)
             communityMap.setRegion(region, animated: true)
         }
+    }
+    
+    func loadStats(object: Array<Dictionary<String, String>>) {
+        if object.count != 0 {
+            totalPoundage.text = object[0]["poundage"]
+            totalLifts.text = object[0]["total_lifts"]
+            favoriteLift.text = object[0]["favorite"]
+            totalSets.text = object[0]["total_sets"]
+            totalReps.text = object[0]["total_reps"]
+            averageReps.text = object[0]["average_reps"]
+        }
+    }
+    
+    func stopIndicator() {
+        self.indicator.stopAnimating()
     }
     
     func loadMap() {
