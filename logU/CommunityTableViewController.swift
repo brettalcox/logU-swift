@@ -13,36 +13,59 @@ import FBAnnotationClusteringSwift
 
 var mapCoords: Array<Dictionary<String, String>> = []
 
-class CommunityTableViewController: UITableViewController {
+class CommunityTableViewController: UITableViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var communityMap: MKMapView!
     var array:[FBAnnotation] = []
     
-    let clusteringManager = FBClusteringManager()
+    var clusteringManager = FBClusteringManager()
+    var locationManager: CLLocationManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        getGpsCoordinates("https://loguapp.com/request_coords.php", completion: { jsonString in
-            mapCoords = jsonString
-            dispatch_sync(dispatch_get_main_queue(), {
-                self.loadMapCoords(mapCoords)
-                self.communityMap.delegate = self
-            })
-        })
+        self.communityMap.delegate = self
 
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        if shouldUpdateMap {
+        if !shouldUpdateMap {
+            
+            if (CLLocationManager.locationServicesEnabled())
+            {
+                locationManager = CLLocationManager()
+                locationManager.delegate = self
+                locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                locationManager.startUpdatingLocation()
+            }
             loadMap()
-            shouldUpdateMap = false
+            locationManager.stopUpdatingLocation()
+
         }
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewDidAppear(animated: Bool) {
+        self.communityMap.delegate = self
+        
+        if shouldUpdateMap {
+            if (CLLocationManager.locationServicesEnabled())
+            {
+                locationManager = CLLocationManager()
+                locationManager.delegate = self
+                locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                locationManager.startUpdatingLocation()
+            }
+
+            clusteringManager = FBClusteringManager()
+            loadMap()
+            locationManager.stopUpdatingLocation()
+            locationManager.delegate = nil
+            
+            shouldUpdateMap = false
+        } else {
+            loadMapCoords(mapCoords)
+        }
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
         self.communityMap.delegate = nil
-        self.clusteringManager.delegate = nil
+        clusteringManager.setAnnotations([])
         
         self.communityMap.mapType = MKMapType.Satellite
         self.communityMap.mapType = MKMapType.Hybrid
@@ -51,6 +74,14 @@ class CommunityTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
         return 3
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            let span = MKCoordinateSpanMake(0.05, 0.05)
+            let region = MKCoordinateRegion(center: location.coordinate, span: span)
+            communityMap.setRegion(region, animated: true)
+        }
     }
     
     func loadMap() {

@@ -105,13 +105,6 @@
 			remoteGlobalIDString = 95CBDB951BFD2B720065FC66;
 			remoteInfo = "DeviceKit-tvOSTests";
 		};
-		B5A54A861C8CCB320011DED9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5A54A721C8CCB0C0011DED9 /* DeviceKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 95CBDB6E1BFD2B5F0065FC66;
-			remoteInfo = "DeviceKit-iOS";
-		};
 		B5C6F1001C4F25F70016B70E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B5C6F0E31C4F25F70016B70E /* Project object */;
@@ -410,7 +403,6 @@
 			dependencies = (
 				B5C6F1471C4F26EA0016B70E /* PBXTargetDependency */,
 				B55E02461C64578A00DBACF6 /* PBXTargetDependency */,
-				B5A54A871C8CCB320011DED9 /* PBXTargetDependency */,
 			);
 			name = logU;
 			productName = logU;
@@ -719,11 +711,6 @@
 			isa = PBXTargetDependency;
 			name = Eureka;
 			targetProxy = B55E02451C64578A00DBACF6 /* PBXContainerItemProxy */;
-		};
-		B5A54A871C8CCB320011DED9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "DeviceKit-iOS";
-			targetProxy = B5A54A861C8CCB320011DED9 /* PBXContainerItemProxy */;
 		};
 		B5C6F1011C4F25F70016B70E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
