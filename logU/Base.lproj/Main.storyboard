@@ -1288,18 +1288,39 @@
                                 <rect key="frame" x="180" y="236" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fG4-wo-TRD">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem image="Clear Filters" id="bEf-Ft-dZY">
+                                        <connections>
+                                            <action selector="reloadGraph:" destination="B7k-lR-9g7" id="0mR-cG-S3O"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="I2K-A9-PNU"/>
+                                    <barButtonItem image="Filter" id="jJM-zu-SAp">
+                                        <connections>
+                                            <action selector="filterGraph:" destination="B7k-lR-9g7" id="mKz-WK-aXo"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Qzf-Sw-SvT" firstAttribute="top" secondItem="Es5-uK-1hz" secondAttribute="bottom" id="5Vu-6q-5ox"/>
-                            <constraint firstItem="Qzf-Sw-SvT" firstAttribute="leading" secondItem="GXu-Cu-f66" secondAttribute="leadingMargin" id="QY9-fE-lZU"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Qzf-Sw-SvT" secondAttribute="trailing" id="ejC-Vu-BC5"/>
-                            <constraint firstItem="ty2-JW-X7f" firstAttribute="top" secondItem="Qzf-Sw-SvT" secondAttribute="bottom" id="nOp-fn-Iyx"/>
+                            <constraint firstItem="fG4-wo-TRD" firstAttribute="bottom" secondItem="ty2-JW-X7f" secondAttribute="top" id="Cg9-X4-DW5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qzf-Sw-SvT" secondAttribute="trailing" id="Djb-Bn-hQd"/>
+                            <constraint firstItem="Qzf-Sw-SvT" firstAttribute="leading" secondItem="GXu-Cu-f66" secondAttribute="leadingMargin" id="HBU-z6-YAV"/>
+                            <constraint firstItem="Qzf-Sw-SvT" firstAttribute="top" secondItem="Es5-uK-1hz" secondAttribute="bottom" id="R3J-2X-Iba"/>
+                            <constraint firstItem="fG4-wo-TRD" firstAttribute="leading" secondItem="GXu-Cu-f66" secondAttribute="leading" id="SR8-Yw-bwX"/>
+                            <constraint firstItem="fG4-wo-TRD" firstAttribute="top" secondItem="Qzf-Sw-SvT" secondAttribute="bottom" id="dMr-LU-UDv"/>
+                            <constraint firstAttribute="trailing" secondItem="fG4-wo-TRD" secondAttribute="trailing" id="mHW-Hf-L5A"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rwG-bK-oFU"/>
                     <connections>
+                        <outlet property="filterButton" destination="jJM-zu-SAp" id="8Fi-IS-ZIH"/>
                         <outlet property="liftChartView" destination="Qzf-Sw-SvT" id="eyv-KJ-v55"/>
+                        <outlet property="reloadButton" destination="bEf-Ft-dZY" id="Qx5-3U-0s0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ksQ-wW-TLF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1570,8 +1591,10 @@ This data will not be collected, transmitted, or used with anybody or anything o
         </scene>
     </scenes>
     <resources>
+        <image name="Clear Filters" width="16" height="16"/>
         <image name="Contacts" width="25" height="25"/>
         <image name="Dumbbell" width="25" height="25"/>
+        <image name="Filter" width="16" height="16"/>
         <image name="Globe" width="25" height="25"/>
         <image name="Help" width="25" height="25"/>
         <image name="Home" width="25" height="25"/>
