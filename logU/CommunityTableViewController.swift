@@ -10,11 +10,12 @@ import UIKit
 import MapKit
 import CoreLocation
 import FBAnnotationClusteringSwift
+import EasyTipView
 
 var mapCoords: Array<Dictionary<String, String>> = []
 var hasLoaded: Bool = false
 
-class CommunityTableViewController: UITableViewController, CLLocationManagerDelegate {
+class CommunityTableViewController: UITableViewController, CLLocationManagerDelegate, EasyTipViewDelegate {
 
     @IBOutlet weak var communityMap: MKMapView!
     var array:[FBAnnotation] = []
@@ -32,8 +33,40 @@ class CommunityTableViewController: UITableViewController, CLLocationManagerDele
     @IBOutlet weak var totalReps: UILabel!
     @IBOutlet weak var averageReps: UILabel!
     
+    @IBOutlet weak var helpButton: UIBarButtonItem!
+    var commStatsTipView: EasyTipView!
+    @IBAction func helpClicked(sender: AnyObject) {
+        if self.commStatsTipView == nil {
+            var preferences = EasyTipView.globalPreferences
+            preferences.drawing.textAlignment = NSTextAlignment.Justified
+            preferences.positioning.maxWidth = CGFloat(250)
+            
+            self.commStatsTipView = EasyTipView(text: "Community Map: When enabled, all lifts will be logged on the map to show where in the world people are lifting the most.\n\nTo enable your lifts to be logged on the map, go to the settings page within the app and enable the feature.\n\nTotal Poundage: The total sum of all pounds lifted by the members of the logU community.\n\n", preferences: preferences, delegate: self)
+            
+            self.commStatsTipView.show(forItem: self.helpButton, withinSuperView: self.navigationController?.view)
+            
+        } else {
+            self.commStatsTipView.dismiss()
+            self.commStatsTipView = nil
+        }
+
+    }
+    
+    func easyTipViewDidDismiss(tipView: EasyTipView) {
+        commStatsTipView = nil
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var preferences = EasyTipView.Preferences()
+        
+        preferences.drawing.font = UIFont(name: "Futura-Medium", size: 12)!
+        preferences.drawing.foregroundColor = UIColor.whiteColor()
+        preferences.drawing.backgroundColor = UIColor(red: 0/255.0, green: 152/255.0, blue: 255/255.0, alpha: 1.0)
+        preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
+        EasyTipView.globalPreferences = preferences
+
         self.communityMap.delegate = self
 
         if Reachability.isConnectedToNetwork() {

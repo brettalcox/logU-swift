@@ -582,11 +582,18 @@
                             <outlet property="delegate" destination="Sjj-hH-skx" id="lFK-t6-tKp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="logU Community" id="30P-y2-Ayy"/>
+                    <navigationItem key="navigationItem" title="logU Community" id="30P-y2-Ayy">
+                        <barButtonItem key="rightBarButtonItem" image="Help" id="8ei-MU-bbh">
+                            <connections>
+                                <action selector="helpClicked:" destination="Sjj-hH-skx" id="2lY-fE-3af"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="averageReps" destination="xAd-Om-zGK" id="NSu-ID-VRo"/>
                         <outlet property="communityMap" destination="M2C-vH-5pj" id="Mam-vP-sgG"/>
                         <outlet property="favoriteLift" destination="tcx-O6-vCo" id="vyJ-HD-mA5"/>
+                        <outlet property="helpButton" destination="8ei-MU-bbh" id="wJj-4E-ca0"/>
                         <outlet property="totalLifts" destination="1wg-tc-QEH" id="TxR-iQ-ywT"/>
                         <outlet property="totalPoundage" destination="zb1-lm-fOP" id="EOq-q5-iUy"/>
                         <outlet property="totalReps" destination="40P-ow-MT2" id="T6Z-LI-q6h"/>
