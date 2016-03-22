@@ -84,13 +84,17 @@ class LogLift: FormViewController, CLLocationManagerDelegate {
                     locationManager.desiredAccuracy = kCLLocationAccuracyBest
                     //locationManager.requestWhenInUseAuthorization()
                     //locationManager.
-                    if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
-                        if Int(String((defaults.valueForKey("GPS"))!)) == 1 {
-                            locationManager.startUpdatingLocation()
+                    if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse || CLLocationManager.authorizationStatus() == .AuthorizedAlways {
+                        if Int(String((defaults.valueForKey("GPS"))!)) == 1 && defaults.valueForKey("gym_loc") != nil {
+
+                            if let loadedData = NSUserDefaults.standardUserDefaults().dataForKey("gym_loc") {
+                                if let loadedLocation = NSKeyedUnarchiver.unarchiveObjectWithData(loadedData) as? CLLocation {
+                                    lat = (loadedLocation.coordinate.latitude.description)
+                                    lon = (loadedLocation.coordinate.longitude.description)
+                                }
+                            }
+
                             
-                            lat = (locationManager.location?.coordinate.latitude.description)!
-                            lon = (locationManager.location?.coordinate.longitude.description)!
-                            locationManager.stopUpdatingLocation()
                         }
                         locationManager.delegate = nil
                     }
@@ -213,7 +217,7 @@ class LogLift: FormViewController, CLLocationManagerDelegate {
     func upload_request()
     {
         if (CLLocationManager.locationServicesEnabled()) {
-            if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
+            if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse || CLLocationManager.authorizationStatus() == .AuthorizedAlways {
                 if Int(String((defaults.valueForKey("GPS"))!)) == 1 {
                     auth_map_enabled()
                 } else {

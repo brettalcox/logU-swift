@@ -8,10 +8,14 @@
 
 import UIKit
 import Eureka
+import CoreLocation
+import MapKit
 
-class SettingsTableViewController: FormViewController {
+class SettingsTableViewController: FormViewController, CLLocationManagerDelegate {
     
     let defaults = NSUserDefaults.standardUserDefaults()
+    var locationManager: CLLocationManager!
+    var currentLocation: CLLocation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,15 +80,35 @@ class SettingsTableViewController: FormViewController {
                 
                 row4.onCellSelection(self.saveTapped)
             }
-            
-            +++ Section("Current Session")
-            <<< ButtonRow("Logout") {
-                $0.title = "Logout"
-                
-                $0.onCellSelection(self.buttonTapped)
 
-        }
             +++ Section("Privacy")
+            <<< LocationRow("Map") {
+                $0.title = "My Gym Location"
+                
+                if let loadedData = NSUserDefaults.standardUserDefaults().dataForKey("gym_loc") {
+                    if let loadedLocation = NSKeyedUnarchiver.unarchiveObjectWithData(loadedData) as? CLLocation {
+                        $0.value = loadedLocation
+                    }
+                } else {
+                    if (CLLocationManager.locationServicesEnabled()) {
+                        if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
+                            locationManager = CLLocationManager()
+                            locationManager.delegate = self
+                            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                            locationManager.startUpdatingLocation()
+                            $0.value = locationManager.location
+                            locationManager.stopUpdatingLocation()
+                        } else {
+                            $0.value = CLLocation(latitude: 39.0866, longitude: -94.5770)
+                        }
+                    } else {
+                        $0.value = CLLocation(latitude: 39.0866, longitude: -94.5770)
+                    }
+                }
+                }.onChange({ row in
+                    let locationData = NSKeyedArchiver.archivedDataWithRootObject(row.value!)
+                    NSUserDefaults.standardUserDefaults().setObject(locationData, forKey: "gym_loc")
+                })
             <<< SwitchRow("GPS") {
                 $0.title = "Log GPS on Community Map"
                 //defaults.synchronize()
@@ -108,6 +132,15 @@ class SettingsTableViewController: FormViewController {
                 $0.onCellSelection(self.viewPrivacy)
             }
         
+            
+            +++ Section("Current Session")
+            <<< ButtonRow("Logout") {
+                $0.title = "Logout"
+                
+                $0.onCellSelection(self.buttonTapped)
+                
+            }
+            
             +++ Section("Account Management")
             <<< ButtonRow("Delete Account") {
                 $0.title = "Delete Account"
