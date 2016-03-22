@@ -218,7 +218,7 @@ class LogLift: FormViewController, CLLocationManagerDelegate {
     {
         if (CLLocationManager.locationServicesEnabled()) {
             if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse || CLLocationManager.authorizationStatus() == .AuthorizedAlways {
-                if Int(String((defaults.valueForKey("GPS"))!)) == 1 {
+                if Int(String((defaults.valueForKey("GPS"))!)) == 1 && defaults.valueForKey("gym_loc") != nil {
                     auth_map_enabled()
                 } else {
                     loc_auth_disabled()

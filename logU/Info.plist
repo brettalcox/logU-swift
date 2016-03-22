@@ -19,13 +19,13 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>21</string>
+	<string>23</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string></string>
+	<string>This will log the gym you set in &quot;Settings&quot;. Visible to all members of the logU community, however, your username is not linked to it. Go to the &quot;Settings&quot; page to enable GPS logging and set gym location.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This will log where you logged your lift. Visible to all members of the logU community, however, your username is not linked to it. Go to the settings page within the app to enable GPS logging.</string>
+	<string>This will log the gym you set in &quot;Settings&quot;. Visible to all members of the logU community, however, your username is not linked to it. Go to the &quot;Settings&quot; page to enable GPS logging and set gym location.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

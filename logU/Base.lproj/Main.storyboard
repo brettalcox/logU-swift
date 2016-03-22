@@ -236,8 +236,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8hD-rA-mKz">
-                                <rect key="frame" x="150" y="173" width="300" height="253"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8hD-rA-mKz">
+                                <rect key="frame" x="150" y="150" width="300" height="253"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="logU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvZ-AC-eA7">
                                         <rect key="frame" x="50" y="8" width="200" height="98"/>
@@ -300,7 +300,7 @@
                                             <action selector="signinTapped:" destination="OZX-0a-4Rg" eventType="touchUpInside" id="Sgv-2b-kR4"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aK2-Y3-DiX">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aK2-Y3-DiX">
                                         <rect key="frame" x="87" y="215" width="127" height="30"/>
                                         <state key="normal" title="Create an Account">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -313,7 +313,7 @@
                                 <constraints>
                                     <constraint firstItem="aK2-Y3-DiX" firstAttribute="leading" secondItem="8hD-rA-mKz" secondAttribute="leading" id="B2H-mQ-Yis"/>
                                     <constraint firstItem="FvZ-AC-eA7" firstAttribute="leading" secondItem="8hD-rA-mKz" secondAttribute="leading" constant="50" id="Ogg-ff-8Aw"/>
-                                    <constraint firstItem="JAU-XF-aus" firstAttribute="top" secondItem="FvZ-AC-eA7" secondAttribute="bottom" id="nlR-va-cYq"/>
+                                    <constraint firstItem="JAU-XF-aus" firstAttribute="top" secondItem="FvZ-AC-eA7" secondAttribute="bottom" constant="30" id="nlR-va-cYq"/>
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="8" left="50" bottom="8" right="50"/>
                             </stackView>

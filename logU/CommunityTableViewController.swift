@@ -67,10 +67,12 @@ class CommunityTableViewController: UITableViewController, CLLocationManagerDele
         preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
         EasyTipView.globalPreferences = preferences
 
-        self.communityMap.delegate = self
-
+        if CLLocationManager.locationServicesEnabled().boolValue == true {
+            self.communityMap.delegate = self
+        }
+        
         if Reachability.isConnectedToNetwork() {
-
+            
             dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
                 GraphData().dataOfLifting(self.url_com_stats, completion: { jsonString in
                     dataWeek = jsonString
@@ -82,10 +84,9 @@ class CommunityTableViewController: UITableViewController, CLLocationManagerDele
             }
             
         }
-
         
         if !hasLoaded {
-            if (CLLocationManager.locationServicesEnabled())
+            if (CLLocationManager.locationServicesEnabled().boolValue == true)
             {
                 locationManager = CLLocationManager()
                 locationManager.delegate = self
@@ -93,17 +94,22 @@ class CommunityTableViewController: UITableViewController, CLLocationManagerDele
                 locationManager.startUpdatingLocation()
             }
             loadMap()
-            locationManager.stopUpdatingLocation()
+            
+            if CLLocationManager.locationServicesEnabled().boolValue == true {
+                locationManager.stopUpdatingLocation()
+            }
         }
 
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.communityMap.delegate = self
+        if CLLocationManager.locationServicesEnabled().boolValue == true {
+            self.communityMap.delegate = self
+        }
         
         if hasLoaded {
             if shouldUpdateMap {
-                if (CLLocationManager.locationServicesEnabled())
+                if (CLLocationManager.locationServicesEnabled().boolValue == true)
                 {
                     locationManager = CLLocationManager()
                     locationManager.delegate = self
@@ -113,8 +119,10 @@ class CommunityTableViewController: UITableViewController, CLLocationManagerDele
                 
                 clusteringManager = FBClusteringManager()
                 loadMap()
-                locationManager.stopUpdatingLocation()
-                locationManager.delegate = nil
+                if CLLocationManager.locationServicesEnabled().boolValue == true {
+                    locationManager.stopUpdatingLocation()
+                    locationManager.delegate = nil
+                }
                 
                 shouldUpdateMap = false
             } else {
@@ -124,20 +132,22 @@ class CommunityTableViewController: UITableViewController, CLLocationManagerDele
         }
         
         if shouldUpdateComm {
-            if Reachability.isConnectedToNetwork() {
-
-                dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
-                    GraphData().dataOfLifting(self.url_com_stats, completion: { jsonString in
-                        dataWeek = jsonString
-                        dispatch_sync(dispatch_get_main_queue(), {
-                            self.loadStats(dataWeek)
+            if CLLocationManager.locationServicesEnabled().boolValue == true {
+                if Reachability.isConnectedToNetwork() {
+                    
+                    dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+                        GraphData().dataOfLifting(self.url_com_stats, completion: { jsonString in
+                            dataWeek = jsonString
+                            dispatch_sync(dispatch_get_main_queue(), {
+                                self.loadStats(dataWeek)
+                            })
+                            
                         })
-                        
-                    })
+                    }
+                    
                 }
-                
-            }
 
+            }
         }
         
         shouldUpdateComm = false
