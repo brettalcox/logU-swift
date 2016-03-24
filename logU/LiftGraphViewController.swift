@@ -26,6 +26,9 @@ class LiftGraphViewController: UIViewController {
     @IBOutlet weak var reloadButton: UIBarButtonItem!
     @IBOutlet weak var filterButton: UIBarButtonItem!
     
+    @IBAction func savePress(sender: UILongPressGestureRecognizer) {
+        saveGraph()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -231,5 +234,25 @@ class LiftGraphViewController: UIViewController {
             liftChartView.descriptionText = ""
         }
     }
+    
+    func saveGraph() {
+        
+        let alert = UIAlertController(title: "Save Chart View?", message: "Select an option", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        
+        alert.popoverPresentationController?.sourceView = self.view
+        alert.popoverPresentationController?.sourceRect = CGRectMake(self.view.bounds.width / 2.0, (self.view.bounds.height - 115.0), 1.0, 1.0)
+        
+        let libButton = UIAlertAction(title: "Save to Camera Roll", style: UIAlertActionStyle.Default) { (alert: UIAlertAction!) -> Void in
+            self.liftChartView.saveToCameraRoll()
+        }
+        
+        let cancelButton = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (alert: UIAlertAction!) -> Void in
+        }
+        
+        alert.addAction(libButton)
+        alert.addAction(cancelButton)
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+
 
 }

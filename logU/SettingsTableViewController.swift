@@ -92,17 +92,22 @@ class SettingsTableViewController: FormViewController, CLLocationManagerDelegate
                 } else {
                     if (CLLocationManager.locationServicesEnabled()) {
                         if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
+                            /*
                             locationManager = CLLocationManager()
                             locationManager.delegate = self
                             locationManager.desiredAccuracy = kCLLocationAccuracyBest
                             locationManager.startUpdatingLocation()
                             $0.value = locationManager.location
                             locationManager.stopUpdatingLocation()
+                            */
+                            $0.value = CLLocation(latitude: 0, longitude: 0)
                         } else {
-                            $0.value = CLLocation(latitude: 39.0866, longitude: -94.5770)
+                            //$0.value = CLLocation(latitude: 39.0866, longitude: -94.5770)
+                            $0.value = CLLocation(latitude: 0, longitude: 0)
                         }
                     } else {
-                        $0.value = CLLocation(latitude: 39.0866, longitude: -94.5770)
+                        //$0.value = CLLocation(latitude: 39.0866, longitude: -94.5770)
+                        $0.value = CLLocation(latitude: 0, longitude: 0)
                     }
                 }
                 }.onChange({ row in

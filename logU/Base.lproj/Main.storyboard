@@ -1290,6 +1290,10 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qzf-Sw-SvT" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="180" y="236" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="6R8-yn-1gj" appends="YES" id="v3n-bC-1KN"/>
+                                </connections>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fG4-wo-TRD">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
@@ -1327,6 +1331,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ksQ-wW-TLF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="6R8-yn-1gj">
+                    <connections>
+                        <action selector="savePress:" destination="B7k-lR-9g7" id="tRW-JC-Ybx"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2782" y="3838"/>
         </scene>
