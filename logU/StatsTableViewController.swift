@@ -359,17 +359,20 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate, UIGe
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
         if indexPath.row == 1 && indexPath.section == 4 {
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
+        if indexPath.row == 2 && indexPath.section == 4 {
             self.performSegueWithIdentifier("showMaxes", sender: self)
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
         
-        if indexPath.row == 2 && indexPath.section == 4 {
+        if indexPath.row == 3 && indexPath.section == 4 {
             self.performSegueWithIdentifier("showPoundage", sender: self)
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
         }
         
-        if indexPath.row == 3 && indexPath.section == 4 {
+        if indexPath.row == 4 && indexPath.section == 4 {
             self.performSegueWithIdentifier("showFrequency", sender: self)
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
             
