@@ -26,10 +26,10 @@ class JsonData {
     
     func dataOfLift(completion: (Array<Dictionary<String, String>>) -> ()) {//url: String) -> ([String], [String], [String], [String], [String], [String])? {
         
-        let urlName:NSURL = NSURL(string: "https:loguapp.com/swift6.php")!
+        let urlName:NSURL = NSURL(string: "https://loguapp.com/swift6.php")!
         let session = NSURLSession.sharedSession()
         
-        let data = NSData(contentsOfURL: NSURL(string: "https:/loguapp.com/swift6.php")!)
+        let data = NSData(contentsOfURL: NSURL(string: "https://loguapp.com/swift6.php")!)
         let user = "username=\(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)"
         let queryParam = user.dataUsingEncoding(NSUTF8StringEncoding)
         let userData:NSData = user.dataUsingEncoding(NSASCIIStringEncoding)!

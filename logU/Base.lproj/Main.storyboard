@@ -579,6 +579,70 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="IeN-EE-wlg">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="SKq-YB-bum">
+                                        <rect key="frame" x="0.0" y="483" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SKq-YB-bum" id="kg7-12-rRo">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weekly Poundage Graph" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejn-dz-vD5">
+                                                    <rect key="frame" x="13" y="11" width="213" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="Vyv-Cr-5Ze" kind="show" id="qQb-7b-ffN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="44" id="WOV-2k-5Ef" customClass="PoundageTableViewCell" customModule="logU" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="527" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WOV-2k-5Ef" id="s5y-7E-ZRQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weekly Poundage Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Cd-ZY-8pB">
+                                                    <rect key="frame" x="13" y="11" width="211" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="QJf-yI-iln" kind="show" id="2Nu-Zf-uUk"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="44" id="SKd-59-TU7">
+                                        <rect key="frame" x="0.0" y="571" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SKd-59-TU7" id="86y-tf-noB">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Targeted Muscle Graph" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2G4-KH-eQD">
+                                                    <rect key="frame" x="13" y="11" width="208" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="eIb-A1-xFx" kind="show" id="afm-7Z-FGq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="Sjj-hH-skx" id="mVz-Oi-rs4"/>
@@ -586,6 +650,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="logU Community" id="30P-y2-Ayy">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Jdr-km-04d"/>
                         <barButtonItem key="rightBarButtonItem" image="Help" id="8ei-MU-bbh">
                             <connections>
                                 <action selector="helpClicked:" destination="Sjj-hH-skx" id="2lY-fE-3af"/>
@@ -606,6 +671,158 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AiS-Y4-Y8T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2006" y="782"/>
+        </scene>
+        <!--Poundage Graph-->
+        <scene sceneID="DYZ-yE-DvZ">
+            <objects>
+                <viewController id="Vyv-Cr-5Ze" customClass="CommunityPoundageDataViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4K1-23-FSn"/>
+                        <viewControllerLayoutGuide type="bottom" id="QXT-ri-bBi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KZW-Je-adS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pJF-VQ-UFF" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="9IA-fB-AUb" appends="YES" id="kQy-pG-c8d"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="pJF-VQ-UFF" secondAttribute="trailing" id="mzy-DK-zh0"/>
+                            <constraint firstItem="QXT-ri-bBi" firstAttribute="top" secondItem="pJF-VQ-UFF" secondAttribute="bottom" id="sWh-Ga-zJR"/>
+                            <constraint firstItem="pJF-VQ-UFF" firstAttribute="top" secondItem="4K1-23-FSn" secondAttribute="bottom" id="xCI-yc-y7V"/>
+                            <constraint firstItem="pJF-VQ-UFF" firstAttribute="leading" secondItem="KZW-Je-adS" secondAttribute="leadingMargin" id="zxN-ZR-Ha2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Poundage Graph" id="YN6-It-LFZ">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="ft9-bh-fmM"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="poundageChartView" destination="pJF-VQ-UFF" id="b6a-z5-f6P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="thN-ax-eo5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="9IA-fB-AUb">
+                    <connections>
+                        <action selector="longPress:" destination="Vyv-Cr-5Ze" id="sVS-ER-Gr4"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="3534" y="74"/>
+        </scene>
+        <!--Poundage Data-->
+        <scene sceneID="2KQ-kH-I77">
+            <objects>
+                <tableViewController id="QJf-yI-iln" customClass="CommunityPoundageTableViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6rU-0X-BXh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="Jes-ma-cV7" customClass="CommunityPoundageTableViewCell" customModule="logU" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jes-ma-cV7" id="qxx-Lo-W2k">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFv-EO-db8">
+                                            <rect key="frame" x="543" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3I-uL-vsa">
+                                            <rect key="frame" x="16" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="RFv-EO-db8" secondAttribute="trailing" constant="7" id="85X-oM-UIG"/>
+                                        <constraint firstItem="k3I-uL-vsa" firstAttribute="firstBaseline" secondItem="RFv-EO-db8" secondAttribute="firstBaseline" id="DjO-WR-amJ"/>
+                                        <constraint firstItem="k3I-uL-vsa" firstAttribute="leading" secondItem="qxx-Lo-W2k" secondAttribute="leadingMargin" constant="8" id="EEl-U6-Lel"/>
+                                        <constraint firstItem="k3I-uL-vsa" firstAttribute="baseline" secondItem="RFv-EO-db8" secondAttribute="baseline" id="UJC-nb-R7p"/>
+                                        <constraint firstItem="k3I-uL-vsa" firstAttribute="leading" secondItem="qxx-Lo-W2k" secondAttribute="leadingMargin" constant="8" id="UQr-38-Xa6"/>
+                                        <constraint firstItem="RFv-EO-db8" firstAttribute="trailing" secondItem="qxx-Lo-W2k" secondAttribute="trailingMargin" constant="-7" id="aaQ-Bf-IKY"/>
+                                        <constraint firstItem="k3I-uL-vsa" firstAttribute="top" secondItem="qxx-Lo-W2k" secondAttribute="topMargin" constant="3" id="hei-g6-Flr"/>
+                                        <constraint firstItem="k3I-uL-vsa" firstAttribute="centerY" secondItem="qxx-Lo-W2k" secondAttribute="centerY" id="ltW-pw-nwj"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="poundageLabel" destination="RFv-EO-db8" id="f75-k2-EvI"/>
+                                    <outlet property="weekLabel" destination="k3I-uL-vsa" id="55p-BS-7rK"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="QJf-yI-iln" id="UTa-R7-3DO"/>
+                            <outlet property="delegate" destination="QJf-yI-iln" id="xF2-bt-QXd"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Poundage Data" id="Bc3-6C-Vjt">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="pNB-Hp-3ov"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dus-tT-BoV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3532" y="784"/>
+        </scene>
+        <!--Targeted Muscle-->
+        <scene sceneID="eU1-Fe-Fcz">
+            <objects>
+                <viewController id="eIb-A1-xFx" customClass="CommunityTargetedMuscleViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Clq-5h-vKc"/>
+                        <viewControllerLayoutGuide type="bottom" id="dnT-RJ-lqw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YqD-xj-IDE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zpm-gt-KDR" customClass="RadarChartView" customModule="Charts">
+                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="7Zw-8C-I26" appends="YES" id="9zL-DJ-bSx"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="dnT-RJ-lqw" firstAttribute="top" secondItem="zpm-gt-KDR" secondAttribute="bottom" id="dIf-dx-LxK"/>
+                            <constraint firstItem="zpm-gt-KDR" firstAttribute="leading" secondItem="YqD-xj-IDE" secondAttribute="leadingMargin" id="fB5-Fw-g5X"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zpm-gt-KDR" secondAttribute="trailing" id="p0s-C6-mxl"/>
+                            <constraint firstItem="zpm-gt-KDR" firstAttribute="top" secondItem="Clq-5h-vKc" secondAttribute="bottom" id="po1-ZX-K0w"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Targeted Muscle" id="ysh-4Z-ma9">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="lvO-e1-Zci"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="radarChartView" destination="zpm-gt-KDR" id="2Ve-4h-NTr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W56-pK-fSX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="7Zw-8C-I26">
+                    <connections>
+                        <action selector="savePress:" destination="eIb-A1-xFx" id="5DT-My-gGR"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="3530" y="1514"/>
         </scene>
         <!--User Stats-->
         <scene sceneID="lU8-5O-zet">
@@ -924,8 +1141,36 @@
                                             <segue destination="59w-h9-cGZ" kind="show" id="d6R-bG-Emd"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="7Jc-DR-3qZ" customClass="StatsTableViewCell" customModule="logU" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="UmJ-pE-aTj" customClass="StatsTableViewCell" customModule="logU" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="605" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UmJ-pE-aTj" id="FBY-tY-kiW">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One Rep Maxes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5G3-CQ-lIF">
+                                                    <rect key="frame" x="15" y="11" width="220" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="220" id="nHs-4f-7Qg"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5G3-CQ-lIF" firstAttribute="top" secondItem="FBY-tY-kiW" secondAttribute="topMargin" constant="3" id="G9b-AV-uWz"/>
+                                                <constraint firstItem="5G3-CQ-lIF" firstAttribute="leading" secondItem="FBY-tY-kiW" secondAttribute="leadingMargin" constant="7" id="PwV-Yk-LQB"/>
+                                                <constraint firstItem="5G3-CQ-lIF" firstAttribute="centerY" secondItem="FBY-tY-kiW" secondAttribute="centerY" id="krm-uW-w1f"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="5G3-CQ-lIF" id="qCE-yz-usx"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="7Jc-DR-3qZ" customClass="StatsTableViewCell" customModule="logU" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="649" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Jc-DR-3qZ" id="TNy-vN-Ibk">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
@@ -953,34 +1198,6 @@
                                             <segue destination="4JV-Ko-2as" kind="show" identifier="showPoundageGraph" id="4Xp-jj-1zA"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="UmJ-pE-aTj" customClass="StatsTableViewCell" customModule="logU" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="649" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UmJ-pE-aTj" id="FBY-tY-kiW">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One Rep Maxes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5G3-CQ-lIF">
-                                                    <rect key="frame" x="15" y="11" width="220" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="220" id="nHs-4f-7Qg"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="5G3-CQ-lIF" firstAttribute="top" secondItem="FBY-tY-kiW" secondAttribute="topMargin" constant="3" id="G9b-AV-uWz"/>
-                                                <constraint firstItem="5G3-CQ-lIF" firstAttribute="leading" secondItem="FBY-tY-kiW" secondAttribute="leadingMargin" constant="7" id="PwV-Yk-LQB"/>
-                                                <constraint firstItem="5G3-CQ-lIF" firstAttribute="centerY" secondItem="FBY-tY-kiW" secondAttribute="centerY" id="krm-uW-w1f"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <outlet property="titleLabel" destination="5G3-CQ-lIF" id="qCE-yz-usx"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="d1H-CV-scZ" customClass="StatsTableViewCell" customModule="logU" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="693" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -988,7 +1205,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly Poundage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yB1-1O-ZwF">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly Poundage Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yB1-1O-ZwF">
                                                     <rect key="frame" x="15" y="11" width="220" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="220" id="XD0-05-eJ9"/>
@@ -1009,14 +1226,43 @@
                                             <outlet property="titleLabel" destination="yB1-1O-ZwF" id="qJB-ab-xBk"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="vmO-xe-nmp" customClass="StatsTableViewCell" customModule="logU" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="IYF-Xu-tCB" customClass="StatsTableViewCell" customModule="logU" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="737" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IYF-Xu-tCB" id="fbY-wT-tGN">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly Frequency Graph" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8b8-YH-3ZF">
+                                                    <rect key="frame" x="15" y="11" width="220" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="220" id="F7J-2c-g7F"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8b8-YH-3ZF" firstAttribute="centerY" secondItem="fbY-wT-tGN" secondAttribute="centerY" id="QDH-uj-wMR"/>
+                                                <constraint firstItem="8b8-YH-3ZF" firstAttribute="leading" secondItem="fbY-wT-tGN" secondAttribute="leadingMargin" constant="7" id="iS6-xb-kt3"/>
+                                                <constraint firstItem="8b8-YH-3ZF" firstAttribute="top" secondItem="fbY-wT-tGN" secondAttribute="topMargin" constant="3" id="oWV-kf-2E0"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="8b8-YH-3ZF" id="coO-A4-Nfa"/>
+                                            <segue destination="QLW-mW-8r1" kind="show" id="WpN-HB-OlW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="vmO-xe-nmp" customClass="StatsTableViewCell" customModule="logU" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="781" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vmO-xe-nmp" id="zHz-BL-i2T">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly Frequency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1M-C1-sIC">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly Frequency Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1M-C1-sIC">
                                                     <rect key="frame" x="15" y="11" width="220" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="220" id="rdd-zd-0Sm"/>
@@ -1138,10 +1384,10 @@
             </objects>
             <point key="canvasLocation" x="1362" y="1683"/>
         </scene>
-        <!--Weekly Poundage-->
+        <!--Poundage Data-->
         <scene sceneID="i6t-Y8-HjD">
             <objects>
-                <tableViewController id="x92-rr-BNi" customClass="PoundageTableViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Poundage Data" id="x92-rr-BNi" customClass="PoundageTableViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eCO-XC-dmU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1193,16 +1439,16 @@
                             <outlet property="delegate" destination="x92-rr-BNi" id="IIZ-Hi-GJX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Weekly Poundage" id="sIw-No-Ywk"/>
+                    <navigationItem key="navigationItem" title="Poundage Data" id="sIw-No-Ywk"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kWZ-gd-Fbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1362" y="2372"/>
         </scene>
-        <!--Weekly Frequency-->
+        <!--Frequency Data-->
         <scene sceneID="L5Y-iJ-fAw">
             <objects>
-                <tableViewController title="Weekly Frequency" id="IjE-e9-dV0" customClass="FrequencyTableViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Frequency Data" id="IjE-e9-dV0" customClass="FrequencyTableViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="d2F-Fg-Mwj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1251,7 +1497,7 @@
                             <outlet property="delegate" destination="IjE-e9-dV0" id="JHf-qc-Qpk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Weekly Frequency" id="CDF-ld-asQ"/>
+                    <navigationItem key="navigationItem" title="Frequency Data" id="CDF-ld-asQ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="col-mg-Ri3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1347,6 +1593,49 @@
                 </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1362" y="4572"/>
+        </scene>
+        <!--Frequency Graph-->
+        <scene sceneID="zcf-so-k2j">
+            <objects>
+                <viewController title="Frequency Graph" id="QLW-mW-8r1" customClass="FrequencyViewController" customModule="logU" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lsa-0E-Pmz"/>
+                        <viewControllerLayoutGuide type="bottom" id="gnH-md-xPs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="upW-9D-jHM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cmG-Ca-E2Q" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="KQU-h2-SQw" appends="YES" id="ANo-tf-cGq"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cmG-Ca-E2Q" firstAttribute="top" secondItem="Lsa-0E-Pmz" secondAttribute="bottom" id="LBT-Ij-NIJ"/>
+                            <constraint firstItem="cmG-Ca-E2Q" firstAttribute="leading" secondItem="upW-9D-jHM" secondAttribute="leadingMargin" id="aeQ-GW-fvm"/>
+                            <constraint firstItem="gnH-md-xPs" firstAttribute="top" secondItem="cmG-Ca-E2Q" secondAttribute="bottom" id="bnu-9H-o38"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cmG-Ca-E2Q" secondAttribute="trailing" id="dc8-gf-oz1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Frequency Graph" id="INo-21-nwr"/>
+                    <connections>
+                        <outlet property="poundageChartView" destination="cmG-Ca-E2Q" id="ffk-aH-Nzw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zVQ-H6-t9E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="KQU-h2-SQw">
+                    <connections>
+                        <action selector="longPress:" destination="QLW-mW-8r1" id="Yrn-TA-Gih"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1362" y="5332"/>
         </scene>
         <!--Lift Graph View Controller-->
         <scene sceneID="D7O-Pe-NWl">
@@ -1692,6 +1981,78 @@ This data will not be collected, transmitted, or used with anybody or anything o
             </objects>
             <point key="canvasLocation" x="634" y="4572"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Mqe-Oh-fM7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hcX-dF-tWR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RkW-B4-2DB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QLW-mW-8r1" kind="relationship" relationship="rootViewController" id="9fT-Wt-Jfy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lD3-vd-esM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="634" y="5332"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wWX-Pi-N3C">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jrY-U4-OpS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WjV-6e-Mi1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eIb-A1-xFx" kind="relationship" relationship="rootViewController" id="T9k-8N-Z9h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CCU-PJ-A19" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2764" y="1514"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OMa-no-OIz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mWk-1g-8xC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R0h-hg-Tay">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QJf-yI-iln" kind="relationship" relationship="rootViewController" id="inN-3A-O8h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="457-bo-3xd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2766" y="784"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1P3-Kh-gfx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zpe-OJ-vIh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rhQ-5x-eAa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Vyv-Cr-5Ze" kind="relationship" relationship="rootViewController" id="fFe-u0-dNC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7yA-8L-581" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2768" y="74"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Clear Filters" width="16" height="16"/>
@@ -1703,13 +2064,17 @@ This data will not be collected, transmitted, or used with anybody or anything o
         <image name="Home" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="4uB-Y3-VRi"/>
         <segue reference="R1l-bB-OIO"/>
         <segue reference="F9a-gd-XNB"/>
-        <segue reference="4Xp-jj-1zA"/>
+        <segue reference="2Nu-Zf-uUk"/>
+        <segue reference="afm-7Z-FGq"/>
         <segue reference="d6R-bG-Emd"/>
-        <segue reference="qD1-yQ-ibE"/>
-        <segue reference="4uB-Y3-VRi"/>
         <segue reference="gM6-x4-DUo"/>
+        <segue reference="4Xp-jj-1zA"/>
+        <segue reference="qD1-yQ-ibE"/>
+        <segue reference="WpN-HB-OlW"/>
         <segue reference="Quu-xr-t5E"/>
+        <segue reference="fFe-u0-dNC"/>
     </inferredMetricsTieBreakers>
 </document>

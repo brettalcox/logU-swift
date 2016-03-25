@@ -14,3 +14,10 @@ class PoundageTableViewCell: UITableViewCell {
     @IBOutlet weak var weekLabel: UILabel!
     @IBOutlet weak var poundageLabel: UILabel!
 }
+
+class CommunityPoundageTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var weekLabel: UILabel!
+    @IBOutlet weak var poundageLabel: UILabel!
+    
+}

@@ -164,7 +164,7 @@ class CommunityTableViewController: UITableViewController, CLLocationManagerDele
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
-        return 3
+        return 4
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -246,6 +246,19 @@ class CommunityTableViewController: UITableViewController, CLLocationManagerDele
                 
         });
         task.resume()
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        if indexPath.row == 0 && indexPath.section == 3 {
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
+        if indexPath.row == 1 && indexPath.section == 3 {
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
+        if indexPath.row == 2 && indexPath.section == 3 {
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
     }
 
 }

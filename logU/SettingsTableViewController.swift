@@ -157,6 +157,19 @@ class SettingsTableViewController: FormViewController, CLLocationManagerDelegate
     
     override func viewDidAppear(animated: Bool) {
         globalUser = defaults.valueForKey("USERNAME") as! String
+        
+        if CLLocationManager.locationServicesEnabled().boolValue == false {
+            self.form.rows[4].disabled = true
+            self.form.rows[5].disabled = true
+            self.form.rows[4].evaluateDisabled()
+            self.form.rows[5].evaluateDisabled()
+        } else {
+            self.form.rows[4].disabled = false
+            self.form.rows[5].disabled = false
+            self.form.rows[4].evaluateDisabled()
+            self.form.rows[5].evaluateDisabled()
+        }
+
     }
     
     func buttonTapped(cell: ButtonCellOf<String>, row: ButtonRow) {

@@ -21,6 +21,7 @@
 		B55E02431C64578A00DBACF6 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55E02401C64577300DBACF6 /* Eureka.framework */; };
 		B55E02441C64578A00DBACF6 /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B55E02401C64577300DBACF6 /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B55E02481C6457C200DBACF6 /* LogLift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55E02471C6457C200DBACF6 /* LogLift.swift */; };
+		B566605D1CA4A575009796C6 /* FrequencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B566605C1CA4A575009796C6 /* FrequencyViewController.swift */; };
 		B56863DC1C58374B0065D641 /* DashData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56863DB1C58374B0065D641 /* DashData.swift */; };
 		B56863E01C59A1A70065D641 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56863DF1C59A1A70065D641 /* SignUpViewController.swift */; };
 		B5787C371C7AA2B400694C44 /* JsonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5787C361C7AA2B400694C44 /* JsonData.swift */; };
@@ -53,6 +54,9 @@
 		B5C6F15E1C4F45240016B70E /* MaxesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F15D1C4F45240016B70E /* MaxesTableViewCell.swift */; };
 		B5C6F1681C557ACD0016B70E /* PoundageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F1671C557ACD0016B70E /* PoundageTableViewCell.swift */; };
 		B5C6F16C1C557B4E0016B70E /* PoundageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6F16B1C557B4E0016B70E /* PoundageTableViewController.swift */; };
+		B5C958CD1CA4CF590084F7FF /* CommunityPoundageDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C958CC1CA4CF590084F7FF /* CommunityPoundageDataViewController.swift */; };
+		B5C958D61CA4D20B0084F7FF /* CommunityPoundageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C958D51CA4D20B0084F7FF /* CommunityPoundageTableViewController.swift */; };
+		B5C958D81CA4D6560084F7FF /* CommunityTargetMuscleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C958D71CA4D6560084F7FF /* CommunityTargetMuscleViewController.swift */; };
 		C681BE885C54F2E0D318C54E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACF0D323F1ACAA97C55B4611 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -183,6 +187,7 @@
 		B55185481C9261DA00C6D8A9 /* LiftGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiftGraphViewController.swift; sourceTree = "<group>"; };
 		B55E02381C64577300DBACF6 /* Eureka.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Eureka.xcodeproj; path = Eureka/Eureka.xcodeproj; sourceTree = SOURCE_ROOT; };
 		B55E02471C6457C200DBACF6 /* LogLift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLift.swift; sourceTree = "<group>"; };
+		B566605C1CA4A575009796C6 /* FrequencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrequencyViewController.swift; sourceTree = "<group>"; };
 		B56863DB1C58374B0065D641 /* DashData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashData.swift; sourceTree = "<group>"; };
 		B56863DF1C59A1A70065D641 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		B5787C361C7AA2B400694C44 /* JsonData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonData.swift; sourceTree = "<group>"; };
@@ -219,6 +224,9 @@
 		B5C6F15D1C4F45240016B70E /* MaxesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaxesTableViewCell.swift; sourceTree = "<group>"; };
 		B5C6F1671C557ACD0016B70E /* PoundageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoundageTableViewCell.swift; sourceTree = "<group>"; };
 		B5C6F16B1C557B4E0016B70E /* PoundageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoundageTableViewController.swift; sourceTree = "<group>"; };
+		B5C958CC1CA4CF590084F7FF /* CommunityPoundageDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityPoundageDataViewController.swift; sourceTree = "<group>"; };
+		B5C958D51CA4D20B0084F7FF /* CommunityPoundageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityPoundageTableViewController.swift; sourceTree = "<group>"; };
+		B5C958D71CA4D6560084F7FF /* CommunityTargetMuscleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityTargetMuscleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +312,8 @@
 		B5C6F0ED1C4F25F70016B70E /* logU */ = {
 			isa = PBXGroup;
 			children = (
+				B5C958D51CA4D20B0084F7FF /* CommunityPoundageTableViewController.swift */,
+				B5C958CC1CA4CF590084F7FF /* CommunityPoundageDataViewController.swift */,
 				B5B5D8001C938C1B00C10D4E /* CommunityMapPoints.swift */,
 				B5B5D7F81C9386EB00C10D4E /* CommunityTableViewController.swift */,
 				B55185481C9261DA00C6D8A9 /* LiftGraphViewController.swift */,
@@ -336,6 +346,7 @@
 				B5C6F14B1C4F27520016B70E /* Main.storyboard */,
 				B5C6F1211C4F26480016B70E /* GraphData.swift */,
 				B5C6F1221C4F26480016B70E /* GraphViewController.swift */,
+				B566605C1CA4A575009796C6 /* FrequencyViewController.swift */,
 				B5C6F1231C4F26480016B70E /* Info.plist */,
 				B5C6F1251C4F26480016B70E /* LiftTableViewCell.swift */,
 				B5C6F1261C4F26480016B70E /* LoginVC.swift */,
@@ -345,6 +356,7 @@
 				B55E02471C6457C200DBACF6 /* LogLift.swift */,
 				B58E938E1C6EDFED00CFC8CA /* Theme.swift */,
 				B524A5011CA0CDC600783E11 /* LocationRow.swift */,
+				B5C958D71CA4D6560084F7FF /* CommunityTargetMuscleViewController.swift */,
 			);
 			path = logU;
 			sourceTree = "<group>";
@@ -674,8 +686,11 @@
 				B5C6F1681C557ACD0016B70E /* PoundageTableViewCell.swift in Sources */,
 				B505D0251C55B5AE00C09549 /* SettingsTableViewController.swift in Sources */,
 				B56863DC1C58374B0065D641 /* DashData.swift in Sources */,
+				B5C958D61CA4D20B0084F7FF /* CommunityPoundageTableViewController.swift in Sources */,
 				B551853F1C925BCA00C6D8A9 /* GraphTableViewController.swift in Sources */,
 				8BB596E01C513BE8003B98BA /* LiftDataModel.xcdatamodeld in Sources */,
+				B5C958D81CA4D6560084F7FF /* CommunityTargetMuscleViewController.swift in Sources */,
+				B566605D1CA4A575009796C6 /* FrequencyViewController.swift in Sources */,
 				B55185491C9261DA00C6D8A9 /* LiftGraphViewController.swift in Sources */,
 				B5C6F1331C4F26480016B70E /* LiftTableViewCell.swift in Sources */,
 				B5B5D8011C938C1B00C10D4E /* CommunityMapPoints.swift in Sources */,
@@ -687,6 +702,7 @@
 				B505D0291C55C27500C09549 /* SettingsTableViewCell.swift in Sources */,
 				B5C6F12F1C4F26480016B70E /* GraphData.swift in Sources */,
 				B524A5021CA0CDC600783E11 /* LocationRow.swift in Sources */,
+				B5C958CD1CA4CF590084F7FF /* CommunityPoundageDataViewController.swift in Sources */,
 				B56863E01C59A1A70065D641 /* SignUpViewController.swift in Sources */,
 				B55185471C925DFC00C6D8A9 /* GraphLiftNameCell.swift in Sources */,
 			);
