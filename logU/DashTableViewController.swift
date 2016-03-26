@@ -21,7 +21,7 @@ var Ids: [String]! = []
 var unfilteredTableData = [DashData]()
 var filteredTableData = [DashData]()
 
-class DashTableViewController: UITableViewController, UISearchResultsUpdating {
+class DashTableViewController: UITableViewController, UISearchResultsUpdating, CLLocationManagerDelegate {
     
     let searchController = UISearchController(searchResultsController: nil)
     let url_to_post:String = "https://loguapp.com/swift7.php"
@@ -31,7 +31,7 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.resultSearchController = ({
             let controller = UISearchController(searchResultsController: nil)
             controller.searchResultsUpdater = self
@@ -147,7 +147,7 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
 
         self.tableView.reloadData()
         
-        if (CLLocationManager.locationServicesEnabled()) {
+        if (CLLocationManager.locationServicesEnabled().boolValue == true) {
             locationManager = CLLocationManager()
             locationManager.requestWhenInUseAuthorization()
         }
@@ -276,6 +276,10 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
                 shouldUpdateWeek = true
                 shouldUpdateStats = true
                 shouldUpdateFrequency = true
+                shouldUpdateComm = true
+                shouldUpdateCommWeek = true
+                shouldUpdateGraphs = true
+                
                 
                 if Reachability.isConnectedToNetwork() {
                     
@@ -316,6 +320,9 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
                 shouldUpdateWeek = true
                 shouldUpdateStats = true
                 shouldUpdateFrequency = true
+                shouldUpdateComm = true
+                shouldUpdateCommWeek = true
+                shouldUpdateGraphs = true
             }
             
         } else if editingStyle == .Insert {
@@ -355,5 +362,4 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
         
         unfilteredTableData.insert(tableInsert, atIndex: 0)
     }
-    
 }

@@ -761,8 +761,8 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <outlet property="poundageLabel" destination="RFv-EO-db8" id="f75-k2-EvI"/>
-                                    <outlet property="weekLabel" destination="k3I-uL-vsa" id="55p-BS-7rK"/>
+                                    <outlet property="commPoundageLabel" destination="RFv-EO-db8" id="V5K-Wa-Osq"/>
+                                    <outlet property="commWeekLabel" destination="k3I-uL-vsa" id="gnr-n8-1hD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

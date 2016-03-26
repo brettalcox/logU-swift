@@ -19,6 +19,9 @@ class SettingsTableViewController: FormViewController, CLLocationManagerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        
         form +++ Section("Settings")
             
             <<< SegmentedRow<String>("Unit") { (row1 : SegmentedRow) -> Void in
@@ -158,7 +161,7 @@ class SettingsTableViewController: FormViewController, CLLocationManagerDelegate
     override func viewDidAppear(animated: Bool) {
         globalUser = defaults.valueForKey("USERNAME") as! String
         
-        if CLLocationManager.locationServicesEnabled().boolValue == false {
+        if CLLocationManager.locationServicesEnabled().boolValue == false || CLLocationManager.authorizationStatus() == .Denied || CLLocationManager.authorizationStatus() == .NotDetermined || CLLocationManager.authorizationStatus() == .Restricted {
             self.form.rows[4].disabled = true
             self.form.rows[5].disabled = true
             self.form.rows[4].evaluateDisabled()
@@ -261,5 +264,33 @@ class SettingsTableViewController: FormViewController, CLLocationManagerDelegate
             shouldUpdateWeek = true
             shouldUpdateStats = true
         }
+    }
+    
+    func locationManager(manager: CLLocationManager,
+        didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+            switch status {
+            case CLAuthorizationStatus.Restricted:
+                self.form.rows[4].disabled = true
+                self.form.rows[5].disabled = true
+                self.form.rows[4].evaluateDisabled()
+                self.form.rows[5].evaluateDisabled()
+            case CLAuthorizationStatus.Denied:
+                self.form.rows[4].disabled = true
+                self.form.rows[5].disabled = true
+                self.form.rows[4].evaluateDisabled()
+                self.form.rows[5].evaluateDisabled()
+            case CLAuthorizationStatus.NotDetermined:
+                self.form.rows[4].disabled = true
+                self.form.rows[5].disabled = true
+                self.form.rows[4].evaluateDisabled()
+                self.form.rows[5].evaluateDisabled()
+                locationManager.requestWhenInUseAuthorization()
+            default:
+                self.form.rows[4].disabled = false
+                self.form.rows[5].disabled = false
+                self.form.rows[4].evaluateDisabled()
+                self.form.rows[5].evaluateDisabled()
+                locationManager.requestWhenInUseAuthorization()
+            }
     }
 }

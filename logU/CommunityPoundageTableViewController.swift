@@ -16,6 +16,9 @@
 
 import UIKit
 
+var commWeeks: [String]! = []
+var commPoundage: [String]! = []
+
 class CommunityPoundageTableViewController: UITableViewController {
     
     let url_to_request:String = "https://loguapp.com/community_poundage2.php"
@@ -24,7 +27,7 @@ class CommunityPoundageTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         
-        if shouldUpdateWeek {
+        if shouldUpdateCommWeek {
             if Reachability.isConnectedToNetwork() {
                 
                 indicator = UIActivityIndicatorView()
@@ -46,14 +49,14 @@ class CommunityPoundageTableViewController: UITableViewController {
                     })
                 }
             }
-            shouldUpdateWeek = false
+            shouldUpdateCommWeek = false
         }
         self.tableView.reloadData()
     }
     
     override func viewDidAppear(animated: Bool) {
         
-        if shouldUpdateWeek {
+        if shouldUpdateCommWeek {
             if Reachability.isConnectedToNetwork() {
                 
                 indicator = UIActivityIndicatorView()
@@ -75,7 +78,7 @@ class CommunityPoundageTableViewController: UITableViewController {
                     })
                 }
             }
-            shouldUpdateWeek = false
+            shouldUpdateCommWeek = false
         }
         self.tableView.reloadData()
     }
@@ -83,12 +86,12 @@ class CommunityPoundageTableViewController: UITableViewController {
     func loadAfter(object: Array<Dictionary<String, String>>) {
         dataAfter = object
         
-        Weeks = []
-        Poundage = []
+        commWeeks = []
+        commPoundage = []
         
         for i in 0..<dataAfter.count {
-            Weeks.append(dataAfter[i]["week"]!)
-            Poundage.append(dataAfter[i]["pounds"]!)
+            commWeeks.append(dataAfter[i]["week"]!)
+            commPoundage.append(dataAfter[i]["pounds"]!)
         }
         self.tableView.reloadData()
         indicator.stopAnimating()
@@ -102,7 +105,7 @@ class CommunityPoundageTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section:
         Int) -> Int
     {
-        return Weeks.count
+        return commWeeks.count
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
@@ -112,11 +115,11 @@ class CommunityPoundageTableViewController: UITableViewController {
             forIndexPath: indexPath) as! CommunityPoundageTableViewCell
         // Sets the text of the Label in the Table View Cell
         
-        let week = Weeks[indexPath.row]
-        let poundage = Poundage[indexPath.row]
+        let week = commWeeks[indexPath.row]
+        let poundage = commPoundage[indexPath.row]
         
-        aCell.weekLabel.text = "Week " + week
-        aCell.poundageLabel.text = poundage
+        aCell.commWeekLabel.text = "Week " + week
+        aCell.commPoundageLabel.text = poundage
         return aCell
     }
     

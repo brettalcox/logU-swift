@@ -135,6 +135,7 @@ class EditLift: FormViewController {
                 shouldUpdateFrequency = true
                 shouldUpdateGraphs = true
                 shouldUpdateComm = true
+                shouldUpdateCommWeek = true
                 
                 viewTitle.title = formattedDateString
                 dateValue = formattedDateString
