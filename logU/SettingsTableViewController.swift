@@ -134,12 +134,11 @@ class SettingsTableViewController: FormViewController, CLLocationManagerDelegate
                     }
                 })
             <<< LabelRow("Label") {
-                $0.value = "If these options are disabled, turn on Location Services."
+                $0.title = "If disabled, turn on Location Services."
                 
                 $0.disabled = true
                 }.cellSetup { cell, row in
                     cell.backgroundColor = UIColor .whiteColor()
-                    cell.textLabel?.font = UIFont .systemFontOfSize(6)
             }
 
             +++ Section("Privacy")
