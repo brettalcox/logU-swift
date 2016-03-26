@@ -37,7 +37,7 @@ var lon:String?
 class LogLift: FormViewController, CLLocationManagerDelegate {
     
     let url_to_request:String = "https://loguapp.com/swift.php"
-    let url_to_post:String = "https://loguapp.com/log_with_gps.php"
+    let url_to_post:String = "https://loguapp.com/log_with_gps_coords.php"
     let url_to_post_nogps:String = "https://loguapp.com/swift2.php"
     var locationManager: CLLocationManager!
     var currentLocation: CLLocationCoordinate2D?
