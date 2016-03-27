@@ -802,10 +802,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="dnT-RJ-lqw" firstAttribute="top" secondItem="zpm-gt-KDR" secondAttribute="bottom" id="dIf-dx-LxK"/>
-                            <constraint firstItem="zpm-gt-KDR" firstAttribute="leading" secondItem="YqD-xj-IDE" secondAttribute="leadingMargin" id="fB5-Fw-g5X"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zpm-gt-KDR" secondAttribute="trailing" id="p0s-C6-mxl"/>
-                            <constraint firstItem="zpm-gt-KDR" firstAttribute="top" secondItem="Clq-5h-vKc" secondAttribute="bottom" id="po1-ZX-K0w"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zpm-gt-KDR" secondAttribute="trailing" constant="20" id="Rqg-kw-WgD"/>
+                            <constraint firstItem="dnT-RJ-lqw" firstAttribute="top" secondItem="zpm-gt-KDR" secondAttribute="bottom" constant="20" id="Z90-ey-EER"/>
+                            <constraint firstItem="zpm-gt-KDR" firstAttribute="top" secondItem="Clq-5h-vKc" secondAttribute="bottom" constant="20" id="gaR-Zb-G8d"/>
+                            <constraint firstItem="zpm-gt-KDR" firstAttribute="leading" secondItem="YqD-xj-IDE" secondAttribute="leadingMargin" constant="20" id="rMV-4n-Go6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Targeted Muscle" id="ysh-4Z-ma9">

@@ -95,21 +95,11 @@ class SettingsTableViewController: FormViewController, CLLocationManagerDelegate
                 } else {
                     if (CLLocationManager.locationServicesEnabled()) {
                         if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
-                            /*
-                            locationManager = CLLocationManager()
-                            locationManager.delegate = self
-                            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-                            locationManager.startUpdatingLocation()
-                            $0.value = locationManager.location
-                            locationManager.stopUpdatingLocation()
-                            */
                             $0.value = CLLocation(latitude: 0, longitude: 0)
                         } else {
-                            //$0.value = CLLocation(latitude: 39.0866, longitude: -94.5770)
                             $0.value = CLLocation(latitude: 0, longitude: 0)
                         }
                     } else {
-                        //$0.value = CLLocation(latitude: 39.0866, longitude: -94.5770)
                         $0.value = CLLocation(latitude: 0, longitude: 0)
                     }
                 }
@@ -119,7 +109,6 @@ class SettingsTableViewController: FormViewController, CLLocationManagerDelegate
                 })
             <<< SwitchRow("GPS") {
                 $0.title = "Log GPS on Community Map"
-                //defaults.synchronize()
                 if Int(String((defaults.valueForKey("GPS"))!)) == 1 {
                     $0.value = true
                 } else {
@@ -133,13 +122,16 @@ class SettingsTableViewController: FormViewController, CLLocationManagerDelegate
                         self.defaults.setInteger(0, forKey: "GPS")
                     }
                 })
-            <<< LabelRow("Label") {
-                $0.title = "If disabled, turn on Location Services."
-                
+            <<< TextAreaRow(){
                 $0.disabled = true
-                }.cellSetup { cell, row in
-                    cell.backgroundColor = UIColor .whiteColor()
-            }
+                $0.value = "If these options are disabled, turn on Location Services."
+                }.cellSetup({ (cell, row) -> () in
+                    cell.textView.font = UIFont .systemFontOfSize(9)
+                    cell.userInteractionEnabled = false
+                    row.cell.height = {
+                        return 35
+                    }
+                })
 
             +++ Section("Privacy")
             <<< ButtonRow("Privacy") {

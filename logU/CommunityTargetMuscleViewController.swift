@@ -70,7 +70,7 @@ class CommunityTargetedMuscleViewController: UIViewController, UIActionSheetDele
         }
         
         if dataPoints.count != 0 || values.count != 0 {
-            let radarChartDataSet = RadarChartDataSet(yVals: dataEntries, label: "")
+            let radarChartDataSet = RadarChartDataSet(yVals: dataEntries, label: "logU Community")
             let radarChartData = RadarChartData(xVals: dataPoints, dataSet: radarChartDataSet)
             
             radarChartDataSet.drawFilledEnabled = true
@@ -83,13 +83,13 @@ class CommunityTargetedMuscleViewController: UIViewController, UIActionSheetDele
             radarChartView.xAxis.labelFont = UIFont .systemFontOfSize(10)
             radarChartView.rotationEnabled = false
             radarChartView.animate(yAxisDuration: 1.0)
+            radarChartView.animate(xAxisDuration: 1.0)
             radarChartView.descriptionText = ""
             radarChartView.data = radarChartData
             radarChartView.backgroundColor = UIColor.groupTableViewBackgroundColor()
             radarChartView.legend.enabled = false
             radarChartView.highlightPerTapEnabled = false
             radarChartView.yAxis.drawLabelsEnabled = false
-            
         }
     }
     
