@@ -41,7 +41,7 @@ class CommunityTableViewController: UITableViewController, CLLocationManagerDele
             preferences.drawing.textAlignment = NSTextAlignment.Justified
             preferences.positioning.maxWidth = CGFloat(250)
             
-            self.commStatsTipView = EasyTipView(text: "Community Map: When enabled, all lifts will be logged on the map to show where in the world people are lifting the most (your username is not linked to this).\n\nTo enable your lifts to be logged on the map, go to the settings page within the app, enable the feature, and set your gym location.\n\nTotal Poundage: The total sum of all pounds lifted by the members of the logU community.", preferences: preferences, delegate: self)
+            self.commStatsTipView = EasyTipView(text: "Community Map: Shows the number of lifts at each gym across the world.\n\nTo enable your lifts to be logged on the map, go to the settings page, set your gym location, and enable the feature.\n\nTotal Poundage: The total sum of all pounds lifted by the members of the logU community.", preferences: preferences, delegate: self)
             
             self.commStatsTipView.show(forItem: self.helpButton, withinSuperView: self.navigationController?.view)
             

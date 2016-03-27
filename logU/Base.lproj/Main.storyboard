@@ -63,9 +63,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xpn-H0-aGX">
-                                            <rect key="frame" x="18" y="40" width="138" height="21"/>
+                                            <rect key="frame" x="18" y="40" width="197" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="138" id="95S-16-wyl"/>
+                                                <constraint firstAttribute="width" constant="197" id="95S-16-wyl"/>
                                                 <constraint firstAttribute="height" constant="21" id="qVt-da-PnX"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -108,7 +108,7 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="7AN-qX-fwD" firstAttribute="trailing" secondItem="Xpn-H0-aGX" secondAttribute="trailing" id="14g-oS-vCj"/>
+                                        <constraint firstItem="7AN-qX-fwD" firstAttribute="trailing" secondItem="Xpn-H0-aGX" secondAttribute="trailing" constant="-59" id="14g-oS-vCj"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="siD-Gs-LzB" secondAttribute="trailing" constant="11" id="3GG-F8-Ic3"/>
                                         <constraint firstItem="siD-Gs-LzB" firstAttribute="top" secondItem="ODK-1i-JOY" secondAttribute="topMargin" constant="-8" id="5CU-YH-ikF"/>
                                         <constraint firstItem="Xpn-H0-aGX" firstAttribute="top" secondItem="7AN-qX-fwD" secondAttribute="bottom" constant="8" id="Kse-TX-qKk"/>

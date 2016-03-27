@@ -21,21 +21,69 @@ class CommunityTargetedMuscleViewController: UIViewController, UIActionSheetDele
     
     let url_target:String = "https://loguapp.com/comm_radar_graph.php"
     
+    var indicator: UIActivityIndicatorView!
+
     override func viewDidLoad() {
         if Reachability.isConnectedToNetwork() {
             
-            GraphData().dataOfLifting(self.url_target, completion: {
-                jsonString in
-                dataWeek = jsonString
-                dispatch_sync(dispatch_get_main_queue(), {
-                    self.loadRadarChart(dataWeek)
+            indicator = UIActivityIndicatorView()
+            var frame = indicator.frame
+            frame.origin.x = view.frame.size.width / 2
+            frame.origin.y = (view.frame.size.height / 2) - 40
+            indicator.frame = frame
+            indicator.activityIndicatorViewStyle = .Gray
+            indicator.startAnimating()
+            view.addSubview(indicator)
+            
+            dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+                GraphData().dataOfLifting(self.url_target, completion: {
+                    jsonString in
+                    dataWeek = jsonString
+                    dispatch_sync(dispatch_get_main_queue(), {
+                        self.loadRadarChart(dataWeek)
+                    })
                 })
-            })
+                
+                dispatch_sync(dispatch_get_main_queue(), {
+                    self.stopIndicator()
+                })
+            }
         }
     }
     
     override func viewWillAppear(animated: Bool) {
-        
+        if shouldUpdateComm {
+            if Reachability.isConnectedToNetwork() {
+                
+                indicator = UIActivityIndicatorView()
+                var frame = indicator.frame
+                frame.origin.x = view.frame.size.width / 2
+                frame.origin.y = (view.frame.size.height / 2) - 40
+                indicator.frame = frame
+                indicator.activityIndicatorViewStyle = .Gray
+                indicator.startAnimating()
+                view.addSubview(indicator)
+                
+                dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
+                    GraphData().dataOfLifting(self.url_target, completion: {
+                        jsonString in
+                        dataWeek = jsonString
+                        dispatch_sync(dispatch_get_main_queue(), {
+                            self.loadRadarChart(dataWeek)
+                        })
+                    })
+                    
+                    dispatch_sync(dispatch_get_main_queue(), {
+                        self.stopIndicator()
+                    })
+                }
+            }
+        }
+        shouldUpdateCommTar = false
+    }
+    
+    func stopIndicator() {
+        self.indicator.stopAnimating()
     }
     
     func loadRadarChart(object: Array<Dictionary<String, String>>) {
