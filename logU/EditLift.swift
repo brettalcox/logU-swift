@@ -83,7 +83,7 @@ class EditLift: FormViewController {
             <<< SliderRow("Intensity") {
                 $0.title = "Intensity"
                 $0.value = intensityValue
-                $0.steps = 100
+                $0.steps = 20
                 $0.maximumValue = 100
                 $0.minimumValue = 0
                 $0.onChange { row in
@@ -133,6 +133,9 @@ class EditLift: FormViewController {
                 shouldUpdateWeek = true
                 shouldUpdateStats = true
                 shouldUpdateFrequency = true
+                shouldUpdateGraphs = true
+                shouldUpdateComm = true
+                shouldUpdateCommWeek = true
                 
                 viewTitle.title = formattedDateString
                 dateValue = formattedDateString
@@ -145,18 +148,6 @@ class EditLift: FormViewController {
                     noteValue = ""
                 } else {
                     noteValue = String((form.values()["Notes"]!)!)
-                }
-                
-                if lift == "Squat" {
-                    shouldUpdateSquat = true
-                }
-                
-                if lift == "Bench" {
-                    shouldUpdateBench = true
-                }
-                
-                if lift == "Deadlift" {
-                    shouldUpdateDeadlift = true
                 }
                 
                 upload_request()

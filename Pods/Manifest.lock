@@ -1,13 +1,16 @@
 PODS:
   - EasyTipView (0.1.4)
+  - FBAnnotationClusteringSwift (1.0.0)
   - IQKeyboardManagerSwift (4.0.0)
 
 DEPENDENCIES:
   - EasyTipView (~> 0.1.3)
+  - FBAnnotationClusteringSwift
   - IQKeyboardManagerSwift
 
 SPEC CHECKSUMS:
   EasyTipView: 8938007882416faf655d40bd7b0b83bf73783724
+  FBAnnotationClusteringSwift: b06550cf23e0508da6f501af0aa7f7ba894baed9
   IQKeyboardManagerSwift: ede2a27b4e1ce053d03073b9c7fa439322f5e405
 
 COCOAPODS: 0.39.0

@@ -8,17 +8,20 @@
 
 import UIKit
 import Eureka
+import MapKit
+import CoreLocation
 
 var shouldUpdateDash: Bool = false
 var shouldUpdatePoundage: Bool = false
-var shouldUpdateSquat: Bool = false
-var shouldUpdateBench: Bool = false
-var shouldUpdateDeadlift: Bool = false
+var shouldUpdateGraphs: Bool = true
 var shouldUpdateMax: Bool = true
 var shouldUpdateWeek: Bool = true
 var shouldUpdateSettings: Bool = false
 var shouldUpdateStats: Bool = false
 var shouldUpdateFrequency: Bool = true
+var shouldUpdateMap: Bool = false
+var shouldUpdateComm: Bool = false
+var shouldUpdateCommWeek: Bool = true
 
 
 var theDate:String?
@@ -28,11 +31,17 @@ var rep:String?
 var weight:String?
 var intensity:String?
 var notes:String?
+var lat:String?
+var lon:String?
 
-class LogLift: FormViewController {
+class LogLift: FormViewController, CLLocationManagerDelegate {
     
     let url_to_request:String = "https://loguapp.com/swift.php"
-    let url_to_post:String = "https://loguapp.com/swift2.php"
+    let url_to_post:String = "https://loguapp.com/log_with_gps_coords.php"
+    let url_to_post_nogps:String = "https://loguapp.com/swift2.php"
+    var locationManager: CLLocationManager!
+    var currentLocation: CLLocationCoordinate2D?
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     @IBOutlet weak var logButton: UIBarButtonItem!
     
@@ -65,6 +74,33 @@ class LogLift: FormViewController {
                 shouldUpdateWeek = true
                 shouldUpdateStats = true
                 shouldUpdateFrequency = true
+                shouldUpdateGraphs = true
+                shouldUpdateMap = true
+                shouldUpdateComm = true
+                shouldUpdateCommWeek = true
+
+                if (CLLocationManager.locationServicesEnabled())
+                {
+                    locationManager = CLLocationManager()
+                    locationManager.delegate = self
+                    locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                    //locationManager.requestWhenInUseAuthorization()
+                    //locationManager.
+                    if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse || CLLocationManager.authorizationStatus() == .AuthorizedAlways {
+                        if Int(String((defaults.valueForKey("GPS"))!)) == 1 && defaults.valueForKey("gym_loc") != nil {
+
+                            if let loadedData = NSUserDefaults.standardUserDefaults().dataForKey("gym_loc") {
+                                if let loadedLocation = NSKeyedUnarchiver.unarchiveObjectWithData(loadedData) as? CLLocation {
+                                    lat = (loadedLocation.coordinate.latitude.description)
+                                    lon = (loadedLocation.coordinate.longitude.description)
+                                }
+                            }
+
+                            
+                        }
+                        locationManager.delegate = nil
+                    }
+                }
                 
                 theDate = formattedDateString
                 lift = String((form.values()["Lift"]!)!)
@@ -76,18 +112,6 @@ class LogLift: FormViewController {
                     notes = ""
                 } else {
                     notes = String((form.values()["Notes"]!)!)
-                }
-                
-                if lift == "Squat" {
-                    shouldUpdateSquat = true
-                }
-                
-                if lift == "Bench" {
-                    shouldUpdateBench = true
-                }
-                
-                if lift == "Deadlift" {
-                    shouldUpdateDeadlift = true
                 }
                 
                 upload_request()
@@ -107,19 +131,6 @@ class LogLift: FormViewController {
                 rep = String((form.values()["Reps"]!)!)
                 weight = String((form.values()["Weight"]!)!)
                 
-                if lift == "Squat" {
-                    shouldUpdateSquat = true
-                }
-                
-                if lift == "Bench" {
-                    shouldUpdateBench = true
-                }
-                
-                if lift == "Deadlift" {
-                    shouldUpdateDeadlift = true
-                }
-
-                
                 OfflineRequest.coreDataInsert(theDate!, lift: lift!, sets: set!, reps: rep!, weight: weight!)
                 DashTableViewController().OfflineTableInsert(theDate!, lift: lift!, set: set!, rep: rep!, weight: weight!)
                 performSegueWithIdentifier("unwindToDash", sender: nil)
@@ -128,6 +139,12 @@ class LogLift: FormViewController {
             
             }
 
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        currentLocation = locValue
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
     }
     
     override func viewDidLoad() {
@@ -141,26 +158,35 @@ class LogLift: FormViewController {
             <<< PickerInlineRow<String>("Lift") { (row : PickerInlineRow<String>) -> Void in
                 
                 row.title = "Lift"
-                row.options = ["Squat", "Pause Squat", "Front Squat", "Box Squat", "Hack Squat", "Zerker Squat", "Pin Squat", "Good Mornings", "Bench", "Close Grip Bench", "Incline Bench", "Decline Bench", "Pause Bench", "Floor Press", "Pin Press", "Deadlift", "Deficit Deadlift", "Pause Deadlift", "Snatch Grip Deadlift", "Straight Leg Deadlift", "Romanian Deadlift", "Overhead Press", "Sots Press", "Pullups", "Dips", "Push Ups", "Bent Over Rows", "T-Bar Rows", "Kroc Rows", "Upright Rows", "Cable Upright Rows", "Cable Seated Rows", "Straight Bar Bicep Curls", "EZ Bar Bicep Curls", "Barbell Bicep Curls", "Hammer Curls", "Cable Curls", "Chest Fly", "Cable Standing Fly", "Lat Pulldown", "Shoulder Fly", "Lateral Raise", "Shoulder Shrug", "Tricep Extension", "Tricep Pushdown", "Dumbbell Bench", "Dumbbell Incline Press", "Dumbbell Press", "Skullcrushers", "21's", "Leg Press", "Leg Extension", "Leg Curl", "Standing Calf Raise", "Seated Calf Raise", "Snatch", "Clean and Jerk", "Power Clean", "Power Snatch", "Hang Clean", "Hang Snatch", "Snatch Pulls", "Clean Pulls"]
+                row.options = ["Squat", "Pause Squat", "Front Squat", "Box Squat", "Hack Squat", "Zerker Squat", "Pin Squat", "Good Mornings", "Bench", "Close Grip Bench", "Incline Bench", "Decline Bench", "Pause Bench", "Floor Press", "Pin Press", "Deadlift", "Deficit Deadlift", "Pause Deadlift", "Snatch Grip Deadlift", "Straight Leg Deadlift", "Romanian Deadlift", "Overhead Press", "Sots Press", "Pullups", "Dips", "Push Ups", "Crunches", "Sit-ups", "General Ab Work", "Bent Over Rows", "T-Bar Rows", "Kroc Rows", "Upright Rows", "Cable Upright Rows", "Cable Seated Rows", "Straight Bar Bicep Curls", "EZ Bar Bicep Curls", "Barbell Bicep Curls", "Hammer Curls", "Cable Curls", "Chest Fly", "Cable Standing Fly", "Lat Pulldown", "Shoulder Fly", "Lateral Raise", "Shoulder Shrug", "Tricep Extension", "Tricep Pushdown", "Dumbbell Bench", "Dumbbell Incline Press", "Dumbbell Press", "Skullcrushers", "21's", "Leg Press", "Leg Extension", "Leg Curl", "Standing Calf Raise", "Seated Calf Raise", "Snatch", "Clean and Jerk", "Power Clean", "Power Snatch", "Hang Clean", "Hang Snatch", "Snatch Pulls", "Clean Pulls"]
                 row.value = row.options[0]
             }
             
             <<< IntRow("Sets") {
                 $0.title = "Sets"
-                set = String($0.value)
-            }
+                }.onChange({ row in
+                    if row.value != nil {
+                        set = String(row.value)
+                    }
+                })
             <<< IntRow("Reps") {
                 $0.title = "Reps"
-                rep = String($0.value)
-            }
+                }.onChange({ row in
+                    if row.value != nil {
+                        rep = String(row.value)
+                    }
+                })
             <<< DecimalRow("Weight") {
                 $0.title = "Weight"
-                weight = String($0.value)
-            }
+                }.onChange({ row in
+                    if row.value != nil {
+                        weight = String(row.value)
+                    }
+                })
             <<< SliderRow("Intensity") {
                 $0.title = "Intensity"
                 $0.value = 0
-                $0.steps = 100
+                $0.steps = 20
                 $0.maximumValue = 100
                 $0.minimumValue = 0
             }
@@ -168,13 +194,48 @@ class LogLift: FormViewController {
                 $0.title = "Notes"
                 $0.placeholder = "i.e. \"275 bar weight, +120 chains.\""
         }
-
         
+        form +++ Section() { section in
+            let separatorLineView = self.tableView!
+            separatorLineView.separatorColor = UIColor .groupTableViewBackgroundColor()
+            }
+            <<< TextAreaRow("Label") {
+                $0.value = "Intensity will be used to provide an INOL (Intensity and Number of Lifts) value for the Targeted Muscle graph. Values of 0 will not be graphed.\n\nIntensity, similar to RPE (Rating of Perceived Exertion), can be viewed as the difficulty of the lift.\n\nExamples: \n1 rep short of failure: 90%\n2-4 reps short of failure: 80%\n1x2-3 @ 85% of 1RM: 50-60%"
+                
+                $0.disabled = true
+                }.cellSetup { cell, row in
+                    cell.backgroundColor = UIColor .clearColor()
+                    cell.textView.backgroundColor = UIColor .clearColor()
+                    cell.textView.editable = false
+                    cell.editing = false
+                    cell.userInteractionEnabled = false
+                    cell.textView.textColor = UIColor .lightGrayColor()
+                    cell.textView.font = UIFont .systemFontOfSize(11)
+                    
+            }
+
     }
     
     func upload_request()
     {
-        let url:NSURL = NSURL(string: url_to_post)!
+        if (CLLocationManager.locationServicesEnabled()) {
+            if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse || CLLocationManager.authorizationStatus() == .AuthorizedAlways {
+                if Int(String((defaults.valueForKey("GPS"))!)) == 1 && defaults.valueForKey("gym_loc") != nil {
+                    auth_map_enabled()
+                } else {
+                    loc_auth_disabled()
+                }
+            } else {
+                loc_auth_disabled()
+            }
+        } else {
+            loc_auth_disabled()
+        }
+        
+    }
+
+    func loc_auth_disabled() {
+        let url:NSURL = NSURL(string: url_to_post_nogps)!
         let session = NSURLSession.sharedSession()
         
         let request = NSMutableURLRequest(URL: url)
@@ -195,8 +256,32 @@ class LogLift: FormViewController {
         );
         
         task.resume()
-        
-    }
 
+    }
+    
+    func auth_map_enabled() {
+        let url:NSURL = NSURL(string: url_to_post)!
+        let session = NSURLSession.sharedSession()
+        
+        let request = NSMutableURLRequest(URL: url)
+        request.HTTPMethod = "POST"
+        request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
+        
+        let query = "name=\(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)&date=\(theDate!)&lift=\(lift!)&sets=\(set!)&reps=\(rep!)&weight=\(weight!)&intensity=\(intensity!)&notes=\(notes!)&latitude=\(lat!)&longitude=\(lon!)".dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let task = session.uploadTaskWithRequest(request, fromData: query, completionHandler:
+            {(data,response,error) in
+                
+                guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
+                    return
+                }
+                
+                let dataString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            }
+        );
+        
+        task.resume()
+
+    }
 
 }

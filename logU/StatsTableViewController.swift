@@ -38,7 +38,6 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate, UIGe
     @IBOutlet weak var frequencyWorkout: UILabel!
     @IBOutlet weak var wilkPercentile: UILabel!
     @IBOutlet weak var strengthLabel: UILabel!
-    @IBOutlet weak var pieChartView: PieChartView!
     @IBOutlet weak var radarChartView: RadarChartView!
     
     var statsTipView : EasyTipView!
@@ -156,7 +155,8 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate, UIGe
             }
             shouldUpdateStats = false
         }
-
+        radarChartView.noDataText = "Log some lifts with an intensity value!"
+        radarChartView.infoTextColor = UIColor(red: 0/255.0, green: 152/255.0, blue: 255/255.0, alpha: 1.0)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -341,6 +341,9 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate, UIGe
             let sum = radarWeight.reduce(0, combine: +)
             if sum != 0 {
                 setRadar(radarLift, values: radarWeight)
+                radarChartView.userInteractionEnabled = true
+            } else {
+                radarChartView.userInteractionEnabled = false
             }
         }
     }
@@ -353,17 +356,26 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate, UIGe
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         if indexPath.row == 0 && indexPath.section == 4 {
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
+        if indexPath.row == 4 && indexPath.section == 4 {
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
+        if indexPath.row == 2 && indexPath.section == 4 {
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
+        if indexPath.row == 1 && indexPath.section == 4 {
             self.performSegueWithIdentifier("showMaxes", sender: self)
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
         }
         
-        if indexPath.row == 1 && indexPath.section == 4 {
+        if indexPath.row == 3 && indexPath.section == 4 {
             self.performSegueWithIdentifier("showPoundage", sender: self)
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
         }
         
-        if indexPath.row == 2 && indexPath.section == 4 {
+        if indexPath.row == 5 && indexPath.section == 4 {
             self.performSegueWithIdentifier("showFrequency", sender: self)
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
             
@@ -373,7 +385,7 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate, UIGe
     func setRadar(dataPoints: [String], values: [Double]) {
         
         var dataEntries: [ChartDataEntry] = []
-        
+
         for i in 0..<dataPoints.count {
             let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
             dataEntries.append(dataEntry)
@@ -389,6 +401,7 @@ class StatsTableViewController: UITableViewController, EasyTipViewDelegate, UIGe
             //chartDataSet.fillAlpha = 0.50
             radarChartData.setValueFont(UIFont .systemFontOfSize(0))
             
+            radarChartView.userInteractionEnabled = true
             radarChartView.xAxis.labelFont = UIFont .systemFontOfSize(10)
             radarChartView.rotationEnabled = false
             radarChartView.animate(yAxisDuration: 1.0)

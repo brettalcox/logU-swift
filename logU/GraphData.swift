@@ -47,6 +47,39 @@ class GraphData {
         task.resume()
     }
     
+    func dataOfLiftGraphs(url: String, liftParam: String, completion: (Array<Dictionary<String, String>>) -> ()) {
+        
+        let urlName:NSURL = NSURL(string: url)!
+        let session = NSURLSession.sharedSession()
+        let data = NSData(contentsOfURL: NSURL(string: url)!)
+        let user = "username=\(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)&lift=\(liftParam)"
+        let queryParam = user.dataUsingEncoding(NSUTF8StringEncoding)
+        let request:NSMutableURLRequest = NSMutableURLRequest(URL: urlName)
+        request.HTTPMethod = "POST"
+        request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
+        
+        let task = session.uploadTaskWithRequest(request, fromData: queryParam!, completionHandler:
+            {(data,response,error) in
+                
+                guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
+                    return
+                }
+                var myData: Array<Dictionary<String, String>> = []
+                do {
+                    let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!, options: [NSJSONReadingOptions.MutableContainers, NSJSONReadingOptions.AllowFragments]) as? Array<Dictionary<String, String>>
+                    if jsonArray != nil {
+                        myData = jsonArray!
+                    }
+                    
+                } catch let error as NSError {
+                }
+                completion(Array<Dictionary<String, String>>(myData))
+                
+        });
+        task.resume()
+    }
+
+    
     func dataOfLiftingFiltered(url: String, sets: String, reps: String, lift: String, completion: (Array<Dictionary<String, String>>) -> ()) {
         
         let urlName:NSURL = NSURL(string: url)!
@@ -81,5 +114,38 @@ class GraphData {
         });
         task.resume()
     }
+    
+    func dataOfCommunity(url: String, completion: (Array<Dictionary<String, String>>) -> ()) {
+        
+        let urlName:NSURL = NSURL(string: url)!
+        let session = NSURLSession.sharedSession()
+        let data = NSData(contentsOfURL: NSURL(string: url)!)
+        let user = "username=\(NSUserDefaults.standardUserDefaults().valueForKey("USERNAME")!)"
+        let queryParam = user.dataUsingEncoding(NSUTF8StringEncoding)
+        let request:NSMutableURLRequest = NSMutableURLRequest(URL: urlName)
+        request.HTTPMethod = "POST"
+        request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
+        
+        let task = session.uploadTaskWithRequest(request, fromData: queryParam!, completionHandler:
+            {(data,response,error) in
+                
+                guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
+                    return
+                }
+                var myData: Array<Dictionary<String, String>> = []
+                do {
+                    let jsonArray = try NSJSONSerialization.JSONObjectWithData(data!, options: [NSJSONReadingOptions.MutableContainers, NSJSONReadingOptions.AllowFragments]) as? Array<Dictionary<String, String>>
+                    if jsonArray != nil {
+                        myData = jsonArray!
+                    }
+                    
+                } catch let error as NSError {
+                }
+                completion(Array<Dictionary<String, String>>(myData))
+                
+        });
+        task.resume()
+    }
+
 
 }

@@ -8,13 +8,20 @@
 
 import UIKit
 import Eureka
+import CoreLocation
+import MapKit
 
-class SettingsTableViewController: FormViewController {
+class SettingsTableViewController: FormViewController, CLLocationManagerDelegate {
     
     let defaults = NSUserDefaults.standardUserDefaults()
+    var locationManager: CLLocationManager!
+    var currentLocation: CLLocation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        
         form +++ Section("Settings")
             
             <<< SegmentedRow<String>("Unit") { (row1 : SegmentedRow) -> Void in
@@ -76,22 +83,72 @@ class SettingsTableViewController: FormViewController {
                 
                 row4.onCellSelection(self.saveTapped)
             }
-            
-            +++ Section("Current Session")
-            <<< ButtonRow("Logout") {
-                $0.title = "Logout"
-                
-                $0.onCellSelection(self.buttonTapped)
 
-        }
+            +++ Section("Location")
+            <<< LocationRow("Map") {
+                $0.title = "My Gym Location"
+                
+                if let loadedData = NSUserDefaults.standardUserDefaults().dataForKey("gym_loc") {
+                    if let loadedLocation = NSKeyedUnarchiver.unarchiveObjectWithData(loadedData) as? CLLocation {
+                        $0.value = loadedLocation
+                    }
+                } else {
+                    if (CLLocationManager.locationServicesEnabled()) {
+                        if CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse {
+                            $0.value = CLLocation(latitude: 0, longitude: 0)
+                        } else {
+                            $0.value = CLLocation(latitude: 0, longitude: 0)
+                        }
+                    } else {
+                        $0.value = CLLocation(latitude: 0, longitude: 0)
+                    }
+                }
+                }.onChange({ row in
+                    let locationData = NSKeyedArchiver.archivedDataWithRootObject(row.value!)
+                    NSUserDefaults.standardUserDefaults().setObject(locationData, forKey: "gym_loc")
+                })
+            <<< SwitchRow("GPS") {
+                $0.title = "Log GPS on Community Map"
+                if Int(String((defaults.valueForKey("GPS"))!)) == 1 {
+                    $0.value = true
+                } else {
+                    $0.value = false
+                }
+                }.onChange({ row in
+                    if row.value == true {
+                        self.defaults.setInteger(1, forKey: "GPS")
+                    }
+                    else {
+                        self.defaults.setInteger(0, forKey: "GPS")
+                    }
+                })
+            <<< TextAreaRow(){
+                $0.disabled = true
+                $0.value = "If these options are disabled, turn on Location Services."
+                }.cellSetup({ (cell, row) -> () in
+                    cell.textView.font = UIFont .systemFontOfSize(9)
+                    cell.userInteractionEnabled = false
+                    row.cell.height = {
+                        return 35
+                    }
+                })
+
             +++ Section("Privacy")
             <<< ButtonRow("Privacy") {
                 $0.title = "Privacy Policy"
                 
                 $0.onCellSelection(self.viewPrivacy)
             }
-            
         
+            
+            +++ Section("Current Session")
+            <<< ButtonRow("Logout") {
+                $0.title = "Logout"
+                
+                $0.onCellSelection(self.buttonTapped)
+                
+            }
+            
             +++ Section("Account Management")
             <<< ButtonRow("Delete Account") {
                 $0.title = "Delete Account"
@@ -103,6 +160,19 @@ class SettingsTableViewController: FormViewController {
     
     override func viewDidAppear(animated: Bool) {
         globalUser = defaults.valueForKey("USERNAME") as! String
+        
+        if CLLocationManager.locationServicesEnabled().boolValue == false || CLLocationManager.authorizationStatus() == .Denied || CLLocationManager.authorizationStatus() == .NotDetermined || CLLocationManager.authorizationStatus() == .Restricted {
+            self.form.rows[4].disabled = true
+            self.form.rows[5].disabled = true
+            self.form.rows[4].evaluateDisabled()
+            self.form.rows[5].evaluateDisabled()
+        } else {
+            self.form.rows[4].disabled = false
+            self.form.rows[5].disabled = false
+            self.form.rows[4].evaluateDisabled()
+            self.form.rows[5].evaluateDisabled()
+        }
+
     }
     
     func buttonTapped(cell: ButtonCellOf<String>, row: ButtonRow) {
@@ -116,9 +186,6 @@ class SettingsTableViewController: FormViewController {
         
         shouldUpdateDash = true
         shouldUpdatePoundage = true
-        shouldUpdateSquat = true
-        shouldUpdateBench = true
-        shouldUpdateDeadlift = true
         shouldUpdateMax = true
         shouldUpdateWeek = true
         shouldUpdateStats = true
@@ -193,12 +260,37 @@ class SettingsTableViewController: FormViewController {
         
             shouldUpdateDash = true
             shouldUpdatePoundage = true
-            shouldUpdateSquat = true
-            shouldUpdateBench = true
-            shouldUpdateDeadlift = true
             shouldUpdateMax = true
             shouldUpdateWeek = true
             shouldUpdateStats = true
         }
+    }
+    
+    func locationManager(manager: CLLocationManager,
+        didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+            switch status {
+            case CLAuthorizationStatus.Restricted:
+                self.form.rows[4].disabled = true
+                self.form.rows[5].disabled = true
+                self.form.rows[4].evaluateDisabled()
+                self.form.rows[5].evaluateDisabled()
+            case CLAuthorizationStatus.Denied:
+                self.form.rows[4].disabled = true
+                self.form.rows[5].disabled = true
+                self.form.rows[4].evaluateDisabled()
+                self.form.rows[5].evaluateDisabled()
+            case CLAuthorizationStatus.NotDetermined:
+                self.form.rows[4].disabled = true
+                self.form.rows[5].disabled = true
+                self.form.rows[4].evaluateDisabled()
+                self.form.rows[5].evaluateDisabled()
+                locationManager.requestWhenInUseAuthorization()
+            default:
+                self.form.rows[4].disabled = false
+                self.form.rows[5].disabled = false
+                self.form.rows[4].evaluateDisabled()
+                self.form.rows[5].evaluateDisabled()
+                locationManager.requestWhenInUseAuthorization()
+            }
     }
 }

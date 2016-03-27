@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 var dataAfter: Array<Dictionary<String, String>> = []
 
@@ -20,19 +21,17 @@ var Ids: [String]! = []
 var unfilteredTableData = [DashData]()
 var filteredTableData = [DashData]()
 
-class DashTableViewController: UITableViewController, UISearchResultsUpdating {
+class DashTableViewController: UITableViewController, UISearchResultsUpdating, CLLocationManagerDelegate {
     
     let searchController = UISearchController(searchResultsController: nil)
-    
     let url_to_post:String = "https://loguapp.com/swift7.php"
-    
     var indicator: UIActivityIndicatorView!
-    
     var resultSearchController = UISearchController()
+    var locationManager: CLLocationManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.resultSearchController = ({
             let controller = UISearchController(searchResultsController: nil)
             controller.searchResultsUpdater = self
@@ -91,8 +90,12 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
             self.tableView.reloadData()
         }
         
-        navigationItem.leftBarButtonItem = editButtonItem()
+        //navigationItem.leftBarButtonItem = editButtonItem()
         
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        self.searchController.removeFromParentViewController()
     }
     
     func loadAfter(object: Array<Dictionary<String, String>>) {
@@ -143,6 +146,12 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
         indicator.stopAnimating()
 
         self.tableView.reloadData()
+        
+        if (CLLocationManager.locationServicesEnabled().boolValue == true) {
+            locationManager = CLLocationManager()
+            locationManager.requestWhenInUseAuthorization()
+        }
+
     }
     
     
@@ -263,13 +272,14 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
 
                 shouldUpdateDash = true
                 shouldUpdatePoundage = true
-                shouldUpdateSquat = true
-                shouldUpdateBench = true
-                shouldUpdateDeadlift = true
                 shouldUpdateMax = true
                 shouldUpdateWeek = true
                 shouldUpdateStats = true
                 shouldUpdateFrequency = true
+                shouldUpdateComm = true
+                shouldUpdateCommWeek = true
+                shouldUpdateGraphs = true
+                
                 
                 if Reachability.isConnectedToNetwork() {
                     
@@ -306,13 +316,13 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
             
                 shouldUpdateDash = true
                 shouldUpdatePoundage = true
-                shouldUpdateSquat = true
-                shouldUpdateBench = true
-                shouldUpdateDeadlift = true
                 shouldUpdateMax = true
                 shouldUpdateWeek = true
                 shouldUpdateStats = true
                 shouldUpdateFrequency = true
+                shouldUpdateComm = true
+                shouldUpdateCommWeek = true
+                shouldUpdateGraphs = true
             }
             
         } else if editingStyle == .Insert {
@@ -352,5 +362,4 @@ class DashTableViewController: UITableViewController, UISearchResultsUpdating {
         
         unfilteredTableData.insert(tableInsert, atIndex: 0)
     }
-    
 }

@@ -15,7 +15,7 @@ var globalUser: String?
 
 class LoginVC: UIViewController, UITextFieldDelegate {
     
-    var lifting = [NSManagedObject]()
+    //var lifting = [NSManagedObject]()
     var indicator: UIActivityIndicatorView!
     
     @IBOutlet weak var txtUsername: UITextField!
@@ -38,6 +38,10 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                 signUpButton.enabled = false
                 txtUsername.enabled = false
                 txtPassword.enabled = false
+                
+                if prefs.valueForKey("GPS") == nil {
+                    prefs.setInteger(0, forKey: "GPS")
+                }
             
                 dispatch_async(dispatch_get_main_queue(), {
                     self.performSegueWithIdentifier("Dashboard", sender: self)
@@ -57,6 +61,10 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             signUpButton.enabled = true
             txtUsername.enabled = true
             txtPassword.enabled = true
+            
+            if prefs.valueForKey("GPS") == nil {
+                prefs.setInteger(0, forKey: "GPS")
+            }
         
             if Reachability.isConnectedToNetwork() {
                 OfflineRequest().OfflineFetchSubmit()
@@ -91,7 +99,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         txtUsername.enabled = false
         txtPassword.enabled = false
         
-        UIApplication.sharedApplication().sendAction("resignFirstResponder", to:nil, from:nil, forEvent:nil)
+        //UIApplication.sharedApplication().sendAction("resignFirstResponder", to:nil, from:nil, forEvent:nil)
         
         var username:NSString = txtUsername.text!
         let password:NSString = txtPassword.text!
